@@ -1,5 +1,2 @@
-Este va a ser el readme del openproject.
+Desarroyo de un sistema de control para el Parrot ArDrone.
 
-Una prueba de carlos.
-
-Otra prueba mas el sabado 29 para ver si puedo comunicarme con el servidor.
