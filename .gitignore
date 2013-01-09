@@ -167,8 +167,4 @@ pip-log.txt
 #############
 
 # Temp files
-<<<<<<< HEAD
-.autosave
-=======
 *.autosave
->>>>>>> Actualizado gitignore
