@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.97"
+    ComputedModelVersion    "1.98"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1382.0, 744.0]
+      Location		      [-8.0, -8.0, 1300.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,10 +53,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"40"
-	Extents			[1330.0, 568.0]
+	LoadSaveID		"672"
+	Extents			[1248.0, 568.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, -4.0]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Carlos"
+  LastModifiedBy	  "Elisa"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 08 12:24:11 2013"
-  RTWModifiedTimeStamp	  279546063
-  ModelVersionFormat	  "1.%<AutoIncrement:97>"
+  LastModifiedDate	  "Wed Jan 09 13:42:28 2013"
+  RTWModifiedTimeStamp	  279639742
+  ModelVersionFormat	  "1.%<AutoIncrement:98>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -975,7 +975,7 @@ Model {
   }
   System {
     Name		    "mi_simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1374, 736]
+    Location		    [-8, -8, 1292, 736]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1007,8 +1007,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			" Modelo NO lineal"
-	Location		[5, 8, 855, 649]
-	Open			off
+	Location		[-8, -8, 1292, 736]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1073,7 +1073,7 @@ Model {
 	  LibraryVersion	  "1.263"
 	  SourceBlock		  "slident/Hammerstein-Wiener Model"
 	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vx123_nlhw122bis_borja"
+	  sys			  "vx123_nlhw122bis"
 	  IC			  "Zero"
 	  X0i			  "0"
 	}
@@ -1087,7 +1087,7 @@ Model {
 	  LibraryVersion	  "1.263"
 	  SourceBlock		  "slident/Hammerstein-Wiener Model"
 	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vy_nlhw112SAT"
+	  sys			  "vy123_nlhw111"
 	  IC			  "Zero"
 	  X0i			  "0"
 	}
@@ -1356,7 +1356,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controlador"
-	Location		[5, 8, 855, 649]
+	Location		[-8, -8, 1292, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1846,8 +1846,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Generador Referencia"
-	Location		[-8, -8, 1374, 736]
-	Open			on
+	Location		[-8, -8, 1292, 736]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
