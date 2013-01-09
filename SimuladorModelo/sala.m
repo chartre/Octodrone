@@ -28,6 +28,7 @@ find(ens(:,4)<=Ly,1)
 find(ens(:,4)>=Uy,1)]);
 
 if ~isempty(choca)
+    disp('Warning: el parato ha salido de la zona de control')
   %ens(choca:end,2:5)=repmat([ens(choca,2) 0 ens(choca,4) 0],size(ens,1)-choca+1,1);
 else
     ens=ens;
