@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.97"
+    ComputedModelVersion    "1.98"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -52,11 +52,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"40"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1330.0, 568.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, -4.0]
+	Offset			[61.059043778801879, -89.257296466974282]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 08 12:24:11 2013"
-  RTWModifiedTimeStamp	  279546063
-  ModelVersionFormat	  "1.%<AutoIncrement:97>"
+  LastModifiedDate	  "Wed Jan 09 15:13:43 2013"
+  RTWModifiedTimeStamp	  279641185
+  ModelVersionFormat	  "1.%<AutoIncrement:98>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -976,7 +976,7 @@ Model {
   System {
     Name		    "mi_simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -995,7 +995,7 @@ Model {
       Name		      " Modelo NO lineal"
       SID		      "672"
       Ports		      [2, 4]
-      Position		      [535, 120, 595, 250]
+      Position		      [655, 120, 715, 250]
       ZOrder		      1
       NamePlacement	      "alternate"
       MinAlgLoopOccurrences   off
@@ -1344,7 +1344,7 @@ Model {
       Name		      "Controlador"
       SID		      "101"
       Ports		      [6, 2]
-      Position		      [365, 124, 430, 246]
+      Position		      [420, 124, 485, 246]
       ZOrder		      -3
       NamePlacement	      "alternate"
       MinAlgLoopOccurrences   off
@@ -1356,7 +1356,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controlador"
-	Location		[5, 8, 855, 649]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1399,7 +1399,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Sp y"
 	  SID			  "654"
-	  Position		  [60, 118, 90, 132]
+	  Position		  [60, 208, 90, 222]
 	  ZOrder		  -4
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -1408,7 +1408,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "y"
 	  SID			  "656"
-	  Position		  [60, 153, 90, 167]
+	  Position		  [60, 243, 90, 257]
 	  ZOrder		  -5
 	  Port			  "5"
 	  IconDisplay		  "Port number"
@@ -1417,7 +1417,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vy"
 	  SID			  "655"
-	  Position		  [60, 183, 90, 197]
+	  Position		  [60, 273, 90, 287]
 	  ZOrder		  -6
 	  Port			  "6"
 	  IconDisplay		  "Port number"
@@ -1427,7 +1427,7 @@ Model {
 	  Name			  "Discrete PID Controller1"
 	  SID			  "686"
 	  Ports			  [1, 1]
-	  Position		  [345, 17, 385, 53]
+	  Position		  [340, 42, 380, 78]
 	  ZOrder		  39
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
@@ -1536,7 +1536,7 @@ Model {
 	  Name			  "Discrete PID Controller2"
 	  SID			  "683"
 	  Ports			  [1, 1]
-	  Position		  [315, 87, 355, 123]
+	  Position		  [340, 197, 380, 233]
 	  ZOrder		  38
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
@@ -1644,7 +1644,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain"
 	  SID			  "668"
-	  Position		  [300, 20, 330, 50]
+	  Position		  [265, 45, 295, 75]
 	  ZOrder		  33
 	  Gain			  "-1"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -1657,7 +1657,7 @@ Model {
 	  Name			  "Saturation"
 	  SID			  "669"
 	  Ports			  [1, 1]
-	  Position		  [415, 20, 445, 50]
+	  Position		  [430, 45, 460, 75]
 	  ZOrder		  35
 	  InputPortMap		  "u0"
 	  UpperLimit		  "0.3"
@@ -1669,7 +1669,7 @@ Model {
 	  Name			  "Saturation1"
 	  SID			  "671"
 	  Ports			  [1, 1]
-	  Position		  [385, 90, 415, 120]
+	  Position		  [430, 200, 460, 230]
 	  ZOrder		  37
 	  InputPortMap		  "u0"
 	  UpperLimit		  "1"
@@ -1681,7 +1681,7 @@ Model {
 	  Name			  "Sum"
 	  SID			  "635"
 	  Ports			  [2, 1]
-	  Position		  [230, 25, 250, 45]
+	  Position		  [215, 50, 235, 70]
 	  ZOrder		  -9
 	  ShowName		  off
 	  IconShape		  "round"
@@ -1695,7 +1695,7 @@ Model {
 	  Name			  "Sum1"
 	  SID			  "636"
 	  Ports			  [2, 1]
-	  Position		  [230, 115, 250, 135]
+	  Position		  [215, 205, 235, 225]
 	  ZOrder		  -10
 	  ShowName		  off
 	  IconShape		  "round"
@@ -1715,14 +1715,14 @@ Model {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  "652"
-	  Position		  [135, 180, 155, 200]
+	  Position		  [135, 270, 155, 290]
 	  ZOrder		  -12
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "RefPitch"
 	  SID			  "104"
-	  Position		  [490, 28, 520, 42]
+	  Position		  [505, 53, 535, 67]
 	  ZOrder		  -15
 	  IconDisplay		  "Port number"
 	}
@@ -1730,7 +1730,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "RefRoll"
 	  SID			  "106"
-	  Position		  [490, 98, 520, 112]
+	  Position		  [505, 208, 535, 222]
 	  ZOrder		  -16
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1738,7 +1738,6 @@ Model {
 	Line {
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
-	  Points		  [27, 0; 0, -20]
 	  DstBlock		  "Discrete PID Controller2"
 	  DstPort		  1
 	}
@@ -1751,14 +1750,13 @@ Model {
 	Line {
 	  SrcBlock		  "x"
 	  SrcPort		  1
-	  Points		  [125, 0; 0, -30]
+	  Points		  [130, 0]
 	  DstBlock		  "Sum"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "SP x"
 	  SrcPort		  1
-	  Points		  [110, 0; 0, -25]
 	  DstBlock		  "Sum"
 	  DstPort		  1
 	}
@@ -1777,7 +1775,7 @@ Model {
 	Line {
 	  SrcBlock		  "y"
 	  SrcPort		  1
-	  Points		  [145, 0]
+	  Points		  [130, 0]
 	  DstBlock		  "Sum1"
 	  DstPort		  2
 	}
@@ -1847,7 +1845,7 @@ Model {
       System {
 	Name			"Generador Referencia"
 	Location		[-8, -8, 1374, 736]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2112,7 +2110,7 @@ Model {
       Name		      "Mux"
       SID		      "61"
       Ports		      [2, 1]
-      Position		      [645, 131, 650, 169]
+      Position		      [870, 131, 875, 169]
       ZOrder		      -6
       ShowName		      off
       Inputs		      "2"
@@ -2123,7 +2121,7 @@ Model {
       Name		      "Mux1"
       SID		      "85"
       Ports		      [2, 1]
-      Position		      [505, 166, 510, 204]
+      Position		      [590, 166, 595, 204]
       ZOrder		      -7
       ShowName		      off
       Inputs		      "2"
@@ -2134,7 +2132,7 @@ Model {
       Name		      "Mux2"
       SID		      "643"
       Ports		      [2, 1]
-      Position		      [675, 286, 680, 324]
+      Position		      [925, 286, 930, 324]
       ZOrder		      -8
       ShowName		      off
       Inputs		      "2"
@@ -2165,7 +2163,7 @@ Model {
       Name		      "Scope"
       SID		      "62"
       Ports		      [2]
-      Position		      [700, 255, 730, 290]
+      Position		      [1215, 255, 1245, 290]
       ZOrder		      -11
       Floating		      off
       Location		      [692, 56, 1359, 719]
@@ -2212,7 +2210,7 @@ Model {
       Name		      "XY Graph"
       SID		      "76"
       Ports		      [2]
-      Position		      [690, 80, 720, 115]
+      Position		      [1205, 80, 1235, 115]
       ZOrder		      -13
       LibraryVersion	      "1.281"
       SourceBlock	      "simulink/Sinks/XY Graph"
@@ -2270,9 +2268,9 @@ Model {
     Line {
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [5, 0; 0, 145]
+      Points		      [9, 0; 0, 145]
       Branch {
-	Points			[-560, 0; 0, -125]
+	Points			[-789, 0; 0, -125]
 	DstBlock		"Generador Referencia"
 	DstPort			1
       }
@@ -2286,11 +2284,12 @@ Model {
       SrcPort		      2
       Points		      [55, 0]
       Branch {
-	Points			[0, 5]
+	Points			[95, 0]
 	DstBlock		" Modelo NO lineal"
 	DstPort			2
       }
       Branch {
+	Points			[0, -20]
 	DstBlock		"Mux1"
 	DstPort			2
       }
@@ -2298,12 +2297,13 @@ Model {
     Line {
       SrcBlock		      "Controlador"
       SrcPort		      1
-      Points		      [55, 0]
+      Points		      [56, 0]
       Branch {
 	DstBlock		" Modelo NO lineal"
 	DstPort			1
       }
       Branch {
+	Points			[0, 20]
 	DstBlock		"Mux1"
 	DstPort			1
       }
@@ -2311,41 +2311,42 @@ Model {
     Line {
       SrcBlock		      " Modelo NO lineal"
       SrcPort		      2
-      Points		      [20, 0; 0, -30]
-      Branch {
-	DstBlock		"Mux"
-	DstPort			1
-      }
+      Points		      [53, 0; 0, -30]
       Branch {
 	Points			[0, -50]
+	Branch {
+	  Points		  [-428, 0; 0, 65]
+	  DstBlock		  "Controlador"
+	  DstPort		  2
+	}
 	Branch {
 	  DstBlock		  "XY Graph"
 	  DstPort		  1
 	}
-	Branch {
-	  Points		  [-275, 0; 0, 65]
-	  DstBlock		  "Controlador"
-	  DstPort		  2
-	}
+      }
+      Branch {
+	DstBlock		"Mux"
+	DstPort			1
       }
     }
     Line {
       SrcBlock		      "Mux1"
       SrcPort		      1
-      Points		      [0, 95]
+      Points		      [25, 0; 0, 95]
       DstBlock		      "Scope"
       DstPort		      2
     }
     Line {
       SrcBlock		      " Modelo NO lineal"
       SrcPort		      1
-      Points		      [14, 0; 0, -42; -276, 0; 0, 37]
+      Points		      [15, 0; 0, -42; -342, 0; 0, 37]
       DstBlock		      "Controlador"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Mux2"
       SrcPort		      1
+      Points		      [12, 0; 0, -40]
       DstBlock		      "Scope"
       DstPort		      1
     }
@@ -2370,29 +2371,27 @@ Model {
     Line {
       SrcBlock		      " Modelo NO lineal"
       SrcPort		      3
-      Points		      [9, 0]
+      Points		      [101, 0]
       Branch {
-	Points			[21, 0]
-	Branch {
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Branch {
-	  Points		  [45, 0]
-	  DstBlock		  "XY Graph"
-	  DstPort		  2
-	}
-      }
-      Branch {
-	Points			[0, 58; -267, 0; 0, -43]
+	Points			[0, 72; -479, 0; 0, -57]
 	DstBlock		"Controlador"
 	DstPort			5
+      }
+      Branch {
+	Points			[0, -40]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+      Branch {
+	Points			[110, 0; 0, -95]
+	DstBlock		"XY Graph"
+	DstPort			2
       }
     }
     Line {
       SrcBlock		      " Modelo NO lineal"
       SrcPort		      4
-      Points		      [2, 0; 0, 42; -273, 0; 0, -37]
+      Points		      [12, 0; 0, 32; -344, 0; 0, -27]
       DstBlock		      "Controlador"
       DstPort		      6
     }
