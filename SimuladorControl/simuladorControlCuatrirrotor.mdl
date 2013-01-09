@@ -1,12 +1,12 @@
 Model {
-  Name			  "mi_simuladorControlCuatrirrotor"
+  Name			  "simuladorControlCuatrirrotor"
   Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.98"
+    ComputedModelVersion    "1.104"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -47,16 +47,37 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1330.0, 568.0]
-	ZoomFactor		[1.0]
-	Offset			[61.059043778801879, -89.257296466974282]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		3
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1330.0, 565.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [61.059043778801879, -89.257296466974282]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "672"
+	  Extents		  [1330.0, 565.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-262.5, 10.0]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "101"
+	  Extents		  [1330.0, 565.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-220.0, -67.5]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -66,9 +87,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 09 15:13:43 2013"
-  RTWModifiedTimeStamp	  279641185
-  ModelVersionFormat	  "1.%<AutoIncrement:98>"
+  LastModifiedDate	  "Thu Jan 10 00:49:57 2013"
+  RTWModifiedTimeStamp	  279678890
+  ModelVersionFormat	  "1.%<AutoIncrement:104>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -103,13 +124,13 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "mi_simuladorControlCuatrirrotor"
+    model_		    "simuladorControlCuatrirrotor"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "mi_simuladorControlCuatrirrotor"
+      Cell		      "simuladorControlCuatrirrotor"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -161,13 +182,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      9
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "720"
@@ -202,7 +223,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -234,7 +255,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -289,7 +310,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -379,7 +400,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -416,7 +437,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -431,7 +452,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  16
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -446,7 +467,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  17
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -506,7 +527,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      18
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -571,7 +592,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      19
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -661,11 +682,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    9
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    18
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -974,7 +995,7 @@ Model {
     }
   }
   System {
-    Name		    "mi_simuladorControlCuatrirrotor"
+    Name		    "simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
     Open		    on
     ModelBrowserVisibility  off
@@ -1007,8 +1028,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			" Modelo NO lineal"
-	Location		[5, 8, 855, 649]
-	Open			off
+	Location		[-8, -8, 1374, 736]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1048,7 +1069,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [385, 277, 420, 313]
 	  ZOrder		  22
-	  SampleTime		  "Ts"
+	  SampleTime		  "0.06"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
 	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
 	}
@@ -1059,7 +1080,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [385, 102, 420, 138]
 	  ZOrder		  23
-	  SampleTime		  "Ts"
+	  SampleTime		  "0.06"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
 	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
 	}
@@ -1073,7 +1094,7 @@ Model {
 	  LibraryVersion	  "1.263"
 	  SourceBlock		  "slident/Hammerstein-Wiener Model"
 	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vx123_nlhw122bis_borja"
+	  sys			  "vx123_nlhw122bis"
 	  IC			  "Zero"
 	  X0i			  "0"
 	}
@@ -1087,7 +1108,7 @@ Model {
 	  LibraryVersion	  "1.263"
 	  SourceBlock		  "slident/Hammerstein-Wiener Model"
 	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vy_nlhw112SAT"
+	  sys			  "vy123_nlhw111"
 	  IC			  "Zero"
 	  X0i			  "0"
 	}
@@ -1357,7 +1378,7 @@ Model {
       System {
 	Name			"Controlador"
 	Location		[-8, -8, 1374, 736]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1427,7 +1448,7 @@ Model {
 	  Name			  "Discrete PID Controller1"
 	  SID			  "686"
 	  Ports			  [1, 1]
-	  Position		  [340, 42, 380, 78]
+	  Position		  [340, 77, 380, 113]
 	  ZOrder		  39
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
@@ -1536,7 +1557,7 @@ Model {
 	  Name			  "Discrete PID Controller2"
 	  SID			  "683"
 	  Ports			  [1, 1]
-	  Position		  [340, 197, 380, 233]
+	  Position		  [340, 232, 380, 268]
 	  ZOrder		  38
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
@@ -1650,7 +1671,7 @@ Model {
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	  SampleTime		  "Ts"
+	  SampleTime		  "0.06"
 	}
 	Block {
 	  BlockType		  Saturate
@@ -1662,7 +1683,7 @@ Model {
 	  InputPortMap		  "u0"
 	  UpperLimit		  "0.3"
 	  LowerLimit		  "-0.3"
-	  SampleTime		  "Ts"
+	  SampleTime		  "0.06"
 	}
 	Block {
 	  BlockType		  Saturate
@@ -1674,7 +1695,7 @@ Model {
 	  InputPortMap		  "u0"
 	  UpperLimit		  "1"
 	  LowerLimit		  "-1"
-	  SampleTime		  "Ts"
+	  SampleTime		  "0.06"
 	}
 	Block {
 	  BlockType		  Sum
@@ -1736,12 +1757,6 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  DstBlock		  "Discrete PID Controller2"
-	  DstPort		  1
-	}
-	Line {
 	  SrcBlock		  "Saturation"
 	  SrcPort		  1
 	  DstBlock		  "RefPitch"
@@ -1794,17 +1809,11 @@ Model {
 	Line {
 	  SrcBlock		  "Gain"
 	  SrcPort		  1
-	  DstBlock		  "Discrete PID Controller1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Discrete PID Controller1"
-	  SrcPort		  1
 	  DstBlock		  "Saturation"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Discrete PID Controller2"
+	  SrcBlock		  "Sum1"
 	  SrcPort		  1
 	  DstBlock		  "Saturation1"
 	  DstPort		  1
@@ -2419,7 +2428,7 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "mi_simuladorControlCuatrirrotor"
+    name		    "simuladorControlCuatrirrotor"
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
     firstTarget		    2
