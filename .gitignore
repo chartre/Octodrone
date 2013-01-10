@@ -167,4 +167,4 @@ pip-log.txt
 #############
 
 # Temp files
-.r2009b
+*.autosave
