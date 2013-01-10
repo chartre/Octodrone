@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.104"
+    ComputedModelVersion    "1.110"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -47,37 +47,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		3
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [61.059043778801879, -89.257296466974282]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "672"
-	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-262.5, 10.0]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "101"
-	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-220.0, -67.5]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"40"
+	Extents			[1330.0, 568.0]
+	ZoomFactor		[1.0]
+	Offset			[-78.850000000000023, -29.024999737739506]
       }
     }
   }
@@ -87,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 10 00:49:57 2013"
-  RTWModifiedTimeStamp	  279678890
-  ModelVersionFormat	  "1.%<AutoIncrement:104>"
+  LastModifiedDate	  "Thu Jan 10 11:34:25 2013"
+  RTWModifiedTimeStamp	  279711516
+  ModelVersionFormat	  "1.%<AutoIncrement:110>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -124,7 +103,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simuladorControlCuatrirrotor"
     Array {
@@ -182,13 +161,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      7
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  8
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "720"
@@ -223,7 +202,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -255,7 +234,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -310,7 +289,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -400,7 +379,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -437,7 +416,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -452,7 +431,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -467,7 +446,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -527,7 +506,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      16
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -592,7 +571,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -682,11 +661,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    18
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -997,7 +976,7 @@ Model {
   System {
     Name		    "simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1010,7 +989,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "686"
+    SIDHighWatermark	    "692"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo NO lineal"
@@ -1029,7 +1008,7 @@ Model {
       System {
 	Name			" Modelo NO lineal"
 	Location		[-8, -8, 1374, 736]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1217,7 +1196,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Contador de tiempo ensayo"
-	Location		[916, 571, 1435, 922]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1328,9 +1307,9 @@ Model {
 	Line {
 	  SrcBlock		  "Switch"
 	  SrcPort		  1
-	  Points		  [20, 0; 0, -5]
+	  Points		  [20, 0]
 	  Branch {
-	    Points		    [0, -55]
+	    Points		    [0, -60]
 	    DstBlock		    "Memory"
 	    DstPort		    1
 	  }
@@ -1378,7 +1357,7 @@ Model {
       System {
 	Name			"Controlador"
 	Location		[-8, -8, 1374, 736]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1854,7 +1833,7 @@ Model {
       System {
 	Name			"Generador Referencia"
 	Location		[-8, -8, 1374, 736]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1870,7 +1849,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Posicion \nactual"
 	  SID			  "42"
-	  Position		  [20, 128, 50, 142]
+	  Position		  [20, 208, 50, 222]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -1879,7 +1858,7 @@ Model {
 	  Name			  "Add"
 	  SID			  "19"
 	  Ports			  [2, 1]
-	  Position		  [230, 52, 260, 83]
+	  Position		  [265, 122, 295, 153]
 	  ZOrder		  -2
 	  Inputs		  "+-"
 	  InputSameDT		  off
@@ -1891,7 +1870,7 @@ Model {
 	  Name			  "Add1"
 	  SID			  "75"
 	  Ports			  [2, 1]
-	  Position		  [510, 87, 540, 118]
+	  Position		  [720, 232, 750, 263]
 	  ZOrder		  -3
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -1902,7 +1881,7 @@ Model {
 	  Name			  "Compare\nTo Constant"
 	  SID			  "66"
 	  Ports			  [1, 1]
-	  Position		  [140, 159, 235, 191]
+	  Position		  [150, 259, 245, 291]
 	  ZOrder		  -4
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
@@ -1917,7 +1896,7 @@ Model {
 	  Name			  "Compare\nTo Constant1"
 	  SID			  "73"
 	  Ports			  [1, 1]
-	  Position		  [370, 54, 465, 86]
+	  Position		  [470, 124, 565, 156]
 	  ZOrder		  -5
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
@@ -1932,7 +1911,7 @@ Model {
 	  Name			  "Direct Lookup\nTable (n-D)"
 	  SID			  "15"
 	  Ports			  [1, 1]
-	  Position		  [100, 23, 200, 97]
+	  Position		  [100, 93, 200, 167]
 	  ZOrder		  -6
 	  InputsSelectThisObjectFromTable "Column"
 	  Table			  "ruta'"
@@ -1942,17 +1921,37 @@ Model {
 	  Name			  "Direct Lookup\nTable (n-D)1"
 	  SID			  "36"
 	  Ports			  [1, 1]
-	  Position		  [450, 283, 550, 357]
+	  Position		  [505, 363, 605, 437]
 	  ZOrder		  -7
 	  InputsSelectThisObjectFromTable "Column"
 	  Table			  "ruta'"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Distancia de cada eje"
+	  SID			  "690"
+	  Ports			  [1]
+	  Position		  [340, 194, 420, 236]
+	  ZOrder		  4
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Distancia total al objetivo"
+	  SID			  "691"
+	  Ports			  [1]
+	  Position		  [475, 204, 555, 226]
+	  ZOrder		  5
+	  Decimation		  "1"
+	  Lockdown		  off
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Increment\nReal World"
 	  SID			  "35"
 	  Ports			  [1, 1]
-	  Position		  [205, 245, 235, 275]
+	  Position		  [215, 385, 245, 415]
 	  ZOrder		  -8
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Additional Math\n& Discrete/Additional Math:\nIncrement - Decrement/Increment\nReal World"
@@ -1963,7 +1962,7 @@ Model {
 	  Name			  "MATLAB Fcn"
 	  SID			  "23"
 	  Ports			  [1, 1]
-	  Position		  [280, 55, 340, 85]
+	  Position		  [355, 125, 415, 155]
 	  ZOrder		  -9
 	  MATLABFcn		  "norm"
 	  Output1D		  off
@@ -1972,15 +1971,35 @@ Model {
 	  BlockType		  Memory
 	  Name			  "Memory1"
 	  SID			  "664"
-	  Position		  [535, 15, 565, 45]
-	  ZOrder		  -10
+	  Position		  [720, 0, 750, 30]
+	  ZOrder		  6
 	  BlockMirror		  on
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Pto de la ruta actual"
+	  SID			  "689"
+	  Ports			  [1]
+	  Position		  [255, 37, 345, 83]
+	  ZOrder		  3
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Pto de la ruta siguiente"
+	  SID			  "687"
+	  Ports			  [1]
+	  Position		  [680, 442, 760, 488]
+	  ZOrder		  1
+	  Decimation		  "1"
+	  Lockdown		  off
 	}
 	Block {
 	  BlockType		  Switch
 	  Name			  "Switch"
 	  SID			  "34"
-	  Position		  [370, 230, 400, 260]
+	  Position		  [370, 320, 400, 350]
 	  ZOrder		  -11
 	  Threshold		  "1"
 	  InputSameDT		  off
@@ -1990,7 +2009,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Pto de la ruta"
 	  SID			  "43"
-	  Position		  [590, 238, 620, 252]
+	  Position		  [825, 328, 855, 342]
 	  ZOrder		  -12
 	  IconDisplay		  "Port number"
 	}
@@ -1998,7 +2017,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Siguiente pos"
 	  SID			  "44"
-	  Position		  [590, 313, 620, 327]
+	  Position		  [825, 393, 855, 407]
 	  ZOrder		  -13
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -2006,19 +2025,35 @@ Model {
 	Line {
 	  SrcBlock		  "Direct Lookup\nTable (n-D)"
 	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
+	  Points		  [28, 0]
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "Pto de la ruta actual"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Add"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Add"
 	  SrcPort		  1
-	  DstBlock		  "MATLAB Fcn"
-	  DstPort		  1
+	  Points		  [22, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Distancia de cada eje"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "MATLAB Fcn"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Increment\nReal World"
 	  SrcPort		  1
-	  Points		  [115, 0]
+	  Points		  [57, 0; 0, -55]
 	  DstBlock		  "Switch"
 	  DstPort		  3
 	}
@@ -2027,81 +2062,97 @@ Model {
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    Points		    [0, 75]
-	    DstBlock		    "Direct Lookup\nTable (n-D)1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [160, 0]
+	    Points		    [366, 0]
+	    Branch {
+	      Points		      [0, -320]
+	      DstBlock		      "Memory1"
+	      DstPort		      1
+	    }
 	    Branch {
 	      DstBlock		      "Pto de la ruta"
 	      DstPort		      1
 	    }
-	    Branch {
-	      Points		      [5, 0]
-	      DstBlock		      "Memory1"
-	      DstPort		      1
-	    }
+	  }
+	  Branch {
+	    Points		    [0, 65]
+	    DstBlock		    "Direct Lookup\nTable (n-D)1"
+	    DstPort		    1
 	  }
 	}
 	Line {
 	  SrcBlock		  "Posicion \nactual"
 	  SrcPort		  1
-	  Points		  [160, 0]
+	  Points		  [177, 0; 0, -70]
 	  DstBlock		  "Add"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Direct Lookup\nTable (n-D)1"
 	  SrcPort		  1
-	  DstBlock		  "Siguiente pos"
-	  DstPort		  1
+	  Points		  [39, 0]
+	  Branch {
+	    DstBlock		    "Siguiente pos"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 65]
+	    DstBlock		    "Pto de la ruta siguiente"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "MATLAB Fcn"
 	  SrcPort		  1
-	  DstBlock		  "Compare\nTo Constant1"
-	  DstPort		  1
+	  Points		  [27, 0]
+	  Branch {
+	    DstBlock		    "Compare\nTo Constant1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Distancia total al objetivo"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Compare\nTo Constant1"
 	  SrcPort		  1
-	  Points		  [10, 0; 0, 25]
+	  Points		  [135, 0]
 	  DstBlock		  "Add1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Compare\nTo Constant"
 	  SrcPort		  1
-	  Points		  [82, 0; 0, -49; 173, 0]
+	  Points		  [404, 0; 0, -20]
 	  DstBlock		  "Add1"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Add1"
 	  SrcPort		  1
-	  Points		  [0, 75; -195, 0; 0, 65]
+	  Points		  [9, 0; 0, 47; -414, 0; 0, 38]
 	  DstBlock		  "Switch"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Memory1"
 	  SrcPort		  1
-	  Points		  [-320, 0; 0, -20; -135, 0; 0, 50]
+	  Points		  [-640, 0; 0, 115]
 	  Branch {
 	    DstBlock		    "Direct Lookup\nTable (n-D)"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 115]
+	    Points		    [0, 145]
 	    Branch {
-	      Points		      [0, 85; 85, 0]
+	      Points		      [0, 50]
 	      Branch {
-		Points			[0, -25]
 		DstBlock		"Switch"
 		DstPort			1
 	      }
 	      Branch {
+		Points			[0, 75]
 		DstBlock		"Increment\nReal World"
 		DstPort			1
 	      }
@@ -2324,7 +2375,7 @@ Model {
       Branch {
 	Points			[0, -50]
 	Branch {
-	  Points		  [-428, 0; 0, 65]
+	  Points		  [-395, 0; 0, 65]
 	  DstBlock		  "Controlador"
 	  DstPort		  2
 	}
@@ -2382,7 +2433,7 @@ Model {
       SrcPort		      3
       Points		      [101, 0]
       Branch {
-	Points			[0, 72; -479, 0; 0, -57]
+	Points			[0, 72; -445, 0; 0, -57]
 	DstBlock		"Controlador"
 	DstPort			5
       }
