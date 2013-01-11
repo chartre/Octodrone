@@ -17,5 +17,5 @@ y=exp_ini_fase1(:,4);
 vy=exp_ini_fase1(:,5);
 refPitch=exp_ini_fase1(:,6);
 refRoll=exp_ini_fase1(:,7);
+Ts=0.06;
 
-% esto es una prueba del Github
