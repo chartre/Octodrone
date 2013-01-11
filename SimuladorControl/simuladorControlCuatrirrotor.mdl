@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.118"
+    ComputedModelVersion    "1.135"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1044.0, 744.0]
+      Location		      [-8.0, -8.0, 1382.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,9 +54,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"101"
-	Extents			[992.0, 568.0]
+	Extents			[1330.0, 568.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Offset			[-4.0, 0.0]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jan 11 14:52:48 2013"
-  RTWModifiedTimeStamp	  279814841
-  ModelVersionFormat	  "1.%<AutoIncrement:118>"
+  LastModifiedDate	  "Fri Jan 11 18:59:13 2013"
+  RTWModifiedTimeStamp	  279829909
+  ModelVersionFormat	  "1.%<AutoIncrement:135>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1006,7 +1006,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1036, 736]
+    Location		    [-8, -8, 1374, 736]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1020,13 +1020,13 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "709"
+    SIDHighWatermark	    "711"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo NO lineal"
       SID		      "672"
       Ports		      [2, 4]
-      Position		      [655, 122, 715, 248]
+      Position		      [655, 124, 715, 246]
       ZOrder		      1
       NamePlacement	      "alternate"
       MinAlgLoopOccurrences   off
@@ -1038,7 +1038,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			" Modelo NO lineal"
-	Location		[-8, -8, 1036, 736]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1387,7 +1387,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1036, 736]
+	Location		[-8, -8, 1374, 736]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1421,7 +1421,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "SP x"
 	  SID			  "653"
-	  Position		  [10, 53, 40, 67]
+	  Position		  [10, 138, 40, 152]
 	  ZOrder		  -3
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -1430,7 +1430,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Sp y"
 	  SID			  "654"
-	  Position		  [10, 123, 40, 137]
+	  Position		  [10, 208, 40, 222]
 	  ZOrder		  -4
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -1458,7 +1458,7 @@ Model {
 	  Name			  "Bus Creator"
 	  SID			  "706"
 	  Ports			  [2, 1]
-	  Position		  [70, 81, 75, 119]
+	  Position		  [70, 166, 75, 204]
 	  ZOrder		  44
 	  ShowName		  off
 	  Inputs		  "2"
@@ -1468,9 +1468,8 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Constant"
 	  SID			  "709"
-	  Position		  [120, 150, 150, 180]
+	  Position		  [120, 235, 150, 265]
 	  ZOrder		  47
-	  Value			  "2"
 	}
 	Block {
 	  BlockType		  Constant
@@ -1505,7 +1504,7 @@ Model {
 	  Name			  "Demux"
 	  SID			  "707"
 	  Ports			  [1, 2]
-	  Position		  [430, 211, 435, 249]
+	  Position		  [350, 211, 355, 249]
 	  ZOrder		  45
 	  ShowName		  off
 	  Outputs		  "2"
@@ -1513,24 +1512,24 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Discrete PID Controller1"
-	  SID			  "686"
+	  Name			  "Discrete PID Controller"
+	  SID			  "710"
 	  Ports			  [1, 1]
-	  Position		  [715, 162, 755, 198]
-	  ZOrder		  39
+	  Position		  [705, 282, 745, 318]
+	  ZOrder		  48
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
 	  Controller		  "PID"
 	  TimeDomain		  "Discrete-time"
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "0.7"
+	  P			  "1.6"
 	  I			  "0"
-	  D			  "0.5"
-	  N			  "15"
+	  D			  "0.7"
+	  N			  "8"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -1623,23 +1622,23 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Discrete PID Controller2"
-	  SID			  "683"
+	  SID			  "711"
 	  Ports			  [1, 1]
-	  Position		  [715, 317, 755, 353]
-	  ZOrder		  38
+	  Position		  [705, 127, 745, 163]
+	  ZOrder		  49
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
 	  Controller		  "PID"
 	  TimeDomain		  "Discrete-time"
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "1.6"
+	  P			  "0.7"
 	  I			  "0"
-	  D			  "0.7"
-	  N			  "8"
+	  D			  "0.5"
+	  N			  "15"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -1739,7 +1738,7 @@ Model {
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -1921,9 +1920,7 @@ Model {
 	  Position		  [805, 130, 835, 160]
 	  ZOrder		  35
 	  InputPortMap		  "u0"
-	  UpperLimit		  "0.3"
-	  LowerLimit		  "-0.3"
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Saturate
@@ -1933,9 +1930,7 @@ Model {
 	  Position		  [805, 285, 835, 315]
 	  ZOrder		  37
 	  InputPortMap		  "u0"
-	  UpperLimit		  "1"
-	  LowerLimit		  "-1"
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Sum
@@ -1969,7 +1964,7 @@ Model {
 	  BlockType		  Switch
 	  Name			  "Switch"
 	  SID			  "708"
-	  Position		  [315, 95, 365, 135]
+	  Position		  [260, 180, 290, 210]
 	  ZOrder		  46
 	  Threshold		  "1"
 	  InputSameDT		  off
@@ -2040,13 +2035,13 @@ Model {
 	Line {
 	  SrcBlock		  "Gain"
 	  SrcPort		  1
-	  DstBlock		  "Saturation"
+	  DstBlock		  "Discrete PID Controller2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
-	  DstBlock		  "Saturation1"
+	  DstBlock		  "Discrete PID Controller"
 	  DstPort		  1
 	}
 	Line {
@@ -2067,7 +2062,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [12, 0]
 	  Branch {
-	    Points		    [0, 225]
+	    Points		    [0, 140]
 	    DstBlock		    "MATLAB Function"
 	    DstPort		    1
 	  }
@@ -2094,7 +2089,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [8, 0]
 	  Branch {
-	    Points		    [0, -235]
+	    Points		    [0, -160]
 	    DstBlock		    "Switch"
 	    DstPort		    3
 	  }
@@ -2128,30 +2123,42 @@ Model {
 	Line {
 	  SrcBlock		  "Demux"
 	  SrcPort		  1
-	  Points		  [87, 0; 0, -75]
+	  Points		  [36, 0; 0, -75]
 	  DstBlock		  "Sum"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Demux"
 	  SrcPort		  2
-	  Points		  [72, 0; 0, 60]
+	  Points		  [36, 0; 0, 60]
 	  DstBlock		  "Sum1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Switch"
 	  SrcPort		  1
-	  Points		  [32, 0; 0, 115]
+	  Points		  [40, 0]
 	  DstBlock		  "Demux"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Constant"
 	  SrcPort		  1
-	  Points		  [17, 0; 0, -50]
+	  Points		  [17, 0; 0, -55]
 	  DstBlock		  "Switch"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Discrete PID Controller2"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Discrete PID Controller"
+	  SrcPort		  1
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
 	}
       }
     }
@@ -2182,7 +2189,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Generador Referencia"
-	Location		[-8, -8, 1036, 736]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2845,6 +2852,7 @@ Stateflow {
     firstTransition	    10
     firstJunction	    9
     viewObj		    2
+    visible		    1
     machine		    1
     subviewS {
     }
@@ -2876,7 +2884,7 @@ Stateflow {
       ";\n\nDistXY = SPpos -LastRef;\n\nif (norm(DistXY)<(0.5*radio))\n    CurrRef = LastRef + 0*DistXY;\nelse\n       "
       " minTx=abs(DistXY(1))/maxVx;\n        minTy=abs(DistXY(2))/maxVy;\n        minT=max(minTx,minTy);\n        %disp"
       "('minT')\n        \n        if minT<Ts\n            CurrRef = SPpos;\n        else\n            CurrRef = LastRe"
-      "f+(Ts/minT)*DistXY;\n        end\nend\n"
+      "f+((Ts/minT)*DistXY)/1;\n        end\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
