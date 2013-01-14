@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.143"
+    ComputedModelVersion    "1.164"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -56,7 +56,7 @@ Model {
 	LoadSaveID		"714"
 	Extents			[1330.0, 568.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Offset			[86.199999999999989, 40.8]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jan 11 20:57:52 2013"
-  RTWModifiedTimeStamp	  279833780
-  ModelVersionFormat	  "1.%<AutoIncrement:143>"
+  LastModifiedDate	  "Mon Jan 14 15:39:12 2013"
+  RTWModifiedTimeStamp	  280077289
+  ModelVersionFormat	  "1.%<AutoIncrement:164>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1414,7 +1414,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "SP x"
 	  SID			  "653"
-	  Position		  [20, 138, 50, 152]
+	  Position		  [10, 138, 40, 152]
 	  ZOrder		  -3
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -1450,7 +1450,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Constant"
 	  SID			  "709"
-	  Position		  [150, 235, 180, 265]
+	  Position		  [185, 235, 215, 265]
 	  ZOrder		  47
 	  Value			  "0"
 	}
@@ -1712,68 +1712,11 @@ Model {
 	  FilterRTWStateStorageClass "Auto"
 	}
 	Block {
-	  BlockType		  Gain
-	  Name			  "Gain"
-	  SID			  "668"
-	  Position		  [640, 130, 670, 160]
-	  ZOrder		  33
-	  Gain			  "-1"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  SampleTime		  "Ts"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "713"
-	  Ports			  [2, 1]
-	  Position		  [70, 201, 75, 239]
-	  ZOrder		  51
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux1"
-	  SID			  "721"
-	  Ports			  [4, 1]
-	  Position		  [125, 363, 130, 462]
-	  ZOrder		  53
-	  ShowName		  off
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Saturate
-	  Name			  "Saturation"
-	  SID			  "669"
-	  Ports			  [1, 1]
-	  Position		  [805, 130, 835, 160]
-	  ZOrder		  35
-	  InputPortMap		  "u0"
-	  UpperLimit		  "1"
-	  LowerLimit		  "-1"
-	  SampleTime		  "Ts"
-	}
-	Block {
-	  BlockType		  Saturate
-	  Name			  "Saturation1"
-	  SID			  "671"
-	  Ports			  [1, 1]
-	  Position		  [805, 285, 835, 315]
-	  ZOrder		  37
-	  InputPortMap		  "u0"
-	  UpperLimit		  "1"
-	  LowerLimit		  "-1"
-	  SampleTime		  "Ts"
-	}
-	Block {
 	  BlockType		  SubSystem
-	  Name			  "Subsystem"
+	  Name			  "Funciones"
 	  SID			  "714"
 	  Ports			  [1, 1]
-	  Position		  [150, 394, 250, 436]
+	  Position		  [170, 394, 225, 436]
 	  ZOrder		  52
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -1783,7 +1726,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
 	  System {
-	    Name		    "Subsystem"
+	    Name		    "Funciones"
 	    Location		    [-8, -8, 1374, 736]
 	    Open		    on
 	    ModelBrowserVisibility  off
@@ -1801,30 +1744,13 @@ Model {
 	      BlockType		      Inport
 	      Name		      "In1"
 	      SID		      "715"
-	      Position		      [295, 233, 325, 247]
+	      Position		      [150, 233, 180, 247]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Constant
-	      Name		      "Constant"
-	      SID		      "724"
-	      Position		      [655, 220, 685, 250]
-	      ZOrder		      49
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "722"
-	      Ports		      [1, 4]
-	      Position		      [365, 191, 370, 284]
-	      ZOrder		      47
-	      ShowName		      off
-	      DisplayOption	      "bar"
-	    }
-	    Block {
 	      BlockType		      SubSystem
-	      Name		      "Nueva"
+	      Name		      "Carlos"
 	      SID		      "717"
 	      Ports		      [4, 1]
 	      Position		      [535, 273, 630, 372]
@@ -1856,7 +1782,7 @@ Model {
 		IconUnits		"normalized"
 	      }
 	      System {
-		Name			"Nueva"
+		Name			"Carlos"
 		Location		[223, 338, 826, 833]
 		Open			off
 		ModelBrowserVisibility	off
@@ -1993,6 +1919,24 @@ Model {
 		  DstPort		  1
 		}
 	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "724"
+	      Position		      [655, 220, 685, 250]
+	      ZOrder		      49
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      SID		      "722"
+	      Ports		      [1, 4]
+	      Position		      [365, 191, 370, 284]
+	      ZOrder		      47
+	      ShowName		      off
+	      DisplayOption	      "bar"
 	    }
 	    Block {
 	      BlockType		      SubSystem
@@ -2203,7 +2147,7 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Nueva"
+	      SrcBlock		      "Carlos"
 	      SrcPort		      1
 	      Points		      [122, 0; 0, -140]
 	      DstBlock		      "Switch"
@@ -2220,7 +2164,7 @@ Model {
 	      }
 	      Branch {
 		Points			[0, 85]
-		DstBlock		"Nueva"
+		DstBlock		"Carlos"
 		DstPort			1
 	      }
 	    }
@@ -2235,7 +2179,7 @@ Model {
 	      }
 	      Branch {
 		Points			[0, 85]
-		DstBlock		"Nueva"
+		DstBlock		"Carlos"
 		DstPort			2
 	      }
 	    }
@@ -2245,7 +2189,7 @@ Model {
 	      Points		      [73, 0]
 	      Branch {
 		Points			[0, 85]
-		DstBlock		"Nueva"
+		DstBlock		"Carlos"
 		DstPort			3
 	      }
 	      Branch {
@@ -2260,7 +2204,7 @@ Model {
 	      Points		      [98, 0]
 	      Branch {
 		Points			[0, 85]
-		DstBlock		"Nueva"
+		DstBlock		"Carlos"
 		DstPort			4
 	      }
 	      Branch {
@@ -2277,6 +2221,63 @@ Model {
 	      DstPort		      2
 	    }
 	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "668"
+	  Position		  [640, 130, 670, 160]
+	  ZOrder		  33
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  SampleTime		  "Ts"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "713"
+	  Ports			  [2, 1]
+	  Position		  [70, 201, 75, 239]
+	  ZOrder		  51
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "721"
+	  Ports			  [4, 1]
+	  Position		  [125, 363, 130, 462]
+	  ZOrder		  53
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "669"
+	  Ports			  [1, 1]
+	  Position		  [805, 130, 835, 160]
+	  ZOrder		  35
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1"
+	  LowerLimit		  "-1"
+	  SampleTime		  "Ts"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation1"
+	  SID			  "671"
+	  Ports			  [1, 1]
+	  Position		  [805, 285, 835, 315]
+	  ZOrder		  37
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1"
+	  LowerLimit		  "-1"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Sum
@@ -2310,7 +2311,7 @@ Model {
 	  BlockType		  Switch
 	  Name			  "Switch"
 	  SID			  "708"
-	  Position		  [300, 215, 330, 245]
+	  Position		  [270, 212, 330, 248]
 	  ZOrder		  46
 	  Threshold		  "1"
 	  InputSameDT		  off
@@ -2417,7 +2418,7 @@ Model {
 	  DstPort		  4
 	}
 	Line {
-	  SrcBlock		  "Subsystem"
+	  SrcBlock		  "Funciones"
 	  SrcPort		  1
 	  Points		  [21, 0]
 	  Branch {
@@ -2441,7 +2442,7 @@ Model {
 	Line {
 	  SrcBlock		  "SP x"
 	  SrcPort		  1
-	  Points		  [5, 0; 0, 65]
+	  Points		  [10, 0]
 	  DstBlock		  "Mux"
 	  DstPort		  1
 	}
@@ -2467,12 +2468,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Switch"
-	  SrcPort		  1
-	  DstBlock		  "Demux"
-	  DstPort		  1
-	}
-	Line {
 	  SrcBlock		  "Constant"
 	  SrcPort		  1
 	  Points		  [9, 0; 0, -20]
@@ -2494,7 +2489,7 @@ Model {
 	Line {
 	  SrcBlock		  "Mux"
 	  SrcPort		  1
-	  Points		  [16, 0]
+	  Points		  [35, 0]
 	  Branch {
 	    Points		    [0, 155]
 	    DstBlock		    "Mux1"
@@ -2508,7 +2503,13 @@ Model {
 	Line {
 	  SrcBlock		  "Mux1"
 	  SrcPort		  1
-	  DstBlock		  "Subsystem"
+	  DstBlock		  "Funciones"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
 	  DstPort		  1
 	}
       }
@@ -3194,7 +3195,7 @@ Stateflow {
   }
   chart {
     id			    2
-    name		    "Controlador/Subsystem/Nueva"
+    name		    "Controlador/Funciones/Carlos"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
@@ -3230,11 +3231,11 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function CurrRef = CalcRef (SPpos, LastRef, Ts, radio)\n%%bla bla bla\n\nmaxVx = 3;\nmaxVy = 1.85"
-      ";\n\nDistXY = SPpos - LastRef;\n\nif (norm(DistXY)<(0.5*radio))\n    CurrRef = LastRef + 0*DistXY;\n    disp('Pr"
-      "imer if')\nelse\n        minTx=abs(DistXY(1))/maxVx;\n        minTy=abs(DistXY(2))/maxVy;\n        minT=max(minT"
-      "x,minTy);\n        %disp('minT')\n        \n        if minT<Ts\n            CurrRef = SPpos;\n        else\n    "
-      "        CurrRef = LastRef+((Ts/minT)*DistXY)/1;\n            disp('segundo if')\n        end\nend\n"
+      script		      "function CurrRef = CalcRef(SPpos, LastRef, Ts, radio)\n%%bla bla bla\n\nmaxVx = 3;\nmaxVy = 1.85;"
+      "\n\nDistXY = SPpos -LastRef;\nif (norm(DistXY)<(0.5*radio))\n    CurrRef = LastRef + 0*DistXY;\nelse\n        mi"
+      "nTx=abs(DistXY(1))/maxVx;\n        minTy=abs(DistXY(2))/maxVy;\n        minT=max(minTx,minTy);\n        %disp('m"
+      "inT')\n        \n        if minT<Ts\n            CurrRef = SPpos;\n        else\n            CurrRef = LastRef+("
+      "(Ts/minT)*DistXY)/1;\n        end\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -3378,13 +3379,13 @@ Stateflow {
   }
   instance {
     id			    11
-    name		    "Controlador/Subsystem/Nueva"
+    name		    "Controlador/Funciones/Carlos"
     machine		    1
     chart		    2
   }
   chart {
     id			    12
-    name		    "Controlador/Subsystem/Original Enrique"
+    name		    "Controlador/Funciones/Original Enrique"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
@@ -3420,11 +3421,11 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function CurrRef = CalcRef (SPpos, LastRef, Ts, radio)\n%%bla bla bla\n\nmaxVx = 3;\nmaxVy = 1.85"
-      ";\n\nDistXY = SPpos -LastRef;\n\nif (norm(DistXY)<(0.5*radio))\n    CurrRef = LastRef + 0*DistXY;\nelse\n       "
-      " minTx=abs(DistXY(1))/maxVx;\n        minTy=abs(DistXY(2))/maxVy;\n        minT=max(minTx,minTy);\n        %disp"
-      "('minT')\n        \n        if minT<Ts\n            CurrRef = SPpos;\n        else\n            CurrRef = LastRe"
-      "f+((Ts/minT)*DistXY)/1;\n        end\nend\n"
+      script		      "function CurrRef = CalcRef(SPpos, LastRef, Ts, radio)\n%%bla bla bla\n\nmaxVx = 3;\nmaxVy = 1.85;"
+      "\n\nDistXY = SPpos -LastRef;\nif (norm(DistXY)<(0.5*radio))\n    CurrRef = LastRef + 0*DistXY;\nelse\n        mi"
+      "nTx=abs(DistXY(1))/maxVx;\n        minTy=abs(DistXY(2))/maxVy;\n        minT=max(minTx,minTy);\n        %disp('m"
+      "inT')\n        \n        if minT<Ts\n            CurrRef = SPpos;\n        else\n            CurrRef = LastRef+("
+      "(Ts/minT)*DistXY)/1;\n        end\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -3568,7 +3569,7 @@ Stateflow {
   }
   instance {
     id			    21
-    name		    "Controlador/Subsystem/Original Enrique"
+    name		    "Controlador/Funciones/Original Enrique"
     machine		    1
     chart		    12
   }
