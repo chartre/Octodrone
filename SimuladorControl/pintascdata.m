@@ -133,7 +133,7 @@ title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 figure
 subplot(311)
 plot(scdata.time,scdata.signals(1,1).values)
-legend('x','y')
+legend('x','y','PSx','PSy')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 subplot(312)
 plot(scdata.time,scdata.signals(1,2).values)
