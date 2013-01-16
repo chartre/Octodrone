@@ -340,4 +340,5 @@ pip-log.txt
 
 # Temp files
 *.autosave
+slprj/
 >>>>>>> origin/ejesPIDsincro_promedio
