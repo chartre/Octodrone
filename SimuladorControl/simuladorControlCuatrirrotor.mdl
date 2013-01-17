@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.110"
+    ComputedModelVersion    "1.111"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1382.0, 744.0]
+      Location		      [-8.0, -8.0, 1300.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,11 +52,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"40"
-	Extents			[1330.0, 568.0]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1248.0, 568.0]
 	ZoomFactor		[1.0]
-	Offset			[-78.850000000000023, -29.024999737739506]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Carlos"
+  LastModifiedBy	  "Elisa"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 10 11:34:25 2013"
-  RTWModifiedTimeStamp	  279711516
-  ModelVersionFormat	  "1.%<AutoIncrement:110>"
+  LastModifiedDate	  "Thu Jan 17 11:07:33 2013"
+  RTWModifiedTimeStamp	  280321623
+  ModelVersionFormat	  "1.%<AutoIncrement:111>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -181,15 +181,15 @@ Model {
 	  MaxConsecutiveZCs	  "1000"
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
-	  MaxStep		  "0.06"
+	  MaxStep		  "Ts"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -655,7 +655,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 219, 48, 1148, 636 ] 
+      ConfigPrmDlgPosition     [ 211, 18, 1156, 644 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -975,8 +975,8 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1374, 736]
-    Open		    off
+    Location		    [-8, -8, 1292, 736]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -989,7 +989,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "692"
+    SIDHighWatermark	    "694"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo NO lineal"
@@ -1007,7 +1007,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			" Modelo NO lineal"
-	Location		[-8, -8, 1374, 736]
+	Location		[-8, -8, 1292, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1048,7 +1048,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [385, 277, 420, 313]
 	  ZOrder		  22
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
 	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
 	}
@@ -1059,7 +1059,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [385, 102, 420, 138]
 	  ZOrder		  23
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
 	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
 	}
@@ -1073,7 +1073,7 @@ Model {
 	  LibraryVersion	  "1.263"
 	  SourceBlock		  "slident/Hammerstein-Wiener Model"
 	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vx123_nlhw122bis"
+	  sys			  "vx123_nlhw113_pic2"
 	  IC			  "Zero"
 	  X0i			  "0"
 	}
@@ -1356,7 +1356,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1374, 736]
+	Location		[-8, -8, 1292, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1424,11 +1424,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Discrete PID Controller1"
-	  SID			  "686"
+	  Name			  "Discrete PID refPitch"
+	  SID			  "694"
 	  Ports			  [1, 1]
-	  Position		  [340, 77, 380, 113]
-	  ZOrder		  39
+	  Position		  [330, 42, 370, 78]
+	  ZOrder		  51
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
@@ -1438,9 +1438,9 @@ Model {
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "0.7"
+	  P			  "1.9"
 	  I			  "0"
-	  D			  "0.5"
+	  D			  "0.8"
 	  N			  "15"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
@@ -1533,11 +1533,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Discrete PID Controller2"
-	  SID			  "683"
+	  Name			  "Discrete PID refRoll"
+	  SID			  "693"
 	  Ports			  [1, 1]
-	  Position		  [340, 232, 380, 268]
-	  ZOrder		  38
+	  Position		  [330, 197, 370, 233]
+	  ZOrder		  40
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
@@ -1547,10 +1547,10 @@ Model {
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "1.6"
-	  I			  "0"
-	  D			  "0.7"
-	  N			  "8"
+	  P			  "1"
+	  I			  "0.002"
+	  D			  "0.5"
+	  N			  "10"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -1650,7 +1650,7 @@ Model {
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Saturate
@@ -1660,9 +1660,7 @@ Model {
 	  Position		  [430, 45, 460, 75]
 	  ZOrder		  35
 	  InputPortMap		  "u0"
-	  UpperLimit		  "0.3"
-	  LowerLimit		  "-0.3"
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Saturate
@@ -1672,9 +1670,7 @@ Model {
 	  Position		  [430, 200, 460, 230]
 	  ZOrder		  37
 	  InputPortMap		  "u0"
-	  UpperLimit		  "1"
-	  LowerLimit		  "-1"
-	  SampleTime		  "0.06"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Sum
@@ -1788,19 +1784,31 @@ Model {
 	Line {
 	  SrcBlock		  "Gain"
 	  SrcPort		  1
-	  DstBlock		  "Saturation"
+	  DstBlock		  "Discrete PID refPitch"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
-	  DstBlock		  "Saturation1"
+	  DstBlock		  "Discrete PID refRoll"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Saturation1"
 	  SrcPort		  1
 	  DstBlock		  "RefRoll"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Discrete PID refRoll"
+	  SrcPort		  1
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Discrete PID refPitch"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
 	  DstPort		  1
 	}
       }
@@ -1832,8 +1840,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Generador Referencia"
-	Location		[-8, -8, 1374, 736]
-	Open			on
+	Location		[-8, -8, 1292, 736]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
