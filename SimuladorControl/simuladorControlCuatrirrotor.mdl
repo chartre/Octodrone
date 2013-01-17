@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.111"
+    ComputedModelVersion    "1.118"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1300.0, 744.0]
+      Location		      [-8.0, 12.0, 1300.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,7 +56,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1248.0, 568.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Offset			[11.0, 0.0]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Elisa"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 17 11:07:33 2013"
-  RTWModifiedTimeStamp	  280321623
-  ModelVersionFormat	  "1.%<AutoIncrement:111>"
+  LastModifiedDate	  "Thu Jan 17 22:49:17 2013"
+  RTWModifiedTimeStamp	  280349200
+  ModelVersionFormat	  "1.%<AutoIncrement:118>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -755,6 +755,23 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Delay
+      DelayLengthSource	      "Dialog"
+      DelayLength	      "2"
+      DelayLengthUpperLimit   "100"
+      InitialConditionSource  "Dialog"
+      InitialCondition	      "0.0"
+      ExternalReset	      "None"
+      PreventDirectFeedthrough off
+      DiagnosticForOutOfRangeDelayLength "None"
+      RemoveProtectionDelayLength off
+      InputProcessing	      "Elements as channels (sample based)"
+      UseCircularBuffer	      off
+      SampleTime	      "-1"
+      StateMustResolveToSignalObject off
+      CodeGenStateStorageClass "Auto"
+    }
+    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
@@ -880,6 +897,13 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
       BlockType		      Saturate
       UpperLimitSource	      "Dialog"
       UpperLimit	      "0.5"
@@ -975,7 +999,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1292, 736]
+    Location		    [-8, 12, 1292, 756]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -989,7 +1013,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "694"
+    SIDHighWatermark	    "711"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo NO lineal"
@@ -1356,7 +1380,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1292, 736]
+	Location		[-8, 12, 1292, 756]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1373,7 +1397,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vx"
 	  SID			  "103"
-	  Position		  [60, 18, 90, 32]
+	  Position		  [365, 18, 395, 32]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -1381,7 +1405,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "x"
 	  SID			  "105"
-	  Position		  [60, 83, 90, 97]
+	  Position		  [365, 83, 395, 97]
 	  ZOrder		  -2
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1390,7 +1414,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "SP x"
 	  SID			  "653"
-	  Position		  [60, 53, 90, 67]
+	  Position		  [20, 113, 50, 127]
 	  ZOrder		  -3
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -1399,7 +1423,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Sp y"
 	  SID			  "654"
-	  Position		  [60, 208, 90, 222]
+	  Position		  [20, 163, 50, 177]
 	  ZOrder		  -4
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -1408,7 +1432,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "y"
 	  SID			  "656"
-	  Position		  [60, 243, 90, 257]
+	  Position		  [365, 243, 395, 257]
 	  ZOrder		  -5
 	  Port			  "5"
 	  IconDisplay		  "Port number"
@@ -1417,17 +1441,314 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vy"
 	  SID			  "655"
-	  Position		  [60, 273, 90, 287]
+	  Position		  [365, 273, 395, 287]
 	  ZOrder		  -6
 	  Port			  "6"
 	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Control Ejes teórico"
+	  SID			  "695"
+	  Ports			  [1, 1]
+	  Position		  [140, 128, 225, 162]
+	  ZOrder		  52
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Control Ejes teórico"
+	    Location		    [-8, 12, 1292, 756]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "125"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "SPPos"
+	      SID		      "696"
+	      Position		      [110, 93, 140, 107]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "700"
+	      Position		      [195, 145, 215, 165]
+	      ZOrder		      3
+	      Value		      "Ts"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      SID		      "701"
+	      Position		      [190, 180, 220, 200]
+	      ZOrder		      4
+	      Value		      "radio"
+	    }
+	    Block {
+	      BlockType		      Delay
+	      Name		      "Delay"
+	      SID		      "711"
+	      Ports		      [1, 1]
+	      Position		      [275, 263, 310, 297]
+	      ZOrder		      8
+	      BlockMirror	      on
+	      InputPortMap	      "u0"
+	      DelayLength	      "1"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "MATLAB Function"
+	      SID		      "698"
+	      Ports		      [4, 1]
+	      Position		      [285, 80, 380, 210]
+	      ZOrder		      1
+	      LibraryVersion	      "1.32"
+	      ErrorFcn		      "Stateflow.Translate.translate"
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      SFBlockType	      "MATLAB Function"
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		19
+		$ClassName		"Simulink.Mask"
+		Type			"Stateflow"
+		Description		"Embedded MATLAB block"
+		SelfModifiable		"on"
+		Display			"bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/eml_me"
+		"mbrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'CalcRef']);"
+		IconOpaque		"off"
+		IconUnits		"normalized"
+	      }
+	      System {
+		Name			"MATLAB Function"
+		Location		[223, 338, 826, 833]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	"25"
+		Block {
+		  BlockType		  Inport
+		  Name			  "SPPos"
+		  SID			  "698::1"
+		  Position		  [20, 101, 40, 119]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "LastRef"
+		  SID			  "698::23"
+		  Position		  [20, 136, 40, 154]
+		  ZOrder		  9
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Ts"
+		  SID			  "698::24"
+		  Position		  [20, 171, 40, 189]
+		  ZOrder		  10
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "radio"
+		  SID			  "698::25"
+		  Position		  [20, 206, 40, 224]
+		  ZOrder		  11
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  SID			  "698::20"
+		  Ports			  [1, 1]
+		  Position		  [270, 205, 320, 245]
+		  ZOrder		  6
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  " SFunction "
+		  SID			  "698::19"
+		  Tag			  "Stateflow S-Function simuladorControlCuatrirrotor 2"
+		  Ports			  [4, 2]
+		  Position		  [180, 102, 230, 203]
+		  ZOrder		  5
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[4 2]"
+		  EnableBusSupport	  on
+		  Port {
+		    PortNumber		    2
+		    Name		    "CurrRef"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  SID			  "698::22"
+		  Position		  [460, 216, 480, 234]
+		  ZOrder		  8
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "CurrRef"
+		  SID			  "698::5"
+		  Position		  [460, 101, 480, 119]
+		  ZOrder		  -5
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "SPPos"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "LastRef"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Ts"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "radio"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  4
+		}
+		Line {
+		  Name			  "CurrRef"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "CurrRef"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "CurrRef"
+	      SID		      "697"
+	      Position		      [495, 118, 525, 132]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "SPPos"
+	      SrcPort		      1
+	      Points		      [125, 0]
+	      DstBlock		      "MATLAB Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MATLAB Function"
+	      SrcPort		      1
+	      Points		      [31, 0]
+	      Branch {
+		Points			[0, 135]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -20]
+		DstBlock		"CurrRef"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [33, 0; 0, 5]
+	      DstBlock		      "MATLAB Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "MATLAB Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [-98, 0; 0, -150]
+	      DstBlock		      "MATLAB Function"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "703"
+	  Ports			  [1, 2]
+	  Position		  [265, 126, 270, 164]
+	  ZOrder		  54
+	  ShowName		  off
+	  Outputs		  "2"
+	  DisplayOption		  "bar"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Discrete PID refPitch"
 	  SID			  "694"
 	  Ports			  [1, 1]
-	  Position		  [330, 42, 370, 78]
+	  Position		  [635, 42, 675, 78]
 	  ZOrder		  51
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
@@ -1536,7 +1857,7 @@ Model {
 	  Name			  "Discrete PID refRoll"
 	  SID			  "693"
 	  Ports			  [1, 1]
-	  Position		  [330, 197, 370, 233]
+	  Position		  [635, 197, 675, 233]
 	  ZOrder		  40
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
@@ -1641,10 +1962,50 @@ Model {
 	  FilterRTWStateStorageClass "Auto"
 	}
 	Block {
+	  BlockType		  Display
+	  Name			  "Display"
+	  SID			  "704"
+	  Ports			  [1]
+	  Position		  [265, 195, 340, 235]
+	  ZOrder		  55
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display1"
+	  SID			  "705"
+	  Ports			  [1]
+	  Position		  [125, 195, 200, 235]
+	  ZOrder		  56
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display2"
+	  SID			  "706"
+	  Ports			  [1]
+	  Position		  [425, 105, 485, 125]
+	  ZOrder		  57
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display3"
+	  SID			  "707"
+	  Ports			  [1]
+	  Position		  [425, 165, 485, 185]
+	  ZOrder		  58
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
 	  BlockType		  Gain
 	  Name			  "Gain"
 	  SID			  "668"
-	  Position		  [265, 45, 295, 75]
+	  Position		  [570, 45, 600, 75]
 	  ZOrder		  33
 	  Gain			  "-1"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -1653,11 +2014,22 @@ Model {
 	  SampleTime		  "Ts"
 	}
 	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "702"
+	  Ports			  [2, 1]
+	  Position		  [85, 126, 90, 164]
+	  ZOrder		  53
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
 	  BlockType		  Saturate
 	  Name			  "Saturation"
 	  SID			  "669"
 	  Ports			  [1, 1]
-	  Position		  [430, 45, 460, 75]
+	  Position		  [735, 45, 765, 75]
 	  ZOrder		  35
 	  InputPortMap		  "u0"
 	  SampleTime		  "Ts"
@@ -1667,7 +2039,7 @@ Model {
 	  Name			  "Saturation1"
 	  SID			  "671"
 	  Ports			  [1, 1]
-	  Position		  [430, 200, 460, 230]
+	  Position		  [735, 200, 765, 230]
 	  ZOrder		  37
 	  InputPortMap		  "u0"
 	  SampleTime		  "Ts"
@@ -1677,7 +2049,7 @@ Model {
 	  Name			  "Sum"
 	  SID			  "635"
 	  Ports			  [2, 1]
-	  Position		  [215, 50, 235, 70]
+	  Position		  [520, 50, 540, 70]
 	  ZOrder		  -9
 	  ShowName		  off
 	  IconShape		  "round"
@@ -1691,7 +2063,7 @@ Model {
 	  Name			  "Sum1"
 	  SID			  "636"
 	  Ports			  [2, 1]
-	  Position		  [215, 205, 235, 225]
+	  Position		  [520, 205, 540, 225]
 	  ZOrder		  -10
 	  ShowName		  off
 	  IconShape		  "round"
@@ -1704,21 +2076,21 @@ Model {
 	  BlockType		  Terminator
 	  Name			  "Terminator1"
 	  SID			  "650"
-	  Position		  [135, 15, 155, 35]
+	  Position		  [440, 15, 460, 35]
 	  ZOrder		  -11
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  "652"
-	  Position		  [135, 270, 155, 290]
+	  Position		  [440, 270, 460, 290]
 	  ZOrder		  -12
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "RefPitch"
 	  SID			  "104"
-	  Position		  [505, 53, 535, 67]
+	  Position		  [810, 53, 840, 67]
 	  ZOrder		  -15
 	  IconDisplay		  "Port number"
 	}
@@ -1726,7 +2098,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "RefRoll"
 	  SID			  "106"
-	  Position		  [505, 208, 535, 222]
+	  Position		  [810, 208, 840, 222]
 	  ZOrder		  -16
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1740,15 +2112,17 @@ Model {
 	Line {
 	  SrcBlock		  "x"
 	  SrcPort		  1
-	  Points		  [130, 0]
-	  DstBlock		  "Sum"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "SP x"
-	  SrcPort		  1
-	  DstBlock		  "Sum"
-	  DstPort		  1
+	  Points		  [11, 0]
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "Display2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [119, 0]
+	    DstBlock		    "Sum"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "vx"
@@ -1765,15 +2139,17 @@ Model {
 	Line {
 	  SrcBlock		  "y"
 	  SrcPort		  1
-	  Points		  [130, 0]
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Sp y"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  1
+	  Points		  [8, 0]
+	  Branch {
+	    Points		    [0, -75]
+	    DstBlock		    "Display3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [122, 0]
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Sum"
@@ -1809,6 +2185,62 @@ Model {
 	  SrcBlock		  "Discrete PID refPitch"
 	  SrcPort		  1
 	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SP x"
+	  SrcPort		  1
+	  Points		  [12, 0; 0, 15]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sp y"
+	  SrcPort		  1
+	  Points		  [12, 0; 0, -15]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  Points		  [18, 0]
+	  Branch {
+	    DstBlock		    "Control Ejes teórico"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "Display1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Control Ejes teórico"
+	  SrcPort		  1
+	  Points		  [17, 0]
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "Display"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Demux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [75, 0; 0, -75]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [75, 0; 0, 60]
+	  DstBlock		  "Sum1"
 	  DstPort		  1
 	}
       }
@@ -2234,7 +2666,7 @@ Model {
       Position		      [1215, 255, 1245, 290]
       ZOrder		      -11
       Floating		      off
-      Location		      [692, 56, 1359, 719]
+      Location		      [608, 56, 1275, 719]
       Open		      off
       NumInputPorts	      "2"
       ZoomMode		      "xonly"
@@ -2490,11 +2922,204 @@ Stateflow {
     name		    "simuladorControlCuatrirrotor"
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
-    firstTarget		    2
+    firstTarget		    12
     sfVersion		    76014001.001
   }
-  target {
+  chart {
     id			    2
+    name		    "Controlador/Control Ejes teórico/MATLAB Function"
+    windowPosition	    [357.12 483.496 167 391]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 1024 1.041666666666667]
+    treeNode		    [0 3 0 0]
+    firstTransition	    10
+    firstJunction	    9
+    viewObj		    2
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    8
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    4
+    chartFileNumber	    2
+    disableImplicitCasting  1
+    eml {
+      name		      "CalcRef"
+    }
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 0]
+    superState		    SUBCHART
+    subviewer		    2
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function CurrRef = CalcRef(SPPos,LastRef,Ts,radio)\n% Este bloque es un control de ambas velocida"
+      "des a título teórico para\n% definir las consignas a seguir según una velocidad máxima teórica\n% constante obte"
+      "nida experimentalmente en los modelos. No ayuda gran cosa a\n% corregir las imprecisiones en la trayectoria y el"
+      " desincronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\nmaxVx = 3.3"
+      "; % (-)Pitch\nmaxVy = 1.9; % Roll\n\nDistXY = SPPos-LastRef;\n\nif (norm(DistXY)<(0.5*radio))\n    CurrRef = Las"
+      "tRef;\nelse\n    minTx = abs (DistXY(1))/maxVx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT = max (minTx"
+      ",minTy);\n    \n    if minT<Ts\n        CurrRef = SPPos;\n    else\n        CurrRef = LastRef + (Ts/minT)*DistXY"
+      ";\n    end\nend\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    4
+    ssIdNumber		    4
+    name		    "SPPos"
+    linkNode		    [2 0 5]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    5
+    ssIdNumber		    5
+    name		    "CurrRef"
+    linkNode		    [2 4 6]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    6
+    ssIdNumber		    6
+    name		    "LastRef"
+    linkNode		    [2 5 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    7
+    ssIdNumber		    7
+    name		    "Ts"
+    linkNode		    [2 6 8]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    8
+    ssIdNumber		    8
+    name		    "radio"
+    linkNode		    [2 7 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    9
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    linkNode		    [2 0 0]
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    10
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      9
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    linkNode		    [2 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    11
+    name		    "Controlador/Control Ejes teórico/MATLAB Function"
+    machine		    1
+    chart		    2
+  }
+  target {
+    id			    12
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
