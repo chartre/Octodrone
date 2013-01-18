@@ -129,23 +129,34 @@ xlabel('x')
 ylabel('y')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 
+% %% Representación gráfica señales ensayo
+% figure
+% subplot(311)
+% plot(scdata.time,scdata.signals(1,1).values)
+% legend('x','y','refPitch', 'refRoll')
+% title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
+% subplot(312)
+% plot(scdata.time,scdata.signals(1,2).values)
+% legend('Ref\_pitch','Ref\_roll')
+% subplot(313)
+% plot(scdata.time,distancia)
+% hold on,plot(scdata.time([1 end]),[dmedia dmedia],'g')
+% hold on,plot(scdata.time([1 end]),[dmax dmax],'r')
+% legend('dist.','dist. media','dist. max')
+% xlabel('tiempo (seg)')
+% ylabel('distancia (m)')
+% title(['Distancia a la trayectoria mínima. Dist. media: ' num2str(dmedia) '. Dist. max: ' num2str(dmax)])
+
 %% Representación gráfica señales ensayo
 figure
-subplot(311)
-plot(scdata.time,scdata.signals(1,1).values)
-legend('x','y','refPitch', 'refRoll')
+subplot(211)
+plot(scdata_tuned.time,scdata_tuned.signals(1,1).values)
+legend('x','vx','refPitch', 'consigna x')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
-subplot(312)
-plot(scdata.time,scdata.signals(1,2).values)
-legend('Ref\_pitch','Ref\_roll')
-subplot(313)
-plot(scdata.time,distancia)
-hold on,plot(scdata.time([1 end]),[dmedia dmedia],'g')
-hold on,plot(scdata.time([1 end]),[dmax dmax],'r')
-legend('dist.','dist. media','dist. max')
-xlabel('tiempo (seg)')
-ylabel('distancia (m)')
-title(['Distancia a la trayectoria mínima. Dist. media: ' num2str(dmedia) '. Dist. max: ' num2str(dmax)])
+subplot(212)
+plot(scdata_tuned.time,scdata_tuned.signals(1,2).values)
+legend('y','vy','refRoll', 'consigna y')
+title(['Valores del movimiento'])
 
 
 %% Registro de modificaciones:

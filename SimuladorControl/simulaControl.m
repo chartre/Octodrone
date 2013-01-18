@@ -28,7 +28,7 @@ indicadores=pintascdata(scdata,ruta,radio);
 %%
 %% Evaluación 
 
-clc;
+% clc;
 disp('************ Rendimiento GPP **************')
 %Preparamos el vector para evaluar rendimiento
 J=[indicadores.dmedia, indicadores.dmax, indicadores.tiempoRecorrido];
