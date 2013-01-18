@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata(scdata,ruta,radio)
+function indicadores=pintascdata(scdata,ruta,radio,scVar)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control
@@ -128,7 +128,7 @@ hold on,plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2))
 xlabel('x')
 ylabel('y')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
-
+% 
 % %% Representación gráfica señales ensayo
 % figure
 % subplot(311)
@@ -150,14 +150,15 @@ title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 %% Representación gráfica señales ensayo
 figure
 subplot(211)
-plot(scdata_tuned.time,scdata_tuned.signals(1,1).values)
-legend('x','vx','refPitch', 'consigna x')
+plot(scVar.time,scVar.signals(1,1).values)
+legend('x','vx','SPx', 'consigna x','RefPitch')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
+grid
 subplot(212)
-plot(scdata_tuned.time,scdata_tuned.signals(1,2).values)
-legend('y','vy','refRoll', 'consigna y')
-title(['Valores del movimiento'])
-
+plot(scVar.time,scVar.signals(1,2).values)
+legend('y','vy','SPy', 'consigna y','RefRoll')
+title('Valores del movimiento')
+grid
 
 %% Registro de modificaciones:
 % V.Nov_12, CPOH 2012. 
