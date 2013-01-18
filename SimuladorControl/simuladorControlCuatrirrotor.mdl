@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.133"
+    ComputedModelVersion    "1.139"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 0.0, 640.0, 800.0]
+      Location		      [-8.0, -8.0, 1382.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -47,28 +47,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [588.0, 621.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [432.33749511837959, 88.575005531311035]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "695"
-	  Extents		  [1248.0, 565.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [-206.7, 54.0]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"695"
+	Extents			[1330.0, 568.0]
+	ZoomFactor		[1.25]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -76,11 +64,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Elisa"
+  LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jan 18 11:41:47 2013"
-  RTWModifiedTimeStamp	  280402870
-  ModelVersionFormat	  "1.%<AutoIncrement:133>"
+  LastModifiedDate	  "Fri Jan 18 12:54:38 2013"
+  RTWModifiedTimeStamp	  280414188
+  ModelVersionFormat	  "1.%<AutoIncrement:139>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -115,7 +103,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simuladorControlCuatrirrotor"
     Array {
@@ -173,13 +161,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      7
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "100"
@@ -214,7 +202,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -246,7 +234,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -301,7 +289,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -391,7 +379,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -428,7 +416,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -443,7 +431,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -458,7 +446,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -518,7 +506,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      16
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -583,7 +571,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -673,11 +661,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    18
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1011,8 +999,8 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [0, 0, 640, 800]
-    Open		    on
+    Location		    [-8, -8, 1374, 736]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1392,7 +1380,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controlador"
-	Location		[-8, 12, 1292, 756]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1474,7 +1462,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, 12, 1292, 756]
+	    Location		    [-8, -8, 1374, 736]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1544,7 +1532,7 @@ Model {
 	      SFBlockType	      "MATLAB Function"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		20
+		$ObjectID		19
 		$ClassName		"Simulink.Mask"
 		Type			"Stateflow"
 		Description		"Embedded MATLAB block"
@@ -1754,115 +1742,6 @@ Model {
 	  ShowName		  off
 	  Outputs		  "2"
 	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Discrete PID refPitch"
-	  SID			  "694"
-	  Ports			  [1, 1]
-	  Position		  [715, 17, 755, 53]
-	  ZOrder		  63
-	  LibraryVersion	  "1.281"
-	  SourceBlock		  "simulink/Continuous/PID Controller"
-	  SourceType		  "PID 1dof"
-	  Controller		  "PID"
-	  TimeDomain		  "Discrete-time"
-	  SampleTime		  "Ts"
-	  IntegratorMethod	  "Forward Euler"
-	  FilterMethod		  "Forward Euler"
-	  Form			  "Parallel"
-	  P			  "1.9"
-	  I			  "0"
-	  D			  "0.8"
-	  N			  "15"
-	  InitialConditionSource  "internal"
-	  InitialConditionForIntegrator	"0"
-	  InitialConditionForFilter "0"
-	  ExternalReset		  "none"
-	  IgnoreLimit		  off
-	  ZeroCross		  on
-	  LimitOutput		  off
-	  UpperSaturationLimit	  "inf"
-	  LowerSaturationLimit	  "-inf"
-	  LinearizeAsGain	  off
-	  AntiWindupMode	  "none"
-	  Kb			  "1"
-	  TrackingMode		  off
-	  Kt			  "1"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	  LockScale		  off
-	  PParamMin		  "[]"
-	  PParamMax		  "[]"
-	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IParamMin		  "[]"
-	  IParamMax		  "[]"
-	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  DParamMin		  "[]"
-	  DParamMax		  "[]"
-	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  NParamMin		  "[]"
-	  NParamMax		  "[]"
-	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KbParamMin		  "[]"
-	  KbParamMax		  "[]"
-	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KtParamMin		  "[]"
-	  KtParamMax		  "[]"
-	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  POutMin		  "[]"
-	  POutMax		  "[]"
-	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IOutMin		  "[]"
-	  IOutMax		  "[]"
-	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  DOutMin		  "[]"
-	  DOutMax		  "[]"
-	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  NOutMin		  "[]"
-	  NOutMax		  "[]"
-	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KbOutMin		  "[]"
-	  KbOutMax		  "[]"
-	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KtOutMin		  "[]"
-	  KtOutMax		  "[]"
-	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IntegratorOutMin	  "[]"
-	  IntegratorOutMax	  "[]"
-	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-	  FilterOutMin		  "[]"
-	  FilterOutMax		  "[]"
-	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumOutMin		  "[]"
-	  SumOutMax		  "[]"
-	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI1OutMin		  "[]"
-	  SumI1OutMax		  "[]"
-	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI2OutMin		  "[]"
-	  SumI2OutMax		  "[]"
-	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI3OutMin		  "[]"
-	  SumI3OutMax		  "[]"
-	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumDOutMin		  "[]"
-	  SumDOutMax		  "[]"
-	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturationOutMin	  "[]"
-	  SaturationOutMax	  "[]"
-	  SaturationOutDataTypeStr "Inherit: Same as input"
-	  IntegratorContinuousStateAttributes "''"
-	  IntegratorStateMustResolveToSignalObject off
-	  IntegratorRTWStateStorageClass "Auto"
-	  FilterContinuousStateAttributes "''"
-	  FilterStateMustResolveToSignalObject off
-	  FilterRTWStateStorageClass "Auto"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2756,10 +2635,11 @@ Model {
       BlockType		      Mux
       Name		      "Mux4"
       SID		      "721"
-      Ports		      [4, 1]
+      Ports		      [5, 1]
       Position		      [925, 436, 930, 474]
       ZOrder		      6
       ShowName		      off
+      Inputs		      "5"
       DisplayOption	      "bar"
       Port {
 	PortNumber		1
@@ -2772,10 +2652,11 @@ Model {
       BlockType		      Mux
       Name		      "Mux5"
       SID		      "722"
-      Ports		      [4, 1]
+      Ports		      [5, 1]
       Position		      [925, 376, 930, 414]
       ZOrder		      7
       ShowName		      off
+      Inputs		      "5"
       DisplayOption	      "bar"
       Port {
 	PortNumber		1
@@ -2872,7 +2753,7 @@ Model {
       YMin		      "-5~-1"
       YMax		      "15~1"
       SaveToWorkspace	      on
-      SaveName		      "scdata_tuned"
+      SaveName		      "scVar"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleInput	      on
@@ -2965,6 +2846,11 @@ Model {
       SrcPort		      2
       Points		      [0, 30; 55, 0]
       Branch {
+	Points			[0, 250]
+	DstBlock		"Mux4"
+	DstPort			5
+      }
+      Branch {
 	Points			[95, 0]
 	DstBlock		" Modelo NO lineal"
 	DstPort			2
@@ -2984,9 +2870,16 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[0, 20]
-	DstBlock		"Mux1"
-	DstPort			1
+	Points			[0, 20; 16, 0]
+	Branch {
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 230]
+	  DstBlock		  "Mux5"
+	  DstPort		  5
+	}
       }
     }
     Line {
@@ -2994,7 +2887,7 @@ Model {
       SrcPort		      2
       Points		      [52, 0]
       Branch {
-	Points			[0, 210]
+	Points			[0, 215]
 	DstBlock		"Mux5"
 	DstPort			1
       }
@@ -3052,7 +2945,7 @@ Model {
       SrcPort		      1
       Points		      [31, 0]
       Branch {
-	Points			[0, 225]
+	Points			[0, 220]
 	DstBlock		"Mux5"
 	DstPort			3
       }
@@ -3066,7 +2959,7 @@ Model {
       SrcPort		      2
       Points		      [13, 0]
       Branch {
-	Points			[0, 265]
+	Points			[0, 260]
 	DstBlock		"Mux4"
 	DstPort			3
       }
@@ -3100,7 +2993,7 @@ Model {
       Branch {
 	Points			[0, 72]
 	Branch {
-	  Points		  [0, 168]
+	  Points		  [0, 173]
 	  DstBlock		  "Mux4"
 	  DstPort		  1
 	}
@@ -3154,14 +3047,14 @@ Model {
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      1
-      Points		      [101, 0; 0, -10]
+      Points		      [101, 0; 0, -20]
       DstBlock		      "Mux5"
       DstPort		      4
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      2
-      Points		      [197, 0; 0, 30]
+      Points		      [197, 0; 0, 20]
       DstBlock		      "Mux4"
       DstPort		      4
     }
@@ -3223,7 +3116,7 @@ Stateflow {
       script		      "function CurrRef = CalcRef(SPPos,LastRef,Ts,radio)\n% Este bloque es un control de ambas velocida"
       "des a título teórico para\n% definir las consignas a seguir según una velocidad máxima teórica\n% constante obte"
       "nida experimentalmente en los modelos. No ayuda gran cosa a\n% corregir las imprecisiones en la trayectoria y el"
-      " desincronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\nmaxVx = 1.8"
+      " desincronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\nmaxVx = 3.3"
       "; % (-)Pitch\nmaxVy = 1.8; % Roll\n\nDistXY = SPPos-LastRef;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n   "
       " CurrRef = LastRef;\nelse\n    minTx = abs (DistXY(1))/maxVx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    min"
       "T = max (minTx,minTy);\n    \n    if minT<Ts\n        CurrRef = SPPos;\n    else\n        CurrRef = LastRef + (T"
