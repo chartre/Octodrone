@@ -125,6 +125,13 @@ end
 hold on,plot([0;ruta(:,1)],[0;ruta(:,2)],'r')
 % dibuja la trayectoria seguida
 hold on,plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2)),plot(scVar.signals(1,1).values(:,4),scVar.signals(1,2).values(:,4),'g')
+
+% dibuja vector [pos-consigna]
+for i=1:6:size(scVar.signals(1,1).values(:,1),1)
+    plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,4)],...
+        [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,4)],'k')
+end
+ 
 xlabel('x')
 ylabel('y')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
