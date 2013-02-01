@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.326"
+    ComputedModelVersion    "1.329"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -54,18 +54,18 @@ Model {
 	  $ObjectID		  5
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "101"
+	  LoadSaveID		  "695"
 	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.08]
-	  Offset		  [0.0, 0.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [0.0, -1.1999999999999886]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "101"
 	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.0]
+	  ZoomFactor		  [1.08]
 	  Offset		  [0.0, 0.0]
 	}
 	PropName		"EditorsInfo"
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 01 17:45:54 2013"
-  RTWModifiedTimeStamp	  281640160
-  ModelVersionFormat	  "1.%<AutoIncrement:326>"
+  LastModifiedDate	  "Fri Feb 01 18:23:06 2013"
+  RTWModifiedTimeStamp	  281642643
+  ModelVersionFormat	  "1.%<AutoIncrement:329>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -756,6 +756,11 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      DataStoreWrite
+      DataStoreName	      "A"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      DataTypeConversion
       OutMin		      "[]"
       OutMax		      "[]"
@@ -881,6 +886,12 @@ Model {
       OutputDimensions	      "-1"
       OutputSignalType	      "auto"
       Output1D		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ManualSwitch
+      CurrentSetting	      "1"
+      varsize		      off
       SampleTime	      "-1"
     }
     Block {
@@ -1029,7 +1040,7 @@ Model {
   System {
     Name		    "simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1042,7 +1053,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "774"
+    SIDHighWatermark	    "780"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo NO lineal"
@@ -1492,7 +1503,7 @@ Model {
 	  System {
 	    Name		    "Control Ejes teórico"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1547,6 +1558,14 @@ Model {
 	      Value		      "radio"
 	    }
 	    Block {
+	      BlockType		      DataStoreWrite
+	      Name		      "Data Store Write"
+	      SID		      "780"
+	      Ports		      [1]
+	      Position		      [660, 280, 690, 310]
+	      ZOrder		      33
+	    }
+	    Block {
 	      BlockType		      Delay
 	      Name		      "Delay"
 	      SID		      "769"
@@ -1574,7 +1593,7 @@ Model {
 	      Name		      "Display2"
 	      SID		      "758"
 	      Ports		      [1]
-	      Position		      [35, 139, 100, 181]
+	      Position		      [35, 159, 100, 201]
 	      ZOrder		      18
 	      Decimation	      "1"
 	      Lockdown		      off
@@ -1931,17 +1950,24 @@ Model {
 	      }
 	    }
 	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch"
+	      SID		      "775"
+	      Position		      [650, 197, 680, 233]
+	      ZOrder		      31
+	    }
+	    Block {
 	      BlockType		      Terminator
 	      Name		      "Terminator"
 	      SID		      "764"
-	      Position		      [730, 60, 750, 80]
+	      Position		      [685, 60, 705, 80]
 	      ZOrder		      24
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "consigna"
 	      SID		      "697"
-	      Position		      [795, 173, 825, 187]
+	      Position		      [795, 208, 825, 222]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
 	    }
@@ -1954,9 +1980,8 @@ Model {
 		DstPort			3
 	      }
 	      Branch {
-		Points			[0, 37]
+		Points			[0, 50]
 		Branch {
-		  Points		  [51, 0; 0, 13]
 		  DstBlock		  "MATLAB Function2"
 		  DstPort		  1
 		}
@@ -2000,8 +2025,8 @@ Model {
 	      Branch {
 		Points			[0, 60]
 		Branch {
-		  Points		  [0, 50]
-		  DstBlock		  "consigna"
+		  Points		  [0, 75]
+		  DstBlock		  "Manual Switch"
 		  DstPort		  1
 		}
 		Branch {
@@ -2017,23 +2042,38 @@ Model {
 	    Line {
 	      SrcBlock		      "MATLAB Function2"
 	      SrcPort		      1
-	      Points		      [25, 0]
+	      Points		      [25, 0; 0, 45]
 	      Branch {
-		Points			[0, 140]
+		Points			[0, 95]
 		DstBlock		"Delay"
 		DstPort			1
 	      }
 	      Branch {
 		Points			[77, 0]
 		Branch {
-		  Points		  [0, 190]
+		  Points		  [0, 145]
 		  DstBlock		  "Display3"
 		  DstPort		  1
 		}
 		Branch {
-		  Points		  [43, 0; 0, -65]
-		  DstBlock		  "MATLAB Function"
-		  DstPort		  4
+		  Points		  [43, 0]
+		  Branch {
+		    Points		    [0, -110]
+		    DstBlock		    "MATLAB Function"
+		    DstPort		    4
+		  }
+		  Branch {
+		    Points		    [105, 0]
+		    Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "Data Store Write"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Manual Switch"
+		    DstPort		    2
+		    }
+		  }
 		}
 	      }
 	    }
@@ -2043,6 +2083,12 @@ Model {
 	      Points		      [-138, 0; 0, -155]
 	      DstBlock		      "MATLAB Function2"
 	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Manual Switch"
+	      SrcPort		      1
+	      DstBlock		      "consigna"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -3082,6 +3128,7 @@ Model {
       Port {
 	PortNumber		1
 	Name			"y"
+	PropagatedSignals	", , , , "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -3099,6 +3146,7 @@ Model {
       Port {
 	PortNumber		1
 	Name			"x"
+	PropagatedSignals	", , , , "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -3523,7 +3571,10 @@ Stateflow {
     firstTransition	    10
     firstJunction	    9
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -3558,7 +3609,7 @@ Stateflow {
       "cos (gama) * norm(AB); % distancia desde interseccion de trayectoria con su normal desde la posicion del aparato"
       "\nif alfa == 0\n    CB = [temp/cos(alfa);0];\nelse\n    if alfa == (pi/2)\n        CB = [0;temp/sin(alfa)];\n   "
       " else\n        CB = [temp/cos(alfa);temp/sin(alfa)];\n    end\nend\nC = CurrRef - CB;\n\nvectorError = C - pos;\n"
-      "\nconsigna = CurrRef + vectorError*2;\nend\n"
+      "\nconsigna = CurrRef + vectorError;\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -3716,7 +3767,10 @@ Stateflow {
     firstTransition	    20
     firstJunction	    19
     viewObj		    12
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
