@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.325"
+    ComputedModelVersion    "1.326"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -54,10 +54,10 @@ Model {
 	  $ObjectID		  5
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "695"
+	  LoadSaveID		  "101"
 	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [-222.42500000000007, -1.2000000000000171]
+	  ZoomFactor		  [1.08]
+	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 01 17:22:45 2013"
+  LastModifiedDate	  "Fri Feb 01 17:45:54 2013"
   RTWModifiedTimeStamp	  281640160
-  ModelVersionFormat	  "1.%<AutoIncrement:325>"
+  ModelVersionFormat	  "1.%<AutoIncrement:326>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1025,16 +1025,6 @@ Model {
     Block {
       BlockType		      Terminator
     }
-    Block {
-      BlockType		      ToWorkspace
-      VariableName	      "simulink_output"
-      MaxDataPoints	      "1000"
-      Decimation	      "1"
-      SampleTime	      "0"
-      SaveFormat	      "Array"
-      FixptAsFi		      off
-      NumInputs		      "1"
-    }
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
@@ -1420,7 +1410,7 @@ Model {
       System {
 	Name			"Controlador"
 	Location		[-8, -8, 1374, 736]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1490,7 +1480,7 @@ Model {
 	  Name			  "Control Ejes teórico"
 	  SID			  "695"
 	  Ports			  [3, 1]
-	  Position		  [330, 247, 415, 283]
+	  Position		  [370, 247, 455, 283]
 	  ZOrder		  52
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -1502,7 +1492,7 @@ Model {
 	  System {
 	    Name		    "Control Ejes teórico"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2061,7 +2051,7 @@ Model {
 	  Name			  "Delay"
 	  SID			  "729"
 	  Ports			  [1, 1]
-	  Position		  [150, 83, 185, 117]
+	  Position		  [145, 103, 180, 137]
 	  ZOrder		  70
 	  InputPortMap		  "u0"
 	  DelayLength		  "1"
@@ -2084,7 +2074,7 @@ Model {
 	  Name			  "Demux1"
 	  SID			  "748"
 	  Ports			  [1, 2]
-	  Position		  [210, 136, 215, 174]
+	  Position		  [280, 131, 285, 169]
 	  ZOrder		  81
 	  ShowName		  off
 	  Outputs		  "2"
@@ -2325,7 +2315,7 @@ Model {
 	  Name			  "Logical Operator"
 	  SID			  "749"
 	  Ports			  [2, 1]
-	  Position		  [250, 137, 280, 168]
+	  Position		  [320, 132, 350, 163]
 	  ZOrder		  82
 	  Operator		  "OR"
 	  AllPortsSameDT	  off
@@ -2359,7 +2349,7 @@ Model {
 	  Name			  "Relational Operator"
 	  SID			  "739"
 	  Ports			  [2, 1]
-	  Position		  [150, 137, 180, 168]
+	  Position		  [220, 132, 250, 163]
 	  ZOrder		  77
 	  Operator		  "~="
 	  InputSameDT		  off
@@ -2418,7 +2408,7 @@ Model {
 	  BlockType		  Switch
 	  Name			  "Switch"
 	  SID			  "728"
-	  Position		  [330, 107, 385, 203]
+	  Position		  [400, 102, 455, 198]
 	  ZOrder		  69
 	  Threshold		  "1"
 	  InputSameDT		  off
@@ -2438,18 +2428,6 @@ Model {
 	  SID			  "652"
 	  Position		  [665, 425, 685, 445]
 	  ZOrder		  -12
-	}
-	Block {
-	  BlockType		  ToWorkspace
-	  Name			  "To Workspace1"
-	  SID			  "731"
-	  Ports			  [1]
-	  Position		  [425, 140, 485, 170]
-	  ZOrder		  72
-	  VariableName		  "posAnt"
-	  MaxDataPoints		  "inf"
-	  SampleTime		  "Ts"
-	  SaveFormat		  "Timeseries"
 	}
 	Block {
 	  BlockType		  Outport
@@ -2559,26 +2537,26 @@ Model {
 	  SrcPort		  1
 	  Points		  [18, 0]
 	  Branch {
-	    Points		    [0, -120]
+	    DstBlock		    "Control Ejes teórico"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -110]
 	    Branch {
-	      Points		      [0, -45]
+	      Points		      [0, -35]
 	      DstBlock		      "Delay"
 	      DstPort		      1
 	    }
 	    Branch {
 	      DstBlock		      "Relational Operator"
-	      DstPort		      1
+	      DstPort		      2
 	    }
-	  }
-	  Branch {
-	    DstBlock		    "Control Ejes teórico"
-	    DstPort		    2
 	  }
 	}
 	Line {
 	  SrcBlock		  "Control Ejes teórico"
 	  SrcPort		  1
-	  Points		  [47, 0]
+	  Points		  [7, 0]
 	  Branch {
 	    Points		    [0, 140]
 	    DstBlock		    "Consigna"
@@ -2633,14 +2611,13 @@ Model {
 	Line {
 	  SrcBlock		  "Delay"
 	  SrcPort		  1
-	  Points		  [33, 0]
+	  Points		  [10, 0]
 	  Branch {
-	    Points		    [0, 95; -104, 0; 0, -35]
+	    Points		    [0, 20]
 	    DstBlock		    "Relational Operator"
-	    DstPort		    2
+	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [82, 0; 0, 25]
 	    DstBlock		    "Switch"
 	    DstPort		    1
 	  }
@@ -2648,29 +2625,22 @@ Model {
 	Line {
 	  SrcBlock		  "Switch"
 	  SrcPort		  1
-	  Points		  [4, 0]
+	  Points		  [9, 0; 0, 68; -119, 0]
 	  Branch {
-	    Points		    [0, 63; -95, 0]
-	    Branch {
-	      Points		      [0, -33]
-	      DstBlock		      "Switch"
-	      DstPort		      3
-	    }
-	    Branch {
-	      Points		      [0, 37]
-	      DstBlock		      "Control Ejes teórico"
-	      DstPort		      1
-	    }
+	    Points		    [0, -38]
+	    DstBlock		    "Switch"
+	    DstPort		    3
 	  }
 	  Branch {
-	    DstBlock		    "To Workspace1"
+	    Points		    [0, 37]
+	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    1
 	  }
 	}
 	Line {
 	  SrcBlock		  "Mux1"
 	  SrcPort		  1
-	  Points		  [17, 0; 0, 50; -407, 0; 0, -40]
+	  Points		  [17, 0; 0, 50; -361, 0; 0, -40]
 	  DstBlock		  "Control Ejes teórico"
 	  DstPort		  3
 	}
