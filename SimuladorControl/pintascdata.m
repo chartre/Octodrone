@@ -124,7 +124,7 @@ end
 % une los puntos de la ruta 
 hold on,plot([0;ruta(:,1)],[0;ruta(:,2)],'r')
 % dibuja la trayectoria seguida
-hold on,plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2))
+hold on,plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2)),plot(scVar.signals(1,1).values(:,4),scVar.signals(1,2).values(:,4),'g')
 xlabel('x')
 ylabel('y')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
