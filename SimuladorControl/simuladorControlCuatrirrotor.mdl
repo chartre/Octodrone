@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.329"
+    ComputedModelVersion    "1.339"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -47,28 +47,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "695"
-	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [0.0, -1.1999999999999886]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "101"
-	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.08]
-	  Offset		  [0.0, 0.0]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"695"
+	Extents			[1330.0, 568.0]
+	ZoomFactor		[1.25]
+	Offset			[0.0, -1.1999999999999886]
       }
     }
   }
@@ -78,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 01 18:23:06 2013"
-  RTWModifiedTimeStamp	  281642643
-  ModelVersionFormat	  "1.%<AutoIncrement:329>"
+  LastModifiedDate	  "Tue Feb 05 14:08:27 2013"
+  RTWModifiedTimeStamp	  281963300
+  ModelVersionFormat	  "1.%<AutoIncrement:339>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -115,7 +103,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simuladorControlCuatrirrotor"
     Array {
@@ -173,13 +161,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      7
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "100"
@@ -214,7 +202,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -246,7 +234,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -301,7 +289,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -391,7 +379,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -428,7 +416,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -443,7 +431,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -458,7 +446,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -518,7 +506,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      16
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -583,7 +571,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -673,11 +661,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    18
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -754,11 +742,6 @@ Model {
       SampleTime	      "inf"
       FramePeriod	      "inf"
       PreserveConstantTs      off
-    }
-    Block {
-      BlockType		      DataStoreWrite
-      DataStoreName	      "A"
-      SampleTime	      "-1"
     }
     Block {
       BlockType		      DataTypeConversion
@@ -1051,7 +1034,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    on
-    ZoomFactor		    "100"
+    ZoomFactor		    "120"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "780"
     Block {
@@ -1071,7 +1054,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			" Modelo NO lineal"
-	Location		[-8, -8, 1374, 736]
+	Location		[683, 0, 1366, 728]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1421,7 +1404,7 @@ Model {
       System {
 	Name			"Controlador"
 	Location		[-8, -8, 1374, 736]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1432,7 +1415,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"108"
+	ZoomFactor		"123"
 	Block {
 	  BlockType		  Inport
 	  Name			  "vx"
@@ -1558,14 +1541,6 @@ Model {
 	      Value		      "radio"
 	    }
 	    Block {
-	      BlockType		      DataStoreWrite
-	      Name		      "Data Store Write"
-	      SID		      "780"
-	      Ports		      [1]
-	      Position		      [660, 280, 690, 310]
-	      ZOrder		      33
-	    }
-	    Block {
 	      BlockType		      Delay
 	      Name		      "Delay"
 	      SID		      "769"
@@ -1629,7 +1604,7 @@ Model {
 	      SFBlockType	      "MATLAB Function"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		20
+		$ObjectID		19
 		$ClassName		"Simulink.Mask"
 		Type			"Stateflow"
 		Description		"Embedded MATLAB block"
@@ -1800,7 +1775,7 @@ Model {
 	      SFBlockType	      "MATLAB Function"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		21
+		$ObjectID		20
 		$ClassName		"Simulink.Mask"
 		Type			"Stateflow"
 		Description		"Embedded MATLAB block"
@@ -2063,16 +2038,8 @@ Model {
 		    DstPort		    4
 		  }
 		  Branch {
-		    Points		    [105, 0]
-		    Branch {
-		    Points		    [0, 70]
-		    DstBlock		    "Data Store Write"
-		    DstPort		    1
-		    }
-		    Branch {
 		    DstBlock		    "Manual Switch"
 		    DstPort		    2
-		    }
 		  }
 		}
 	      }
@@ -2142,10 +2109,10 @@ Model {
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "0.3"
-	  I			  "0.05"
-	  D			  "0.2"
-	  N			  "10"
+	  P			  "0.7"
+	  I			  "0"
+	  D			  "0.5"
+	  N			  "15"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -3605,11 +3572,11 @@ Stateflow {
       " el desincronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\n\nAB = C"
       "urrRef - pos; % vector de la consigna desde posicion real\ntray = SPPos - posAnt; % vector de la trayectoria a s"
       "eguir\nbeta = atan (AB(2,1)/AB(1,1)); % angulo entre consigna y horizontal\nalfa = atan (tray(2,1)/tray(1,1)); %"
-      " angulo entre trayectoria y horizontal\ngama = beta + alfa; % angulo entre la consigna y la trayectoria\ntemp = "
-      "cos (gama) * norm(AB); % distancia desde interseccion de trayectoria con su normal desde la posicion del aparato"
-      "\nif alfa == 0\n    CB = [temp/cos(alfa);0];\nelse\n    if alfa == (pi/2)\n        CB = [0;temp/sin(alfa)];\n   "
-      " else\n        CB = [temp/cos(alfa);temp/sin(alfa)];\n    end\nend\nC = CurrRef - CB;\n\nvectorError = C - pos;\n"
-      "\nconsigna = CurrRef + vectorError;\nend\n"
+      " angulo entre trayectoria y horizontal\ngama = beta - alfa; % angulo entre la consigna y la trayectoria\nmodE = "
+      "sin (gama) * norm(AB); % distancia desde interseccion de trayectoria con su normal desde la posicion del aparato"
+      "\n% if alfa == 0\n%     vE = [modE/cos(alfa);0];\n% else\n%     if alfa == (pi/2)\n%         vE = [0;modE/sin(al"
+      "fa)];\n%     else\n        vE = [modE*sin(alfa);modE*cos(alfa)];\n%     end\n% end\nconsigna = CurrRef + vE;\nen"
+      "d\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
