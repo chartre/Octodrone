@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata(scdata,ruta,radio,scVar)
+function indicadores=pintascdata(scdata,ruta,radio,scVar,valores)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control
@@ -127,15 +127,17 @@ hold on,plot([0;ruta(:,1)],[0;ruta(:,2)],'r')
 plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2))
 % dibuja la consigna seguida
 plot(scVar.signals(1,1).values(:,4),scVar.signals(1,2).values(:,4),'g')
-% dibuja vector [pos-consigna]
-for i=1:2:size(scVar.signals(1,1).values(:,1),1)
+
+for i=1:5:size(scVar.signals(1,1).values(:,1),1)
+    % dibuja vector [pos-consigna]
     plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,4)],...
         [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,4)],'k')
-end
-% dibuja vector error sumado a CurrRef
-for i=1:2:size(scVar.signals(1,1).values(:,1),1)
+    % dibuja vector error sumado a CurrRef
     plot([scVar.signals(1,3).values(i,1),scVar.signals(1,1).values(i,4)],...
         [scVar.signals(1,3).values(i,2),scVar.signals(1,2).values(i,4)],'m')
+    % dibuja vector error desde pos hasta trayectoria
+    plot([valores(i,5),(valores(i,5)+valores(i,11))],...
+        [valores(i,6),(valores(i,6)+valores(i,12))],'y')
 end
 % dibuja CurrRef
 plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
