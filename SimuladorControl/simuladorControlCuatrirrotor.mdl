@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.418"
+    ComputedModelVersion    "1.424"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 22 12:29:56 2013"
-  RTWModifiedTimeStamp	  283436194
-  ModelVersionFormat	  "1.%<AutoIncrement:418>"
+  LastModifiedDate	  "Thu Feb 28 11:45:50 2013"
+  RTWModifiedTimeStamp	  283942457
+  ModelVersionFormat	  "1.%<AutoIncrement:424>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1253,7 +1253,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Contador de tiempo ensayo"
-	Location		[-8, 12, 1292, 756]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3603,8 +3603,8 @@ Stateflow {
       "gama) * norm(AB); % distancia desde interseccion de trayectoria con su normal desde la posicion del aparato\n\ni"
       "f alfa >= 0\n    if pos(1,1)<SPPos(1,1)\n            vE = [modE*-sin(alfa);modE*cos(alfa)];\n    else\n         "
       "   vE = [modE*-sin(alfa);modE*cos(alfa)]*-1;\n    end\nelse\n    if pos(1,1)<SPPos(1,1)\n            vE = [modE*"
-      "-sin(alfa);modE*-cos(alfa)];\n    else\n            vE = [modE*sin(alfa);modE*cos(alfa)]*-1;\n    end\nend\n\nco"
-      "nsigna = CurrRef + vE;\n\nend\n"
+      "-sin(alfa);modE*+cos(alfa)];\n    else\n            vE = [modE*-sin(alfa);modE*+cos(alfa)]*-1;\n    end\nend\n\n"
+      "consigna = CurrRef + vE;\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

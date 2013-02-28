@@ -128,19 +128,21 @@ plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2))
 % dibuja la consigna seguida
 plot(scVar.signals(1,1).values(:,4),scVar.signals(1,2).values(:,4),'g')
 
+% dibuja CurrRef
+plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
+
 for i=1:5:size(scVar.signals(1,1).values(:,1),1)
     % dibuja vector [pos-consigna]
     plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,4)],...
         [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,4)],'k')
     % dibuja vector error sumado a CurrRef
-    plot([scVar.signals(1,3).values(i,1),scVar.signals(1,3).values(i,1)+vE(1,1)],...
-        [scVar.signals(1,3).values(i,2),scVar.signals(1,3).values(i,2)+vE(1,2)],'m')
+    plot([scVar.signals(1,3).values(i,1),scVar.signals(1,3).values(i,1)+vE(i,1)],...
+        [scVar.signals(1,3).values(i,2),scVar.signals(1,3).values(i,2)+vE(i,2)],'m')
     % dibuja vector error desde pos hasta trayectoria
-    plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,1)+vE(1,1)],...
-        [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,1)+vE(1,2)],'y')
+    plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,1)+vE(i,1)],...
+        [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,1)+vE(i,2)],'m')
 end
-% dibuja CurrRef
-plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
+
 
 xlabel('x')
 ylabel('y')
