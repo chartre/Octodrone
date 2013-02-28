@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE)
+function indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control
@@ -136,16 +136,26 @@ for i=1:5:size(scVar.signals(1,1).values(:,1),1)
     plot([scVar.signals(1,3).values(i,1),scVar.signals(1,1).values(i,4)],...
         [scVar.signals(1,3).values(i,2),scVar.signals(1,2).values(i,4)],'m')
     % dibuja vector error
-    plot([pos(i,1),(pos(i,1)+vE(i,1))],[pos(i,2),(pos(i,2)+vE(i,2))],'y')
+    plot([pos(i,1),(pos(i,1)+vE(i,1))],[pos(i,2),(pos(i,2)+vE(i,2))],'m')
 end
+
 % dibuja CurrRef
-plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
+% plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
 
 xlabel('x')
 ylabel('y')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
-% 
-% %% Representación gráfica señales ensayo
+
+%% Representacion grafica del modulo del vector error
+
+figure
+hold on
+plot(modulo_vE.time,modulo_vE.signals.values)
+plot(modulo_vCons.time,modulo_vCons.signals.values,'r')
+legend('modulo vE','modulo consigna')
+grid
+
+%% Representación gráfica señales ensayo
 % figure
 % subplot(311)
 % plot(scdata.time,scdata.signals(1,1).values)
