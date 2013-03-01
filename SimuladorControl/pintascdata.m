@@ -128,16 +128,16 @@ plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2))
 % dibuja la consigna seguida
 plot(scVar.signals(1,1).values(:,4),scVar.signals(1,2).values(:,4),'g')
 
-for i=1:5:size(scVar.signals(1,1).values(:,1),1)
-    % dibuja vector [pos-consigna]
-    plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,4)],...
-        [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,4)],'k')
-    % dibuja vector error sumado a CurrRef
-    plot([scVar.signals(1,3).values(i,1),scVar.signals(1,1).values(i,4)],...
-        [scVar.signals(1,3).values(i,2),scVar.signals(1,2).values(i,4)],'m')
-    % dibuja vector error
-    plot([pos(i,1),(pos(i,1)+vE(i,1))],[pos(i,2),(pos(i,2)+vE(i,2))],'m')
-end
+% for i=1:5:size(scVar.signals(1,1).values(:,1),1)
+%     % dibuja vector [pos-consigna]
+%     plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,4)],...
+%         [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,4)],'k')
+%     % dibuja vector error sumado a CurrRef
+%     plot([scVar.signals(1,3).values(i,1),scVar.signals(1,1).values(i,4)],...
+%         [scVar.signals(1,3).values(i,2),scVar.signals(1,2).values(i,4)],'m')
+%     % dibuja vector error
+%     plot([pos(i,1),(pos(i,1)+vE(i,1))],[pos(i,2),(pos(i,2)+vE(i,2))],'m')
+% end
 
 % dibuja CurrRef
 % plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
@@ -146,16 +146,15 @@ xlabel('x')
 ylabel('y')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 
-%% Representacion grafica del modulo del vector error
+%% Representacion grafica del modulo del vector error y de la distancia de la consigna
+% figure
+% hold on
+% plot(modulo_vE.time,modulo_vE.signals.values)
+% plot(modulo_vCons.time,modulo_vCons.signals.values,'r')
+% legend('modulo vE','modulo consigna')
+% grid
 
-figure
-hold on
-plot(modulo_vE.time,modulo_vE.signals.values)
-plot(modulo_vCons.time,modulo_vCons.signals.values,'r')
-legend('modulo vE','modulo consigna')
-grid
-
-%% Representación gráfica señales ensayo
+%% Representación gráfica señales ensayo (original)
 % figure
 % subplot(311)
 % plot(scdata.time,scdata.signals(1,1).values)
@@ -177,12 +176,12 @@ grid
 figure
 subplot(211)
 plot(scVar.time,scVar.signals(1,1).values)
-legend('x','vx','SPx', 'consigna x','RefPitch')
+legend('x','vx','SPx', 'consigna x','RefPitch','ax')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 grid
 subplot(212)
 plot(scVar.time,scVar.signals(1,2).values)
-legend('y','vy','SPy', 'consigna y','RefRoll')
+legend('y','vy','SPy', 'consigna y','RefRoll','ay')
 title('Valores del movimiento')
 grid
 

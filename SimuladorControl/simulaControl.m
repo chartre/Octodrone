@@ -17,13 +17,13 @@
 
 %% Simulación controlador
 
-ruta=[12 0;12 5;7 -5;-1 4;-6 -5;-2 0];
+ruta=[12 0;12 12;0 12;0 0];
 %ruta=intermedio(ruta,2);% Esta funcion añade puntos intermedios.
 radio=0.1;
 sim('simuladorControlCuatrirrotor')
 
 %% Representación gráfica y cálculo de indicadores
-indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons);
+indicadores=pintascdata(scdata,ruta,radio,scVar);
 
 %%
 %% Evaluación 
