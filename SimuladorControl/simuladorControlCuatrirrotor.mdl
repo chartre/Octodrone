@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.552"
+    ComputedModelVersion    "1.568"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1300.0, 744.0]
+      Location		      [-8.0, -8.0, 1382.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -49,33 +49,24 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		3
+	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1248.0, 565.0]
+	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [1.0, 52.650002777576447]
+	  Offset		  [0.0, 14.662499725818634]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "839"
-	  Extents		  [1248.0, 565.0]
+	  LoadSaveID		  "872"
+	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.25]
-	  Offset		  [0.0, 8.8000000000000114]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "865"
-	  Extents		  [1248.0, 565.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-33.922796114445546, -34.707317073170714]
+	  Offset		  [-12.450000000000045, -22.590002965927113]
 	}
 	PropName		"EditorsInfo"
       }
@@ -85,11 +76,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Elisa"
+  LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 01 13:55:51 2013"
-  RTWModifiedTimeStamp	  284046877
-  ModelVersionFormat	  "1.%<AutoIncrement:552>"
+  LastModifiedDate	  "Tue Mar 05 10:11:04 2013"
+  RTWModifiedTimeStamp	  284378631
+  ModelVersionFormat	  "1.%<AutoIncrement:568>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -124,7 +115,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simuladorControlCuatrirrotor"
     Array {
@@ -182,13 +173,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      8
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "100"
@@ -223,7 +214,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -255,7 +246,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -310,7 +301,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -400,7 +391,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -437,7 +428,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -452,7 +443,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -467,7 +458,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -527,7 +518,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -592,7 +583,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      18
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -682,11 +673,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1090,10 +1081,14 @@ Model {
       ContinuousStateAttributes	"''"
       Realization	      "auto"
     }
+    Block {
+      BlockType		      ZeroOrderHold
+      SampleTime	      "1"
+    }
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1292, 736]
+    Location		    [-8, -8, 1374, 736]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1107,7 +1102,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "913"
+    SIDHighWatermark	    "972"
     Block {
       BlockType		      SubSystem
       Name		      "Contador de tiempo ensayo"
@@ -1285,13 +1280,14 @@ Model {
       Port {
 	PortNumber		4
 	Name			"CurrRef"
+	PropagatedSignals	"CurrRef"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1292, 736]
-	Open			on
+	Location		[-8, -8, 1374, 736]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1342,7 +1338,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "y"
 	  SID			  "870"
-	  Position		  [590, 363, 620, 377]
+	  Position		  [590, 348, 620, 362]
 	  ZOrder		  -5
 	  Port			  "5"
 	  IconDisplay		  "Port number"
@@ -1351,7 +1347,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vy"
 	  SID			  "871"
-	  Position		  [590, 428, 620, 442]
+	  Position		  [590, 438, 620, 452]
 	  ZOrder		  -6
 	  Port			  "6"
 	  IconDisplay		  "Port number"
@@ -1372,8 +1368,8 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, -8, 1292, 736]
-	    Open		    off
+	    Location		    [-8, -8, 1374, 736]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1424,7 +1420,7 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "877"
-	      Position		      [50, 235, 70, 255]
+	      Position		      [130, 235, 150, 255]
 	      ZOrder		      3
 	      Value		      "Ts"
 	    }
@@ -1432,7 +1428,7 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant1"
 	      SID		      "878"
-	      Position		      [45, 290, 75, 310]
+	      Position		      [125, 290, 155, 310]
 	      ZOrder		      4
 	      Value		      "radio"
 	    }
@@ -1441,7 +1437,7 @@ Model {
 	      Name		      "Delay"
 	      SID		      "879"
 	      Ports		      [1, 1]
-	      Position		      [135, 323, 170, 357]
+	      Position		      [185, 323, 220, 357]
 	      ZOrder		      30
 	      BlockMirror	      on
 	      InputPortMap	      "u0"
@@ -1453,7 +1449,7 @@ Model {
 	      BlockType		      Fcn
 	      Name		      "Fcn"
 	      SID		      "880"
-	      Position		      [595, 120, 655, 150]
+	      Position		      [500, 125, 560, 155]
 	      ZOrder		      59
 	      Expr		      "sqrt(u(1)^2+u(2)^2)"
 	    }
@@ -1461,7 +1457,7 @@ Model {
 	      BlockType		      Fcn
 	      Name		      "Fcn1"
 	      SID		      "881"
-	      Position		      [870, 110, 930, 140]
+	      Position		      [810, 110, 870, 140]
 	      ZOrder		      62
 	      Expr		      "sqrt(u(1)^2+u(2)^2)"
 	    }
@@ -1486,7 +1482,7 @@ Model {
 	      SFBlockType	      "MATLAB Function"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		21
+		$ObjectID		20
 		$ClassName		"Simulink.Mask"
 		Type			"Stateflow"
 		Description		"Embedded MATLAB block"
@@ -1701,7 +1697,7 @@ Model {
 	      Name		      "MATLAB Function2"
 	      SID		      "883"
 	      Ports		      [4, 1]
-	      Position		      [150, 173, 220, 287]
+	      Position		      [200, 173, 270, 287]
 	      ZOrder		      19
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
@@ -1718,7 +1714,7 @@ Model {
 	      SFBlockType	      "MATLAB Function"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		22
+		$ObjectID		21
 		$ClassName		"Simulink.Mask"
 		Type			"Stateflow"
 		Description		"Embedded MATLAB block"
@@ -1871,16 +1867,23 @@ Model {
 	      BlockType		      ManualSwitch
 	      Name		      "Manual Switch"
 	      SID		      "884"
-	      Position		      [500, 212, 530, 248]
+	      Position		      [545, 212, 575, 248]
 	      ZOrder		      52
 	      CurrentSetting	      "0"
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch2"
+	      SID		      "916"
+	      Position		      [430, 202, 460, 238]
+	      ZOrder		      66
 	    }
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "885"
 	      Ports		      [2, 1]
-	      Position		      [810, 95, 830, 115]
+	      Position		      [750, 95, 770, 115]
 	      ZOrder		      60
 	      ShowName		      off
 	      IconShape		      "round"
@@ -1894,7 +1897,7 @@ Model {
 	      Name		      "To Workspace"
 	      SID		      "886"
 	      Ports		      [1]
-	      Position		      [675, 65, 735, 95]
+	      Position		      [580, 70, 640, 100]
 	      ZOrder		      55
 	      VariableName	      "vE"
 	      MaxDataPoints	      "inf"
@@ -1905,7 +1908,7 @@ Model {
 	      Name		      "To Workspace1"
 	      SID		      "887"
 	      Ports		      [1]
-	      Position		      [870, 0, 930, 30]
+	      Position		      [810, 0, 870, 30]
 	      ZOrder		      56
 	      VariableName	      "pos"
 	      MaxDataPoints	      "inf"
@@ -1916,7 +1919,7 @@ Model {
 	      Name		      "To Workspace2"
 	      SID		      "888"
 	      Ports		      [1]
-	      Position		      [870, 170, 930, 200]
+	      Position		      [810, 170, 870, 200]
 	      ZOrder		      57
 	      VariableName	      "consigna"
 	      MaxDataPoints	      "inf"
@@ -1927,7 +1930,7 @@ Model {
 	      Name		      "To Workspace3"
 	      SID		      "889"
 	      Ports		      [1]
-	      Position		      [675, 120, 735, 150]
+	      Position		      [580, 125, 640, 155]
 	      ZOrder		      58
 	      VariableName	      "modulo_vE"
 	      MaxDataPoints	      "inf"
@@ -1939,7 +1942,7 @@ Model {
 	      Name		      "To Workspace4"
 	      SID		      "890"
 	      Ports		      [1]
-	      Position		      [870, 60, 930, 90]
+	      Position		      [810, 60, 870, 90]
 	      ZOrder		      61
 	      VariableName	      "vCons"
 	      MaxDataPoints	      "inf"
@@ -1950,7 +1953,7 @@ Model {
 	      Name		      "To Workspace5"
 	      SID		      "891"
 	      Ports		      [1]
-	      Position		      [970, 110, 1030, 140]
+	      Position		      [910, 110, 970, 140]
 	      ZOrder		      63
 	      VariableName	      "modulo_vCons"
 	      MaxDataPoints	      "inf"
@@ -1969,7 +1972,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "CurrRef"
 	      SID		      "893"
-	      Position		      [705, 273, 735, 287]
+	      Position		      [705, 333, 735, 347]
 	      ZOrder		      37
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -1977,15 +1980,23 @@ Model {
 	    Line {
 	      SrcBlock		      "SPPos"
 	      SrcPort		      1
-	      Points		      [37, 0]
+	      Points		      [17, 0]
 	      Branch {
-		DstBlock		"MATLAB Function"
-		DstPort			4
+		Points			[75, 0]
+		Branch {
+		  DstBlock		  "MATLAB Function"
+		  DstPort		  4
+		}
+		Branch {
+		  Points		  [0, 50]
+		  DstBlock		  "MATLAB Function2"
+		  DstPort		  1
+		}
 	      }
 	      Branch {
-		Points			[0, 50]
-		DstBlock		"MATLAB Function2"
-		DstPort			1
+		Points			[0, 258; 451, 0; 0, -153]
+		DstBlock		"Manual Switch"
+		DstPort			2
 	      }
 	    }
 	    Line {
@@ -1997,7 +2008,7 @@ Model {
 	    Line {
 	      SrcBlock		      "Constant1"
 	      SrcPort		      1
-	      Points		      [30, 0; 0, -25]
+	      Points		      [9, 0; 0, -25]
 	      DstBlock		      "MATLAB Function2"
 	      DstPort		      4
 	    }
@@ -2027,44 +2038,39 @@ Model {
 	      SrcPort		      1
 	      Points		      [25, 0]
 	      Branch {
-		Points			[50, 0]
+		Points			[0, 110]
 		Branch {
-		  Points		  [0, -70]
-		  DstBlock		  "MATLAB Function"
-		  DstPort		  5
+		  DstBlock		  "Delay"
+		  DstPort		  1
 		}
 		Branch {
-		  Points		  [0, 10]
-		  Branch {
-		    DstBlock		    "Manual Switch"
-		    DstPort		    2
-		  }
-		  Branch {
-		    Points		    [0, 40]
-		    DstBlock		    "CurrRef"
-		    DstPort		    1
-		  }
+		  DstBlock		  "CurrRef"
+		  DstPort		  1
 		}
 	      }
 	      Branch {
-		Points			[0, 110]
-		DstBlock		"Delay"
-		DstPort			1
+		DstBlock		"Manual Switch2"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -70]
+		DstBlock		"MATLAB Function"
+		DstPort			5
 	      }
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      3
-	      Points		      [45, 0; 0, 70]
-	      DstBlock		      "Manual Switch"
+	      Points		      [10, 0]
+	      DstBlock		      "Manual Switch2"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Manual Switch"
 	      SrcPort		      1
-	      Points		      [67, 0]
+	      Points		      [22, 0]
 	      Branch {
-		Points			[0, -45; 218, 0]
+		Points			[0, -45; 158, 0]
 		Branch {
 		  DstBlock		  "To Workspace2"
 		  DstPort		  1
@@ -2088,30 +2094,30 @@ Model {
 	    Line {
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      2
-	      Points		      [177, 0]
+	      Points		      [79, 0]
 	      Branch {
-		Points			[0, -30]
-		DstBlock		"To Workspace"
+		Points			[0, 30]
+		DstBlock		"Fcn"
 		DstPort			1
 	      }
 	      Branch {
-		Points			[0, 25]
-		DstBlock		"Fcn"
+		Points			[0, -25]
+		DstBlock		"To Workspace"
 		DstPort			1
 	      }
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      1
-	      Points		      [132, 0; 0, -25; 246, 0]
-	      Branch {
-		Points			[0, 60]
-		DstBlock		"Sum"
-		DstPort			1
-	      }
+	      Points		      [44, 0; 0, -25; 247, 0]
 	      Branch {
 		Points			[0, -30]
 		DstBlock		"To Workspace1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 60]
+		DstBlock		"Sum"
 		DstPort			1
 	      }
 	    }
@@ -2140,6 +2146,12 @@ Model {
 	      SrcBlock		      "Fcn1"
 	      SrcPort		      1
 	      DstBlock		      "To Workspace5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Manual Switch2"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch"
 	      DstPort		      1
 	    }
 	  }
@@ -2513,7 +2525,7 @@ Model {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  "909"
-	  Position		  [665, 425, 685, 445]
+	  Position		  [665, 435, 685, 455]
 	  ZOrder		  -12
 	}
 	Block {
@@ -2562,7 +2574,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [20, 0]
 	  Branch {
-	    Points		    [0, 215; -295, 0; 0, -135]
+	    Points		    [0, 196; -318, 0; 0, -116]
 	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    3
 	  }
@@ -2669,7 +2681,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [14, 0]
 	  Branch {
-	    Points		    [0, 51; -303, 0; 0, -131]
+	    Points		    [0, 29; -303, 0; 0, -94]
 	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    4
 	  }
@@ -2782,6 +2794,184 @@ Model {
       ShowName		      off
       Outputs		      "2"
       DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Disc-Cont"
+      SID		      "919"
+      Ports		      [3, 2]
+      Position		      [505, 177, 550, 263]
+      ZOrder		      20
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Disc-Cont"
+	Location		[-8, -8, 1374, 736]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Sel"
+	  SID			  "920"
+	  Position		  [40, 3, 70, 17]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "RP"
+	  SID			  "921"
+	  Position		  [40, 53, 70, 67]
+	  ZOrder		  -2
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "RR"
+	  SID			  "922"
+	  Position		  [40, 138, 70, 152]
+	  ZOrder		  -3
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  SID			  "971"
+	  Position		  [290, 40, 340, 80]
+	  ZOrder		  86
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  SID			  "972"
+	  Position		  [290, 125, 340, 165]
+	  ZOrder		  87
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold"
+	  SID			  "969"
+	  Position		  [230, 60, 245, 90]
+	  ZOrder		  84
+	  SampleTime		  "Ts"
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold1"
+	  SID			  "970"
+	  Position		  [230, 145, 245, 175]
+	  ZOrder		  85
+	  SampleTime		  "Ts"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "RefPitch"
+	  SID			  "965"
+	  Position		  [370, 53, 400, 67]
+	  ZOrder		  -15
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "RefRoll"
+	  SID			  "966"
+	  Position		  [370, 138, 400, 152]
+	  ZOrder		  -16
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "RefPitch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  DstBlock		  "RefRoll"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "RP"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Zero-Order\nHold"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "Switch"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "RR"
+	  SrcPort		  1
+	  Points		  [74, 0]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Zero-Order\nHold1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "Switch1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold1"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sel"
+	  SrcPort		  1
+	  Points		  [192, 0; 0, 50]
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "Switch1"
+	    DstPort		    2
+	  }
+	}
+      }
     }
     Block {
       BlockType		      SubSystem
@@ -3148,14 +3338,14 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		23
+	$ObjectID		22
 	$ClassName		"Simulink.Mask"
 	IconOpaque		"off"
       }
       System {
 	Name			"Modelo"
-	Location		[-8, -8, 1292, 736]
-	Open			on
+	Location		[-8, -8, 1374, 736]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3967,7 +4157,7 @@ Model {
       Name		      "Mux1"
       SID		      "85"
       Ports		      [2, 1]
-      Position		      [590, 303, 595, 327]
+      Position		      [590, 313, 595, 337]
       ZOrder		      -7
       ShowName		      off
       Inputs		      "2"
@@ -4024,7 +4214,7 @@ Model {
       BlockType		      Constant
       Name		      "NO lineal"
       SID		      "859"
-      Position		      [605, 65, 625, 85]
+      Position		      [605, 20, 625, 40]
       ZOrder		      16
       BlockRotation	      270
       BlockMirror	      on
@@ -4033,7 +4223,7 @@ Model {
       BlockType		      Constant
       Name		      "Original"
       SID		      "858"
-      Position		      [585, 65, 605, 85]
+      Position		      [585, 20, 605, 40]
       ZOrder		      15
       BlockRotation	      270
       BlockMirror	      on
@@ -4139,7 +4329,7 @@ Model {
       BlockType		      ManualSwitch
       Name		      "Selector de modelo"
       SID		      "857"
-      Position		      [587, 110, 623, 140]
+      Position		      [587, 65, 623, 95]
       ZOrder		      14
       BlockRotation	      270
       BlockMirror	      on
@@ -4214,13 +4404,13 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Controlador"
+      SrcBlock		      "Disc-Cont"
       SrcPort		      2
-      Points		      [72, 0]
+      Points		      [10, 0; 0, 35]
       Branch {
-	Points			[0, 70]
+	Points			[0, 50]
 	Branch {
-	  Points		  [0, 225]
+	  Points		  [0, 215]
 	  DstBlock		  "Mux4"
 	  DstPort		  5
 	}
@@ -4230,19 +4420,18 @@ Model {
 	}
       }
       Branch {
-	Points			[48, 0]
 	DstBlock		"Modelo"
 	DstPort			3
       }
     }
     Line {
-      SrcBlock		      "Controlador"
+      SrcBlock		      "Disc-Cont"
       SrcPort		      1
-      Points		      [84, 0]
+      Points		      [19, 0; 0, 40]
       Branch {
-	Points			[0, 90]
+	Points			[0, 80]
 	Branch {
-	  Points		  [0, 175]
+	  Points		  [0, 165]
 	  DstBlock		  "Mux5"
 	  DstPort		  5
 	}
@@ -4252,7 +4441,6 @@ Model {
 	}
       }
       Branch {
-	Points			[36, 0]
 	DstBlock		"Modelo"
 	DstPort			2
       }
@@ -4260,7 +4448,7 @@ Model {
     Line {
       SrcBlock		      "Mux1"
       SrcPort		      1
-      Points		      [25, 0; 0, 104; 365, 0]
+      Points		      [25, 0; 0, 94; 365, 0]
       DstBlock		      "Scope"
       DstPort		      2
     }
@@ -4372,10 +4560,6 @@ Model {
       SrcPort		      4
       Points		      [100, 0]
       Branch {
-	DstBlock		"Mux"
-	DstPort			2
-      }
-      Branch {
 	Points			[0, 102]
 	Branch {
 	  Points		  [-410, 0; 0, -57]
@@ -4388,19 +4572,24 @@ Model {
 	  DstPort		  1
 	}
       }
+      Branch {
+	DstBlock		"Mux"
+	DstPort			2
+      }
     }
     Line {
       SrcBlock		      "Modelo"
       SrcPort		      2
-      Points		      [62, 0; 0, 260; 10, 0]
+      Points		      [72, 0]
       Branch {
-	Points			[0, -306; -359, 0; 0, 51]
-	DstBlock		"Controlador"
-	DstPort			1
-      }
-      Branch {
+	Points			[0, 260]
 	DstBlock		"Mux5"
 	DstPort			2
+      }
+      Branch {
+	Points			[0, -75; -359, 0; 0, 80]
+	DstBlock		"Controlador"
+	DstPort			1
       }
     }
     Line {
@@ -4408,16 +4597,14 @@ Model {
       SrcPort		      3
       Points		      [82, 0]
       Branch {
-	Points			[0, 235; 9, 0]
-	Branch {
-	  Points		  [0, -316; -392, 0; 0, 86]
-	  DstBlock		  "Controlador"
-	  DstPort		  2
-	}
-	Branch {
-	  DstBlock		  "Mux5"
-	  DstPort		  1
-	}
+	Points			[0, 235]
+	DstBlock		"Mux5"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -108; -383, 0; 0, 113]
+	DstBlock		"Controlador"
+	DstPort			2
       }
       Branch {
 	DstBlock		"Mux"
@@ -4427,9 +4614,17 @@ Model {
     Line {
       SrcBlock		      "Selector de modelo"
       SrcPort		      1
-      Points		      [0, 55]
-      DstBlock		      "Modelo"
-      DstPort		      1
+      Points		      [0, 54]
+      Branch {
+	Points			[0, 46]
+	DstBlock		"Modelo"
+	DstPort			1
+      }
+      Branch {
+	Points			[-115, 0]
+	DstBlock		"Disc-Cont"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Original"
@@ -4456,6 +4651,18 @@ Model {
       Points		      [7, 0; 0, 260]
       DstBlock		      "Mux4"
       DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Controlador"
+      SrcPort		      1
+      DstBlock		      "Disc-Cont"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Controlador"
+      SrcPort		      2
+      DstBlock		      "Disc-Cont"
+      DstPort		      3
     }
   }
 }
@@ -4485,8 +4692,6 @@ Stateflow {
     firstJunction	    12
     viewObj		    2
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    24
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -4743,8 +4948,6 @@ Stateflow {
     firstJunction	    22
     viewObj		    15
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -4772,11 +4975,11 @@ Stateflow {
       script		      "function CurrRef = CalcRef(SPPos,LastRef,Ts,radio)\n% Este bloque es un control de ambas velocida"
       "des a título teórico para\n% definir las consignas a seguir según una velocidad máxima teórica\n% constante obte"
       "nida experimentalmente en los modelos. No ayuda gran cosa a\n% corregir las imprecisiones en la trayectoria y el"
-      " desincronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\nmaxVx = 1.5"
-      "; % (-)Pitch\nmaxVy = 0.5; % Roll\n\nDistXY =SPPos-LastRef;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n    "
-      "CurrRef = LastRef;\nelse\n    minTx = abs (DistXY(1))/maxVx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT"
-      " = max (minTx,minTy);\n    \n    if minT<Ts\n        CurrRef = SPPos;\n    else\n        CurrRef = LastRef + (Ts"
-      "/minT)*DistXY;\n    end\nend\n\n"
+      " desincronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\nmaxVx = 5; "
+      "% (-)Pitch\nmaxVy = 5; % Roll\n\nDistXY =SPPos-LastRef;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n    Curr"
+      "Ref = LastRef;\nelse\n    minTx = abs (DistXY(1))/maxVx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT = m"
+      "ax (minTx,minTy);\n    \n    if minT<Ts\n        CurrRef = SPPos;\n    else\n        CurrRef = LastRef + (Ts/min"
+      "T)*DistXY;\n    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
