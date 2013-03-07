@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata(scdata,ruta,radio)
+function indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control
@@ -124,29 +124,65 @@ end
 % une los puntos de la ruta 
 hold on,plot([0;ruta(:,1)],[0;ruta(:,2)],'r')
 % dibuja la trayectoria seguida
-hold on,plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2))
+plot(scdata.signals(1,1).values(:,1),scdata.signals(1,1).values(:,2))
+% dibuja la consigna seguida
+plot(scVar.signals(1,1).values(:,4),scVar.signals(1,2).values(:,4),'g')
+
+for i=1:5:size(scVar.signals(1,1).values(:,1),1)
+    % dibuja vector [pos-consigna]
+    plot([scVar.signals(1,1).values(i,1),scVar.signals(1,1).values(i,4)],...
+        [scVar.signals(1,2).values(i,1),scVar.signals(1,2).values(i,4)],'k')
+    % dibuja vector error sumado a CurrRef
+    plot([scVar.signals(1,3).values(i,1),scVar.signals(1,1).values(i,4)],...
+        [scVar.signals(1,3).values(i,2),scVar.signals(1,2).values(i,4)],'m')
+    % dibuja vector error
+    plot([pos(i,1),(pos(i,1)+vE(i,1))],[pos(i,2),(pos(i,2)+vE(i,2))],'m')
+end
+
+% dibuja CurrRef
+% plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
+
 xlabel('x')
 ylabel('y')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 
+%% Representacion grafica del modulo del vector error y de la distancia de la consigna
+% figure
+% hold on
+% plot(modulo_vE.time,modulo_vE.signals.values)
+% plot(modulo_vCons.time,modulo_vCons.signals.values,'r')
+% legend('modulo vE','modulo consigna')
+% grid
+
+%% Representación gráfica señales ensayo (original)
+% figure
+% subplot(311)
+% plot(scdata.time,scdata.signals(1,1).values)
+% legend('x','y','refPitch', 'refRoll')
+% title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
+% subplot(312)
+% plot(scdata.time,scdata.signals(1,2).values)
+% legend('Ref\_pitch','Ref\_roll')
+% subplot(313)
+% plot(scdata.time,distancia)
+% hold on,plot(scdata.time([1 end]),[dmedia dmedia],'g')
+% hold on,plot(scdata.time([1 end]),[dmax dmax],'r')
+% legend('dist.','dist. media','dist. max')
+% xlabel('tiempo (seg)')
+% ylabel('distancia (m)')
+% title(['Distancia a la trayectoria mínima. Dist. media: ' num2str(dmedia) '. Dist. max: ' num2str(dmax)])
+
 %% Representación gráfica señales ensayo
 figure
-subplot(311)
-plot(scdata.time,scdata.signals(1,1).values)
-legend('x','y','PSx','PSy')
+subplot(211)
+plot(scVar.time,scVar.signals(1,1).values)
+legend('x','vx','SPx', 'consigna x','RefPitch','ax')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
-subplot(312)
-plot(scdata.time,scdata.signals(1,2).values)
-legend('Ref\_pitch','Ref\_roll')
-subplot(313)
-plot(scdata.time,distancia)
-hold on,plot(scdata.time([1 end]),[dmedia dmedia],'g')
-hold on,plot(scdata.time([1 end]),[dmax dmax],'r')
-legend('dist.','dist. media','dist. max')
-xlabel('tiempo (seg)')
-ylabel('distancia (m)')
-title(['Distancia a la trayectoria mínima. Dist. media: ' num2str(dmedia) '. Dist. max: ' num2str(dmax)])
-
+grid
+subplot(212)
+plot(scVar.time,scVar.signals(1,2).values)
+legend('y','vy','SPy', 'consigna y','RefRoll','ay')
+title('Valores del movimiento')
+grid
 
 %% Registro de modificaciones:
-% V.Nov_12, CPOH 2012. 

@@ -47,8 +47,10 @@ else
     ds=dimAbsSala-[cero(1) cero(1) cero(2) cero(2)];
 end
 % Acondiciona los datos
-exp=[datos.time datos.signals(1,1).values(:,1) datos.signals(1,2).values(:,1) datos.signals(1,3).values(:,1) datos.signals(1,4).values(:,1)];
-modelo=[datos.time datos.signals(1,1).values(:,2) datos.signals(1,2).values(:,2) datos.signals(1,3).values(:,2) datos.signals(1,4).values(:,2)];
+exp=[datos.time datos.signals(1,1).values(:,1) datos.signals(1,2).values(:,1) ...
+    datos.signals(1,3).values(:,1) datos.signals(1,4).values(:,1)];
+modelo=[datos.time datos.signals(1,1).values(:,2) datos.signals(1,2).values(:,2) ...
+    datos.signals(1,3).values(:,2) datos.signals(1,4).values(:,2)];
 entrada=[datos.signals(1,5).values datos.signals(1,6).values];
 
 % Aplica dimensiones de la sala
@@ -57,37 +59,32 @@ modelo=sala(modelo,ds);
 
 % Representa la respuesta
 figure
-subplot(6,1,1)
+subplot(4,1,1)
 plot(exp(:,1),exp(:,2))
 hold on,plot(modelo(:,1),modelo(:,2),'r')
 title('x')
 legend('Real','Modelo')
-subplot(6,1,2)
+subplot(4,1,2)
 plot(exp(:,1),exp(:,3))
 hold on,plot(modelo(:,1),modelo(:,3),'r')
 title('vx')
-subplot(6,1,3)
+subplot(4,1,3)
 plot(exp(:,1),exp(:,4))
 hold on,plot(modelo(:,1),modelo(:,4),'r')
 title('y')
-subplot(6,1,4)
+subplot(4,1,4)
 plot(exp(:,1),exp(:,5))
 hold on,plot(modelo(:,1),modelo(:,5),'r')
 title('vy')
-subplot(6,1,5)
-plot(exp(:,1),entrada(:,1))
-title('RefPitch')
-subplot(6,1,6)
-plot(exp(:,1),entrada(:,2))
-title('RefRoll')
+% subplot(6,1,5)
+% plot(exp(:,1),entrada(:,1))
+% title('RefPitch')
+% subplot(6,1,6)
+% plot(exp(:,1),entrada(:,2))
+% title('RefRoll')
 xlabel('sec')
 
-% añadida la representacion de la posicion en x e y
-figure
-plot(modelo(:,2),modelo(:,4))
-rectangle('position',[ds(1) ds(3) ds(2)-ds(1) ds(4)-ds(3)],'LineWidth',4,'EdgeColor','r')
 
-title('Trayectoria xy')
 
 %% calcula indicadores 
 dx=abs(exp(:,2)-modelo(:,2));
@@ -100,23 +97,23 @@ indicadoresModelo.dxmax=max(dx);
 indicadoresModelo.dymax=max(dy);
 % 
 %% Dibuja Indicadores
-figure
-subplot(2,1,1)
-plot(exp(:,1),dx,'b')
-hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dxmax,indicadoresModelo.dxmax],'r')
-hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dxmedio,indicadoresModelo.dxmedio],'g')
-xlabel('tiempo (seg)')
-ylabel('error x')
-legend('error x','error max','error medio')
-title(['Error x max: ' num2str(indicadoresModelo.dxmax) '; Error x medio: '  num2str(indicadoresModelo.dxmedio)])
-subplot(2,1,2)
-plot(exp(:,1),dy,'b')
-hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dymax,indicadoresModelo.dymax],'r')
-hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dymedio,indicadoresModelo.dymedio],'g')
-xlabel('tiempo (seg)')
-ylabel('error y')
-legend('error y','error max','error medio')
-title(['Error y max: ' num2str(indicadoresModelo.dymax) '; Error y medio: '  num2str(indicadoresModelo.dymedio)])
+% figure
+% subplot(2,1,1)
+% plot(exp(:,1),dx,'b')
+% hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dxmax,indicadoresModelo.dxmax],'r')
+% hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dxmedio,indicadoresModelo.dxmedio],'g')
+% xlabel('tiempo (seg)')
+% ylabel('error x')
+% legend('error x','error max','error medio')
+% title(['Error x max: ' num2str(indicadoresModelo.dxmax) '; Error x medio: '  num2str(indicadoresModelo.dxmedio)])
+% subplot(2,1,2)
+% plot(exp(:,1),dy,'b')
+% hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dymax,indicadoresModelo.dymax],'r')
+% hold on,plot([exp(1,1),exp(end,1)],[indicadoresModelo.dymedio,indicadoresModelo.dymedio],'g')
+% xlabel('tiempo (seg)')
+% ylabel('error y')
+% legend('error y','error max','error medio')
+% title(['Error y max: ' num2str(indicadoresModelo.dymax) '; Error y medio: '  num2str(indicadoresModelo.dymedio)])
 
 
 %% Registro de modificaciones:
