@@ -140,7 +140,7 @@ for i=1:5:size(scVar.signals(1,1).values(:,1),1)
 end
 
 % dibuja CurrRef
-% plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
+plot(scVar.signals(1,3).values(:,1),scVar.signals(1,3).values(:,2),'c')
 
 xlabel('x')
 ylabel('y')
