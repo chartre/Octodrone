@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.573"
+    ComputedModelVersion    "1.620"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1382.0, 744.0]
+      Location		      [-11.0, 1.0, 1300.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,19 +52,19 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "865"
-	  Extents		  [1330.0, 565.0]
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1248.0, 565.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "872"
-	  Extents		  [1330.0, 565.0]
+	  Extents		  [1248.0, 565.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [-208.25, -93.530003643035855]
 	}
@@ -76,11 +76,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Carlos"
+  LastModifiedBy	  "Elisa"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 05 10:52:10 2013"
-  RTWModifiedTimeStamp	  284378631
-  ModelVersionFormat	  "1.%<AutoIncrement:573>"
+  LastModifiedDate	  "Mon Mar 25 14:43:44 2013"
+  RTWModifiedTimeStamp	  286103335
+  ModelVersionFormat	  "1.%<AutoIncrement:620>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "100"
+	  StopTime		  "30"
 	  AbsTol		  "auto"
 	  FixedStep		  "0.06"
 	  InitialStep		  "auto"
@@ -1106,8 +1106,8 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1374, 736]
-    Open		    off
+    Location		    [-11, 1, 1289, 745]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1120,7 +1120,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "980"
+    SIDHighWatermark	    "982"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1316,8 +1316,8 @@ Model {
       }
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1374, 736]
-	Open			on
+	Location		[-11, 1, 1289, 745]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1341,7 +1341,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vx"
 	  SID			  "866"
-	  Position		  [590, 128, 620, 142]
+	  Position		  [235, 333, 265, 347]
 	  ZOrder		  -1
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1386,7 +1386,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vy"
 	  SID			  "871"
-	  Position		  [590, 438, 620, 452]
+	  Position		  [235, 363, 265, 377]
 	  ZOrder		  -6
 	  Port			  "7"
 	  IconDisplay		  "Port number"
@@ -1395,8 +1395,8 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "Control Ejes teórico"
 	  SID			  "872"
-	  Ports			  [5, 2]
-	  Position		  [360, 257, 445, 313]
+	  Ports			  [7, 2]
+	  Position		  [365, 257, 445, 363]
 	  ZOrder		  52
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -1407,7 +1407,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, -8, 1374, 736]
+	    Location		    [-11, 1, 1289, 745]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1424,7 +1424,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "posAnt"
 	      SID		      "873"
-	      Position		      [0, 38, 30, 52]
+	      Position		      [0, 23, 30, 37]
 	      ZOrder		      11
 	      IconDisplay	      "Port number"
 	    }
@@ -1432,7 +1432,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "SPPos"
 	      SID		      "874"
-	      Position		      [0, 128, 30, 142]
+	      Position		      [0, 113, 30, 127]
 	      ZOrder		      -1
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -1441,7 +1441,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "pos"
 	      SID		      "875"
-	      Position		      [0, 68, 30, 82]
+	      Position		      [0, 53, 30, 67]
 	      ZOrder		      10
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -1450,7 +1450,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "pos1"
 	      SID		      "876"
-	      Position		      [0, 103, 30, 117]
+	      Position		      [0, 83, 30, 97]
 	      ZOrder		      54
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -1465,10 +1465,28 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
+	      BlockType		      Inport
+	      Name		      "Vx"
+	      SID		      "981"
+	      Position		      [95, 258, 125, 272]
+	      ZOrder		      69
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Vy"
+	      SID		      "982"
+	      Position		      [130, 278, 160, 292]
+	      ZOrder		      70
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "877"
-	      Position		      [130, 235, 150, 255]
+	      Position		      [105, 217, 120, 233]
 	      ZOrder		      3
 	      Value		      "Ts"
 	    }
@@ -1476,7 +1494,7 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant1"
 	      SID		      "878"
-	      Position		      [125, 290, 155, 310]
+	      Position		      [145, 237, 170, 253]
 	      ZOrder		      4
 	      Value		      "radio"
 	    }
@@ -1514,7 +1532,7 @@ Model {
 	      Name		      "MATLAB Function"
 	      SID		      "882"
 	      Ports		      [5, 3]
-	      Position		      [330, 50, 400, 170]
+	      Position		      [330, 17, 400, 163]
 	      ZOrder		      53
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
@@ -1744,8 +1762,8 @@ Model {
 	      BlockType		      SubSystem
 	      Name		      "MATLAB Function2"
 	      SID		      "883"
-	      Ports		      [4, 1]
-	      Position		      [200, 173, 270, 287]
+	      Ports		      [7, 1]
+	      Position		      [200, 149, 270, 301]
 	      ZOrder		      19
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
@@ -1787,40 +1805,67 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"25"
+		SIDHighWatermark	"29"
+		Block {
+		  BlockType		  Inport
+		  Name			  "posAnt"
+		  SID			  "883::27"
+		  Position		  [20, 101, 40, 119]
+		  ZOrder		  12
+		  IconDisplay		  "Port number"
+		}
 		Block {
 		  BlockType		  Inport
 		  Name			  "SPPos"
 		  SID			  "883::1"
-		  Position		  [20, 101, 40, 119]
+		  Position		  [20, 136, 40, 154]
 		  ZOrder		  -1
+		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
 		  Name			  "LastRef"
 		  SID			  "883::23"
-		  Position		  [20, 136, 40, 154]
+		  Position		  [20, 171, 40, 189]
 		  ZOrder		  9
-		  Port			  "2"
+		  Port			  "3"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
 		  Name			  "Ts"
 		  SID			  "883::24"
-		  Position		  [20, 171, 40, 189]
+		  Position		  [20, 206, 40, 224]
 		  ZOrder		  10
-		  Port			  "3"
+		  Port			  "4"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
 		  Name			  "radio"
 		  SID			  "883::25"
-		  Position		  [20, 206, 40, 224]
+		  Position		  [20, 246, 40, 264]
 		  ZOrder		  11
-		  Port			  "4"
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Vx"
+		  SID			  "883::28"
+		  Position		  [20, 281, 40, 299]
+		  ZOrder		  13
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Vy"
+		  SID			  "883::29"
+		  Position		  [20, 316, 40, 334]
+		  ZOrder		  14
+		  Port			  "7"
 		  IconDisplay		  "Port number"
 		}
 		Block {
@@ -1828,7 +1873,7 @@ Model {
 		  Name			  " Demux "
 		  SID			  "883::20"
 		  Ports			  [1, 1]
-		  Position		  [270, 220, 320, 260]
+		  Position		  [270, 265, 320, 305]
 		  ZOrder		  6
 		  Outputs		  "1"
 		}
@@ -1837,11 +1882,11 @@ Model {
 		  Name			  " SFunction "
 		  SID			  "883::19"
 		  Tag			  "Stateflow S-Function simuladorControlCuatrirrotor 3"
-		  Ports			  [4, 2]
-		  Position		  [180, 100, 230, 220]
+		  Ports			  [7, 2]
+		  Position		  [180, 104, 230, 266]
 		  ZOrder		  5
 		  FunctionName		  "sf_sfun"
-		  PortCounts		  "[4 2]"
+		  PortCounts		  "[7 2]"
 		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
@@ -1854,7 +1899,7 @@ Model {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
 		  SID			  "883::22"
-		  Position		  [460, 231, 480, 249]
+		  Position		  [460, 276, 480, 294]
 		  ZOrder		  8
 		}
 		Block {
@@ -1866,28 +1911,46 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "SPPos"
+		  SrcBlock		  "posAnt"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "LastRef"
+		  SrcBlock		  "SPPos"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Ts"
+		  SrcBlock		  "LastRef"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  3
 		}
 		Line {
-		  SrcBlock		  "radio"
+		  SrcBlock		  "Ts"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "radio"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "Vx"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  6
+		}
+		Line {
+		  SrcBlock		  "Vy"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  7
 		}
 		Line {
 		  Name			  "CurrRef"
@@ -1940,7 +2003,7 @@ Model {
 	      Name		      "To Workspace"
 	      SID		      "886"
 	      Ports		      [1]
-	      Position		      [580, 70, 640, 100]
+	      Position		      [580, 75, 640, 105]
 	      ZOrder		      55
 	      VariableName	      "vE"
 	      MaxDataPoints	      "inf"
@@ -2025,63 +2088,73 @@ Model {
 	      SrcPort		      1
 	      Points		      [20, 0]
 	      Branch {
+		Points			[0, 264; 426, 0; 0, -104]
+		DstBlock		"Multiport Switch"
+		DstPort			4
+	      }
+	      Branch {
 		Points			[72, 0]
+		Branch {
+		  Points		  [0, 65]
+		  DstBlock		  "MATLAB Function2"
+		  DstPort		  2
+		}
 		Branch {
 		  DstBlock		  "MATLAB Function"
 		  DstPort		  4
 		}
-		Branch {
-		  Points		  [0, 50]
-		  DstBlock		  "MATLAB Function2"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[0, 249; 426, 0; 0, -104]
-		DstBlock		"Multiport Switch"
-		DstPort			4
 	      }
 	    }
 	    Line {
 	      SrcBlock		      "Constant"
 	      SrcPort		      1
 	      DstBlock		      "MATLAB Function2"
-	      DstPort		      3
+	      DstPort		      4
 	    }
 	    Line {
 	      SrcBlock		      "Constant1"
 	      SrcPort		      1
-	      Points		      [9, 0; 0, -25]
 	      DstBlock		      "MATLAB Function2"
-	      DstPort		      4
+	      DstPort		      5
 	    }
 	    Line {
 	      SrcBlock		      "posAnt"
 	      SrcPort		      1
-	      Points		      [145, 0; 0, 15]
-	      DstBlock		      "MATLAB Function"
-	      DstPort		      1
+	      Points		      [123, 0]
+	      Branch {
+		Points			[0, 135]
+		DstBlock		"MATLAB Function2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"MATLAB Function"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "pos"
 	      SrcPort		      1
-	      Points		      [70, 0; 0, 10]
 	      DstBlock		      "MATLAB Function"
 	      DstPort		      2
 	    }
 	    Line {
 	      SrcBlock		      "Delay"
 	      SrcPort		      1
-	      Points		      [-103, 0; 0, -125]
+	      Points		      [-103, 0; 0, -135]
 	      DstBlock		      "MATLAB Function2"
-	      DstPort		      2
+	      DstPort		      3
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function2"
 	      SrcPort		      1
 	      Points		      [25, 0]
 	      Branch {
-		Points			[0, 25]
+		Points			[0, -75]
+		DstBlock		"MATLAB Function"
+		DstPort			5
+	      }
+	      Branch {
+		Points			[0, 30]
 		Branch {
 		  Points		  [0, 85]
 		  Branch {
@@ -2098,16 +2171,11 @@ Model {
 		  DstPort		  3
 		}
 	      }
-	      Branch {
-		Points			[0, -70]
-		DstBlock		"MATLAB Function"
-		DstPort			5
-	      }
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      3
-	      Points		      [45, 0; 0, 80]
+	      Points		      [45, 0; 0, 90]
 	      DstBlock		      "Multiport Switch"
 	      DstPort		      2
 	    }
@@ -2142,12 +2210,11 @@ Model {
 	      SrcPort		      2
 	      Points		      [79, 0]
 	      Branch {
-		Points			[0, 30]
+		Points			[0, 50]
 		DstBlock		"Fcn"
 		DstPort			1
 	      }
 	      Branch {
-		Points			[0, -25]
 		DstBlock		"To Workspace"
 		DstPort			1
 	      }
@@ -2155,15 +2222,15 @@ Model {
 	    Line {
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      1
-	      Points		      [44, 0; 0, -25; 247, 0]
+	      Points		      [291, 0]
 	      Branch {
-		Points			[0, -30]
-		DstBlock		"To Workspace1"
+		Points			[0, 65]
+		DstBlock		"Sum"
 		DstPort			1
 	      }
 	      Branch {
-		Points			[0, 60]
-		DstBlock		"Sum"
+		Points			[0, -25]
+		DstBlock		"To Workspace1"
 		DstPort			1
 	      }
 	    }
@@ -2200,6 +2267,18 @@ Model {
 	      Points		      [431, 0; 0, -205]
 	      DstBlock		      "Multiport Switch"
 	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Vy"
+	      SrcPort		      1
+	      DstBlock		      "MATLAB Function2"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "Vx"
+	      SrcPort		      1
+	      DstBlock		      "MATLAB Function2"
+	      DstPort		      6
 	    }
 	  }
 	}
@@ -2562,20 +2641,6 @@ Model {
 	  SampleTime		  "Ts"
 	}
 	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator1"
-	  SID			  "908"
-	  Position		  [665, 125, 685, 145]
-	  ZOrder		  -11
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator2"
-	  SID			  "909"
-	  Position		  [665, 435, 685, 455]
-	  ZOrder		  -12
-	}
-	Block {
 	  BlockType		  Outport
 	  Name			  "RefPitch"
 	  SID			  "910"
@@ -2605,7 +2670,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "CurrRef"
 	  SID			  "913"
-	  Position		  [480, 293, 510, 307]
+	  Position		  [490, 333, 520, 347]
 	  ZOrder		  83
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -2621,7 +2686,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [20, 0]
 	  Branch {
-	    Points		    [0, 196; -318, 0; 0, -111]
+	    Points		    [0, 196; -318, 0; 0, -101]
 	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    3
 	  }
@@ -2630,18 +2695,6 @@ Model {
 	    DstBlock		    "Sum"
 	    DstPort		    2
 	  }
-	}
-	Line {
-	  SrcBlock		  "vx"
-	  SrcPort		  1
-	  DstBlock		  "Terminator1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "vy"
-	  SrcPort		  1
-	  DstBlock		  "Terminator2"
-	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Sum"
@@ -2692,7 +2745,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [18, 0]
 	  Branch {
-	    Points		    [0, 10]
+	    Points		    [0, 15]
 	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    2
 	  }
@@ -2714,12 +2767,12 @@ Model {
 	  SrcPort		  1
 	  Points		  [17, 0]
 	  Branch {
-	    Points		    [0, -5]
+	    Points		    [0, -20]
 	    DstBlock		    "Demux"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 135]
+	    Points		    [0, 120]
 	    DstBlock		    "Consigna"
 	    DstPort		    1
 	  }
@@ -2729,7 +2782,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [14, 0]
 	  Branch {
-	    Points		    [0, 29; -303, 0; 0, -89]
+	    Points		    [0, 29; -303, 0; 0, -74]
 	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    4
 	  }
@@ -2822,9 +2875,22 @@ Model {
 	Line {
 	  SrcBlock		  "Sel"
 	  SrcPort		  1
-	  Points		  [154, 0; 0, -35]
+	  Points		  [154, 0; 0, -15]
 	  DstBlock		  "Control Ejes teórico"
 	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "vx"
+	  SrcPort		  1
+	  DstBlock		  "Control Ejes teórico"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "vy"
+	  SrcPort		  1
+	  Points		  [26, 0; 0, -15]
+	  DstBlock		  "Control Ejes teórico"
+	  DstPort		  7
 	}
       }
     }
@@ -4809,7 +4875,7 @@ Stateflow {
     name		    "simuladorControlCuatrirrotor"
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
-    firstTarget		    25
+    firstTarget		    28
     sfVersion		    76014001.001
   }
   chart {
@@ -4855,7 +4921,14 @@ Stateflow {
       "iamos vector Vs\nVs = Vr;\n\n% creamos vector perpendicular a Vr\nVs(1,1) = -Vr(2,1);\nVs(2,1) = Vr(1,1);\n\n% c"
       "reamos matriz de vectores directores\nMatrA = [Vr,-Vs];\n\n% creamos matriz de valores independientes\nMatrB = C"
       "-A;\n\n% calculamos los valores de las K's de cada recta\nK = inv(MatrA)*MatrB;\n\n% sacamos el punto D interese"
-      "ccion de las rectas\nD = A + K(1,1)*Vr;\n\nvE = D-C;\n\nconsigna = CurrRef + (vE^2);\nend\n"
+      "ccion de las rectas\nD = A + K(1,1)*Vr;\n\nvE = D-C;\n\n%% Calculo cuando CurrRef no está sobre la trayectoria\n"
+      "% Se añade esta segunda parte para corregir desviaciones de la trayectoria \n% ideal teórica de la forma apropia"
+      "da y evitar discrepancias según el método \n% de gestión de consigna empleado. Funciona correctamente.\n\n% crea"
+      "mos matriz de valores independientes\nMatrC = CurrRef-A;\n\n% calculamos los valores de las K's de cada recta\nK"
+      "1 = inv(MatrA)*MatrC;\n\n% sacamos el punto E, vertical desde CurrRef, intereseccion de las rectas\n% con trayec"
+      "toria\nE = A + K1(1,1)*Vr;\n\n% Permite seleccionar el instante al que afecta la\n% magnitud de la corrección (p"
+      "osible introducción a la corrección variable\n% selectiva)\n%    if norm(vE)>0.2 \n    consigna = E + vE*3;\n%  "
+      "   else\n%         consigna = E + vE;\n%     end\n\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -5078,11 +5151,14 @@ Stateflow {
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
     treeNode		    [0 16 0 0]
-    firstTransition	    23
-    firstJunction	    22
+    firstTransition	    26
+    firstJunction	    25
     viewObj		    15
+    visible		    1
     machine		    1
-    ssIdHighWaterMark	    10
+    subviewS {
+    }
+    ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    17
@@ -5106,61 +5182,38 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function CurrRef = CalcRef(SPPos,LastRef,Ts,radio)\n% Este bloque es un control de ambas velocida"
-      "des a título teórico para\n% definir las consignas a seguir según una velocidad máxima teórica\n% constante obte"
-      "nida experimentalmente en los modelos. No ayuda gran cosa a\n% corregir las imprecisiones en la trayectoria y el"
-      " desincronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\nmaxVx = 5; "
-      "% (-)Pitch\nmaxVy = 5; % Roll\n\nDistXY =SPPos-LastRef;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n    Curr"
-      "Ref = LastRef;\nelse\n    minTx = abs (DistXY(1))/maxVx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT = m"
-      "ax (minTx,minTy);\n    \n    if minT<Ts\n        CurrRef = SPPos;\n    else\n        CurrRef = LastRef + (Ts/min"
-      "T)*DistXY;\n    end\nend\n\n"
+      script		      "function CurrRef = CalcRef(posAnt,SPPos,LastRef,Ts,radio,Vx,Vy)\n% Este bloque es un control de v"
+      "elocidad y aceleración a título teórico para\n% definir las consignas a seguir según unas velocidades y acelerac"
+      "iones\n% máximas teóricas constantes obtenidas experimentalmente en los modelos.\n% No corrige las imprecisiones"
+      " en la trayectoria y el desincronismo de los ejes\n% en el arranque. Problemas en la llegada de sobrepasamiento."
+      "\n\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = abs(-5.87);\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy "
+      "= 2.62;\nminAx = abs(-2.72);\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPPos-LastRef;\nDistTot = SPPos - posAnt;\n"
+      "\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1)\n    RelA = maxAx/maxAy;\n    RelD = DistXY(1)/DistXY(2);\n\n"
+      "    CurrRef = LastRef;\n    \n    % Apaño temporal para condición de llegada\n        minTx = sqrt(abs (DistXY(1"
+      "))/maxAx);\n        minTy = sqrt(abs (DistXY(2))/maxAy);\n        \n        minT = max (minTx,minTy);\n\n\n\n   "
+      " if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n        CurrRef = LastRef;\n        disp('llegada');\n    else    "
+      "\n        if (RelD>RelA)\n            Ay = maxAx/RelD;\n            Ax = maxAx;\n            \n        if minT<T"
+      "s % Añadido de llegada\n          CurrRef=SPPos;\n          disp('llegada');\n        else\n          CurrRef(1)"
+      " = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n          CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        en"
+      "d\n\n        else\n            Ax = maxAy/RelD;\n            Ay = maxAy;\n            \n        if minT<Ts % Aña"
+      "dido de llegada\n                CurrRef=SPPos;\n                disp('llegada');\n        else\n            Cur"
+      "rRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n "
+      "       end\n        end\n    end\n% else\n%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef ="
+      " LastRef;\n%     else\n%         minTx = sqrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/ma"
+      "xAy);\n%         \n%         minT = max (minTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef="
+      "SPPos;\n%         else\n%          CurrRef = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end"
+      "\n%     end\n% end\n\n%% Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n"
+      "%     CurrRef = LastRef;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n% "
+      "    \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%      "
+      "   CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    17
-    ssIdNumber		    5
-    name		    "CurrRef"
+    ssIdNumber		    12
+    name		    "posAnt"
     linkNode		    [15 0 18]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"2"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    18
-    ssIdNumber		    4
-    name		    "SPPos"
-    linkNode		    [15 17 19]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    19
-    ssIdNumber		    6
-    name		    "LastRef"
-    linkNode		    [15 18 20]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5179,9 +5232,48 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
+    id			    18
+    ssIdNumber		    5
+    name		    "CurrRef"
+    linkNode		    [15 17 19]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"2"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    19
+    ssIdNumber		    4
+    name		    "SPPos"
+    linkNode		    [15 18 20]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
     id			    20
-    ssIdNumber		    7
-    name		    "Ts"
+    ssIdNumber		    6
+    name		    "LastRef"
     linkNode		    [15 19 21]
     scope		    INPUT_DATA
     machine		    1
@@ -5202,9 +5294,75 @@ Stateflow {
   }
   data {
     id			    21
+    ssIdNumber		    7
+    name		    "Ts"
+    linkNode		    [15 20 22]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    22
     ssIdNumber		    8
     name		    "radio"
-    linkNode		    [15 20 0]
+    linkNode		    [15 21 23]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    23
+    ssIdNumber		    13
+    name		    "Vx"
+    linkNode		    [15 22 24]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    24
+    ssIdNumber		    14
+    name		    "Vy"
+    linkNode		    [15 23 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5223,7 +5381,7 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    22
+    id			    25
     position		    [23.5747 49.5747 7]
     chart		    15
     linkNode		    [15 0 0]
@@ -5232,7 +5390,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    23
+    id			    26
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -5240,7 +5398,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      22
+      id		      25
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -5256,13 +5414,13 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    24
+    id			    27
     name		    "Controlador/Control Ejes teórico/MATLAB Function2"
     machine		    1
     chart		    15
   }
   target {
-    id			    25
+    id			    28
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
