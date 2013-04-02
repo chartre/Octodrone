@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.638"
+    ComputedModelVersion    "1.666"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -53,10 +53,10 @@ Model {
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "839"
 	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.0]
+	  ZoomFactor		  [1.25]
 	  Offset		  [0.0, 0.0]
 	}
 	Object {
@@ -65,8 +65,8 @@ Model {
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "865"
 	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  ZoomFactor		  [0.8]
+	  Offset		  [-195.16666666666492, 29.700893887297411]
 	}
 	PropName		"EditorsInfo"
       }
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 26 19:48:14 2013"
-  RTWModifiedTimeStamp	  286202723
-  ModelVersionFormat	  "1.%<AutoIncrement:638>"
+  LastModifiedDate	  "Wed Mar 27 13:05:54 2013"
+  RTWModifiedTimeStamp	  286285494
+  ModelVersionFormat	  "1.%<AutoIncrement:666>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "50"
+	  StopTime		  "8"
 	  AbsTol		  "auto"
 	  FixedStep		  "0.06"
 	  InitialStep		  "auto"
@@ -1118,7 +1118,7 @@ Model {
   System {
     Name		    "simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1131,7 +1131,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1027"
+    SIDHighWatermark	    "1034"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1339,7 +1339,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Sel"
@@ -1403,11 +1403,27 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "1029"
+	  Position		  [925, 655, 955, 685]
+	  ZOrder		  103
+	  Value			  "0.5"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  SID			  "1034"
+	  Position		  [835, 580, 865, 610]
+	  ZOrder		  106
+	  Value			  "-0.6"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "Control Ejes teórico"
 	  SID			  "872"
-	  Ports			  [7, 2]
-	  Position		  [360, 244, 445, 316]
+	  Ports			  [7, 3]
+	  Position		  [360, 254, 445, 326]
 	  ZOrder		  52
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -2127,6 +2143,15 @@ Model {
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "LastRef"
+	      SID		      "1031"
+	      Position		      [705, 388, 735, 402]
+	      ZOrder		      73
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
 	    Line {
 	      SrcBlock		      "SPPos"
 	      SrcPort		      1
@@ -2184,9 +2209,16 @@ Model {
 	    Line {
 	      SrcBlock		      "Delay"
 	      SrcPort		      1
-	      Points		      [-103, 0; 0, -145]
-	      DstBlock		      "MATLAB Function2"
-	      DstPort		      3
+	      Points		      [-103, 0; 0, -145; 98, 0]
+	      Branch {
+		Points			[0, 200]
+		DstBlock		"LastRef"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"MATLAB Function2"
+		DstPort			3
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function2"
@@ -2755,6 +2787,146 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  SubSystem
+	  Name			  "Relacion\nv -> Ref1"
+	  SID			  "1028"
+	  Ports			  [2, 1]
+	  Position		  [695, 527, 765, 578]
+	  ZOrder		  102
+	  LibraryVersion	  "1.32"
+	  ErrorFcn		  "Stateflow.Translate.translate"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  SFBlockType		  "MATLAB Function"
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    23
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Stateflow"
+	    Description		    "Embedded MATLAB block"
+	    SelfModifiable	    "on"
+	    Display		    "bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/"
+	    "eml_membrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+	    IconOpaque		    "off"
+	    IconUnits		    "normalized"
+	  }
+	  System {
+	    Name		    "Relacion\nv -> Ref1"
+	    Location		    [223, 338, 826, 833]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "26"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vx"
+	      SID		      "1028::26"
+	      Position		      [20, 101, 40, 119]
+	      ZOrder		      12
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vxDes"
+	      SID		      "1028::1"
+	      Position		      [20, 136, 40, 154]
+	      ZOrder		      -1
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      "1028::20"
+	      Ports		      [1, 1]
+	      Position		      [270, 160, 320, 200]
+	      ZOrder		      6
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      " SFunction "
+	      SID		      "1028::19"
+	      Tag		      "Stateflow S-Function simuladorControlCuatrirrotor 4"
+	      Ports		      [2, 2]
+	      Position		      [180, 100, 230, 160]
+	      ZOrder		      5
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[2 2]"
+	      EnableBusSupport	      on
+	      Port {
+		PortNumber		2
+		Name			"Ref"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      "1028::24"
+	      Position		      [460, 171, 480, 189]
+	      ZOrder		      10
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Ref"
+	      SID		      "1028::5"
+	      Position		      [460, 101, 480, 119]
+	      ZOrder		      -5
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "vx"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "vxDes"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "Ref"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "Ref"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
 	  BlockType		  RelationalOperator
 	  Name			  "Relational Operator"
 	  SID			  "902"
@@ -2846,6 +3018,161 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
+	  BlockType		  SubSystem
+	  Name			  "vx deseada"
+	  SID			  "1030"
+	  Ports			  [3, 1]
+	  Position		  [540, 536, 610, 594]
+	  ZOrder		  104
+	  LibraryVersion	  "1.32"
+	  ErrorFcn		  "Stateflow.Translate.translate"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  SFBlockType		  "MATLAB Function"
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    24
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Stateflow"
+	    Description		    "Embedded MATLAB block"
+	    SelfModifiable	    "on"
+	    Display		    "bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/"
+	    "eml_membrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'CalcRef']);"
+	    IconOpaque		    "off"
+	    IconUnits		    "normalized"
+	  }
+	  System {
+	    Name		    "vx deseada"
+	    Location		    [223, 338, 826, 833]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "32"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "posAnt"
+	      SID		      "1030::26"
+	      Position		      [20, 101, 40, 119]
+	      ZOrder		      11
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "SPPos"
+	      SID		      "1030::27"
+	      Position		      [20, 136, 40, 154]
+	      ZOrder		      12
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "LastRef"
+	      SID		      "1030::28"
+	      Position		      [20, 171, 40, 189]
+	      ZOrder		      13
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      "1030::20"
+	      Ports		      [1, 1]
+	      Position		      [270, 290, 320, 330]
+	      ZOrder		      6
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      " SFunction "
+	      SID		      "1030::19"
+	      Tag		      "Stateflow S-Function simuladorControlCuatrirrotor 5"
+	      Ports		      [3, 2]
+	      Position		      [180, 109, 230, 291]
+	      ZOrder		      5
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[3 2]"
+	      EnableBusSupport	      on
+	      Port {
+		PortNumber		2
+		Name			"vxDes"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      "1030::24"
+	      Position		      [460, 301, 480, 319]
+	      ZOrder		      10
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "vxDes"
+	      SID		      "1030::5"
+	      Position		      [460, 101, 480, 119]
+	      ZOrder		      -5
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "posAnt"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "SPPos"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "LastRef"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "vxDes"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "vxDes"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "RefPitch"
 	  SID			  "910"
@@ -2866,7 +3193,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Consigna"
 	  SID			  "912"
-	  Position		  [1035, 403, 1065, 417]
+	  Position		  [1195, 403, 1225, 417]
 	  ZOrder		  65
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -2875,7 +3202,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "CurrRef"
 	  SID			  "913"
-	  Position		  [1035, 453, 1065, 467]
+	  Position		  [1195, 453, 1225, 467]
 	  ZOrder		  83
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -2885,7 +3212,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [20, 0]
 	  Branch {
-	    Points		    [0, 196; -318, 0; 0, -126]
+	    Points		    [0, 196; -318, 0; 0, -116]
 	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    3
 	  }
@@ -2898,14 +3225,22 @@ Model {
 	Line {
 	  SrcBlock		  "vx"
 	  SrcPort		  1
-	  Points		  [213, 0; 0, -85]
-	  DstBlock		  "Control Ejes teórico"
-	  DstPort		  6
+	  Points		  [210, 0]
+	  Branch {
+	    Points		    [0, 109; 415, 0]
+	    DstBlock		    "Relacion\nv -> Ref1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [3, 0; 0, -75]
+	    DstBlock		    "Control Ejes teórico"
+	    DstPort		    6
+	  }
 	}
 	Line {
 	  SrcBlock		  "vy"
 	  SrcPort		  1
-	  Points		  [243, 0; 0, -125]
+	  Points		  [243, 0; 0, -115]
 	  DstBlock		  "Control Ejes teórico"
 	  DstPort		  7
 	}
@@ -2946,8 +3281,16 @@ Model {
 	  SrcPort		  1
 	  Points		  [18, 0]
 	  Branch {
-	    DstBlock		    "Control Ejes teórico"
-	    DstPort		    2
+	    Points		    [58, 0; 0, 10]
+	    Branch {
+	      DstBlock		      "Control Ejes teórico"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 295]
+	      DstBlock		      "vx deseada"
+	      DstPort		      2
+	    }
 	  }
 	  Branch {
 	    Points		    [0, -105]
@@ -2965,7 +3308,7 @@ Model {
 	Line {
 	  SrcBlock		  "Control Ejes teórico"
 	  SrcPort		  1
-	  Points		  [42, 0]
+	  Points		  [0, 0; 42, 0]
 	  Branch {
 	    DstBlock		    "Demux"
 	    DstPort		    1
@@ -2986,7 +3329,7 @@ Model {
 	    DstPort		    2
 	  }
 	  Branch {
-	    Points		    [0, 29; -296, 0; 0, -104]
+	    Points		    [0, 29; -296, 0; 0, -94]
 	    DstBlock		    "Control Ejes teórico"
 	    DstPort		    4
 	  }
@@ -3036,9 +3379,16 @@ Model {
 	  SrcPort		  1
 	  Points		  [9, 0; 0, 68; -87, 0]
 	  Branch {
-	    Points		    [-46, 0; 0, 32]
-	    DstBlock		    "Control Ejes teórico"
-	    DstPort		    1
+	    Points		    [-46, 0; 0, 42]
+	    Branch {
+	      Points		      [-53, 0; 0, 285]
+	      DstBlock		      "vx deseada"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Control Ejes teórico"
+	      DstPort		      1
+	    }
 	  }
 	  Branch {
 	    Points		    [0, -38]
@@ -3068,14 +3418,14 @@ Model {
 	Line {
 	  SrcBlock		  "Control Ejes teórico"
 	  SrcPort		  2
-	  Points		  [30, 0; 0, 160]
+	  Points		  [30, 0; 0, 170]
 	  DstBlock		  "CurrRef"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Sel"
 	  SrcPort		  1
-	  Points		  [154, 0; 0, -50]
+	  Points		  [154, 0; 0, -40]
 	  DstBlock		  "Control Ejes teórico"
 	  DstPort		  5
 	}
@@ -3092,7 +3442,9 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  Points		  [830, 240; 218, 0; 0, -85]
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [165, 0; 0, -440; 13, 0]
 	  Branch {
 	    Points		    [0, -15]
 	    DstBlock		    "Switch1"
@@ -3122,16 +3474,31 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  Points		  [830, 270; 218, 0; 0, 25]
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [88, 0; 0, -360]
 	  Branch {
+	    Points		    [0, -15]
 	    DstBlock		    "Switch2"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 15]
 	    DstBlock		    "Switch2"
 	    DstPort		    2
 	  }
+	}
+	Line {
+	  SrcBlock		  "Control Ejes teórico"
+	  SrcPort		  3
+	  Points		  [13, 0; 0, 270]
+	  DstBlock		  "vx deseada"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "vx deseada"
+	  SrcPort		  1
+	  DstBlock		  "Relacion\nv -> Ref1"
+	  DstPort		  2
 	}
       }
     }
@@ -3720,14 +4087,14 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		23
+	$ObjectID		25
 	$ClassName		"Simulink.Mask"
 	IconOpaque		"off"
       }
       System {
 	Name			"Modelo"
 	Location		[-8, -8, 1374, 736]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4643,6 +5010,16 @@ Model {
       Lockdown		      off
     }
     Block {
+      BlockType		      Display
+      Name		      "Referencia actual1"
+      SID		      "1032"
+      Ports		      [1]
+      Position		      [1005, 139, 1070, 161]
+      ZOrder		      28
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
       BlockType		      Scope
       Name		      "Scope"
       SID		      "62"
@@ -4725,6 +5102,7 @@ Model {
       ZOrder		      25
       BlockRotation	      270
       BlockMirror	      on
+      CurrentSetting	      "0"
     }
     Block {
       BlockType		      ManualSwitch
@@ -4988,16 +5366,24 @@ Model {
     Line {
       SrcBlock		      "Modelo"
       SrcPort		      2
-      Points		      [72, 0]
+      Points		      [43, 0]
       Branch {
-	Points			[0, 260]
-	DstBlock		"Mux5"
-	DstPort			2
+	Points			[0, -60]
+	DstBlock		"Referencia actual1"
+	DstPort			1
       }
       Branch {
-	Points			[0, -75; -359, 0; 0, 90]
-	DstBlock		"Controlador"
-	DstPort			2
+	Points			[29, 0]
+	Branch {
+	  Points		  [0, 260]
+	  DstBlock		  "Mux5"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, -75; -359, 0; 0, 90]
+	  DstBlock		  "Controlador"
+	  DstPort		  2
+	}
       }
     }
     Line {
@@ -5130,7 +5516,7 @@ Stateflow {
     name		    "simuladorControlCuatrirrotor"
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
-    firstTarget		    36
+    firstTarget		    53
     debug {
     }
     sfVersion		    76014001.001
@@ -5145,6 +5531,7 @@ Stateflow {
     firstTransition	    7
     firstJunction	    6
     viewObj		    2
+    visible		    1
     machine		    1
     subviewS {
     }
@@ -5586,7 +5973,6 @@ Stateflow {
       " if minT<Ts\n%             CurrRef = SPPos;\n%         else\n%             CurrRef = LastRef + (Ts/minT)*DistXY;"
       "\n%         end\n%     end\n% end\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
-      breakpoints	      "100 M[74]"
     }
   }
   data {
@@ -5821,8 +6207,326 @@ Stateflow {
     machine		    1
     chart		    22
   }
-  target {
+  chart {
     id			    36
+    name		    "Controlador/Relacion\nv -> Ref1"
+    windowPosition	    [357.12 483.496 167 391]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 1024 1.041666666666667]
+    treeNode		    [0 37 0 0]
+    firstTransition	    42
+    firstJunction	    41
+    viewObj		    36
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    8
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    38
+    chartFileNumber	    4
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    37
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    36
+    treeNode		    [36 0 0 0]
+    superState		    SUBCHART
+    subviewer		    36
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function Ref = fcn(vx, vxDes)\n%% Para entender de donde salen estos valores, acudir a la foto de"
+      " la\n% pizarra en el catch\n\nif(vxDes > 2.5)\n    if(vxDes > 3.12) % tramo 3\n        b = 2.418;\n        m = ("
+      "-1.8);\n    else % tramo 2\n        b = 1.1461;\n        m = (-5.0612);\n    end\nelse % tramo 1\n    b = (-0.53"
+      "29);\n    m = (-11.3379);\nend\n\n% if (vx>vxDes)\n    Ref = ((vxDes-b)/(m));\n% else\n%     Ref = 0;\n% end"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    38
+    ssIdNumber		    8
+    name		    "vx"
+    linkNode		    [36 0 39]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    39
+    ssIdNumber		    4
+    name		    "vxDes"
+    linkNode		    [36 38 40]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    40
+    ssIdNumber		    5
+    name		    "Ref"
+    linkNode		    [36 39 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    41
+    position		    [23.5747 49.5747 7]
+    chart		    36
+    linkNode		    [36 0 0]
+    subviewer		    36
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    42
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      41
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    36
+    linkNode		    [36 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    36
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    43
+    name		    "Controlador/Relacion\nv -> Ref1"
+    machine		    1
+    chart		    36
+  }
+  chart {
+    id			    44
+    name		    "Controlador/vx deseada"
+    windowPosition	    [357.12 483.496 167 391]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 1024 1.041666666666667]
+    treeNode		    [0 45 0 0]
+    firstTransition	    51
+    firstJunction	    50
+    viewObj		    44
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    14
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    46
+    chartFileNumber	    5
+    disableImplicitCasting  1
+    eml {
+      name		      "CalcRef"
+    }
+  }
+  state {
+    id			    45
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    44
+    treeNode		    [44 0 0 0]
+    superState		    SUBCHART
+    subviewer		    44
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function vxDes = CalcRef(posAnt,SPPos,LastRef)\n% Este bloque es un control de ambas velocidades "
+      "a título teórico para\n% definir las consignas a seguir según una velocidad máxima teórica\n% constante obtenida"
+      " experimentalmente en los modelos. No ayuda gran cosa a\n% corregir las imprecisiones en la trayectoria y el des"
+      "incronismo de los\n% ejes se refleja igualmente con una diferencia notable desde el arranque.\n\nradio = 0.1;\nT"
+      "s = 0.06;\n\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = abs(-5.87);\nmaxVy = 1.9;\nminVy = maxVy"
+      ";\nmaxAy = 2.62;\nminAx = abs(-2.72);\n\nDistXY = SPPos-LastRef;\nDistTot = SPPos - posAnt;\n\nRelD = DistXY(1)/"
+      "DistXY(2);\nRelV = maxVx/maxVy;\nRelA = maxAx/maxAy;\n\nRelD = DistXY(1)/DistXY(2);\n\nvxDes= maxVy*RelD;"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    46
+    ssIdNumber		    8
+    name		    "posAnt"
+    linkNode		    [44 0 47]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    47
+    ssIdNumber		    9
+    name		    "SPPos"
+    linkNode		    [44 46 48]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    48
+    ssIdNumber		    10
+    name		    "LastRef"
+    linkNode		    [44 47 49]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    49
+    ssIdNumber		    5
+    name		    "vxDes"
+    linkNode		    [44 48 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    50
+    position		    [23.5747 49.5747 7]
+    chart		    44
+    linkNode		    [44 0 0]
+    subviewer		    44
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    51
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      50
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    44
+    linkNode		    [44 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    44
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    52
+    name		    "Controlador/vx deseada"
+    machine		    1
+    chart		    44
+  }
+  target {
+    id			    53
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
