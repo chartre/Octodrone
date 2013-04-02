@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.643"
+    ComputedModelVersion    "1.653"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -52,21 +52,21 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "672"
 	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-100.90000000000009, -6.6374949634074483]
+	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "872"
+	  LoadSaveID		  "865"
 	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-208.25, -3.5300036430358546]
+	  Offset		  [0.0, 0.0]
 	}
 	PropName		"EditorsInfo"
       }
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 02 11:33:09 2013"
+  LastModifiedDate	  "Tue Apr 02 12:53:14 2013"
   RTWModifiedTimeStamp	  286802693
-  ModelVersionFormat	  "1.%<AutoIncrement:643>"
+  ModelVersionFormat	  "1.%<AutoIncrement:653>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1107,7 +1107,7 @@ Model {
   System {
     Name		    "simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1120,7 +1120,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1003"
+    SIDHighWatermark	    "1010"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1130,7 +1130,6 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
-      CurrentSetting	      "0"
     }
     Block {
       BlockType		      Display
@@ -1327,7 +1326,7 @@ Model {
       System {
 	Name			"Controlador"
 	Location		[-8, -8, 1374, 736]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1418,7 +1417,7 @@ Model {
 	  System {
 	    Name		    "Control Ejes teórico"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3006,7 +3005,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Disc-Cont"
-	Location		[-11, 1, 1289, 745]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3195,7 +3194,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Generador Referencia"
-	Location		[-8, -8, 1370, 736]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3607,7 +3606,7 @@ Model {
 	  System {
 	    Name		    " Modelo NO lineal"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3641,11 +3640,20 @@ Model {
 	      SampleTime	      "0.06"
 	    }
 	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "1009"
+	      Position		      [190, 165, 220, 195]
+	      ZOrder		      30
+	      Value		      "0"
+	      SampleTime	      "Ts"
+	    }
+	    Block {
 	      BlockType		      DiscreteIntegrator
 	      Name		      "Discrete-Time Integrator"
 	      SID		      "684"
 	      Ports		      [1, 1]
-	      Position		      [385, 277, 420, 313]
+	      Position		      [575, 277, 610, 313]
 	      ZOrder		      22
 	      SampleTime	      "Ts"
 	      ICPrevOutput	      "DiscIntNeverNeededParam"
@@ -3656,7 +3664,7 @@ Model {
 	      Name		      "Discrete-Time Integrator1"
 	      SID		      "685"
 	      Ports		      [1, 1]
-	      Position		      [385, 102, 420, 138]
+	      Position		      [575, 102, 610, 138]
 	      ZOrder		      23
 	      SampleTime	      "Ts"
 	      ICPrevOutput	      "DiscIntNeverNeededParam"
@@ -3691,10 +3699,55 @@ Model {
 	      X0i		      "0"
 	    }
 	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch"
+	      SID		      "1010"
+	      Position		      [275, 122, 305, 158]
+	      ZOrder		      31
+	      CurrentSetting	      "0"
+	    }
+	    Block {
+	      BlockType		      RandomNumber
+	      Name		      "Random\nNumber"
+	      SID		      "1004"
+	      Position		      [190, 105, 220, 135]
+	      ZOrder		      28
+	      Variance		      "0.3"
+	      SampleTime	      "Ts"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "1005"
+	      Ports		      [2, 1]
+	      Position		      [365, 35, 385, 55]
+	      ZOrder		      25
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "1006"
+	      Ports		      [2, 1]
+	      Position		      [365, 225, 385, 245]
+	      ZOrder		      26
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      Outport
 	      Name		      "Vx"
 	      SID		      "679"
-	      Position		      [385, 38, 415, 52]
+	      Position		      [575, 38, 605, 52]
 	      ZOrder		      -7
 	      IconDisplay	      "Port number"
 	    }
@@ -3702,7 +3755,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "X"
 	      SID		      "680"
-	      Position		      [505, 113, 535, 127]
+	      Position		      [695, 113, 725, 127]
 	      ZOrder		      -8
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -3711,7 +3764,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Y"
 	      SID		      "682"
-	      Position		      [505, 288, 535, 302]
+	      Position		      [695, 288, 725, 302]
 	      ZOrder		      -9
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -3720,38 +3773,16 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Vy"
 	      SID		      "681"
-	      Position		      [385, 228, 415, 242]
+	      Position		      [575, 228, 605, 242]
 	      ZOrder		      -10
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "Hammerstein-Wiener Model1"
-	      SrcPort		      1
-	      Points		      [44, 0]
-	      Branch {
-		Points			[0, 60]
-		DstBlock		"Discrete-Time Integrator"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Vy"
-		DstPort			1
-	      }
-	    }
-	    Line {
 	      SrcBlock		      "Hammerstein-Wiener Model"
 	      SrcPort		      1
-	      Points		      [37, 0]
-	      Branch {
-		Points			[0, 75]
-		DstBlock		"Discrete-Time Integrator1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Vx"
-		DstPort			1
-	      }
+	      DstBlock		      "Sum"
+	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "RefRoll"
@@ -3776,6 +3807,69 @@ Model {
 	      SrcPort		      1
 	      DstBlock		      "X"
 	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [90, 0]
+	      Branch {
+		Points			[0, 75]
+		DstBlock		"Discrete-Time Integrator1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Vx"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Hammerstein-Wiener Model1"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [94, 0]
+	      Branch {
+		Points			[0, 60]
+		DstBlock		"Discrete-Time Integrator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Vy"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Random\nNumber"
+	      SrcPort		      1
+	      Points		      [22, 0; 0, 10]
+	      DstBlock		      "Manual Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [16, 0; 0, -30]
+	      DstBlock		      "Manual Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Manual Switch"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      Branch {
+		Points			[25, 0]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 133; 25, 0]
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
 	    }
 	  }
 	}
@@ -3834,8 +3928,8 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "831"
-	      Position		      [180, 85, 210, 115]
-	      ZOrder		      2
+	      Position		      [155, 90, 185, 120]
+	      ZOrder		      3
 	      Value		      "0"
 	    }
 	    Block {
@@ -3858,8 +3952,8 @@ Model {
 	      BlockType		      RandomNumber
 	      Name		      "Random\nNumber"
 	      SID		      "819"
-	      Position		      [110, 90, 140, 120]
-	      ZOrder		      -5
+	      Position		      [100, 95, 130, 125]
+	      ZOrder		      4
 	      Variance		      "0.3"
 	      SampleTime	      "0.06"
 	    }
@@ -4045,15 +4139,15 @@ Model {
 	    Line {
 	      SrcBlock		      "Constant"
 	      SrcPort		      1
-	      Points		      [45, 0]
+	      Points		      [70, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			2
+	      }
 	      Branch {
 		Points			[10, 0]
 		DstBlock		"Sum1"
 		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Sum"
-		DstPort			2
 	      }
 	    }
 	  }
@@ -5316,7 +5410,6 @@ Stateflow {
       "axVy;\n%     \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else"
       "\n%         CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
-      breakpoints	      "100 M1x6[86 83 52 77 75 55]"
     }
   }
   data {
