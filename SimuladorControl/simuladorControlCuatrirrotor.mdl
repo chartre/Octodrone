@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.620"
+    ComputedModelVersion    "1.641"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -57,7 +57,7 @@ Model {
 	  LoadSaveID		  "0"
 	  Extents		  [1248.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  Offset		  [-45.900000000000091, -0.637494963407562]
 	}
 	Object {
 	  $ObjectID		  6
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Elisa"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 25 14:43:44 2013"
-  RTWModifiedTimeStamp	  286103335
-  ModelVersionFormat	  "1.%<AutoIncrement:620>"
+  LastModifiedDate	  "Tue Mar 26 19:53:48 2013"
+  RTWModifiedTimeStamp	  286199424
+  ModelVersionFormat	  "1.%<AutoIncrement:641>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -666,8 +666,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 182, 14, 1099, 699 ] 
+      CurrentDlgPage	      "Code Generation/Interface"
+      ConfigPrmDlgPosition     [ 268, 5, 1217, 766 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1120,7 +1120,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "982"
+    SIDHighWatermark	    "1001"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1131,6 +1131,16 @@ Model {
       BlockMirror	      on
       NamePlacement	      "alternate"
       CurrentSetting	      "0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Consigna"
+      SID		      "984"
+      Ports		      [1]
+      Position		      [1045, 218, 1130, 262]
+      ZOrder		      27
+      Decimation	      "1"
+      Lockdown		      off
     }
     Block {
       BlockType		      SubSystem
@@ -1481,6 +1491,16 @@ Model {
 	      ZOrder		      70
 	      Port		      "7"
 	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Consigna"
+	      SID		      "986"
+	      Ports		      [1]
+	      Position		      [325, 418, 410, 462]
+	      ZOrder		      71
+	      Decimation	      "1"
+	      Lockdown		      off
 	    }
 	    Block {
 	      BlockType		      Constant
@@ -2147,28 +2167,36 @@ Model {
 	    Line {
 	      SrcBlock		      "MATLAB Function2"
 	      SrcPort		      1
-	      Points		      [25, 0]
+	      Points		      [14, 0]
 	      Branch {
-		Points			[0, -75]
-		DstBlock		"MATLAB Function"
-		DstPort			5
+		Points			[0, 215]
+		DstBlock		"Consigna"
+		DstPort			1
 	      }
 	      Branch {
-		Points			[0, 30]
+		Points			[11, 0]
 		Branch {
-		  Points		  [0, 85]
-		  Branch {
-		    DstBlock		    "Delay"
-		    DstPort		    1
-		  }
-		  Branch {
-		    DstBlock		    "CurrRef"
-		    DstPort		    1
-		  }
+		  Points		  [0, -75]
+		  DstBlock		  "MATLAB Function"
+		  DstPort		  5
 		}
 		Branch {
-		  DstBlock		  "Multiport Switch"
-		  DstPort		  3
+		  Points		  [0, 30]
+		  Branch {
+		    Points		    [0, 85]
+		    Branch {
+		    DstBlock		    "Delay"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "CurrRef"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "Multiport Switch"
+		    DstPort		    3
+		  }
 		}
 	      }
 	    }
@@ -2895,6 +2923,16 @@ Model {
       }
     }
     Block {
+      BlockType		      Display
+      Name		      "CurrRef"
+      SID		      "985"
+      Ports		      [1]
+      Position		      [1045, 303, 1130, 347]
+      ZOrder		      28
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
       BlockType		      Demux
       Name		      "Demux"
       SID		      "49"
@@ -2932,7 +2970,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Disc-Cont"
-	Location		[-8, -8, 1374, 736]
+	Location		[-11, 1, 1289, 745]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3476,7 +3514,7 @@ Model {
       }
       System {
 	Name			"Modelo"
-	Location		[-8, -8, 1374, 736]
+	Location		[-11, 1, 1289, 745]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3532,7 +3570,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    " Modelo NO lineal"
-	    Location		    [-8, -8, 1370, 736]
+	    Location		    [-11, 1, 1289, 745]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3722,7 +3760,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    " Original"
-	    Location		    [-8, -8, 1370, 736]
+	    Location		    [-11, 1, 1289, 745]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4373,6 +4411,16 @@ Model {
     }
     Block {
       BlockType		      Display
+      Name		      "Pos"
+      SID		      "983"
+      Ports		      [1]
+      Position		      [1040, 147, 1130, 193]
+      ZOrder		      26
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
       Name		      "Pto de la ruta"
       SID		      "37"
       Ports		      [1]
@@ -4556,14 +4604,22 @@ Model {
     Line {
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [13, 0; 0, 135]
+      Points		      [13, 0]
       Branch {
-	DstBlock		"Mux2"
-	DstPort			1
+	Points			[0, 135]
+	Branch {
+	  DstBlock		  "Mux2"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [-795, 0; 0, -125]
+	  DstBlock		  "Generador Referencia"
+	  DstPort		  1
+	}
       }
       Branch {
-	Points			[-795, 0; 0, -125]
-	DstBlock		"Generador Referencia"
+	Points			[0, -70]
+	DstBlock		"Pos"
 	DstPort			1
       }
     }
@@ -4673,9 +4729,17 @@ Model {
     Line {
       SrcBlock		      "Controlador"
       SrcPort		      3
-      Points		      [29, 0; 0, 225]
-      DstBlock		      "Demux1"
-      DstPort		      1
+      Points		      [29, 0; 0, 165]
+      Branch {
+	Points			[403, 0; 0, -205]
+	DstBlock		"Consigna"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 60]
+	DstBlock		"Demux1"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Demux1"
@@ -4693,12 +4757,20 @@ Model {
     }
     Line {
       Name		      "CurrRef"
-      Labels		      [-1, 0]
       SrcBlock		      "Controlador"
       SrcPort		      4
-      Points		      [12, 0; 0, 262; 443, 0; 0, -47]
-      DstBlock		      "Scope1"
-      DstPort		      3
+      Points		      [12, 0; 0, 37]
+      Branch {
+	Labels			[2, 1]
+	Points			[0, 225; 443, 0; 0, -47]
+	DstBlock		"Scope1"
+	DstPort			3
+      }
+      Branch {
+	Points			[426, 0; 0, -22]
+	DstBlock		"CurrRef"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Modelo"
@@ -4876,6 +4948,8 @@ Stateflow {
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
     firstTarget		    28
+    debug {
+    }
     sfVersion		    76014001.001
   }
   chart {
@@ -5186,27 +5260,33 @@ Stateflow {
       "elocidad y aceleración a título teórico para\n% definir las consignas a seguir según unas velocidades y acelerac"
       "iones\n% máximas teóricas constantes obtenidas experimentalmente en los modelos.\n% No corrige las imprecisiones"
       " en la trayectoria y el desincronismo de los ejes\n% en el arranque. Problemas en la llegada de sobrepasamiento."
-      "\n\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = abs(-5.87);\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy "
-      "= 2.62;\nminAx = abs(-2.72);\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPPos-LastRef;\nDistTot = SPPos - posAnt;\n"
-      "\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1)\n    RelA = maxAx/maxAy;\n    RelD = DistXY(1)/DistXY(2);\n\n"
-      "    CurrRef = LastRef;\n    \n    % Apaño temporal para condición de llegada\n        minTx = sqrt(abs (DistXY(1"
-      "))/maxAx);\n        minTy = sqrt(abs (DistXY(2))/maxAy);\n        \n        minT = max (minTx,minTy);\n\n\n\n   "
-      " if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n        CurrRef = LastRef;\n        disp('llegada');\n    else    "
-      "\n        if (RelD>RelA)\n            Ay = maxAx/RelD;\n            Ax = maxAx;\n            \n        if minT<T"
-      "s % Añadido de llegada\n          CurrRef=SPPos;\n          disp('llegada');\n        else\n          CurrRef(1)"
-      " = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n          CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        en"
-      "d\n\n        else\n            Ax = maxAy/RelD;\n            Ay = maxAy;\n            \n        if minT<Ts % Aña"
-      "dido de llegada\n                CurrRef=SPPos;\n                disp('llegada');\n        else\n            Cur"
-      "rRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n "
-      "       end\n        end\n    end\n% else\n%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef ="
-      " LastRef;\n%     else\n%         minTx = sqrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/ma"
-      "xAy);\n%         \n%         minT = max (minTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef="
-      "SPPos;\n%         else\n%          CurrRef = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end"
-      "\n%     end\n% end\n\n%% Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n"
-      "%     CurrRef = LastRef;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n% "
-      "    \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%      "
-      "   CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end\n"
+      "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = a"
+      "bs(-5.87);\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2.62;\nminAx = abs(-2.72);\n\n\n% Cuadr = SPPos - posAnt;\n\nD"
+      "istXY =SPPos-LastRef;\nDistTot = SPPos - posAnt;\n\n% Condición de aplicación para criterio de distancias\n% if "
+      "(norm(DistTot)-norm(DistXY)<norm(DistTot)*1)\n    RelA = maxAx/maxAy;\n    RelD = DistXY(1)/DistXY(2);\n\n    Cu"
+      "rrRef = LastRef;\n    \n%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternati"
+      "va para evitar valores anómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/V"
+      "x);\n        minTy = abs (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n   "
+      " end\nelse\n    minTx = 0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de '"
+      "Consigna'\n\nif (norm(DistXY)<=(radio)) % (0.5*radio)\n    CurrRef = LastRef;\n    disp('llegada');\nelse\n    i"
+      "f (RelD>RelA)\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n            Ay = 0;\n        els"
+      "e\n            Ay = maxAx/RelD;\n        end\n        \n        Ax = maxAx;\n        \n        if minT<Ts % Añad"
+      "ido de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef(1) ="
+      " LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        en"
+      "d\n        \n    else\n        if RelD==inf || RelD==0 % Condición_excepción\n            Ax = 0;\n        else\n"
+      "            Ax = maxAy*RelD;\n        end\n        \n        Ay = maxAy;\n        \n        if minT<Ts % Añadido"
+      " de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef(1) = La"
+      "stRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n"
+      "    end\nend\n\n% else\n%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef = LastRef;\n%     e"
+      "lse\n%         minTx = sqrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/maxAy);\n%         \n"
+      "%         minT = max (minTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef=SPPos;\n%         e"
+      "lse\n%          CurrRef = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end\n%     end\n% end\n"
+      "\n%% Método de control de Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)"
+      "\n%     CurrRef = LastRef;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n"
+      "%     \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%    "
+      "     CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
+      breakpoints	      "100 M[55]"
     }
   }
   data {
