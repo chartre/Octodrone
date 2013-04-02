@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.641"
+    ComputedModelVersion    "1.643"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-11.0, 1.0, 1300.0, 744.0]
+      Location		      [-8.0, -8.0, 1382.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,21 +52,21 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1248.0, 565.0]
+	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-45.900000000000091, -0.637494963407562]
+	  Offset		  [-100.90000000000009, -6.6374949634074483]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "872"
-	  Extents		  [1248.0, 565.0]
+	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-208.25, -93.530003643035855]
+	  Offset		  [-208.25, -3.5300036430358546]
 	}
 	PropName		"EditorsInfo"
       }
@@ -76,11 +76,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Elisa"
+  LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 26 19:53:48 2013"
-  RTWModifiedTimeStamp	  286199424
-  ModelVersionFormat	  "1.%<AutoIncrement:641>"
+  LastModifiedDate	  "Tue Apr 02 11:33:09 2013"
+  RTWModifiedTimeStamp	  286802693
+  ModelVersionFormat	  "1.%<AutoIncrement:643>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1106,7 +1106,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-11, 1, 1289, 745]
+    Location		    [-8, -8, 1374, 736]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1120,7 +1120,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1001"
+    SIDHighWatermark	    "1003"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1326,7 +1326,7 @@ Model {
       }
       System {
 	Name			"Controlador"
-	Location		[-11, 1, 1289, 745]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1417,7 +1417,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-11, 1, 1289, 745]
+	    Location		    [-8, -8, 1374, 736]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1434,7 +1434,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "posAnt"
 	      SID		      "873"
-	      Position		      [0, 23, 30, 37]
+	      Position		      [0, 113, 30, 127]
 	      ZOrder		      11
 	      IconDisplay	      "Port number"
 	    }
@@ -1442,7 +1442,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "SPPos"
 	      SID		      "874"
-	      Position		      [0, 113, 30, 127]
+	      Position		      [0, 203, 30, 217]
 	      ZOrder		      -1
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -1451,7 +1451,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "pos"
 	      SID		      "875"
-	      Position		      [0, 53, 30, 67]
+	      Position		      [0, 143, 30, 157]
 	      ZOrder		      10
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -1460,7 +1460,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "pos1"
 	      SID		      "876"
-	      Position		      [0, 83, 30, 97]
+	      Position		      [0, 173, 30, 187]
 	      ZOrder		      54
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -1469,7 +1469,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "Sel"
 	      SID		      "974"
-	      Position		      [0, 403, 30, 417]
+	      Position		      [0, 493, 30, 507]
 	      ZOrder		      67
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -1478,7 +1478,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "Vx"
 	      SID		      "981"
-	      Position		      [95, 258, 125, 272]
+	      Position		      [95, 348, 125, 362]
 	      ZOrder		      69
 	      Port		      "6"
 	      IconDisplay	      "Port number"
@@ -1487,7 +1487,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "Vy"
 	      SID		      "982"
-	      Position		      [130, 278, 160, 292]
+	      Position		      [130, 368, 160, 382]
 	      ZOrder		      70
 	      Port		      "7"
 	      IconDisplay	      "Port number"
@@ -1497,8 +1497,28 @@ Model {
 	      Name		      "Consigna"
 	      SID		      "986"
 	      Ports		      [1]
-	      Position		      [325, 418, 410, 462]
+	      Position		      [325, 508, 410, 552]
 	      ZOrder		      71
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Consigna1"
+	      SID		      "1002"
+	      Ports		      [1]
+	      Position		      [250, 18, 315, 42]
+	      ZOrder		      72
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Consigna2"
+	      SID		      "1003"
+	      Ports		      [1]
+	      Position		      [250, 63, 315, 87]
+	      ZOrder		      73
 	      Decimation	      "1"
 	      Lockdown		      off
 	    }
@@ -1506,7 +1526,7 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "877"
-	      Position		      [105, 217, 120, 233]
+	      Position		      [105, 307, 120, 323]
 	      ZOrder		      3
 	      Value		      "Ts"
 	    }
@@ -1514,7 +1534,7 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant1"
 	      SID		      "878"
-	      Position		      [145, 237, 170, 253]
+	      Position		      [145, 327, 170, 343]
 	      ZOrder		      4
 	      Value		      "radio"
 	    }
@@ -1523,7 +1543,7 @@ Model {
 	      Name		      "Delay"
 	      SID		      "879"
 	      Ports		      [1, 1]
-	      Position		      [185, 323, 220, 357]
+	      Position		      [185, 413, 220, 447]
 	      ZOrder		      30
 	      BlockMirror	      on
 	      InputPortMap	      "u0"
@@ -1535,7 +1555,7 @@ Model {
 	      BlockType		      Fcn
 	      Name		      "Fcn"
 	      SID		      "880"
-	      Position		      [500, 125, 560, 155]
+	      Position		      [500, 215, 560, 245]
 	      ZOrder		      59
 	      Expr		      "sqrt(u(1)^2+u(2)^2)"
 	    }
@@ -1543,7 +1563,7 @@ Model {
 	      BlockType		      Fcn
 	      Name		      "Fcn1"
 	      SID		      "881"
-	      Position		      [810, 110, 870, 140]
+	      Position		      [810, 200, 870, 230]
 	      ZOrder		      62
 	      Expr		      "sqrt(u(1)^2+u(2)^2)"
 	    }
@@ -1552,7 +1572,7 @@ Model {
 	      Name		      "MATLAB Function"
 	      SID		      "882"
 	      Ports		      [5, 3]
-	      Position		      [330, 17, 400, 163]
+	      Position		      [330, 107, 400, 253]
 	      ZOrder		      53
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
@@ -1783,7 +1803,7 @@ Model {
 	      Name		      "MATLAB Function2"
 	      SID		      "883"
 	      Ports		      [7, 1]
-	      Position		      [200, 149, 270, 301]
+	      Position		      [200, 239, 270, 391]
 	      ZOrder		      19
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
@@ -1999,7 +2019,7 @@ Model {
 	      Name		      "Multiport Switch"
 	      SID		      "975"
 	      Ports		      [4, 1]
-	      Position		      [500, 192, 540, 293]
+	      Position		      [500, 282, 540, 383]
 	      ZOrder		      68
 	      InputSameDT	      off
 	      SaturateOnIntegerOverflow	off
@@ -2009,7 +2029,7 @@ Model {
 	      Name		      "Sum"
 	      SID		      "885"
 	      Ports		      [2, 1]
-	      Position		      [750, 95, 770, 115]
+	      Position		      [750, 185, 770, 205]
 	      ZOrder		      60
 	      ShowName		      off
 	      IconShape		      "round"
@@ -2023,7 +2043,7 @@ Model {
 	      Name		      "To Workspace"
 	      SID		      "886"
 	      Ports		      [1]
-	      Position		      [580, 75, 640, 105]
+	      Position		      [580, 165, 640, 195]
 	      ZOrder		      55
 	      VariableName	      "vE"
 	      MaxDataPoints	      "inf"
@@ -2034,7 +2054,7 @@ Model {
 	      Name		      "To Workspace1"
 	      SID		      "887"
 	      Ports		      [1]
-	      Position		      [810, 0, 870, 30]
+	      Position		      [810, 90, 870, 120]
 	      ZOrder		      56
 	      VariableName	      "pos"
 	      MaxDataPoints	      "inf"
@@ -2045,7 +2065,7 @@ Model {
 	      Name		      "To Workspace2"
 	      SID		      "888"
 	      Ports		      [1]
-	      Position		      [810, 170, 870, 200]
+	      Position		      [810, 260, 870, 290]
 	      ZOrder		      57
 	      VariableName	      "consigna"
 	      MaxDataPoints	      "inf"
@@ -2056,7 +2076,7 @@ Model {
 	      Name		      "To Workspace3"
 	      SID		      "889"
 	      Ports		      [1]
-	      Position		      [580, 125, 640, 155]
+	      Position		      [580, 215, 640, 245]
 	      ZOrder		      58
 	      VariableName	      "modulo_vE"
 	      MaxDataPoints	      "inf"
@@ -2068,7 +2088,7 @@ Model {
 	      Name		      "To Workspace4"
 	      SID		      "890"
 	      Ports		      [1]
-	      Position		      [810, 60, 870, 90]
+	      Position		      [810, 150, 870, 180]
 	      ZOrder		      61
 	      VariableName	      "vCons"
 	      MaxDataPoints	      "inf"
@@ -2079,7 +2099,7 @@ Model {
 	      Name		      "To Workspace5"
 	      SID		      "891"
 	      Ports		      [1]
-	      Position		      [910, 110, 970, 140]
+	      Position		      [910, 200, 970, 230]
 	      ZOrder		      63
 	      VariableName	      "modulo_vCons"
 	      MaxDataPoints	      "inf"
@@ -2090,7 +2110,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "consigna"
 	      SID		      "892"
-	      Position		      [705, 238, 735, 252]
+	      Position		      [705, 328, 735, 342]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
 	    }
@@ -2098,7 +2118,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "CurrRef"
 	      SID		      "893"
-	      Position		      [705, 333, 735, 347]
+	      Position		      [705, 423, 735, 437]
 	      ZOrder		      37
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -2154,8 +2174,16 @@ Model {
 	    Line {
 	      SrcBlock		      "pos"
 	      SrcPort		      1
-	      DstBlock		      "MATLAB Function"
-	      DstPort		      2
+	      Points		      [154, 0]
+	      Branch {
+		Points			[0, -120]
+		DstBlock		"Consigna1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"MATLAB Function"
+		DstPort			2
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "Delay"
@@ -2230,8 +2258,16 @@ Model {
 	    Line {
 	      SrcBlock		      "pos1"
 	      SrcPort		      1
-	      DstBlock		      "MATLAB Function"
-	      DstPort		      3
+	      Points		      [194, 0]
+	      Branch {
+		Points			[0, -105]
+		DstBlock		"Consigna2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"MATLAB Function"
+		DstPort			3
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function"
@@ -3514,7 +3550,7 @@ Model {
       }
       System {
 	Name			"Modelo"
-	Location		[-11, 1, 1289, 745]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3570,7 +3606,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    " Modelo NO lineal"
-	    Location		    [-11, 1, 1289, 745]
+	    Location		    [-8, -8, 1374, 736]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3760,7 +3796,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    " Original"
-	    Location		    [-11, 1, 1289, 745]
+	    Location		    [-8, -8, 1374, 736]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4962,10 +4998,7 @@ Stateflow {
     firstTransition	    13
     firstJunction	    12
     viewObj		    2
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    24
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5228,10 +5261,7 @@ Stateflow {
     firstTransition	    26
     firstJunction	    25
     viewObj		    15
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5263,30 +5293,30 @@ Stateflow {
       "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = a"
       "bs(-5.87);\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2.62;\nminAx = abs(-2.72);\n\n\n% Cuadr = SPPos - posAnt;\n\nD"
       "istXY =SPPos-LastRef;\nDistTot = SPPos - posAnt;\n\n% Condición de aplicación para criterio de distancias\n% if "
-      "(norm(DistTot)-norm(DistXY)<norm(DistTot)*1)\n    RelA = maxAx/maxAy;\n    RelD = DistXY(1)/DistXY(2);\n\n    Cu"
-      "rrRef = LastRef;\n    \n%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternati"
-      "va para evitar valores anómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/V"
-      "x);\n        minTy = abs (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n   "
-      " end\nelse\n    minTx = 0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de '"
-      "Consigna'\n\nif (norm(DistXY)<=(radio)) % (0.5*radio)\n    CurrRef = LastRef;\n    disp('llegada');\nelse\n    i"
-      "f (RelD>RelA)\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n            Ay = 0;\n        els"
-      "e\n            Ay = maxAx/RelD;\n        end\n        \n        Ax = maxAx;\n        \n        if minT<Ts % Añad"
-      "ido de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef(1) ="
-      " LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        en"
-      "d\n        \n    else\n        if RelD==inf || RelD==0 % Condición_excepción\n            Ax = 0;\n        else\n"
-      "            Ax = maxAy*RelD;\n        end\n        \n        Ay = maxAy;\n        \n        if minT<Ts % Añadido"
-      " de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef(1) = La"
-      "stRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n"
-      "    end\nend\n\n% else\n%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef = LastRef;\n%     e"
-      "lse\n%         minTx = sqrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/maxAy);\n%         \n"
-      "%         minT = max (minTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef=SPPos;\n%         e"
-      "lse\n%          CurrRef = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end\n%     end\n% end\n"
-      "\n%% Método de control de Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)"
-      "\n%     CurrRef = LastRef;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n"
-      "%     \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%    "
-      "     CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end\n"
+      "(norm(DistTot)-norm(DistXY)<norm(DistTot)*1)\n    RelA = maxAx/maxAy;\n    RelD = abs(DistXY(1)/DistXY(2));\n\n "
+      "   CurrRef = LastRef;\n    \n%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alte"
+      "rnativa para evitar valores anómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY"
+      "(1)/Vx);\n        minTy = abs (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;"
+      "\n    end\nelse\n    minTx = 0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control"
+      " de 'Consigna'\n\nif (norm(DistXY)<=(radio)) % (0.5*radio)\n    CurrRef = LastRef;\n    disp('llegada');\nelse\n"
+      "    if (RelD>RelA)\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n            Ay = 0;\n      "
+      "  else\n            Ay = maxAx/RelD;\n        end\n        \n        Ax = maxAx;\n        \n        if minT<Ts %"
+      " Añadido de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef"
+      "(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n     "
+      "   end\n        \n    else\n        if RelD==inf || RelD==0 % Condición_excepción\n            Ax = 0;\n        "
+      "else\n            Ax = maxAy*RelD;\n        end\n        \n        Ay = maxAy;\n        \n        if minT<Ts % A"
+      "ñadido de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef(1"
+      ") = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n       "
+      " end\n    end\nend\n\n% else\n%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef = LastRef;\n%"
+      "     else\n%         minTx = sqrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/maxAy);\n%    "
+      "     \n%         minT = max (minTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef=SPPos;\n%   "
+      "      else\n%          CurrRef = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end\n%     end\n"
+      "% end\n\n%% Método de control de Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5"
+      "*radio)\n%     CurrRef = LastRef;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/m"
+      "axVy;\n%     \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else"
+      "\n%         CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
-      breakpoints	      "100 M[55]"
+      breakpoints	      "100 M1x6[86 83 52 77 75 55]"
     }
   }
   data {
