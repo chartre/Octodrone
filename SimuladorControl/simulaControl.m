@@ -26,7 +26,7 @@ radio=0.1;
 sim('simuladorControlCuatrirrotor')
 
 %% Representación gráfica y cálculo de indicadores
-indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons);
+indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,Consigna);
 
 %%
 %% Evaluación 

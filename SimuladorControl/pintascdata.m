@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons)
+function indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,Consigna)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control
@@ -172,17 +172,27 @@ title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 % ylabel('distancia (m)')
 % title(['Distancia a la trayectoria mínima. Dist. media: ' num2str(dmedia) '. Dist. max: ' num2str(dmax)])
 
+pdi % Ejecuta script para generar datos en gráficos
+
 %% Representación gráfica señales ensayo
 figure
-subplot(211)
+subplot(311)
 plot(scVar.time,scVar.signals(1,1).values)
 legend('x','vx','SPx', 'consigna x','RefPitch','ax')
 title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 grid
-subplot(212)
+subplot(312)
 plot(scVar.time,scVar.signals(1,2).values)
 legend('y','vy','SPy', 'consigna y','RefRoll','ay')
 title('Valores del movimiento')
+grid
+subplot(313) % Gráfica extra para verificar relación de distancia de consigna-posición
+plot(scVar.time,Consigna)
+hold on
+plot(scVar.time,scVar.signals(1,1).values(:,3)/15,'r')
+plot(scVar.time,scVar.signals(1,2).values(:,3)/15,'r')
+legend('consigna-pos','SPPos X','SPPos Y')
+title('Relación consigna-pos en tiempo de ejecución')
 grid
 
 %% Registro de modificaciones:
