@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.653"
+    ComputedModelVersion    "1.654"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -53,11 +53,11 @@ Model {
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "672"
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
 	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  Offset		  [-46.900000000000091, -19.661719607578465]
 	}
 	Object {
 	  $ObjectID		  6
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 02 12:53:14 2013"
+  LastModifiedDate	  "Tue Apr 02 13:47:53 2013"
   RTWModifiedTimeStamp	  286802693
-  ModelVersionFormat	  "1.%<AutoIncrement:653>"
+  ModelVersionFormat	  "1.%<AutoIncrement:654>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1107,7 +1107,7 @@ Model {
   System {
     Name		    "simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1130,6 +1130,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
+      CurrentSetting	      "0"
     }
     Block {
       BlockType		      Display
@@ -3606,7 +3607,7 @@ Model {
 	  System {
 	    Name		    " Modelo NO lineal"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
