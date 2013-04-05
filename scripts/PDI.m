@@ -38,7 +38,7 @@ for i=1:n % obtiene la distancia de la consigna en cada momento
     Consigna (i,1) = norm(Cx,Cy);
 end
 maxC = max(Consigna);
-medC = mean(Consigna);
+medC = mean(Consigna(2:end));
 
 str = sprintf('Consigna max = %0.2f', maxC);
 disp(str);

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.654"
+    ComputedModelVersion    "1.678"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1382.0, 744.0]
+      Location		      [-8.0, -8.0, 1378.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,18 +55,18 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-46.900000000000091, -19.661719607578465]
+	  Extents		  [1326.0, 565.0]
+	  ZoomFactor		  [0.93999999999999984]
+	  Offset		  [-1.1368683772161603e-13, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "865"
-	  Extents		  [1330.0, 565.0]
+	  LoadSaveID		  "872"
+	  Extents		  [1326.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  Offset		  [-15.25, 0.0]
 	}
 	PropName		"EditorsInfo"
       }
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 02 13:47:53 2013"
-  RTWModifiedTimeStamp	  286802693
-  ModelVersionFormat	  "1.%<AutoIncrement:654>"
+  LastModifiedDate	  "Fri Apr 05 19:29:49 2013"
+  RTWModifiedTimeStamp	  287087629
+  ModelVersionFormat	  "1.%<AutoIncrement:678>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1106,7 +1106,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1374, 736]
+    Location		    [-8, -8, 1370, 736]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1118,9 +1118,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    on
-    ZoomFactor		    "100"
+    ZoomFactor		    "93"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1010"
+    SIDHighWatermark	    "1011"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1326,8 +1326,8 @@ Model {
       }
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1374, 736]
-	Open			on
+	Location		[-8, -8, 1370, 736]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1417,8 +1417,8 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, -8, 1374, 736]
-	    Open		    off
+	    Location		    [-8, -8, 1370, 736]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1519,6 +1519,16 @@ Model {
 	      Ports		      [1]
 	      Position		      [250, 63, 315, 87]
 	      ZOrder		      73
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Consigna3"
+	      SID		      "1011"
+	      Ports		      [1]
+	      Position		      [750, 20, 815, 70]
+	      ZOrder		      74
 	      Decimation	      "1"
 	      Lockdown		      off
 	    }
@@ -2104,7 +2114,7 @@ Model {
 	      VariableName	      "modulo_vCons"
 	      MaxDataPoints	      "inf"
 	      SampleTime	      "-1"
-	      SaveFormat	      "Structure With Time"
+	      SaveFormat	      "Timeseries"
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -2293,9 +2303,16 @@ Model {
 		DstPort			1
 	      }
 	      Branch {
-		Points			[0, -25]
-		DstBlock		"To Workspace1"
-		DstPort			1
+		Points			[0, -25; 20, 0]
+		Branch {
+		  Points		  [0, -60]
+		  DstBlock		  "Consigna3"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "To Workspace1"
+		  DstPort		  1
+		}
 	      }
 	    }
 	    Line {
@@ -5356,7 +5373,10 @@ Stateflow {
     firstTransition	    26
     firstJunction	    25
     viewObj		    15
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5393,23 +5413,22 @@ Stateflow {
       "rnativa para evitar valores anómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY"
       "(1)/Vx);\n        minTy = abs (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;"
       "\n    end\nelse\n    minTx = 0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control"
-      " de 'Consigna'\n\nif (norm(DistXY)<=(radio)) % (0.5*radio)\n    CurrRef = LastRef;\n    disp('llegada');\nelse\n"
-      "    if (RelD>RelA)\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n            Ay = 0;\n      "
-      "  else\n            Ay = maxAx/RelD;\n        end\n        \n        Ax = maxAx;\n        \n        if minT<Ts %"
-      " Añadido de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef"
-      "(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n     "
-      "   end\n        \n    else\n        if RelD==inf || RelD==0 % Condición_excepción\n            Ax = 0;\n        "
-      "else\n            Ax = maxAy*RelD;\n        end\n        \n        Ay = maxAy;\n        \n        if minT<Ts % A"
-      "ñadido de llegada\n            CurrRef=SPPos;\n            disp('llegada');\n        else\n            CurrRef(1"
-      ") = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n       "
-      " end\n    end\nend\n\n% else\n%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef = LastRef;\n%"
-      "     else\n%         minTx = sqrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/maxAy);\n%    "
-      "     \n%         minT = max (minTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef=SPPos;\n%   "
-      "      else\n%          CurrRef = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end\n%     end\n"
-      "% end\n\n%% Método de control de Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5"
-      "*radio)\n%     CurrRef = LastRef;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/m"
-      "axVy;\n%     \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else"
-      "\n%         CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end\n"
+      " de 'Consigna'\n\nif (norm(DistXY)<=(radio)) % (0.5*radio)\n    CurrRef = LastRef;\nelse\n    if (RelD>RelA)\n  "
+      "      if RelD==inf || RelD==0 % Condición_excepción\n            Ay = 0;\n        else\n            Ay = maxAx/R"
+      "elD;\n        end\n        Ax = maxAx;\n        if minT<Ts % Añadido de llegada\n            CurrRef=SPPos;\n   "
+      "     else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + "
+      "Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    else\n        if RelD==inf || RelD==0 % Condición_excepción\n         "
+      "   Ax = 0;\n        else\n            Ax = maxAy*RelD;\n        end\n        Ay = maxAy;\n        if minT<Ts % A"
+      "ñadido de llegada\n            CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*"
+      "Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    end\nend\n\n% else\n"
+      "%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef = LastRef;\n%     else\n%         minTx = s"
+      "qrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/maxAy);\n%         \n%         minT = max (m"
+      "inTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef=SPPos;\n%         else\n%          CurrRef"
+      " = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end\n%     end\n% end\n\n%% Método de control"
+      " de Enrique\nfunction CurrRef = enr(SPPos,LastRef,Ts,radio)\nmaxVx = 3.26;\nmaxVy = 1.9;\n\nDistXY =SPPos-LastRe"
+      "f;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n    CurrRef = LastRef;\nelse\n    minTx = abs (DistXY(1))/max"
+      "Vx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT = max (minTx,minTy);\n    \n    if minT<Ts\n        Curr"
+      "Ref = SPPos;\n    else\n        CurrRef = LastRef + (Ts/minT)*DistXY;\n    end\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

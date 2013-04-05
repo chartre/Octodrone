@@ -17,18 +17,24 @@
 
 %% Simulación controlador
 % ruta=[2 8;12 8;12 12];
-ruta=[0 2;8 12;12 12];
+% ruta=[0 2;8 12;12 12];
 % ruta=[6 0;16 10;16 16]; % Prueba de trayectos básicos
 % ruta=[12 0;12 5;7 -5;-1 4;-6 -5;-2 0];
-% ruta=[12 0;12 12;0 12;0 0];
+ruta=[12 0;12 12;24 48];
 %ruta=intermedio(ruta,2);% Esta funcion añade puntos intermedios.
 radio=0.1;
 sim('simuladorControlCuatrirrotor')
 
+%% PDI
+% crea indicadores acerca de los maximos y medios de la consigna durante el
+% recorrido
+pdi;
+
+
 %% Representación gráfica y cálculo de indicadores
 indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,Consigna);
 
-%%
+
 %% Evaluación 
 
 % clc;
