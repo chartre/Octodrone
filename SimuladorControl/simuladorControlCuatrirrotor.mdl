@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.678"
+    ComputedModelVersion    "1.679"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr 05 19:29:49 2013"
-  RTWModifiedTimeStamp	  287087629
-  ModelVersionFormat	  "1.%<AutoIncrement:678>"
+  LastModifiedDate	  "Wed Apr 10 00:16:37 2013"
+  RTWModifiedTimeStamp	  287453773
+  ModelVersionFormat	  "1.%<AutoIncrement:679>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "30"
+	  StopTime		  "simtime"
 	  AbsTol		  "auto"
 	  FixedStep		  "0.06"
 	  InitialStep		  "auto"
@@ -667,7 +667,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Code Generation/Interface"
-      ConfigPrmDlgPosition     [ 268, 5, 1217, 766 ] 
+      ConfigPrmDlgPosition     [ 270, 4, 1235, 784 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -5096,8 +5096,6 @@ Stateflow {
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
     firstTarget		    28
-    debug {
-    }
     sfVersion		    76014001.001
   }
   chart {
@@ -5373,10 +5371,7 @@ Stateflow {
     firstTransition	    26
     firstJunction	    25
     viewObj		    15
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
