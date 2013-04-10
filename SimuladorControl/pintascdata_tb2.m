@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,Consigna)
+function indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control

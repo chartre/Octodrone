@@ -8,7 +8,7 @@ dis = 10; % distancia a recorrer en cada tramo
 ang = pi/6; % angulos a incrementar entre cada prueba
 np = floor(2*pi/ang); % n de pruebas a realizar
 mov = zeros (np,3); % creacion del array de tramos
-output = zeros (np,4);
+output = cell(np+1,5);
 radio=0.1;
 
 %% Calculo de los trayectos de la ruta
@@ -38,7 +38,7 @@ for i=1:np
     sim('simuladorControlCuatrirrotor')
 
     %% Representacion grafica y calculo de indicadores
-    indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,Consigna);
+    indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons);
     
     %% Evaluacion
     %Preparamos el vector para evaluar rendimiento
@@ -54,9 +54,18 @@ for i=1:np
     Etiquetas={'Distancia Media','Distancia Maxima','Tiempo de Recorrido';
         'metros',           'metros',        'segundos'};
     
-    %Evaluamos
-    [GPP, Porcentajes, Zonas]=Rendimiento_GPP(J,PhyMatrix,Etiquetas);
-    output(i,1) = GPP;
-%     output(i,2:4) = Zonas(1,1:3);
-%     output
+    % Evaluamos
+    [GPP, Porcentajes, Zonas]=Rendimiento_GPP_tb2(J,PhyMatrix);
+    
+    % Recogemos datos
+    output(i+1,3:5) = Zonas;
+    output{i+1,2} = GPP;
+    output{i+1,1} = i;
 end
+%% Muestra los dtos obtenidos
+output{1,1}='N';
+output{1,2}='GPP';
+output{1,3}='D med';
+output{1,4}='D Max';
+output{1,5}='Time';
+disp(output)

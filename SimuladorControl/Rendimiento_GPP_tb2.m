@@ -45,11 +45,7 @@
 %%
 %% Rendimiento_GPP
 
-function [Rendimiento R Zona]=Rendimiento_GPP(J,Phy,Etiquetas)
-
-if nargin==2
-    Etiquetas={' ',' ',' '; ' ', ' ', ' '};
-end
+function [Rendimiento,R,Zona]=Rendimiento_GPP_tb2(J,Phy)
 
 Population=size(J,1);            % Número de vectores objetivo.
 Nobj=size(J,2);                  % Número de objetivos.
@@ -85,53 +81,28 @@ for population=1:Population
         if J(population,nobj)>Phy(nobj,1) && J(population,nobj)<=Phy(nobj,2)     % Tenemos un valor altamente deseable
             F(population,nobj)=offset(1)*(Nobj+1)+ (offset(2)-offset(1))*((J(population,nobj)-Phy(nobj,1))/(Phy(nobj,2)-Phy(nobj,1)))^N;
             R(population,nobj)=100*(J(population,nobj)-Phy(nobj,1))/(Phy(nobj,2)-Phy(nobj,1));
-            Zona{population,nobj}='AD - Altamente Deseable';
+            Zona{population,nobj}='AD';
         elseif J(population,nobj)>Phy(nobj,2) && J(population,nobj)<=Phy(nobj,3) % Tenemos un valor deseable
             F(population,nobj)=offset(2)*(Nobj+1)+ (offset(3)-offset(2))*((J(population,nobj)-Phy(nobj,2))/(Phy(nobj,3)-Phy(nobj,2)))^N;
             R(population,nobj)=100*(J(population,nobj)-Phy(nobj,2))/(Phy(nobj,3)-Phy(nobj,2));
-            Zona{population,nobj}='D - Deseable';
+            Zona{population,nobj}='D ';
         elseif J(population,nobj)>Phy(nobj,3) && J(population,nobj)<=Phy(nobj,4) % Tenemos un valor tolerable
             F(population,nobj)=offset(3)*(Nobj+1)+ (offset(4)-offset(3))*((J(population,nobj)-Phy(nobj,3))/(Phy(nobj,4)-Phy(nobj,3)))^N;
             R(population,nobj)=100*(J(population,nobj)-Phy(nobj,3))/(Phy(nobj,4)-Phy(nobj,3));
-            Zona{population,nobj}='T - Tolerable';
+            Zona{population,nobj}='T ';
         elseif J(population,nobj)>Phy(nobj,4) && J(population,nobj)<=Phy(nobj,5) % Tenemos un valor indeseable
             F(population,nobj)=offset(4)*(Nobj+1)+ (offset(5)-offset(4))*((J(population,nobj)-Phy(nobj,4))/(Phy(nobj,5)-Phy(nobj,4)))^N;
             R(population,nobj)=100*(J(population,nobj)-Phy(nobj,4))/(Phy(nobj,5)-Phy(nobj,4));
-            Zona{population,nobj}='I - Indeseable';
+            Zona{population,nobj}='I ';
         elseif J(population,nobj)>Phy(nobj,5) && J(population,nobj)<=Phy(nobj,6) % Tenemos un valor altamente indeseable.
             F(population,nobj)=offset(5)*(Nobj+1)+ (offset(6)-offset(5))*((J(population,nobj)-Phy(nobj,5))/(Phy(nobj,6)-Phy(nobj,5)))^N;
             R(population,nobj)=100*(J(population,nobj)-Phy(nobj,5))/(Phy(nobj,6)-Phy(nobj,5));
-            Zona{population,nobj}='AI - Altamente Indeseable';
+            Zona{population,nobj}='AI';
         elseif J(population,nobj)>Phy(nobj,6)                                    % Tenemos un valor fuera de toda consideración.
             F(population,nobj)=offset(6)*(Nobj+1);
             R(population,nobj)=100*(J(population,nobj)-Phy(nobj,5))/(Phy(nobj,6)-Phy(nobj,5));
-            Zona{population,nobj}='FUERA DE TODA CONSIDERACION!!!';
+            Zona{population,nobj}='INF';
         end        
     end
     Rendimiento(population,1)=sum(F(population,:));       % CONTROL 
 end
-
-%%
-%% Desplegamos en pantalla:
-
-for population=1:Population
-    disp(['Vector objetivo ' num2str(population) ' : valor GPP : ' num2str(Rendimiento(population,1))]);
-    Jind=J(population,:);
-    Rind=R(population,:);
-    for nobj=1:Nobj
-       if Jind(1,nobj)<=Phy(nobj,2)
-           disp(['---J' num2str(nobj) ': ' Etiquetas{1,nobj} ' = ' num2str(Jind(1,nobj)) ' ' Etiquetas{2,nobj} ' ---> AD - Altamente Deseable (' num2str(Rind(1,nobj)) '%)']);
-       elseif Jind(1,nobj)>Phy(nobj,2) && Jind(1,nobj)<=Phy(nobj,3)
-           disp(['---J' num2str(nobj) ': ' Etiquetas{1,nobj} ' = ' num2str(Jind(1,nobj)) ' ' Etiquetas{2,nobj} ' ---> D - Deseable (' num2str(Rind(1,nobj)) '%)']);
-       elseif Jind(1,nobj)>Phy(nobj,3) && Jind(1,nobj)<=Phy(nobj,4)
-           disp(['---J' num2str(nobj) ': ' Etiquetas{1,nobj} ' = ' num2str(Jind(1,nobj)) ' ' Etiquetas{2,nobj} ' ---> T - Tolerable (' num2str(Rind(1,nobj)) '%)']);
-       elseif Jind(1,nobj)>Phy(nobj,4) && Jind(1,nobj)<=Phy(nobj,5)
-           disp(['---J' num2str(nobj) ': ' Etiquetas{1,nobj} ' = ' num2str(Jind(1,nobj)) ' ' Etiquetas{2,nobj} ' ---> I - Indeseable (' num2str(Rind(1,nobj)) '%)']);
-       elseif Jind(1,nobj)>Phy(nobj,5)
-           disp(['---J' num2str(nobj) ': ' Etiquetas{1,nobj} ' = ' num2str(Jind(1,nobj)) ' ' Etiquetas{2,nobj} ' ---> AI - Altamente Indeseable (' num2str(Rind(1,nobj)) '%)']);
-       end           
-    end
-end
-
-%% Registro de modificaciones:
-% V.Nov_12, CPOH 2012.
