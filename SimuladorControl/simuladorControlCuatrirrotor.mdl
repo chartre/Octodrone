@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.678"
+    ComputedModelVersion    "1.679"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1378.0, 744.0]
+      Location		      [-8.0, -8.0, 1300.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,19 +52,19 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1326.0, 565.0]
+	  Extents		  [1248.0, 565.0]
 	  ZoomFactor		  [0.93999999999999984]
 	  Offset		  [-1.1368683772161603e-13, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "872"
-	  Extents		  [1326.0, 565.0]
+	  Extents		  [1248.0, 565.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [-15.25, 0.0]
 	}
@@ -76,11 +76,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Carlos"
+  LastModifiedBy	  "Elisa"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr 05 19:29:49 2013"
-  RTWModifiedTimeStamp	  287087629
-  ModelVersionFormat	  "1.%<AutoIncrement:678>"
+  LastModifiedDate	  "Wed Apr 10 15:49:18 2013"
+  RTWModifiedTimeStamp	  287509735
+  ModelVersionFormat	  "1.%<AutoIncrement:679>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1106,7 +1106,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1370, 736]
+    Location		    [-8, -8, 1292, 736]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1417,7 +1417,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, -8, 1370, 736]
+	    Location		    [-8, -8, 1292, 736]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5096,8 +5096,6 @@ Stateflow {
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
     firstTarget		    28
-    debug {
-    }
     sfVersion		    76014001.001
   }
   chart {
@@ -5405,30 +5403,42 @@ Stateflow {
       "elocidad y aceleración a título teórico para\n% definir las consignas a seguir según unas velocidades y acelerac"
       "iones\n% máximas teóricas constantes obtenidas experimentalmente en los modelos.\n% No corrige las imprecisiones"
       " en la trayectoria y el desincronismo de los ejes\n% en el arranque. Problemas en la llegada de sobrepasamiento."
-      "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = a"
-      "bs(-5.87);\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2.62;\nminAx = abs(-2.72);\n\n\n% Cuadr = SPPos - posAnt;\n\nD"
-      "istXY =SPPos-LastRef;\nDistTot = SPPos - posAnt;\n\n% Condición de aplicación para criterio de distancias\n% if "
-      "(norm(DistTot)-norm(DistXY)<norm(DistTot)*1)\n    RelA = maxAx/maxAy;\n    RelD = abs(DistXY(1)/DistXY(2));\n\n "
-      "   CurrRef = LastRef;\n    \n%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alte"
-      "rnativa para evitar valores anómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY"
-      "(1)/Vx);\n        minTy = abs (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;"
-      "\n    end\nelse\n    minTx = 0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control"
-      " de 'Consigna'\n\nif (norm(DistXY)<=(radio)) % (0.5*radio)\n    CurrRef = LastRef;\nelse\n    if (RelD>RelA)\n  "
-      "      if RelD==inf || RelD==0 % Condición_excepción\n            Ay = 0;\n        else\n            Ay = maxAx/R"
-      "elD;\n        end\n        Ax = maxAx;\n        if minT<Ts % Añadido de llegada\n            CurrRef=SPPos;\n   "
-      "     else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + "
-      "Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    else\n        if RelD==inf || RelD==0 % Condición_excepción\n         "
-      "   Ax = 0;\n        else\n            Ax = maxAy*RelD;\n        end\n        Ay = maxAy;\n        if minT<Ts % A"
-      "ñadido de llegada\n            CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*"
-      "Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    end\nend\n\n% else\n"
-      "%     if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%         CurrRef = LastRef;\n%     else\n%         minTx = s"
-      "qrt(abs (DistXY(1))/maxAx);\n%         minTy = sqrt(abs (DistXY(2))/maxAy);\n%         \n%         minT = max (m"
-      "inTx,minTy);\n%         \n%         if minT<Ts\n%             CurrRef=SPPos;\n%         else\n%          CurrRef"
-      " = LastRef + [Vx;Vy]*Ts + 0.5*DistXY*Ts*Ts/(minT*minT);\n%         end\n%     end\n% end\n\n%% Método de control"
-      " de Enrique\nfunction CurrRef = enr(SPPos,LastRef,Ts,radio)\nmaxVx = 3.26;\nmaxVy = 1.9;\n\nDistXY =SPPos-LastRe"
-      "f;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n    CurrRef = LastRef;\nelse\n    minTx = abs (DistXY(1))/max"
-      "Vx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT = max (minTx,minTy);\n    \n    if minT<Ts\n        Curr"
-      "Ref = SPPos;\n    else\n        CurrRef = LastRef + (Ts/minT)*DistXY;\n    end\nend\n"
+      "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = -"
+      "5.87;\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2.62;\nminAy = -2.72;\n\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPP"
+      "os-LastRef;\n% DistTot = SPPos - posAnt; % Posible uso de la 'DistanciaTotal' del trayecto\n% para intervención "
+      "en instantes específicos del recorrido.\n\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1) % Condición de apli"
+      "cación para criterio de distancias\n% RelA = maxAx/maxAy;\nRelD = DistXY(1)/DistXY(2);\n\nCurrRef = LastRef;\n  "
+      "  \n%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternativa para evitar valor"
+      "es anómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/Vx);\n        minTy ="
+      " abs (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n    end\nelse\n    minT"
+      "x = 0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de 'Consigna'\n\nif (nor"
+      "m(DistXY)<=(radio)) % (0.5*radio) ¿Hemos llegado?\nCurrRef = LastRef;\nelse % No hemos llegado...\n    \n   % Cá"
+      "lculo de límite de aceleraciones según el tipo de movimiento desempeñado\n    if DistXY(1)>0 % 'X' positiva\n   "
+      "     if RelD>0 % Cuadrante 1\n            RelA=abs(maxAx/maxAy);\n        else % Cuadrante 4\n            RelA=a"
+      "bs(maxAx/minAy);\n        end\n    else % 'X' negativa\n        if RelD>0 % Cuadrante 3\n            RelA=abs(mi"
+      "nAx/minAy);\n        else % Cuadrante 2\n            RelA=abs(minAx/maxAy);\n        end\n    end\n    \n    if "
+      "(abs(RelD)>RelA) % En el desplazamiento predomina 'X'\n        \n        if RelD==inf || RelD==0 % Condición_exc"
+      "epción\n            Ay = 0;\n            Ax = maxAx;\n        else\n            if DistXY(1)>0 % 'X' positiva\n "
+      "               if RelD>0 % Cuadrante 1\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n    "
+      "            else % Cuadrante 4\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n            "
+      "    end\n            else % 'X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ax = minA"
+      "x;\n                    Ay = Ax/RelD;\n                else % Cuadrante 2\n                    Ax = minAx;\n    "
+      "                Ay = Ax/RelD;\n                end\n            end\n        end\n        \n        if minT<Ts %"
+      " Añadido de llegada\n            CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0."
+      "5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n        \n        else"
+      " % En el desplazamiento predomina 'Y'\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n        "
+      "    Ax = 0;\n            Ay = maxAy;\n        else\n            if DistXY(1)>0 % 'X' positiva\n                i"
+      "f RelD>0 % Cuadrante 1\n                    Ay = maxAy;\n                    Ax = Ay*RelD;\n                else"
+      " % Cuadrante 4\n                    Ay = minAy;\n                    Ax = Ay*RelD;\n                end\n       "
+      "     else % 'X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ay = minAy;\n            "
+      "        Ax = Ay*RelD;\n                else % Cuadrante 2\n                    Ay = maxAy;\n                    "
+      "Ax = Ay*RelD;\n                end\n            end\n        end\n        \n        if minT<Ts % Añadido de lleg"
+      "ada\n            CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n  "
+      "          CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    end\nend\n\n%% Método de control d"
+      "e Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%     CurrRef = LastRe"
+      "f;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n%     \n%     minT = max"
+      " (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%         CurrRef = LastRef +"
+      " (Ts/minT)*DistXY;\n%     end\n% end"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

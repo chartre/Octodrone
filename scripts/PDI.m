@@ -27,17 +27,16 @@ disp(str);
 str = sprintf('Maximo error = %0.2f', maxEr);
 disp(str);
 
-%% Valores de la consigna durante el recorrido
-
-Consigna = zeros(size(scVar.signals(1,1).values(:,1),1),1);
-n = size(scVar.signals(1,1).values(:,1),1);
-for i=1:n % obtiene la distancia de la consigna en cada momento
-    Cx = scVar.signals(1,1).values(i,4) - scVar.signals(1,1).values(i,1);
-    Cy = scVar.signals(1,2).values(i,4) - scVar.signals(1,2).values(i,1);
-    
-    Consigna (i,1) = norm(Cx,Cy);
-end
-maxC = max(Consigna);
+ %% Valores de la consigna durante el recorrido
+ 
+Consigna = zeros(size(scVar.time,1),1);
+ n = size(scVar.signals(1,1).values(:,1),1);
+ for i=1:n % obtiene la distancia de la consigna en cada momento
+     Cx = scVar.signals(1,1).values(i,4) - scVar.signals(1,1).values(i,1);
+ for i=1:n % obtiene la distancia de la consigna en cada momento
+     Consigna (i,1) = norm(Cx,Cy);
+ end
+ maxC = max(Consigna);
 medC = mean(Consigna(2:end));
 
 str = sprintf('Consigna max = %0.2f', maxC);
