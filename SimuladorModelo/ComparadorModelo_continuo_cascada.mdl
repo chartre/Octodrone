@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.135"
+    ComputedModelVersion    "1.144"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [29.0, 64.0, 734.0, 608.0]
+      Location		      [337.0, 47.0, 734.0, 608.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,8 +52,8 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"264"
 	Extents			[682.0, 432.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -64,11 +64,11 @@ Model {
   Creator		  "sergarro"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "TOSHIBA"
+  LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Dec 28 13:13:54 2012"
-  RTWModifiedTimeStamp	  278600663
-  ModelVersionFormat	  "1.%<AutoIncrement:135>"
+  LastModifiedDate	  "Thu Apr 11 12:52:21 2013"
+  RTWModifiedTimeStamp	  287585082
+  ModelVersionFormat	  "1.%<AutoIncrement:144>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -722,6 +722,43 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      DiscreteIntegrator
+      IntegratorMethod	      "Integration: Forward Euler"
+      gainval		      "1.0"
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      InitialConditionMode    "State and output"
+      SampleTime	      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      IgnoreLimit	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      FromWorkspace
       VariableName	      "simulink_input"
       OutDataTypeStr	      "Inherit: auto"
@@ -747,21 +784,6 @@ Model {
       LatchByDelayingOutsideSignal off
       LatchInputForFeedbackSignals off
       Interpolate	      on
-    }
-    Block {
-      BlockType		      Integrator
-      ExternalReset	      "none"
-      InitialConditionSource  "internal"
-      InitialCondition	      "0"
-      LimitOutput	      off
-      UpperSaturationLimit    "inf"
-      LowerSaturationLimit    "-inf"
-      ShowSaturationPort      off
-      ShowStatePort	      off
-      AbsoluteTolerance	      "auto"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      ContinuousStateAttributes	"''"
     }
     Block {
       BlockType		      Mux
@@ -829,11 +851,27 @@ Model {
       Variant		      off
       GeneratePreprocessorConditionals off
     }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
   }
   System {
     Name		    "ComparadorModelo_continuo_cascada"
     Location		    [29, 64, 763, 672]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -846,7 +884,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "311"
+    SIDHighWatermark	    "315"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo NO lineal"
@@ -864,8 +902,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			" Modelo NO lineal"
-	Location		[29, 64, 763, 672]
-	Open			off
+	Location		[337, 47, 1071, 655]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -899,6 +937,40 @@ Model {
 	  SampleTime		  "0.06"
 	}
 	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "314"
+	  Position		  [155, 310, 185, 340]
+	  ZOrder		  25
+	  Value			  "0.005"
+	}
+	Block {
+	  BlockType		  DiscreteIntegrator
+	  Name			  "Discrete-Time Integrator"
+	  SID			  "312"
+	  Ports			  [1, 1]
+	  Position		  [380, 277, 415, 313]
+	  ZOrder		  23
+	  gainval		  "1"
+	  InitialCondition	  "-1"
+	  SampleTime		  "Ts"
+	  ICPrevOutput		  "DiscIntNeverNeededParam"
+	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+	}
+	Block {
+	  BlockType		  DiscreteIntegrator
+	  Name			  "Discrete-Time Integrator1"
+	  SID			  "313"
+	  Ports			  [1, 1]
+	  Position		  [370, 102, 405, 138]
+	  ZOrder		  24
+	  gainval		  "1"
+	  InitialCondition	  "0.5"
+	  SampleTime		  "Ts"
+	  ICPrevOutput		  "DiscIntNeverNeededParam"
+	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "Hammerstein-Wiener Model"
 	  SID			  "289"
@@ -908,7 +980,7 @@ Model {
 	  LibraryVersion	  "1.263"
 	  SourceBlock		  "slident/Hammerstein-Wiener Model"
 	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vx123_nlhw122bis_borja"
+	  sys			  "vx123_nlhw113_pic2"
 	  IC			  "Zero"
 	  X0i			  "0"
 	}
@@ -922,25 +994,23 @@ Model {
 	  LibraryVersion	  "1.263"
 	  SourceBlock		  "slident/Hammerstein-Wiener Model"
 	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vy_nlhw112SAT"
+	  sys			  "vy123_nlhw111"
 	  IC			  "Zero"
 	  X0i			  "0"
 	}
 	Block {
-	  BlockType		  Integrator
-	  Name			  "Integrator"
-	  SID			  "308"
-	  Ports			  [1, 1]
-	  Position		  [385, 105, 415, 135]
-	  ZOrder		  20
-	}
-	Block {
-	  BlockType		  Integrator
-	  Name			  "Integrator1"
-	  SID			  "309"
-	  Ports			  [1, 1]
-	  Position		  [385, 280, 415, 310]
-	  ZOrder		  21
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "315"
+	  Ports			  [2, 1]
+	  Position		  [320, 285, 340, 305]
+	  ZOrder		  26
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
 	}
 	Block {
 	  BlockType		  Outport
@@ -980,16 +1050,9 @@ Model {
 	Line {
 	  SrcBlock		  "Hammerstein-Wiener Model1"
 	  SrcPort		  1
-	  Points		  [44, 0]
-	  Branch {
-	    Points		    [0, 60]
-	    DstBlock		    "Integrator1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Vy"
-	    DstPort		    1
-	  }
+	  Points		  [44, 0; 0, 60]
+	  DstBlock		  "Sum"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Hammerstein-Wiener Model"
@@ -997,7 +1060,7 @@ Model {
 	  Points		  [37, 0]
 	  Branch {
 	    Points		    [0, 75]
-	    DstBlock		    "Integrator"
+	    DstBlock		    "Discrete-Time Integrator1"
 	    DstPort		    1
 	  }
 	  Branch {
@@ -1018,16 +1081,37 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Integrator1"
+	  SrcBlock		  "Discrete-Time Integrator"
 	  SrcPort		  1
 	  DstBlock		  "Y"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Integrator"
+	  SrcBlock		  "Discrete-Time Integrator1"
 	  SrcPort		  1
 	  DstBlock		  "X"
 	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [140, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [8, 0]
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "Vy"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Discrete-Time Integrator"
+	    DstPort		    1
+	  }
 	}
       }
     }
