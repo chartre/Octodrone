@@ -33,25 +33,26 @@ Consigna = zeros(size(scVar.time,1),1);
  n = size(scVar.signals(1,1).values(:,1),1);
  for i=1:n % obtiene la distancia de la consigna en cada momento
      Cx = scVar.signals(1,1).values(i,4) - scVar.signals(1,1).values(i,1);
- for i=1:n % obtiene la distancia de la consigna en cada momento
+     Cy = scVar.signals(1,2).values(i,4) - scVar.signals(1,2).values(i,1);
+    
      Consigna (i,1) = norm(Cx,Cy);
  end
  maxC = max(Consigna);
-medC = mean(Consigna(2:end));
-
-str = sprintf('Consigna max = %0.2f', maxC);
-disp(str);
-str = sprintf('Consigna media = %0.2f', medC);
-disp(str);
-
-iter = ceil(maxC*20);
-moda = zeros(iter,1);
-
-for i=1:1:iter
-    aux = i*0.05;
-    for j=1:n
-        if (Consigna(j,1) < aux) && (Consigna(j,1) > (aux - 0.05))
-            moda(i,1) = moda(i,1)+1;
-        end
-    end
-end
+ medC = mean(Consigna(2:end));
+ 
+ str = sprintf('Consigna max = %0.2f', maxC);
+ disp(str);
+ str = sprintf('Consigna media = %0.2f', medC);
+ disp(str);
+ 
+ iter = ceil(maxC*20);
+ moda = zeros(iter,1);
+ 
+ for i=1:1:iter
+     aux = i*0.05;
+     for j=1:n
+         if (Consigna(j,1) < aux) && (Consigna(j,1) > (aux - 0.05))
+             moda(i,1) = moda(i,1)+1;
+         end
+     end
+ end
