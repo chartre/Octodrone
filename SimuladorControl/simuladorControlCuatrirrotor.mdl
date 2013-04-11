@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.682"
+    ComputedModelVersion    "1.708"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1300.0, 744.0]
+      Location		      [-1928.0, -274.0, 1936.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,16 +55,16 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1248.0, 565.0]
-	  ZoomFactor		  [0.93999999999999984]
-	  Offset		  [-1.1368683772161603e-13, 0.0]
+	  Extents		  [1884.0, 917.0]
+	  ZoomFactor		  [1.5665198237885463]
+	  Offset		  [-23.7704583802025, 11.062992125984252]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "872"
-	  Extents		  [1248.0, 565.0]
+	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [-15.25, 0.0]
 	}
@@ -76,11 +76,11 @@ Model {
   Creator		  "xblasco"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Elisa"
+  LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 11 09:14:15 2013"
-  RTWModifiedTimeStamp	  287572326
-  ModelVersionFormat	  "1.%<AutoIncrement:682>"
+  LastModifiedDate	  "Thu Apr 11 14:41:10 2013"
+  RTWModifiedTimeStamp	  287583514
+  ModelVersionFormat	  "1.%<AutoIncrement:708>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "90"
+	  StopTime		  "50"
 	  AbsTol		  "auto"
 	  FixedStep		  "0.06"
 	  InitialStep		  "auto"
@@ -1106,7 +1106,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1292, 736]
+    Location		    [-1928, -274, 8, 822]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1118,9 +1118,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    on
-    ZoomFactor		    "93"
+    ZoomFactor		    "156"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1011"
+    SIDHighWatermark	    "1014"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1130,7 +1130,6 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
-      CurrentSetting	      "0"
     }
     Block {
       BlockType		      Display
@@ -1326,7 +1325,7 @@ Model {
       }
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1370, 736]
+	Location		[-8, -8, 1374, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1417,7 +1416,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, -8, 1292, 736]
+	    Location		    [-8, -8, 1374, 736]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2399,11 +2398,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Discrete PID refPitch1"
-	  SID			  "897"
+	  Name			  "Discrete PID refPitch2"
+	  SID			  "1013"
 	  Ports			  [1, 1]
-	  Position		  [860, 152, 900, 188]
-	  ZOrder		  64
+	  Position		  [625, 32, 665, 68]
+	  ZOrder		  85
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
@@ -2416,6 +2415,115 @@ Model {
 	  P			  "0.65"
 	  I			  "0"
 	  D			  "0.5"
+	  N			  "15"
+	  InitialConditionSource  "internal"
+	  InitialConditionForIntegrator	"0"
+	  InitialConditionForFilter "0"
+	  ExternalReset		  "none"
+	  IgnoreLimit		  off
+	  ZeroCross		  on
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  LinearizeAsGain	  off
+	  AntiWindupMode	  "none"
+	  Kb			  "1"
+	  TrackingMode		  off
+	  Kt			  "1"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  LockScale		  off
+	  PParamMin		  "[]"
+	  PParamMax		  "[]"
+	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IParamMin		  "[]"
+	  IParamMax		  "[]"
+	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DParamMin		  "[]"
+	  DParamMax		  "[]"
+	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NParamMin		  "[]"
+	  NParamMax		  "[]"
+	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbParamMin		  "[]"
+	  KbParamMax		  "[]"
+	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtParamMin		  "[]"
+	  KtParamMax		  "[]"
+	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  POutMin		  "[]"
+	  POutMax		  "[]"
+	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IOutMin		  "[]"
+	  IOutMax		  "[]"
+	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DOutMin		  "[]"
+	  DOutMax		  "[]"
+	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NOutMin		  "[]"
+	  NOutMax		  "[]"
+	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbOutMin		  "[]"
+	  KbOutMax		  "[]"
+	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtOutMin		  "[]"
+	  KtOutMax		  "[]"
+	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IntegratorOutMin	  "[]"
+	  IntegratorOutMax	  "[]"
+	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  FilterOutMin		  "[]"
+	  FilterOutMax		  "[]"
+	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumOutMin		  "[]"
+	  SumOutMax		  "[]"
+	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1OutMin		  "[]"
+	  SumI1OutMax		  "[]"
+	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2OutMin		  "[]"
+	  SumI2OutMax		  "[]"
+	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3OutMin		  "[]"
+	  SumI3OutMax		  "[]"
+	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDOutMin		  "[]"
+	  SumDOutMax		  "[]"
+	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturationOutMin	  "[]"
+	  SaturationOutMax	  "[]"
+	  SaturationOutDataTypeStr "Inherit: Same as input"
+	  IntegratorContinuousStateAttributes "''"
+	  IntegratorStateMustResolveToSignalObject off
+	  IntegratorRTWStateStorageClass "Auto"
+	  FilterContinuousStateAttributes "''"
+	  FilterStateMustResolveToSignalObject off
+	  FilterRTWStateStorageClass "Auto"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Discrete PID refPitch3"
+	  SID			  "1014"
+	  Ports			  [1, 1]
+	  Position		  [860, 152, 900, 188]
+	  ZOrder		  86
+	  LibraryVersion	  "1.281"
+	  SourceBlock		  "simulink/Continuous/PID Controller"
+	  SourceType		  "PID 1dof"
+	  Controller		  "PID"
+	  TimeDomain		  "Discrete-time"
+	  SampleTime		  "Ts"
+	  IntegratorMethod	  "Forward Euler"
+	  FilterMethod		  "Forward Euler"
+	  Form			  "Parallel"
+	  P			  "0.6"
+	  I			  "0"
+	  D			  "0.6"
 	  N			  "15"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
@@ -2522,7 +2630,7 @@ Model {
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "0.95"
+	  P			  "1.1"
 	  I			  "0.002"
 	  D			  "0.5"
 	  N			  "10"
@@ -2786,7 +2894,7 @@ Model {
 	Line {
 	  SrcBlock		  "Gain"
 	  SrcPort		  1
-	  DstBlock		  "Discrete PID refPitch1"
+	  DstBlock		  "Discrete PID refPitch3"
 	  DstPort		  1
 	}
 	Line {
@@ -2802,7 +2910,7 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Discrete PID refPitch1"
+	  SrcBlock		  "Discrete PID refPitch3"
 	  SrcPort		  1
 	  DstBlock		  "Saturation"
 	  DstPort		  1
@@ -3673,6 +3781,7 @@ Model {
 	      Ports		      [1, 1]
 	      Position		      [575, 277, 610, 313]
 	      ZOrder		      22
+	      gainval		      "1"
 	      SampleTime	      "Ts"
 	      ICPrevOutput	      "DiscIntNeverNeededParam"
 	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
@@ -5096,6 +5205,8 @@ Stateflow {
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
     firstTarget		    28
+    debug {
+    }
     sfVersion		    76014001.001
   }
   chart {
@@ -5108,7 +5219,10 @@ Stateflow {
     firstTransition	    13
     firstJunction	    12
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    24
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5404,41 +5518,46 @@ Stateflow {
       "iones\n% máximas teóricas constantes obtenidas experimentalmente en los modelos.\n% No corrige las imprecisiones"
       " en la trayectoria y el desincronismo de los ejes\n% en el arranque. Problemas en la llegada de sobrepasamiento."
       "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = -"
-      "5.87;\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2.62;\nminAy = -2.72;\n\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPP"
-      "os-LastRef;\n% DistTot = SPPos - posAnt; % Posible uso de la 'DistanciaTotal' del trayecto\n% para intervención "
-      "en instantes específicos del recorrido.\n\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1) % Condición de apli"
-      "cación para criterio de distancias\n% RelA = maxAx/maxAy;\nRelD = DistXY(1)/DistXY(2);\n\nCurrRef = LastRef;\n  "
-      "  \n%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternativa para evitar valor"
-      "es anómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/Vx);\n        minTy ="
-      " abs (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n    end\nelse\n    minT"
-      "x = 0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de 'Consigna'\n\nif (nor"
-      "m(DistXY)<=(radio)) % (0.5*radio) ¿Hemos llegado?\nCurrRef = LastRef;\nelse % No hemos llegado...\n    \n   % Cá"
-      "lculo de límite de aceleraciones según el tipo de movimiento desempeñado\n    if DistXY(1)>0 % 'X' positiva\n   "
-      "     if RelD>0 % Cuadrante 1\n            RelA=abs(maxAx/maxAy);\n        else % Cuadrante 4\n            RelA=a"
-      "bs(maxAx/minAy);\n        end\n    else % 'X' negativa\n        if RelD>0 % Cuadrante 3\n            RelA=abs(mi"
-      "nAx/minAy);\n        else % Cuadrante 2\n            RelA=abs(minAx/maxAy);\n        end\n    end\n    \n    if "
-      "(abs(RelD)>RelA) % En el desplazamiento predomina 'X'\n        \n        if RelD==inf || RelD==0 % Condición_exc"
-      "epción\n            Ay = 0;\n            Ax = maxAx;\n        else\n            if DistXY(1)>0 % 'X' positiva\n "
-      "               if RelD>0 % Cuadrante 1\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n    "
-      "            else % Cuadrante 4\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n            "
-      "    end\n            else % 'X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ax = minA"
-      "x;\n                    Ay = Ax/RelD;\n                else % Cuadrante 2\n                    Ax = minAx;\n    "
-      "                Ay = Ax/RelD;\n                end\n            end\n        end\n        \n        if minT<Ts %"
-      " Añadido de llegada\n            CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0."
-      "5*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n        \n        else"
-      " % En el desplazamiento predomina 'Y'\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n        "
-      "    Ax = 0;\n            Ay = maxAy;\n        else\n            if DistXY(1)>0 % 'X' positiva\n                i"
-      "f RelD>0 % Cuadrante 1\n                    Ay = maxAy;\n                    Ax = Ay*RelD;\n                else"
-      " % Cuadrante 4\n                    Ay = minAy;\n                    Ax = Ay*RelD;\n                end\n       "
-      "     else % 'X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ay = minAy;\n            "
-      "        Ax = Ay*RelD;\n                else % Cuadrante 2\n                    Ay = maxAy;\n                    "
-      "Ax = Ay*RelD;\n                end\n            end\n        end\n        \n        if minT<Ts % Añadido de lleg"
-      "ada\n            CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n  "
-      "          CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    end\nend\n\n%% Método de control d"
-      "e Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%     CurrRef = LastRe"
-      "f;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n%     \n%     minT = max"
-      " (minTx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%         CurrRef = LastRef +"
-      " (Ts/minT)*DistXY;\n%     end\n% end"
+      "5.87;\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2;\nminAy = -2;\n\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPPos-Las"
+      "tRef;\n% DistTot = SPPos - posAnt; % Posible uso de la 'DistanciaTotal' del trayecto\n% para intervención en ins"
+      "tantes específicos del recorrido.\n\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1) % Condición de aplicación"
+      " para criterio de distancias\n% RelA = maxAx/maxAy;\nRelD = DistXY(1)/DistXY(2);\n\nCurrRef = LastRef;\n    \n%%"
+      " Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternativa para evitar valores anó"
+      "malos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/Vx);\n        minTy = abs ("
+      "DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n    end\nelse\n    minTx = 0;"
+      "\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de 'Consigna'\n\nif (norm(Dist"
+      "XY)<=(radio)) % (0.5*radio) ¿Hemos llegado?\nCurrRef = LastRef;\nelse % No hemos llegado...\n    \n   % Cálculo "
+      "de límite de aceleraciones según el tipo de movimiento desempeñado\n    if DistXY(1)>0 % 'X' positiva\n        i"
+      "f RelD>0 % Cuadrante 1\n            RelA=abs(maxAx/maxAy);\n        else % Cuadrante 4\n            RelA=abs(max"
+      "Ax/minAy);\n        end\n    else % 'X' negativa\n        if RelD>0 % Cuadrante 3\n            RelA=abs(minAx/mi"
+      "nAy);\n        else % Cuadrante 2\n            RelA=abs(minAx/maxAy);\n        end\n    end\n    \n    if (abs(R"
+      "elD)>RelA) % En el desplazamiento predomina 'X'\n        \n        if RelD==inf || RelD==0 % Condición_excepción"
+      "\n            Ay = 0;\n            Ax = maxAx;\n        else\n            if DistXY(1)>0 % 'X' positiva\n       "
+      "         if RelD>0 % Cuadrante 1\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n          "
+      "      else % Cuadrante 4\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n                en"
+      "d\n            else % 'X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ax = minAx;\n  "
+      "                  Ay = Ax/RelD;\n                else % Cuadrante 2\n                    Ax = minAx;\n          "
+      "          Ay = Ax/RelD;\n                end\n            end\n        end\n        \n        if minT<Ts % Añadi"
+      "do de llegada\n            CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*T"
+      "s*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n        \n        else % En "
+      "el desplazamiento predomina 'Y'\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n            Ax"
+      " = 0;\n            Ay = maxAy;\n        else\n            if DistXY(1)>0 % 'X' positiva\n                if RelD"
+      ">0 % Cuadrante 1\n                    Ay = maxAy;\n                    Ax = Ay*RelD;\n                else % Cua"
+      "drante 4\n                    Ay = minAy;\n                    Ax = Ay*RelD;\n                end\n            e"
+      "lse % 'X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ay = minAy;\n                  "
+      "  Ax = Ay*RelD;\n                else % Cuadrante 2\n                    Ay = maxAy;\n                    Ax = A"
+      "y*RelD;\n                end\n            end\n        end\n        \n        if minT<Ts % Añadido de llegada\n "
+      "           CurrRef=SPPos;\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n        "
+      "    CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    end\nend\n\n%% Forzado de la referencia "
+      "a la trayectoria ideal (desplazado en perpendicular)\nA=posAnt;\nB=SPPos;\n% creamos vector director de la recta"
+      " AB (recta r)\nVr = B-A;\n% iniciamos vector Vs\nVs = Vr;\n% creamos vector perpendicular a Vr\nVs(1,1) = -Vr(2,"
+      "1);\nVs(2,1) = Vr(1,1);\n% creamos matriz de vectores directores\nMatrA = [Vr,-Vs];\n% creamos matriz de valores"
+      " independientes\nMatrB = CurrRef-A;\n% calculamos los valores de las K's de cada recta\nK = inv(MatrA)*MatrB;\n%"
+      " sacamos el punto D intereseccion de las rectas\nD = A + K(1,1)*Vr;\nCurrRef=D;\n\n\n%% Método de control de Enr"
+      "ique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%     CurrRef = LastRef;\n%"
+      " else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n%     \n%     minT = max (min"
+      "Tx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%         CurrRef = LastRef + (Ts/"
+      "minT)*DistXY;\n%     end\n% end"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
