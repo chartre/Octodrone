@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons)
+function indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,vCons)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control
@@ -112,6 +112,7 @@ indicadores.tiempoRecorrido=scdata.time(end);
 
 %% Representación gráfica XY
 % dibuja los zonas de llegada a cada punto
+figure(1)
 for i=1:size(ruta,1)
     if i==size(ruta,1)
         color='g';
@@ -172,22 +173,21 @@ title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
 % title(['Distancia a la trayectoria mínima. Dist. media: ' num2str(dmedia) '. Dist. max: ' num2str(dmax)])
 
 %% Representación gráfica señales ensayo
-% figure
-% subplot(311)
-% plot(scVar.time,scVar.signals(1,1).values)
-% legend('x','vx','SPx', 'consigna x','RefPitch','ax')
-% title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
-% grid
-% subplot(312)
-% plot(scVar.time,scVar.signals(1,2).values)
-% legend('y','vy','SPy', 'consigna y','RefRoll','ay')
-% title('Valores del movimiento')
-% grid
-% subplot(313) % Gráfica extra para verificar relación de distancia de consigna-posición
-% plot(scVar.time,Consigna)
-% hold on
-% plot(scVar.time,scVar.signals(1,1).values(:,3)/15,'r')
-% plot(scVar.time,scVar.signals(1,2).values(:,3)/15,'r')
-% legend('consigna-pos','SPPos X','SPPos Y')
-% title('Relación consigna-pos en tiempo de ejecución')
-% grid
+figure(2)
+subplot(311)
+plot(scVar.time,scVar.signals(1,1).values)
+legend('x','vx','SPx', 'consigna x','RefPitch','ax')
+title(['Tiempo del recorrido: ' num2str(scdata.time(end)) ' segundos.'])
+grid
+subplot(312)
+plot(scVar.time,scVar.signals(1,2).values)
+legend('y','vy','SPy', 'consigna y','RefRoll','ay')
+title('Valores del movimiento')
+grid
+subplot(313) % Gráfica extra para verificar relación de distancia de consigna-posición
+hold on
+plot(vCons.time,vCons.signals.values(:,1))
+plot(vCons.time,vCons.signals.values(:,2),'c')
+legend('x','y')
+title('Relación consigna-pos en tiempo de ejecución')
+grid

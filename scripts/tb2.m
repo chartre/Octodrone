@@ -5,7 +5,7 @@
 % Se puede definir la distancia de los tramos y el angulo en el que se
 % va a incrementar cada tramo (siempre haciendo los ejes)
 dis = 10; % distancia a recorrer en cada tramo
-ang = pi/6; % angulos a incrementar entre cada prueba
+ang = pi/12; % angulos a incrementar entre cada prueba
 np = floor(2*pi/ang); % n de pruebas a realizar
 mov = zeros (np,3); % creacion del array de tramos
 output = cell(np+1,5);
@@ -38,7 +38,7 @@ for i=1:np
     sim('simuladorControlCuatrirrotor')
 
     %% Representacion grafica y calculo de indicadores
-    indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons);
+    indicadores=pintascdata_tb2(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,vCons);
     
     %% Evaluacion
     %Preparamos el vector para evaluar rendimiento
