@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.720"
+    ComputedModelVersion    "1.721"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -52,21 +52,21 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "672"
 	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [-77.112415635545574, 1.041169853768281]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "814"
+	  LoadSaveID		  "872"
 	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-550.0, -172.5]
+	  Offset		  [-15.25, 0.0]
 	}
 	PropName		"EditorsInfo"
       }
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 15 13:17:56 2013"
-  RTWModifiedTimeStamp	  287928912
-  ModelVersionFormat	  "1.%<AutoIncrement:720>"
+  LastModifiedDate	  "Thu Apr 18 11:00:19 2013"
+  RTWModifiedTimeStamp	  288183607
+  ModelVersionFormat	  "1.%<AutoIncrement:721>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1107,7 +1107,7 @@ Model {
   System {
     Name		    "simuladorControlCuatrirrotor"
     Location		    [-8, -8, 1374, 736]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1120,7 +1120,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1016"
+    SIDHighWatermark	    "1023"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1417,7 +1417,7 @@ Model {
 	  System {
 	    Name		    "Control Ejes teórico"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3702,7 +3702,7 @@ Model {
 	  System {
 	    Name		    " Modelo NO lineal"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3736,6 +3736,15 @@ Model {
 	      SampleTime	      "0.06"
 	    }
 	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      SID		      "1017"
+	      Position		      [420, 150, 440, 170]
+	      ZOrder		      32
+	      DisplayTime	      on
+	      Decimation	      "2"
+	    }
+	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "1009"
@@ -3745,11 +3754,27 @@ Model {
 	      SampleTime	      "Ts"
 	    }
 	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      SID		      "1018"
+	      Position		      [605, 145, 635, 175]
+	      ZOrder		      36
+	      Value		      "0.00015"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      SID		      "1022"
+	      Position		      [390, 320, 420, 350]
+	      ZOrder		      37
+	      Value		      "0.0045"
+	    }
+	    Block {
 	      BlockType		      DiscreteIntegrator
 	      Name		      "Discrete-Time Integrator"
 	      SID		      "684"
 	      Ports		      [1, 1]
-	      Position		      [575, 277, 610, 313]
+	      Position		      [565, 277, 600, 313]
 	      ZOrder		      22
 	      gainval		      "1"
 	      SampleTime	      "Ts"
@@ -3761,11 +3786,20 @@ Model {
 	      Name		      "Discrete-Time Integrator1"
 	      SID		      "685"
 	      Ports		      [1, 1]
-	      Position		      [575, 102, 610, 138]
+	      Position		      [720, 82, 755, 118]
 	      ZOrder		      23
 	      SampleTime	      "Ts"
 	      ICPrevOutput	      "DiscIntNeverNeededParam"
 	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "Fcn"
+	      SID		      "1019"
+	      Position		      [465, 145, 525, 175]
+	      ZOrder		      33
+	      Expr		      "(sin((u/12.35)+13.3))/10"
+	      SampleTime	      "Ts"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -3841,10 +3875,52 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      SID		      "1020"
+	      Ports		      [2, 1]
+	      Position		      [565, 90, 585, 110]
+	      ZOrder		      34
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      SID		      "1021"
+	      Ports		      [2, 1]
+	      Position		      [645, 90, 665, 110]
+	      ZOrder		      35
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum4"
+	      SID		      "1023"
+	      Ports		      [2, 1]
+	      Position		      [485, 285, 505, 305]
+	      ZOrder		      38
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      Outport
 	      Name		      "Vx"
 	      SID		      "679"
-	      Position		      [575, 38, 605, 52]
+	      Position		      [825, 38, 855, 52]
 	      ZOrder		      -7
 	      IconDisplay	      "Port number"
 	    }
@@ -3852,7 +3928,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "X"
 	      SID		      "680"
-	      Position		      [695, 113, 725, 127]
+	      Position		      [825, 93, 855, 107]
 	      ZOrder		      -8
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -3861,7 +3937,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Y"
 	      SID		      "682"
-	      Position		      [695, 288, 725, 302]
+	      Position		      [825, 288, 855, 302]
 	      ZOrder		      -9
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -3870,7 +3946,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Vy"
 	      SID		      "681"
-	      Position		      [575, 228, 605, 242]
+	      Position		      [825, 228, 855, 242]
 	      ZOrder		      -10
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -3906,38 +3982,10 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Sum"
-	      SrcPort		      1
-	      Points		      [90, 0]
-	      Branch {
-		Points			[0, 75]
-		DstBlock		"Discrete-Time Integrator1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Vx"
-		DstPort			1
-	      }
-	    }
-	    Line {
 	      SrcBlock		      "Hammerstein-Wiener Model1"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Sum1"
-	      SrcPort		      1
-	      Points		      [94, 0]
-	      Branch {
-		Points			[0, 60]
-		DstBlock		"Discrete-Time Integrator"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Vy"
-		DstPort			1
-	      }
 	    }
 	    Line {
 	      SrcBlock		      "Random\nNumber"
@@ -3968,6 +4016,79 @@ Model {
 		DstPort			2
 	      }
 	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [104, 0]
+	      Branch {
+		Points			[0, 55]
+		DstBlock		"Sum2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Vx"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "Discrete-Time Integrator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Fcn"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      DstBlock		      "Fcn"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      Branch {
+		Points			[0, 60]
+		DstBlock		"Sum4"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Vy"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Sum4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum4"
+	      SrcPort		      1
+	      DstBlock		      "Discrete-Time Integrator"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Block {
@@ -3988,7 +4109,7 @@ Model {
 	  System {
 	    Name		    " Original"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5428,10 +5549,7 @@ Stateflow {
     firstTransition	    25
     firstJunction	    24
     viewObj		    14
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART

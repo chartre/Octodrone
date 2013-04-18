@@ -19,7 +19,7 @@
 load exp_ini_fase1.txt; % carga el txt con los datos para trabajar con el.
 exp=exp_ini_fase1; % crea una copia del txt para no machacar el original y que siga estando disponible
 
-sim('ComparadorModelo_continuo_separado'); % simula el modelo de "ComparadorModelo_continuo.mdl"
+sim('ComparadorModelo_continuo_cascada'); % simula el modelo de "ComparadorModelo_continuo.mdl"
 % cero=[20 5];
 % dimSala=[0 25 0 20];
 % indModelo=pintaResultExp(ResultExp,cero,dimSala);

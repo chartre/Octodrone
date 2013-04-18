@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.144"
+    ComputedModelVersion    "1.146"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 11 12:52:21 2013"
-  RTWModifiedTimeStamp	  287585082
-  ModelVersionFormat	  "1.%<AutoIncrement:144>"
+  LastModifiedDate	  "Thu Apr 18 10:53:29 2013"
+  RTWModifiedTimeStamp	  288183126
+  ModelVersionFormat	  "1.%<AutoIncrement:146>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -722,6 +722,11 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -757,6 +762,11 @@ Model {
       IgnoreLimit	      off
       StateMustResolveToSignalObject off
       RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      FromWorkspace
@@ -870,7 +880,7 @@ Model {
   }
   System {
     Name		    "ComparadorModelo_continuo_cascada"
-    Location		    [29, 64, 763, 672]
+    Location		    [337, 47, 1071, 655]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -884,7 +894,7 @@ Model {
     ShowPageBoundaries	    on
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "315"
+    SIDHighWatermark	    "320"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo NO lineal"
@@ -937,12 +947,29 @@ Model {
 	  SampleTime		  "0.06"
 	}
 	Block {
+	  BlockType		  Clock
+	  Name			  "Clock"
+	  SID			  "316"
+	  Position		  [120, 145, 140, 165]
+	  ZOrder		  27
+	  DisplayTime		  on
+	  Decimation		  "2"
+	}
+	Block {
 	  BlockType		  Constant
 	  Name			  "Constant"
 	  SID			  "314"
-	  Position		  [155, 310, 185, 340]
+	  Position		  [240, 360, 270, 390]
 	  ZOrder		  25
-	  Value			  "0.005"
+	  Value			  "0.0045"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  SID			  "320"
+	  Position		  [340, 170, 370, 200]
+	  ZOrder		  31
+	  Value			  "0.00015"
 	}
 	Block {
 	  BlockType		  DiscreteIntegrator
@@ -962,13 +989,22 @@ Model {
 	  Name			  "Discrete-Time Integrator1"
 	  SID			  "313"
 	  Ports			  [1, 1]
-	  Position		  [370, 102, 405, 138]
+	  Position		  [435, 102, 470, 138]
 	  ZOrder		  24
 	  gainval		  "1"
 	  InitialCondition	  "0.5"
 	  SampleTime		  "Ts"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
 	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  SID			  "317"
+	  Position		  [190, 140, 250, 170]
+	  ZOrder		  28
+	  Expr			  "(sin((u/12.35)+13.3))/10"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Reference
@@ -1013,6 +1049,34 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "318"
+	  Ports			  [2, 1]
+	  Position		  [305, 110, 325, 130]
+	  ZOrder		  29
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "319"
+	  Ports			  [2, 1]
+	  Position		  [370, 110, 390, 130]
+	  ZOrder		  30
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "Vx"
 	  SID			  "276"
@@ -1050,21 +1114,28 @@ Model {
 	Line {
 	  SrcBlock		  "Hammerstein-Wiener Model1"
 	  SrcPort		  1
-	  Points		  [44, 0; 0, 60]
-	  DstBlock		  "Sum"
-	  DstPort		  1
+	  Points		  [31, 0]
+	  Branch {
+	    Points		    [0, 60]
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Vy"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Hammerstein-Wiener Model"
 	  SrcPort		  1
-	  Points		  [37, 0]
+	  Points		  [14, 0]
 	  Branch {
-	    Points		    [0, 75]
-	    DstBlock		    "Discrete-Time Integrator1"
+	    DstBlock		    "Vx"
 	    DstPort		    1
 	  }
 	  Branch {
-	    DstBlock		    "Vx"
+	    Points		    [0, 75]
+	    DstBlock		    "Sum1"
 	    DstPort		    1
 	  }
 	}
@@ -1095,23 +1166,47 @@ Model {
 	Line {
 	  SrcBlock		  "Constant"
 	  SrcPort		  1
-	  Points		  [140, 0]
+	  Points		  [55, 0]
 	  DstBlock		  "Sum"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Sum"
 	  SrcPort		  1
-	  Points		  [8, 0]
-	  Branch {
-	    Points		    [0, -60]
-	    DstBlock		    "Vy"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Discrete-Time Integrator"
-	    DstPort		    1
-	  }
+	  DstBlock		  "Discrete-Time Integrator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  DstBlock		  "Discrete-Time Integrator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Clock"
+	  SrcPort		  1
+	  DstBlock		  "Fcn"
+	  DstPort		  1
 	}
       }
     }
