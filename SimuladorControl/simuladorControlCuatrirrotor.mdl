@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.708"
+    ComputedModelVersion    "1.720"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-1928.0, -274.0, 1936.0, 1096.0]
+      Location		      [-8.0, -8.0, 1382.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,21 +52,21 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1884.0, 917.0]
-	  ZoomFactor		  [1.5665198237885463]
-	  Offset		  [-23.7704583802025, 11.062992125984252]
+	  Extents		  [1330.0, 565.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [-77.112415635545574, 1.041169853768281]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "872"
+	  LoadSaveID		  "814"
 	  Extents		  [1330.0, 565.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-15.25, 0.0]
+	  Offset		  [-550.0, -172.5]
 	}
 	PropName		"EditorsInfo"
       }
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 11 14:41:10 2013"
-  RTWModifiedTimeStamp	  287583514
-  ModelVersionFormat	  "1.%<AutoIncrement:708>"
+  LastModifiedDate	  "Mon Apr 15 13:17:56 2013"
+  RTWModifiedTimeStamp	  287928912
+  ModelVersionFormat	  "1.%<AutoIncrement:720>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1106,7 +1106,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-1928, -274, 8, 822]
+    Location		    [-8, -8, 1374, 736]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1118,9 +1118,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    on
-    ZoomFactor		    "156"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1014"
+    SIDHighWatermark	    "1016"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1417,7 +1417,7 @@ Model {
 	  System {
 	    Name		    "Control Ejes teórico"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1503,30 +1503,10 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Display
-	      Name		      "Consigna1"
-	      SID		      "1002"
-	      Ports		      [1]
-	      Position		      [250, 18, 315, 42]
-	      ZOrder		      72
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "Consigna2"
-	      SID		      "1003"
-	      Ports		      [1]
-	      Position		      [250, 63, 315, 87]
-	      ZOrder		      73
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
-	      BlockType		      Display
 	      Name		      "Consigna3"
 	      SID		      "1011"
 	      Ports		      [1]
-	      Position		      [750, 20, 815, 70]
+	      Position		      [905, 20, 970, 70]
 	      ZOrder		      74
 	      Decimation	      "1"
 	      Lockdown		      off
@@ -1580,7 +1560,7 @@ Model {
 	      BlockType		      SubSystem
 	      Name		      "MATLAB Function"
 	      SID		      "882"
-	      Ports		      [5, 3]
+	      Ports		      [5, 2]
 	      Position		      [330, 107, 400, 253]
 	      ZOrder		      53
 	      LibraryVersion	      "1.32"
@@ -1681,26 +1661,20 @@ Model {
 		  Name			  " SFunction "
 		  SID			  "882::19"
 		  Tag			  "Stateflow S-Function simuladorControlCuatrirrotor 2"
-		  Ports			  [5, 4]
+		  Ports			  [5, 3]
 		  Position		  [180, 100, 230, 220]
 		  ZOrder		  5
 		  FunctionName		  "sf_sfun"
-		  PortCounts		  "[5 4]"
+		  PortCounts		  "[5 3]"
 		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
-		    Name		    "C"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		  }
-		  Port {
-		    PortNumber		    3
 		    Name		    "vE"
 		    RTWStorageClass	    "Auto"
 		    DataLoggingNameMode	    "SignalName"
 		  }
 		  Port {
-		    PortNumber		    4
+		    PortNumber		    3
 		    Name		    "consigna"
 		    RTWStorageClass	    "Auto"
 		    DataLoggingNameMode	    "SignalName"
@@ -1715,28 +1689,19 @@ Model {
 		}
 		Block {
 		  BlockType		  Outport
-		  Name			  "C"
-		  SID			  "882::41"
-		  Position		  [460, 101, 480, 119]
-		  ZOrder		  27
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
 		  Name			  "vE"
 		  SID			  "882::40"
-		  Position		  [460, 136, 480, 154]
+		  Position		  [460, 101, 480, 119]
 		  ZOrder		  26
-		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "consigna"
 		  SID			  "882::35"
-		  Position		  [460, 171, 480, 189]
+		  Position		  [460, 136, 480, 154]
 		  ZOrder		  21
-		  Port			  "3"
+		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Line {
@@ -1770,18 +1735,10 @@ Model {
 		  DstPort		  5
 		}
 		Line {
-		  Name			  "C"
-		  Labels		  [0, 0]
-		  SrcBlock		  " SFunction "
-		  SrcPort		  2
-		  DstBlock		  "C"
-		  DstPort		  1
-		}
-		Line {
 		  Name			  "vE"
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
-		  SrcPort		  3
+		  SrcPort		  2
 		  DstBlock		  "vE"
 		  DstPort		  1
 		}
@@ -1789,7 +1746,7 @@ Model {
 		  Name			  "consigna"
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
-		  SrcPort		  4
+		  SrcPort		  3
 		  DstBlock		  "consigna"
 		  DstPort		  1
 		}
@@ -2034,6 +1991,17 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "1015"
+	      Ports		      [2, 1]
+	      Position		      [500, 56, 505, 94]
+	      ZOrder		      75
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "885"
@@ -2102,6 +2070,7 @@ Model {
 	      VariableName	      "vCons"
 	      MaxDataPoints	      "inf"
 	      SampleTime	      "-1"
+	      SaveFormat	      "Structure With Time"
 	    }
 	    Block {
 	      BlockType		      ToWorkspace
@@ -2183,15 +2152,15 @@ Model {
 	    Line {
 	      SrcBlock		      "pos"
 	      SrcPort		      1
-	      Points		      [154, 0]
-	      Branch {
-		Points			[0, -120]
-		DstBlock		"Consigna1"
-		DstPort			1
-	      }
+	      Points		      [215, 0]
 	      Branch {
 		DstBlock		"MATLAB Function"
 		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -85]
+		DstBlock		"Mux"
+		DstPort			1
 	      }
 	    }
 	    Line {
@@ -2239,8 +2208,8 @@ Model {
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function"
-	      SrcPort		      3
-	      Points		      [45, 0; 0, 90]
+	      SrcPort		      2
+	      Points		      [45, 0; 0, 100]
 	      DstBlock		      "Multiport Switch"
 	      DstPort		      2
 	    }
@@ -2267,21 +2236,21 @@ Model {
 	    Line {
 	      SrcBlock		      "pos1"
 	      SrcPort		      1
-	      Points		      [194, 0]
-	      Branch {
-		Points			[0, -105]
-		DstBlock		"Consigna2"
-		DstPort			1
-	      }
+	      Points		      [238, 0]
 	      Branch {
 		DstBlock		"MATLAB Function"
 		DstPort			3
 	      }
+	      Branch {
+		Points			[0, -95]
+		DstBlock		"Mux"
+		DstPort			2
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "MATLAB Function"
-	      SrcPort		      2
-	      Points		      [79, 0]
+	      SrcPort		      1
+	      Points		      [0, 35; 79, 0]
 	      Branch {
 		Points			[0, 50]
 		DstBlock		"Fcn"
@@ -2293,23 +2262,24 @@ Model {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "MATLAB Function"
+	      SrcBlock		      "Mux"
 	      SrcPort		      1
-	      Points		      [291, 0]
+	      Points		      [186, 0]
 	      Branch {
-		Points			[0, 65]
+		Points			[0, 120]
 		DstBlock		"Sum"
 		DstPort			1
 	      }
 	      Branch {
-		Points			[0, -25; 20, 0]
+		Points			[20, 0]
 		Branch {
-		  Points		  [0, -60]
-		  DstBlock		  "Consigna3"
+		  Points		  [0, 30]
+		  DstBlock		  "To Workspace1"
 		  DstPort		  1
 		}
 		Branch {
-		  DstBlock		  "To Workspace1"
+		  Points		  [0, -30]
+		  DstBlock		  "Consigna3"
 		  DstPort		  1
 		}
 	      }
@@ -2615,115 +2585,6 @@ Model {
 	  FilterRTWStateStorageClass "Auto"
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "Discrete PID refRoll"
-	  SID			  "898"
-	  Ports			  [1, 1]
-	  Position		  [860, 307, 900, 343]
-	  ZOrder		  40
-	  LibraryVersion	  "1.281"
-	  SourceBlock		  "simulink/Continuous/PID Controller"
-	  SourceType		  "PID 1dof"
-	  Controller		  "PID"
-	  TimeDomain		  "Discrete-time"
-	  SampleTime		  "Ts"
-	  IntegratorMethod	  "Forward Euler"
-	  FilterMethod		  "Forward Euler"
-	  Form			  "Parallel"
-	  P			  "1.1"
-	  I			  "0.002"
-	  D			  "0.5"
-	  N			  "10"
-	  InitialConditionSource  "internal"
-	  InitialConditionForIntegrator	"0"
-	  InitialConditionForFilter "0"
-	  ExternalReset		  "none"
-	  IgnoreLimit		  off
-	  ZeroCross		  on
-	  LimitOutput		  off
-	  UpperSaturationLimit	  "inf"
-	  LowerSaturationLimit	  "-inf"
-	  LinearizeAsGain	  off
-	  AntiWindupMode	  "none"
-	  Kb			  "1"
-	  TrackingMode		  off
-	  Kt			  "1"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	  LockScale		  off
-	  PParamMin		  "[]"
-	  PParamMax		  "[]"
-	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IParamMin		  "[]"
-	  IParamMax		  "[]"
-	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  DParamMin		  "[]"
-	  DParamMax		  "[]"
-	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  NParamMin		  "[]"
-	  NParamMax		  "[]"
-	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KbParamMin		  "[]"
-	  KbParamMax		  "[]"
-	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KtParamMin		  "[]"
-	  KtParamMax		  "[]"
-	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  POutMin		  "[]"
-	  POutMax		  "[]"
-	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IOutMin		  "[]"
-	  IOutMax		  "[]"
-	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  DOutMin		  "[]"
-	  DOutMax		  "[]"
-	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  NOutMin		  "[]"
-	  NOutMax		  "[]"
-	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KbOutMin		  "[]"
-	  KbOutMax		  "[]"
-	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KtOutMin		  "[]"
-	  KtOutMax		  "[]"
-	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IntegratorOutMin	  "[]"
-	  IntegratorOutMax	  "[]"
-	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-	  FilterOutMin		  "[]"
-	  FilterOutMax		  "[]"
-	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumOutMin		  "[]"
-	  SumOutMax		  "[]"
-	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI1OutMin		  "[]"
-	  SumI1OutMax		  "[]"
-	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI2OutMin		  "[]"
-	  SumI2OutMax		  "[]"
-	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI3OutMin		  "[]"
-	  SumI3OutMax		  "[]"
-	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumDOutMin		  "[]"
-	  SumDOutMax		  "[]"
-	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturationOutMin	  "[]"
-	  SaturationOutMax	  "[]"
-	  SaturationOutDataTypeStr "Inherit: Same as input"
-	  IntegratorContinuousStateAttributes "''"
-	  IntegratorStateMustResolveToSignalObject off
-	  IntegratorRTWStateStorageClass "Auto"
-	  FilterContinuousStateAttributes "''"
-	  FilterStateMustResolveToSignalObject off
-	  FilterRTWStateStorageClass "Auto"
-	}
-	Block {
 	  BlockType		  Gain
 	  Name			  "Gain"
 	  SID			  "899"
@@ -2830,6 +2691,115 @@ Model {
 	  SampleTime		  "Ts"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Y bajo bien pero alto largo"
+	  SID			  "1016"
+	  Ports			  [1, 1]
+	  Position		  [860, 307, 900, 343]
+	  ZOrder		  87
+	  LibraryVersion	  "1.281"
+	  SourceBlock		  "simulink/Continuous/PID Controller"
+	  SourceType		  "PID 1dof"
+	  Controller		  "PID"
+	  TimeDomain		  "Discrete-time"
+	  SampleTime		  "Ts"
+	  IntegratorMethod	  "Forward Euler"
+	  FilterMethod		  "Forward Euler"
+	  Form			  "Parallel"
+	  P			  "1"
+	  I			  "0.16"
+	  D			  "0.5"
+	  N			  "10"
+	  InitialConditionSource  "internal"
+	  InitialConditionForIntegrator	"0"
+	  InitialConditionForFilter "0"
+	  ExternalReset		  "none"
+	  IgnoreLimit		  off
+	  ZeroCross		  on
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  LinearizeAsGain	  off
+	  AntiWindupMode	  "none"
+	  Kb			  "1"
+	  TrackingMode		  off
+	  Kt			  "1"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  LockScale		  off
+	  PParamMin		  "[]"
+	  PParamMax		  "[]"
+	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IParamMin		  "[]"
+	  IParamMax		  "[]"
+	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DParamMin		  "[]"
+	  DParamMax		  "[]"
+	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NParamMin		  "[]"
+	  NParamMax		  "[]"
+	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbParamMin		  "[]"
+	  KbParamMax		  "[]"
+	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtParamMin		  "[]"
+	  KtParamMax		  "[]"
+	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  POutMin		  "[]"
+	  POutMax		  "[]"
+	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IOutMin		  "[]"
+	  IOutMax		  "[]"
+	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DOutMin		  "[]"
+	  DOutMax		  "[]"
+	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NOutMin		  "[]"
+	  NOutMax		  "[]"
+	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbOutMin		  "[]"
+	  KbOutMax		  "[]"
+	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtOutMin		  "[]"
+	  KtOutMax		  "[]"
+	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IntegratorOutMin	  "[]"
+	  IntegratorOutMax	  "[]"
+	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  FilterOutMin		  "[]"
+	  FilterOutMax		  "[]"
+	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumOutMin		  "[]"
+	  SumOutMax		  "[]"
+	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1OutMin		  "[]"
+	  SumI1OutMax		  "[]"
+	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2OutMin		  "[]"
+	  SumI2OutMax		  "[]"
+	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3OutMin		  "[]"
+	  SumI3OutMax		  "[]"
+	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDOutMin		  "[]"
+	  SumDOutMax		  "[]"
+	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturationOutMin	  "[]"
+	  SaturationOutMax	  "[]"
+	  SaturationOutDataTypeStr "Inherit: Same as input"
+	  IntegratorContinuousStateAttributes "''"
+	  IntegratorStateMustResolveToSignalObject off
+	  IntegratorRTWStateStorageClass "Auto"
+	  FilterContinuousStateAttributes "''"
+	  FilterStateMustResolveToSignalObject off
+	  FilterRTWStateStorageClass "Auto"
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "RefPitch"
 	  SID			  "910"
@@ -2904,7 +2874,7 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Discrete PID refRoll"
+	  SrcBlock		  "Y bajo bien pero alto largo"
 	  SrcPort		  1
 	  DstBlock		  "Saturation1"
 	  DstPort		  1
@@ -2984,7 +2954,7 @@ Model {
 	Line {
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
-	  DstBlock		  "Discrete PID refRoll"
+	  DstBlock		  "Y bajo bien pero alto largo"
 	  DstPort		  1
 	}
 	Line {
@@ -4018,7 +3988,7 @@ Model {
 	  System {
 	    Name		    " Original"
 	    Location		    [-8, -8, 1374, 736]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5204,9 +5174,7 @@ Stateflow {
     name		    "simuladorControlCuatrirrotor"
     created		    "25-Nov-2011 18:14:19"
     isLibrary		    0
-    firstTarget		    28
-    debug {
-    }
+    firstTarget		    27
     sfVersion		    76014001.001
   }
   chart {
@@ -5216,13 +5184,10 @@ Stateflow {
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
     treeNode		    [0 3 0 0]
-    firstTransition	    13
-    firstJunction	    12
+    firstTransition	    12
+    firstJunction	    11
     viewObj		    2
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    24
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5247,26 +5212,26 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [C,vE,consigna] = CalcRef(posAnt,posx,posy,SPPos,CurrRef)\n\nA=posAnt;\nB=SPPos;\nC=[pos"
-      "x;posy]; %construimos vector posicion\n\n% creamos vector director de la recta AB (recta r)\nVr = B-A;\n\n% inic"
-      "iamos vector Vs\nVs = Vr;\n\n% creamos vector perpendicular a Vr\nVs(1,1) = -Vr(2,1);\nVs(2,1) = Vr(1,1);\n\n% c"
-      "reamos matriz de vectores directores\nMatrA = [Vr,-Vs];\n\n% creamos matriz de valores independientes\nMatrB = C"
-      "-A;\n\n% calculamos los valores de las K's de cada recta\nK = inv(MatrA)*MatrB;\n\n% sacamos el punto D interese"
-      "ccion de las rectas\nD = A + K(1,1)*Vr;\n\nvE = D-C;\n\n%% Calculo cuando CurrRef no está sobre la trayectoria\n"
-      "% Se añade esta segunda parte para corregir desviaciones de la trayectoria \n% ideal teórica de la forma apropia"
-      "da y evitar discrepancias según el método \n% de gestión de consigna empleado. Funciona correctamente.\n\n% crea"
-      "mos matriz de valores independientes\nMatrC = CurrRef-A;\n\n% calculamos los valores de las K's de cada recta\nK"
-      "1 = inv(MatrA)*MatrC;\n\n% sacamos el punto E, vertical desde CurrRef, intereseccion de las rectas\n% con trayec"
-      "toria\nE = A + K1(1,1)*Vr;\n\n% Permite seleccionar el instante al que afecta la\n% magnitud de la corrección (p"
-      "osible introducción a la corrección variable\n% selectiva)\n%    if norm(vE)>0.2 \n    consigna = E + vE*3;\n%  "
-      "   else\n%         consigna = E + vE;\n%     end\n\n\n"
+      script		      "function [vE,consigna] = CalcRef(posAnt,posx,posy,SPPos,CurrRef)\n\nA=posAnt;\nB=SPPos;\nC=[posx;"
+      "posy]; %construimos vector posicion\n\n% creamos vector director de la recta AB (recta r)\nVr = B-A;\n\n% inicia"
+      "mos vector Vs\nVs = Vr;\n\n% creamos vector perpendicular a Vr\nVs(1,1) = -Vr(2,1);\nVs(2,1) = Vr(1,1);\n\n% cre"
+      "amos matriz de vectores directores\nMatrA = [Vr,-Vs];\n\n% creamos matriz de valores independientes\nMatrB = C-A"
+      ";\n\n% calculamos los valores de las K's de cada recta\nK = inv(MatrA)*MatrB;\n\n% sacamos el punto D interesecc"
+      "ion de las rectas\nD = A + K(1,1)*Vr;\n\nvE = D-C;\n\n%% Calculo cuando CurrRef no está sobre la trayectoria\n% "
+      "Se añade esta segunda parte para corregir desviaciones de la trayectoria \n% ideal teórica de la forma apropiada"
+      " y evitar discrepancias según el método \n% de gestión de consigna empleado. Funciona correctamente.\n\n% creamo"
+      "s matriz de valores independientes\nMatrC = CurrRef-A;\n\n% calculamos los valores de las K's de cada recta\nK1 "
+      "= inv(MatrA)*MatrC;\n\n% sacamos el punto E, vertical desde CurrRef, intereseccion de las rectas\n% con trayecto"
+      "ria\nE = A + K1(1,1)*Vr;\n\n% Permite seleccionar el instante al que afecta la\n% magnitud de la corrección (pos"
+      "ible introducción a la corrección variable\n% selectiva)\n%    if norm(vE)>0.2 \n    consigna = E + vE*3;\n%    "
+      " else\n%         consigna = E + vE;\n%     end\n\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    4
-    ssIdNumber		    24
-    name		    "C"
+    ssIdNumber		    23
+    name		    "vE"
     linkNode		    [2 0 5]
     scope		    OUTPUT_DATA
     machine		    1
@@ -5287,31 +5252,9 @@ Stateflow {
   }
   data {
     id			    5
-    ssIdNumber		    23
-    name		    "vE"
-    linkNode		    [2 4 6]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    6
     ssIdNumber		    4
     name		    "posAnt"
-    linkNode		    [2 5 7]
+    linkNode		    [2 4 6]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5327,9 +5270,31 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    7
+    id			    6
     ssIdNumber		    21
     name		    "posx"
+    linkNode		    [2 5 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    7
+    ssIdNumber		    22
+    name		    "posy"
     linkNode		    [2 6 8]
     scope		    INPUT_DATA
     machine		    1
@@ -5350,8 +5315,8 @@ Stateflow {
   }
   data {
     id			    8
-    ssIdNumber		    22
-    name		    "posy"
+    ssIdNumber		    7
+    name		    "SPPos"
     linkNode		    [2 7 9]
     scope		    INPUT_DATA
     machine		    1
@@ -5372,8 +5337,8 @@ Stateflow {
   }
   data {
     id			    9
-    ssIdNumber		    7
-    name		    "SPPos"
+    ssIdNumber		    8
+    name		    "CurrRef"
     linkNode		    [2 8 10]
     scope		    INPUT_DATA
     machine		    1
@@ -5394,31 +5359,9 @@ Stateflow {
   }
   data {
     id			    10
-    ssIdNumber		    8
-    name		    "CurrRef"
-    linkNode		    [2 9 11]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    11
     ssIdNumber		    18
     name		    "consigna"
-    linkNode		    [2 10 0]
+    linkNode		    [2 9 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -5437,7 +5380,7 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    12
+    id			    11
     position		    [23.5747 49.5747 7]
     chart		    2
     linkNode		    [2 0 0]
@@ -5446,7 +5389,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    13
+    id			    12
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -5454,7 +5397,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      12
+      id		      11
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -5470,21 +5413,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    14
+    id			    13
     name		    "Controlador/Control Ejes teórico/MATLAB Function"
     machine		    1
     chart		    2
   }
   chart {
-    id			    15
+    id			    14
     name		    "Controlador/Control Ejes teórico/MATLAB Function2"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
-    treeNode		    [0 16 0 0]
-    firstTransition	    26
-    firstJunction	    25
-    viewObj		    15
+    treeNode		    [0 15 0 0]
+    firstTransition	    25
+    firstJunction	    24
+    viewObj		    14
     visible		    1
     machine		    1
     subviewS {
@@ -5492,7 +5435,7 @@ Stateflow {
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    17
+    firstData		    16
     chartFileNumber	    3
     disableImplicitCasting  1
     eml {
@@ -5500,14 +5443,14 @@ Stateflow {
     }
   }
   state {
-    id			    16
+    id			    15
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    15
-    treeNode		    [15 0 0 0]
+    chart		    14
+    treeNode		    [14 0 0 0]
     superState		    SUBCHART
-    subviewer		    15
+    subviewer		    14
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -5517,16 +5460,16 @@ Stateflow {
       "elocidad y aceleración a título teórico para\n% definir las consignas a seguir según unas velocidades y acelerac"
       "iones\n% máximas teóricas constantes obtenidas experimentalmente en los modelos.\n% No corrige las imprecisiones"
       " en la trayectoria y el desincronismo de los ejes\n% en el arranque. Problemas en la llegada de sobrepasamiento."
-      "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 8.33;\nminAx = -"
-      "5.87;\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2;\nminAy = -2;\n\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPPos-Las"
-      "tRef;\n% DistTot = SPPos - posAnt; % Posible uso de la 'DistanciaTotal' del trayecto\n% para intervención en ins"
-      "tantes específicos del recorrido.\n\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1) % Condición de aplicación"
-      " para criterio de distancias\n% RelA = maxAx/maxAy;\nRelD = DistXY(1)/DistXY(2);\n\nCurrRef = LastRef;\n    \n%%"
-      " Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternativa para evitar valores anó"
-      "malos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/Vx);\n        minTy = abs ("
-      "DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n    end\nelse\n    minTx = 0;"
-      "\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de 'Consigna'\n\nif (norm(Dist"
-      "XY)<=(radio)) % (0.5*radio) ¿Hemos llegado?\nCurrRef = LastRef;\nelse % No hemos llegado...\n    \n   % Cálculo "
+      "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 2;\nminAx = -5.8"
+      "7;\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2.36;\nminAy = -2.84;\n\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPPos-"
+      "LastRef;\n% DistTot = SPPos - posAnt; % Posible uso de la 'DistanciaTotal' del trayecto\n% para intervención en "
+      "instantes específicos del recorrido.\n\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1) % Condición de aplicac"
+      "ión para criterio de distancias\n% RelA = maxAx/maxAy;\nRelD = DistXY(1)/DistXY(2);\n\nCurrRef = LastRef;\n    \n"
+      "%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternativa para evitar valores a"
+      "nómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/Vx);\n        minTy = abs"
+      " (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n    end\nelse\n    minTx = "
+      "0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de 'Consigna'\n\nif (norm(Di"
+      "stXY)<=(radio)) % (0.5*radio) ¿Hemos llegado?\nCurrRef = SPPos;\nelse % No hemos llegado...\n    \n   % Cálculo "
       "de límite de aceleraciones según el tipo de movimiento desempeñado\n    if DistXY(1)>0 % 'X' positiva\n        i"
       "f RelD>0 % Cuadrante 1\n            RelA=abs(maxAx/maxAy);\n        else % Cuadrante 4\n            RelA=abs(max"
       "Ax/minAy);\n        end\n    else % 'X' negativa\n        if RelD>0 % Cuadrante 3\n            RelA=abs(minAx/mi"
@@ -5553,19 +5496,20 @@ Stateflow {
       " AB (recta r)\nVr = B-A;\n% iniciamos vector Vs\nVs = Vr;\n% creamos vector perpendicular a Vr\nVs(1,1) = -Vr(2,"
       "1);\nVs(2,1) = Vr(1,1);\n% creamos matriz de vectores directores\nMatrA = [Vr,-Vs];\n% creamos matriz de valores"
       " independientes\nMatrB = CurrRef-A;\n% calculamos los valores de las K's de cada recta\nK = inv(MatrA)*MatrB;\n%"
-      " sacamos el punto D intereseccion de las rectas\nD = A + K(1,1)*Vr;\nCurrRef=D;\n\n\n%% Método de control de Enr"
-      "ique\n\n% DistXY =SPPos-LastRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%     CurrRef = LastRef;\n%"
-      " else\n%     minTx = abs (DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n%     \n%     minT = max (min"
-      "Tx,minTy);\n%     \n%     if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%         CurrRef = LastRef + (Ts/"
-      "minT)*DistXY;\n%     end\n% end"
+      " sacamos el punto D intereseccion de las rectas\nD = A + K(1,1)*Vr;\nCurrRef=D;\n\n%% Forzado a salir desde el p"
+      "unto y no irse hacia \"atras\"\n\nDtray = norm(SPPos - posAnt);\nDref = norm(SPPos - LastRef);\nif Dref > (Dtray"
+      "+radio)\n    CurrRef = posAnt;\nend\n\n%% Método de control de Enrique\n\n% DistXY =SPPos-LastRef;\n% \n% if (no"
+      "rm(DistXY)<(0.5*radio)) % (0.5*radio)\n%     CurrRef = LastRef;\n% else\n%     minTx = abs (DistXY(1))/maxVx;\n%"
+      "     minTy = abs (DistXY(2))/maxVy;\n%     \n%     minT = max (minTx,minTy);\n%     \n%     if minT<Ts\n%       "
+      "  CurrRef = SPPos;\n%     else\n%         CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n% end"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    17
+    id			    16
     ssIdNumber		    12
     name		    "posAnt"
-    linkNode		    [15 0 18]
+    linkNode		    [14 0 17]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5584,10 +5528,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    18
+    id			    17
     ssIdNumber		    5
     name		    "CurrRef"
-    linkNode		    [15 17 19]
+    linkNode		    [14 16 18]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -5604,10 +5548,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    19
+    id			    18
     ssIdNumber		    4
     name		    "SPPos"
-    linkNode		    [15 18 20]
+    linkNode		    [14 17 19]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5623,10 +5567,32 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    20
+    id			    19
     ssIdNumber		    6
     name		    "LastRef"
-    linkNode		    [15 19 21]
+    linkNode		    [14 18 20]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    20
+    ssIdNumber		    7
+    name		    "Ts"
+    linkNode		    [14 19 21]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5646,9 +5612,9 @@ Stateflow {
   }
   data {
     id			    21
-    ssIdNumber		    7
-    name		    "Ts"
-    linkNode		    [15 20 22]
+    ssIdNumber		    8
+    name		    "radio"
+    linkNode		    [14 20 22]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5668,9 +5634,9 @@ Stateflow {
   }
   data {
     id			    22
-    ssIdNumber		    8
-    name		    "radio"
-    linkNode		    [15 21 23]
+    ssIdNumber		    13
+    name		    "Vx"
+    linkNode		    [14 21 23]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5690,31 +5656,9 @@ Stateflow {
   }
   data {
     id			    23
-    ssIdNumber		    13
-    name		    "Vx"
-    linkNode		    [15 22 24]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    24
     ssIdNumber		    14
     name		    "Vy"
-    linkNode		    [15 23 0]
+    linkNode		    [14 22 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5733,16 +5677,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    25
+    id			    24
     position		    [23.5747 49.5747 7]
-    chart		    15
-    linkNode		    [15 0 0]
-    subviewer		    15
+    chart		    14
+    linkNode		    [14 0 0]
+    subviewer		    14
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    26
+    id			    25
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -5750,14 +5694,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      25
+      id		      24
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    15
-    linkNode		    [15 0 0]
+    chart		    14
+    linkNode		    [14 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    15
+    subviewer		    14
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -5766,13 +5710,13 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    27
+    id			    26
     name		    "Controlador/Control Ejes teórico/MATLAB Function2"
     machine		    1
-    chart		    15
+    chart		    14
   }
   target {
-    id			    28
+    id			    27
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
