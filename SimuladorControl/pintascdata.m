@@ -16,7 +16,7 @@
 
 %% Función pintascdata()
 
-function indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,vCons)
+function indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,vCons)
 % indicadores=pintascdata(scdata,ruta,radio)
 % 
 % Dibuja las graficas de un ensayo de control
@@ -186,12 +186,11 @@ title('Valores del movimiento')
 grid
 subplot(313) % Gráfica extra para verificar relación de distancia de consigna-posición
 hold on
-plot(modulo_vCons,'k')
-plot(vCons.time,vCons.signals.values(:,1))
-plot(vCons.time,vCons.signals.values(:,2),'c')
+plot(vCons.time,vCons.signals.values(:,1),'k')
+plot(vCons.time,vCons.signals.values(:,2),'m')
 plot(scVar.time,scVar.signals(1,1).values(:,3)/15,'r')
 plot(scVar.time,scVar.signals(1,2).values(:,3)/15,'r')
-legend('consigna-pos','x','y','SPPos X','SPPos Y')
+legend('consignaX','consignaY','SPPos X','SPPos Y')
 title('Relación consigna-pos en tiempo de ejecución')
 grid
 
