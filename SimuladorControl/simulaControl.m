@@ -21,6 +21,7 @@
 % ruta=[1 -6;-5 -7;-13 -6;-12 0]; % Prueba de trayectos básicos
 % ruta=[3 2;1 -6;-5 -7;-13 -6;-12 0]; % Prueba de trayectos básicos FAIL!!
 ruta=[12 0;12 5;7 -5;-1 4;-6 -5;-2 0]; % Trayecto original
+% ruta=[0 0;0.2 0.2]; % Trayecto original
 % ruta=[12 0;12 12;0 12;0 0]; % Trayecto cuadrado, horiz. y vert.
 %ruta=intermedio(ruta,2);% Esta funcion añade puntos intermedios.
 radio=0.1;

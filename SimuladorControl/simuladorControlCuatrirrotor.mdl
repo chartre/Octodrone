@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.740"
+    ComputedModelVersion    "1.759"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1382.0, 744.0]
+      Location		      [-8.0, -8.0, 1378.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,19 +52,19 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1330.0, 565.0]
-	  ZoomFactor		  [1.25]
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "865"
+	  Extents		  [1326.0, 565.0]
+	  ZoomFactor		  [1.0]
 	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "872"
-	  Extents		  [1330.0, 565.0]
+	  Extents		  [1326.0, 565.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [-15.25, 0.0]
 	}
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Carlos"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 23 14:24:19 2013"
-  RTWModifiedTimeStamp	  288623164
-  ModelVersionFormat	  "1.%<AutoIncrement:740>"
+  LastModifiedDate	  "Thu May 09 18:37:48 2013"
+  RTWModifiedTimeStamp	  290018533
+  ModelVersionFormat	  "1.%<AutoIncrement:759>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "50"
+	  StopTime		  "100"
 	  AbsTol		  "auto"
 	  FixedStep		  "0.06"
 	  InitialStep		  "auto"
@@ -1106,8 +1106,8 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1374, 736]
-    Open		    on
+    Location		    [-8, -8, 1370, 736]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1118,9 +1118,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    on
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1024"
+    SIDHighWatermark	    "1032"
     Block {
       BlockType		      ManualSwitch
       Name		      "\n"
@@ -1325,8 +1325,8 @@ Model {
       }
       System {
 	Name			"Controlador"
-	Location		[-8, -8, 1374, 736]
-	Open			off
+	Location		[-8, -8, 1370, 736]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1416,7 +1416,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, -8, 1374, 736]
+	    Location		    [-8, -8, 1370, 736]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2335,6 +2335,19 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Coulomb & Viscous Friction1"
+	  SID			  "1032"
+	  Ports			  [1, 1]
+	  Position		  [945, 155, 975, 185]
+	  ZOrder		  93
+	  LibraryVersion	  "1.281"
+	  SourceBlock		  "simulink/Discontinuities/Coulomb &\nViscous Friction"
+	  SourceType		  "Coulombic and Viscous Friction"
+	  offset		  "0.07"
+	  gain			  "1"
+	}
+	Block {
 	  BlockType		  Delay
 	  Name			  "Delay"
 	  SID			  "894"
@@ -2370,11 +2383,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Discrete PID refPitch2"
-	  SID			  "1013"
+	  Name			  "Discrete PID refPitch1"
+	  SID			  "1030"
 	  Ports			  [1, 1]
-	  Position		  [625, 32, 665, 68]
-	  ZOrder		  85
+	  Position		  [860, 152, 900, 188]
+	  ZOrder		  91
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
@@ -2384,10 +2397,10 @@ Model {
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "0.65"
+	  P			  "0.1"
 	  I			  "0"
-	  D			  "0.5"
-	  N			  "15"
+	  D			  "0.05"
+	  N			  "12"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -2479,11 +2492,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Discrete PID refPitch3"
-	  SID			  "1014"
+	  Name			  "Discrete PID refPitch2"
+	  SID			  "1013"
 	  Ports			  [1, 1]
-	  Position		  [860, 152, 900, 188]
-	  ZOrder		  86
+	  Position		  [625, 32, 665, 68]
+	  ZOrder		  85
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
@@ -2493,9 +2506,9 @@ Model {
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "0.6"
+	  P			  "0.65"
 	  I			  "0"
-	  D			  "0.6"
+	  D			  "0.5"
 	  N			  "15"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
@@ -2637,9 +2650,11 @@ Model {
 	  Name			  "Saturation"
 	  SID			  "903"
 	  Ports			  [1, 1]
-	  Position		  [960, 155, 990, 185]
+	  Position		  [1015, 155, 1045, 185]
 	  ZOrder		  35
 	  InputPortMap		  "u0"
+	  UpperLimit		  "0.6"
+	  LowerLimit		  "-0.6"
 	  SampleTime		  "Ts"
 	}
 	Block {
@@ -2650,6 +2665,8 @@ Model {
 	  Position		  [960, 310, 990, 340]
 	  ZOrder		  37
 	  InputPortMap		  "u0"
+	  UpperLimit		  "0.6"
+	  LowerLimit		  "-0.6"
 	  SampleTime		  "Ts"
 	}
 	Block {
@@ -2695,10 +2712,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Y bajo bien pero alto largo"
-	  SID			  "1016"
+	  SID			  "1028"
 	  Ports			  [1, 1]
 	  Position		  [860, 307, 900, 343]
-	  ZOrder		  87
+	  ZOrder		  89
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
@@ -2708,10 +2725,10 @@ Model {
 	  IntegratorMethod	  "Forward Euler"
 	  FilterMethod		  "Forward Euler"
 	  Form			  "Parallel"
-	  P			  "1"
-	  I			  "0.16"
-	  D			  "0.5"
-	  N			  "10"
+	  P			  "1.5"
+	  I			  "0"
+	  D			  "1"
+	  N			  "27"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -2805,7 +2822,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "RefPitch"
 	  SID			  "910"
-	  Position		  [1035, 163, 1065, 177]
+	  Position		  [1090, 163, 1120, 177]
 	  ZOrder		  -15
 	  IconDisplay		  "Port number"
 	}
@@ -2866,7 +2883,7 @@ Model {
 	Line {
 	  SrcBlock		  "Gain"
 	  SrcPort		  1
-	  DstBlock		  "Discrete PID refPitch3"
+	  DstBlock		  "Discrete PID refPitch1"
 	  DstPort		  1
 	}
 	Line {
@@ -2882,9 +2899,9 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Discrete PID refPitch3"
+	  SrcBlock		  "Discrete PID refPitch1"
 	  SrcPort		  1
-	  DstBlock		  "Saturation"
+	  DstBlock		  "Coulomb & Viscous Friction1"
 	  DstPort		  1
 	}
 	Line {
@@ -3052,6 +3069,12 @@ Model {
 	  Points		  [26, 0; 0, -15]
 	  DstBlock		  "Control Ejes teórico"
 	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Coulomb & Viscous Friction1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
 	}
       }
     }
@@ -3647,7 +3670,7 @@ Model {
       }
       System {
 	Name			"Modelo"
-	Location		[-8, -8, 1374, 736]
+	Location		[-8, -8, 1370, 736]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3703,7 +3726,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    " Modelo NO lineal"
-	    Location		    [-8, -8, 1374, 736]
+	    Location		    [-8, -8, 1370, 736]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4023,9 +4046,17 @@ Model {
 	      SrcPort		      1
 	      Points		      [104, 0]
 	      Branch {
-		Points			[0, 55]
-		DstBlock		"Sum2"
-		DstPort			1
+		Points			[0, 31]
+		Branch {
+		  Points		  [198, 0; 0, 24]
+		  DstBlock		  "Discrete-Time Integrator1"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 24]
+		  DstBlock		  "Sum2"
+		  DstPort		  1
+		}
 	      }
 	      Branch {
 		DstBlock		"Vx"
@@ -4041,8 +4072,7 @@ Model {
 	    Line {
 	      SrcBlock		      "Sum3"
 	      SrcPort		      1
-	      DstBlock		      "Discrete-Time Integrator1"
-	      DstPort		      1
+	      Points		      [-5, 0; 18, 0; 0, 0]
 	    }
 	    Line {
 	      SrcBlock		      "Constant1"
@@ -4907,6 +4937,22 @@ Model {
       Lockdown		      off
     }
     Block {
+      BlockType		      Reference
+      Name		      "XY Graph"
+      SID		      "1025"
+      Ports		      [2]
+      Position		      [1025, 65, 1055, 100]
+      ZOrder		      29
+      LibraryVersion	      "1.281"
+      SourceBlock	      "simulink/Sinks/XY Graph"
+      SourceType	      "XY scope."
+      xmin		      "-10"
+      xmax		      "20"
+      ymin		      "-10"
+      ymax		      "10"
+      st		      "Ts"
+    }
+    Block {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "9"
@@ -5140,23 +5186,31 @@ Model {
     Line {
       SrcBlock		      "Modelo"
       SrcPort		      4
-      Points		      [100, 0]
+      Points		      [58, 0]
       Branch {
-	Points			[0, 102]
-	Branch {
-	  Points		  [-410, 0; 0, -47]
-	  DstBlock		  "Controlador"
-	  DstPort		  6
-	}
-	Branch {
-	  Points		  [0, 173]
-	  DstBlock		  "Mux4"
-	  DstPort		  1
-	}
+	Points			[0, -160]
+	DstBlock		"XY Graph"
+	DstPort			2
       }
       Branch {
-	DstBlock		"Mux"
-	DstPort			2
+	Points			[42, 0]
+	Branch {
+	  Points		  [0, 102]
+	  Branch {
+	    Points		    [-410, 0; 0, -47]
+	    DstBlock		    "Controlador"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Points		    [0, 173]
+	    DstBlock		    "Mux4"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
       }
     }
     Line {
@@ -5177,20 +5231,28 @@ Model {
     Line {
       SrcBlock		      "Modelo"
       SrcPort		      3
-      Points		      [82, 0]
+      Points		      [43, 0]
       Branch {
-	Points			[0, 235]
-	DstBlock		"Mux5"
+	Points			[0, -155]
+	DstBlock		"XY Graph"
 	DstPort			1
       }
       Branch {
-	Points			[0, -108; -383, 0; 0, 123]
-	DstBlock		"Controlador"
-	DstPort			3
-      }
-      Branch {
-	DstBlock		"Mux"
-	DstPort			1
+	Points			[39, 0]
+	Branch {
+	  Points		  [0, 235]
+	  DstBlock		  "Mux5"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -108; -383, 0; 0, 123]
+	  DstBlock		  "Controlador"
+	  DstPort		  3
+	}
+	Branch {
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
       }
     }
     Line {
@@ -5583,48 +5645,50 @@ Stateflow {
       "elocidad y aceleración a título teórico para\n% definir las consignas a seguir según unas velocidades y acelerac"
       "iones\n% máximas teóricas constantes obtenidas experimentalmente en los modelos.\n% No corrige las imprecisiones"
       " en la trayectoria y el desincronismo de los ejes\n% en el arranque. Problemas en la llegada de sobrepasamiento."
-      "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 3.26;\nminVx = abs(-3.23);\nmaxAx = 2;\nminAx = -5.8"
-      "7;\nmaxVy = 1.9;\nminVy = maxVy;\nmaxAy = 2.36;\nminAy = -2.84;\n\n\n% Cuadr = SPPos - posAnt;\n\nDistXY =SPPos-"
-      "LastRef;\n% DistTot = SPPos - posAnt; % Posible uso de la 'DistanciaTotal' del trayecto\n% para intervención en "
-      "instantes específicos del recorrido.\n\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1) % Condición de aplicac"
-      "ión para criterio de distancias\n% RelA = maxAx/maxAy;\nRelD = DistXY(1)/DistXY(2);\n\nCurrRef = LastRef;\n    \n"
-      "%% Apaño temporal para condición de llegada en función de \"minT\"\n% Solución alternativa para evitar valores a"
-      "nómalos por división entre 0\n\nif Vx~=0\n    if Vy~=0\n        minTx = abs (DistXY(1)/Vx);\n        minTy = abs"
-      " (DistXY(2)/Vy);\n    else\n        minTx = abs (DistXY(1)/Vx);\n        minTy = 0;\n    end\nelse\n    minTx = "
-      "0;\n    minTy = abs (DistXY(2)/Vy);\nend\n\nminT = max (minTx,minTy);\n\n%% Control de 'Consigna'\n\nif (norm(Di"
-      "stXY)<=(radio)) % (0.5*radio) ¿Hemos llegado?\n    CurrRef = SPPos;\nelse % No hemos llegado...\n    \n    % Cál"
-      "culo de límite de aceleraciones según el tipo de movimiento desempeñado\n    if DistXY(1)>0 % 'X' positiva\n    "
-      "    if RelD>0 % Cuadrante 1\n            RelA=abs(maxAx/maxAy);\n        else % Cuadrante 4\n            RelA=ab"
-      "s(maxAx/minAy);\n        end\n    else % 'X' negativa\n        if RelD>0 % Cuadrante 3\n            RelA=abs(min"
-      "Ax/minAy);\n        else % Cuadrante 2\n            RelA=abs(minAx/maxAy);\n        end\n    end\n    \n    if ("
-      "abs(RelD)>RelA) % En el desplazamiento predomina 'X'\n        \n        if RelD==inf || RelD==0 % Condición_exce"
-      "pción\n            Ay = 0;\n            Ax = maxAx;\n        else\n            if DistXY(1)>0 % 'X' positiva\n  "
-      "              if RelD>0 % Cuadrante 1\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n     "
-      "           else % Cuadrante 4\n                    Ax = maxAx;\n                    Ay = Ax/RelD;\n             "
-      "   end\n            else % 'X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ax = minAx"
-      ";\n                    Ay = Ax/RelD;\n                else % Cuadrante 2\n                    Ax = minAx;\n     "
-      "               Ay = Ax/RelD;\n                end\n            end\n        end\n        \n    else % En el desp"
-      "lazamiento predomina 'Y'\n        \n        if RelD==inf || RelD==0 % Condición_excepción\n            Ax = 0;\n"
-      "            Ay = maxAy;\n        else\n            if DistXY(1)>0 % 'X' positiva\n                if RelD>0 % Cu"
-      "adrante 1\n                    Ay = maxAy;\n                    Ax = Ay*RelD;\n                else % Cuadrante "
-      "4\n                    Ay = minAy;\n                    Ax = Ay*RelD;\n                end\n            else % '"
-      "X' negativa\n                if RelD>0 % Cuadrante 3\n                    Ay = minAy;\n                    Ax = "
-      "Ay*RelD;\n                else % Cuadrante 2\n                    Ay = maxAy;\n                    Ax = Ay*RelD;"
-      "\n                end\n            end\n        end\n    end\n    \n    if minT<Ts % Añadido de llegada\n       "
-      " CurrRef=SPPos;\n    else\n        if minT<Ts*50\n            CurrRef(1) = LastRef(1) + (0.5*Ax*Ts*Ts);\n       "
-      "     CurrRef(2) = LastRef(2) + (0.5*Ay*Ts*Ts);\n        else\n            CurrRef(1) = LastRef(1) + Vx*Ts + (0.5"
-      "*Ax*Ts*Ts);\n            CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n        end\n    end\nend\n\n%% Forz"
-      "ado de la referencia a la trayectoria ideal (desplazado en perpendicular)\nA=posAnt;\nB=SPPos;\n% creamos vector"
-      " director de la recta AB (recta r)\nVr = B-A;\n% iniciamos vector Vs\nVs = Vr;\n% creamos vector perpendicular a"
-      " Vr\nVs(1,1) = -Vr(2,1);\nVs(2,1) = Vr(1,1);\n% creamos matriz de vectores directores\nMatrA = [Vr,-Vs];\n% crea"
-      "mos matriz de valores independientes\nMatrB = CurrRef-A;\n% calculamos los valores de las K's de cada recta\nK ="
-      " inv(MatrA)*MatrB;\n% sacamos el punto D intereseccion de las rectas\nD = A + K(1,1)*Vr;\nCurrRef=D;\n\n%% Forza"
-      "do a salir desde el punto y no irse hacia \"atras\"\n\nDtray = norm(SPPos - posAnt);\nDref = norm(SPPos - LastRe"
-      "f);\nif Dref > (Dtray+radio)\n    CurrRef = posAnt;\nend\n\n%% Método de control de Enrique\n\n% DistXY =SPPos-L"
-      "astRef;\n% \n% if (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n%     CurrRef = LastRef;\n% else\n%     minTx = abs "
-      "(DistXY(1))/maxVx;\n%     minTy = abs (DistXY(2))/maxVy;\n%     \n%     minT = max (minTx,minTy);\n%     \n%    "
-      " if minT<Ts\n%         CurrRef = SPPos;\n%     else\n%         CurrRef = LastRef + (Ts/minT)*DistXY;\n%     end\n"
-      "% end"
+      "\n\n%% Valores límite calculados experimentalmente\nmaxVx = 1.5;\nminVx = abs(-3.23);\nmaxAx = 2;\nminAx = -5.87"
+      ";\nmaxVy = 1;\nminVy = maxVy;\nmaxAy = 2.36;\nminAy = -2.84;\n\n\n% Cuadr = SPPos - posAnt;\n\n% DistXY =SPPos-L"
+      "astRef;\n% DistTot = SPPos - posAnt; % Posible uso de la 'DistanciaTotal' del trayecto\n% para intervención en i"
+      "nstantes específicos del recorrido.\n\n% if (norm(DistTot)-norm(DistXY)<norm(DistTot)*1) % Condición de aplicaci"
+      "ón para criterio de distancias\n% RelA = maxAx/maxAy;\n% RelD = DistXY(1)/DistXY(2);\n% \n% CurrRef = LastRef;\n"
+      "%     \n% %% Apaño temporal para condición de llegada en función de \"minT\"\n% % Solución alternativa para evit"
+      "ar valores anómalos por división entre 0\n% \n% if Vx~=0\n%     if Vy~=0\n%         minTx = abs (DistXY(1)/Vx);\n"
+      "%         minTy = abs (DistXY(2)/Vy);\n%     else\n%         minTx = abs (DistXY(1)/Vx);\n%         minTy = 0;\n"
+      "%     end\n% else\n%     minTx = 0;\n%     minTy = abs (DistXY(2)/Vy);\n% end\n% \n% minT = max (minTx,minTy);\n"
+      "% \n% %% Control de 'Consigna'\n% \n% if (norm(DistXY)<=(radio)) % (0.5*radio) ¿Hemos llegado?\n%     CurrRef = "
+      "SPPos;\n% else % No hemos llegado...\n%     \n%     % Cálculo de límite de aceleraciones según el tipo de movimi"
+      "ento desempeñado\n%     if DistXY(1)>0 % 'X' positiva\n%         if RelD>0 % Cuadrante 1\n%             RelA=abs"
+      "(maxAx/maxAy);\n%         else % Cuadrante 4\n%             RelA=abs(maxAx/minAy);\n%         end\n%     else % "
+      "'X' negativa\n%         if RelD>0 % Cuadrante 3\n%             RelA=abs(minAx/minAy);\n%         else % Cuadrant"
+      "e 2\n%             RelA=abs(minAx/maxAy);\n%         end\n%     end\n%     \n%     if (abs(RelD)>RelA) % En el d"
+      "esplazamiento predomina 'X'\n%         \n%         if RelD==inf || RelD==0 % Condición_excepción\n%             "
+      "Ay = 0;\n%             Ax = maxAx;\n%         else\n%             if DistXY(1)>0 % 'X' positiva\n%              "
+      "   if RelD>0 % Cuadrante 1\n%                     Ax = maxAx;\n%                     Ay = Ax/RelD;\n%           "
+      "      else % Cuadrante 4\n%                     Ax = maxAx;\n%                     Ay = Ax/RelD;\n%             "
+      "    end\n%             else % 'X' negativa\n%                 if RelD>0 % Cuadrante 3\n%                     Ax "
+      "= minAx;\n%                     Ay = Ax/RelD;\n%                 else % Cuadrante 2\n%                     Ax = "
+      "minAx;\n%                     Ay = Ax/RelD;\n%                 end\n%             end\n%         end\n%         "
+      "\n%     else % En el desplazamiento predomina 'Y'\n%         \n%         if RelD==inf || RelD==0 % Condición_exc"
+      "epción\n%             Ax = 0;\n%             Ay = maxAy;\n%         else\n%             if DistXY(1)>0 % 'X' pos"
+      "itiva\n%                 if RelD>0 % Cuadrante 1\n%                     Ay = maxAy;\n%                     Ax = "
+      "Ay*RelD;\n%                 else % Cuadrante 4\n%                     Ay = minAy;\n%                     Ax = Ay"
+      "*RelD;\n%                 end\n%             else % 'X' negativa\n%                 if RelD>0 % Cuadrante 3\n%  "
+      "                   Ay = minAy;\n%                     Ax = Ay*RelD;\n%                 else % Cuadrante 2\n%    "
+      "                 Ay = maxAy;\n%                     Ax = Ay*RelD;\n%                 end\n%             end\n%  "
+      "       end\n%     end\n%     \n%     if minT<Ts % Añadido de llegada\n%         CurrRef=SPPos;\n%     else\n%   "
+      "      if minT<Ts\n%             CurrRef(1) = LastRef(1) + (0.5*Ax*Ts*Ts);\n%             CurrRef(2) = LastRef(2)"
+      " + (0.5*Ay*Ts*Ts);\n%         else\n%             CurrRef(1) = LastRef(1) + Vx*Ts + (0.5*Ax*Ts*Ts);\n%          "
+      "   CurrRef(2) = LastRef(2) + Vy*Ts + (0.5*Ay*Ts*Ts);\n%         end\n%     end\n% end\n\n% %% Forzado de la refe"
+      "rencia a la trayectoria ideal (desplazado en perpendicular)\n% A=posAnt;\n% B=SPPos;\n% % creamos vector directo"
+      "r de la recta AB (recta r)\n% Vr = B-A;\n% % iniciamos vector Vs\n% Vs = Vr;\n% % creamos vector perpendicular a"
+      " Vr\n% Vs(1,1) = -Vr(2,1);\n% Vs(2,1) = Vr(1,1);\n% % creamos matriz de vectores directores\n% MatrA = [Vr,-Vs];"
+      "\n% % creamos matriz de valores independientes\n% MatrB = CurrRef-A;\n% % calculamos los valores de las K's de c"
+      "ada recta\n% K = inv(MatrA)*MatrB;\n% % sacamos el punto D intereseccion de las rectas\n% D = A + K(1,1)*Vr;\n% "
+      "CurrRef=D;\n\n% %% Forzado a salir desde el punto y no irse hacia \"atras\"\n% \n% Dtray = norm(SPPos - posAnt);"
+      "\n% Dref = norm(SPPos - LastRef);\n% if Dref > (Dtray+radio)\n%     CurrRef = posAnt;\n% end\n\n%% Método de con"
+      "trol de Enrique\n\nDistXY = SPPos-LastRef;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n    CurrRef = LastRef"
+      ";\nelse\n    minTx = abs (DistXY(1))/maxVx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT = max (minTx,min"
+      "Ty);\n    \n    if minT<Ts\n        CurrRef = SPPos;\n    else\n        CurrRef = LastRef + (Ts/minT)*DistXY;\n "
+      "   end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
