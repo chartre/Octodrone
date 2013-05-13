@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.782"
+    ComputedModelVersion    "1.814"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -87,9 +87,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "borJaRal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun May 12 19:22:01 2013"
-  RTWModifiedTimeStamp	  290286644
-  ModelVersionFormat	  "1.%<AutoIncrement:782>"
+  LastModifiedDate	  "Mon May 13 13:01:34 2013"
+  RTWModifiedTimeStamp	  290342948
+  ModelVersionFormat	  "1.%<AutoIncrement:814>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1139,6 +1139,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
+      CurrentSetting	      "0"
     }
     Block {
       BlockType		      Display
@@ -2737,7 +2738,7 @@ Model {
 	  P			  "1.5"
 	  I			  "0"
 	  D			  "3"
-	  N			  "27"
+	  N			  "20"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -4149,7 +4150,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    " Original"
-	    Location		    [-8, -8, 1374, 736]
+	    Location		    [-8, 0, 1370, 744]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4955,10 +4956,10 @@ Model {
       LibraryVersion	      "1.281"
       SourceBlock	      "simulink/Sinks/XY Graph"
       SourceType	      "XY scope."
-      xmin		      "-10"
+      xmin		      "-20"
       xmax		      "20"
-      ymin		      "-10"
-      ymax		      "10"
+      ymin		      "-15"
+      ymax		      "15"
       st		      "Ts"
     }
     Block {
@@ -5381,7 +5382,10 @@ Stateflow {
     firstTransition	    12
     firstJunction	    11
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    24
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5694,12 +5698,15 @@ Stateflow {
       " de las K's de cada recta\n% K = inv(MatrA)*MatrB;\n% % sacamos el punto D intereseccion de las rectas\n% D = A "
       "+ K(1,1)*Vr;\n% CurrRef=D;\n% \n% %% Forzado a salir desde el punto y no irse hacia \"atras\"\n% \n% Dtray = nor"
       "m(SPPos - posAnt);\n% Dref = norm(SPPos - LastRef);\n% if Dref > (Dtray+radio)\n%     CurrRef = posAnt;\n% end\n"
-      "\n\n%% Variables para freno\n\nDistTot = SPPos - posAnt;\nminTx = abs (DistTot(1))/maxVx;\nminTy = abs (DistTot("
-      "2))/maxVy;\nminT = max (minTx,minTy);\nif minT<100*Ts\n    if minTx<minTy % x es la rapida\n        maxVx = maxV"
-      "x-(10*Ts);\n    else % y es la rapida\n        maxVy = maxVy-(10*Ts);\n    end\nend\n%% Método de control de Enr"
-      "ique\n\nDistXY = SPPos-LastRef;\n\nif (norm(DistXY)<(0.5*radio)) % (0.5*radio)\n    CurrRef = SPPos;\nelse\n    "
-      "minTx = abs (DistXY(1))/maxVx;\n    minTy = abs (DistXY(2))/maxVy;\n    \n    minT = max (minTx,minTy);\n    \n "
-      "   if minT<Ts\n        CurrRef = SPPos;\n    else\n        CurrRef = LastRef + (Ts/minT)*DistXY;\n    end\nend"
+      "\n\n%% Variables para freno\nDistTot = SPPos - posAnt;\nPf = norm(DistTot)*8; % Calcula el número de períodos en"
+      " los que debe realizar la frenada con una relación de \"80*Ts - para 10m\" como referencia.\nminTx = abs (DistTo"
+      "t(1))/maxVx;\nminTy = abs (DistTot(2))/maxVy;\nminT = max (minTx,minTy);\nif minT<Pf*Ts\n%     if minTx<minTy % "
+      "X es la rapida\n        maxVy = maxVy-((Pf*Ts)-minT)*maxVy/minT;\n        maxVx = maxVx-((Pf*Ts)-minT)*maxVx/min"
+      "T;\n%     else % Y es la rapida\n%         maxVx = maxVx-((80*Ts)-minT)*maxVx/minT;\n%         maxVy = maxVy-((8"
+      "0*Ts)-minT)*maxVy/minT;\n%     end\nend\n%% Método de control de Enrique\n\nDistXY = SPPos-LastRef;\n\nif (norm("
+      "DistXY)<(0.5*radio)) % (0.5*radio)\n    CurrRef = SPPos;\nelse\n    minTx = abs (DistXY(1))/maxVx;\n    minTy = "
+      "abs (DistXY(2))/maxVy;\n    \n    minT = max (minTx,minTy);\n    \n    if minT<Ts\n        CurrRef = SPPos;\n   "
+      " else\n        CurrRef = LastRef + (Ts/minT)*DistXY;\n    end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
