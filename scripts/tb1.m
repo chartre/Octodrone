@@ -29,7 +29,7 @@ sim('simuladorControlCuatrirrotor')
 %% PDI
 pdi;
 %% Representacion grafica y calculo de indicadores
-indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,modulo_vE,modulo_vCons,Consigna);
+indicadores=pintascdata(scdata,ruta,radio,scVar,pos,vE,vCons);
 
 %% Evaluacion
 % clc;
