@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.146"
+    ComputedModelVersion    "1.148"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "sergarro"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Carlos"
+  LastModifiedBy	  "borJaRal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 18 10:53:29 2013"
-  RTWModifiedTimeStamp	  288183126
-  ModelVersionFormat	  "1.%<AutoIncrement:146>"
+  LastModifiedDate	  "Tue May 14 12:53:25 2013"
+  RTWModifiedTimeStamp	  290436002
+  ModelVersionFormat	  "1.%<AutoIncrement:148>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -961,7 +961,7 @@ Model {
 	  SID			  "314"
 	  Position		  [240, 360, 270, 390]
 	  ZOrder		  25
-	  Value			  "0.0045"
+	  Value			  "0.0060"
 	}
 	Block {
 	  BlockType		  Constant
@@ -978,7 +978,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [380, 277, 415, 313]
 	  ZOrder		  23
-	  gainval		  "1"
+	  gainval		  "1.1"
 	  InitialCondition	  "-1"
 	  SampleTime		  "Ts"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
@@ -1130,12 +1130,12 @@ Model {
 	  SrcPort		  1
 	  Points		  [14, 0]
 	  Branch {
-	    DstBlock		    "Vx"
+	    Points		    [0, 42; 127, 0; 0, 33]
+	    DstBlock		    "Discrete-Time Integrator1"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 75]
-	    DstBlock		    "Sum1"
+	    DstBlock		    "Vx"
 	    DstPort		    1
 	  }
 	}
@@ -1171,21 +1171,9 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Sum"
-	  SrcPort		  1
-	  DstBlock		  "Discrete-Time Integrator"
-	  DstPort		  1
-	}
-	Line {
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
 	  DstBlock		  "Sum2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sum2"
-	  SrcPort		  1
-	  DstBlock		  "Discrete-Time Integrator1"
 	  DstPort		  1
 	}
 	Line {
@@ -1206,6 +1194,12 @@ Model {
 	  SrcBlock		  "Clock"
 	  SrcPort		  1
 	  DstBlock		  "Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Discrete-Time Integrator"
 	  DstPort		  1
 	}
       }
