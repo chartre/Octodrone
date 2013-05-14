@@ -20,9 +20,9 @@
 % ruta=[0 2;8 0;6 -8;0 -7;-8 -8;-7 0;0 1;8 -1]; % Prueba trayectos predomina 'X'
 % ruta=[1 -6;-5 -7;-13 -6;-12 0]; % Prueba de trayectos básicos
 % ruta=[3 2;1 -6;-5 -7;-13 -6;-12 0]; % Prueba de trayectos básicos FAIL!!
-% ruta=[12 0;12 5;7 -5;-1 4;-6 -5;-2 0]; % Trayecto original
+ruta=[12 0;12 5;7 -5;-1 4;-6 -5;-2 0]; % Trayecto original
 % ruta=[0 0;0.2 0.2]; % Trayecto mini
-ruta=[12 0;12 12;0 0;12 0]; % Trayecto cuadrado, horiz. y vert.
+% ruta=[15 0;15 15;0 15;0 0]; % Trayecto cuadrado, horiz. y vert.
 %ruta=intermedio(ruta,2);% Esta funcion añade puntos intermedios.
 radio=0.1;
 sim('simuladorControlCuatrirrotor')
