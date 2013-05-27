@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.881"
+    ComputedModelVersion    "1.884"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1616.0, 876.0]
+      Location		      [-8.0, -8.0, 1452.0, 876.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,30 +52,30 @@ Model {
 	Dimension		3
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1564.0, 697.0]
+	  Extents		  [1400.0, 697.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  Offset		  [0.0, -13.187500834465027]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "872"
-	  Extents		  [1564.0, 697.0]
+	  Extents		  [1400.0, 697.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-15.25, 0.0]
+	  Offset		  [-210.17451149708467, 0.78750485181808472]
 	}
 	Object {
 	  $ObjectID		  7
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "672"
-	  Extents		  [1564.0, 697.0]
-	  ZoomFactor		  [1.7792553191489364]
-	  Offset		  [10.615284005979134, 16.131539611360239]
+	  LoadSaveID		  "839"
+	  Extents		  [1400.0, 697.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [0.0, 0.0]
 	}
 	PropName		"EditorsInfo"
       }
@@ -87,9 +87,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "borJaRal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed May 15 17:00:39 2013"
-  RTWModifiedTimeStamp	  290538036
-  ModelVersionFormat	  "1.%<AutoIncrement:881>"
+  LastModifiedDate	  "Mon May 27 12:51:43 2013"
+  RTWModifiedTimeStamp	  291559524
+  ModelVersionFormat	  "1.%<AutoIncrement:884>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1115,7 +1115,7 @@ Model {
   }
   System {
     Name		    "simuladorControlCuatrirrotor"
-    Location		    [-8, -8, 1608, 868]
+    Location		    [-8, -8, 1444, 868]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1335,7 +1335,7 @@ Model {
       }
       System {
 	Name			"Controlador"
-	Location		[-8, 0, 1370, 744]
+	Location		[-8, -8, 1444, 868]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1426,7 +1426,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Control Ejes teórico"
-	    Location		    [-8, -8, 1608, 868]
+	    Location		    [-8, -8, 1444, 868]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1512,16 +1512,6 @@ Model {
 	      Lockdown		      off
 	    }
 	    Block {
-	      BlockType		      Display
-	      Name		      "Consigna3"
-	      SID		      "1011"
-	      Ports		      [1]
-	      Position		      [905, 20, 970, 70]
-	      ZOrder		      74
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "877"
@@ -1554,7 +1544,7 @@ Model {
 	      BlockType		      Fcn
 	      Name		      "Fcn"
 	      SID		      "880"
-	      Position		      [500, 215, 560, 245]
+	      Position		      [500, 180, 560, 210]
 	      ZOrder		      59
 	      Expr		      "sqrt(u(1)^2+u(2)^2)"
 	    }
@@ -1571,7 +1561,7 @@ Model {
 	      Name		      "MATLAB Function"
 	      SID		      "882"
 	      Ports		      [5, 2]
-	      Position		      [330, 111, 400, 259]
+	      Position		      [330, 106, 400, 254]
 	      ZOrder		      53
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
@@ -2030,7 +2020,7 @@ Model {
 	      Name		      "To Workspace"
 	      SID		      "886"
 	      Ports		      [1]
-	      Position		      [580, 165, 640, 195]
+	      Position		      [580, 130, 640, 160]
 	      ZOrder		      55
 	      VariableName	      "vE"
 	      MaxDataPoints	      "inf"
@@ -2041,7 +2031,7 @@ Model {
 	      Name		      "To Workspace1"
 	      SID		      "887"
 	      Ports		      [1]
-	      Position		      [810, 90, 870, 120]
+	      Position		      [710, 60, 770, 90]
 	      ZOrder		      56
 	      VariableName	      "pos"
 	      MaxDataPoints	      "inf"
@@ -2063,7 +2053,7 @@ Model {
 	      Name		      "To Workspace3"
 	      SID		      "889"
 	      Ports		      [1]
-	      Position		      [580, 215, 640, 245]
+	      Position		      [580, 180, 640, 210]
 	      ZOrder		      58
 	      VariableName	      "modulo_vE"
 	      MaxDataPoints	      "inf"
@@ -2195,7 +2185,7 @@ Model {
 	      Branch {
 		Points			[11, 0]
 		Branch {
-		  Points		  [0, -70]
+		  Points		  [0, -75]
 		  DstBlock		  "MATLAB Function"
 		  DstPort		  5
 		}
@@ -2222,7 +2212,7 @@ Model {
 	    Line {
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      2
-	      Points		      [45, 0; 0, 95]
+	      Points		      [45, 0; 0, 100]
 	      DstBlock		      "Multiport Switch"
 	      DstPort		      2
 	    }
@@ -2264,7 +2254,7 @@ Model {
 	    Line {
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      1
-	      Points		      [0, 30; 79, 0]
+	      Points		      [79, 0]
 	      Branch {
 		Points			[0, 50]
 		DstBlock		"Fcn"
@@ -2278,24 +2268,15 @@ Model {
 	    Line {
 	      SrcBlock		      "Mux"
 	      SrcPort		      1
-	      Points		      [186, 0]
+	      Points		      [185, 0]
 	      Branch {
-		Points			[0, 120]
+		Points			[1, 0; 0, 120]
 		DstBlock		"Sum"
 		DstPort			1
 	      }
 	      Branch {
-		Points			[20, 0]
-		Branch {
-		  Points		  [0, 30]
-		  DstBlock		  "To Workspace1"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, -30]
-		  DstBlock		  "Consigna3"
-		  DstPort		  1
-		}
+		DstBlock		"To Workspace1"
+		DstPort			1
 	      }
 	    }
 	    Line {
@@ -2415,115 +2396,6 @@ Model {
 	  I			  "0"
 	  D			  "0.05"
 	  N			  "12"
-	  InitialConditionSource  "internal"
-	  InitialConditionForIntegrator	"0"
-	  InitialConditionForFilter "0"
-	  ExternalReset		  "none"
-	  IgnoreLimit		  off
-	  ZeroCross		  on
-	  LimitOutput		  off
-	  UpperSaturationLimit	  "inf"
-	  LowerSaturationLimit	  "-inf"
-	  LinearizeAsGain	  off
-	  AntiWindupMode	  "none"
-	  Kb			  "1"
-	  TrackingMode		  off
-	  Kt			  "1"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	  LockScale		  off
-	  PParamMin		  "[]"
-	  PParamMax		  "[]"
-	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IParamMin		  "[]"
-	  IParamMax		  "[]"
-	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  DParamMin		  "[]"
-	  DParamMax		  "[]"
-	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  NParamMin		  "[]"
-	  NParamMax		  "[]"
-	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KbParamMin		  "[]"
-	  KbParamMax		  "[]"
-	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KtParamMin		  "[]"
-	  KtParamMax		  "[]"
-	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  POutMin		  "[]"
-	  POutMax		  "[]"
-	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IOutMin		  "[]"
-	  IOutMax		  "[]"
-	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  DOutMin		  "[]"
-	  DOutMax		  "[]"
-	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  NOutMin		  "[]"
-	  NOutMax		  "[]"
-	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KbOutMin		  "[]"
-	  KbOutMax		  "[]"
-	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  KtOutMin		  "[]"
-	  KtOutMax		  "[]"
-	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  IntegratorOutMin	  "[]"
-	  IntegratorOutMax	  "[]"
-	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-	  FilterOutMin		  "[]"
-	  FilterOutMax		  "[]"
-	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumOutMin		  "[]"
-	  SumOutMax		  "[]"
-	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI1OutMin		  "[]"
-	  SumI1OutMax		  "[]"
-	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI2OutMin		  "[]"
-	  SumI2OutMax		  "[]"
-	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI3OutMin		  "[]"
-	  SumI3OutMax		  "[]"
-	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumDOutMin		  "[]"
-	  SumDOutMax		  "[]"
-	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturationOutMin	  "[]"
-	  SaturationOutMax	  "[]"
-	  SaturationOutDataTypeStr "Inherit: Same as input"
-	  IntegratorContinuousStateAttributes "''"
-	  IntegratorStateMustResolveToSignalObject off
-	  IntegratorRTWStateStorageClass "Auto"
-	  FilterContinuousStateAttributes "''"
-	  FilterStateMustResolveToSignalObject off
-	  FilterRTWStateStorageClass "Auto"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Discrete PID refPitch2"
-	  SID			  "1013"
-	  Ports			  [1, 1]
-	  Position		  [625, 32, 665, 68]
-	  ZOrder		  85
-	  LibraryVersion	  "1.281"
-	  SourceBlock		  "simulink/Continuous/PID Controller"
-	  SourceType		  "PID 1dof"
-	  Controller		  "PID"
-	  TimeDomain		  "Discrete-time"
-	  SampleTime		  "Ts"
-	  IntegratorMethod	  "Forward Euler"
-	  FilterMethod		  "Forward Euler"
-	  Form			  "Parallel"
-	  P			  "0.65"
-	  I			  "0"
-	  D			  "0.5"
-	  N			  "15"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -3684,8 +3556,8 @@ Model {
       }
       System {
 	Name			"Modelo"
-	Location		[-8, 0, 1370, 744]
-	Open			off
+	Location		[-8, -8, 1444, 868]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3740,8 +3612,8 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    " Modelo NO lineal"
-	    Location		    [-8, -8, 1608, 868]
-	    Open		    on
+	    Location		    [-8, -8, 1444, 868]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3752,7 +3624,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "177"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "RefPitch"
@@ -3775,15 +3647,6 @@ Model {
 	      SampleTime	      "0.06"
 	    }
 	    Block {
-	      BlockType		      Clock
-	      Name		      "Clock"
-	      SID		      "1017"
-	      Position		      [420, 150, 440, 170]
-	      ZOrder		      32
-	      DisplayTime	      on
-	      Decimation	      "2"
-	    }
-	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "1009"
@@ -3794,19 +3657,11 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Constant
-	      Name		      "Constant1"
-	      SID		      "1018"
-	      Position		      [605, 145, 635, 175]
-	      ZOrder		      36
-	      Value		      "0.00015"
-	    }
-	    Block {
-	      BlockType		      Constant
 	      Name		      "Constant2"
 	      SID		      "1022"
 	      Position		      [390, 320, 420, 350]
 	      ZOrder		      37
-	      Value		      "0.0045"
+	      Value		      "0.006"
 	    }
 	    Block {
 	      BlockType		      DiscreteIntegrator
@@ -3825,20 +3680,11 @@ Model {
 	      Name		      "Discrete-Time Integrator1"
 	      SID		      "685"
 	      Ports		      [1, 1]
-	      Position		      [720, 82, 755, 118]
+	      Position		      [550, 82, 585, 118]
 	      ZOrder		      23
 	      SampleTime	      "Ts"
 	      ICPrevOutput	      "DiscIntNeverNeededParam"
 	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
-	    }
-	    Block {
-	      BlockType		      Fcn
-	      Name		      "Fcn"
-	      SID		      "1019"
-	      Position		      [465, 145, 525, 175]
-	      ZOrder		      33
-	      Expr		      "(sin((u/12.35)+13.3))/10"
-	      SampleTime	      "Ts"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -3885,16 +3731,6 @@ Model {
 	      SampleTime	      "Ts"
 	    }
 	    Block {
-	      BlockType		      RandomNumber
-	      Name		      "Random\nNumber1"
-	      SID		      "1034"
-	      Position		      [215, 340, 245, 370]
-	      ZOrder		      39
-	      Variance		      "0.3"
-	      Seed		      "15"
-	      SampleTime	      "Ts"
-	    }
-	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "1005"
@@ -3924,34 +3760,6 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Sum
-	      Name		      "Sum2"
-	      SID		      "1020"
-	      Ports		      [2, 1]
-	      Position		      [565, 90, 585, 110]
-	      ZOrder		      34
-	      ShowName		      off
-	      IconShape		      "round"
-	      Inputs		      "|+-"
-	      InputSameDT	      off
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum3"
-	      SID		      "1021"
-	      Ports		      [2, 1]
-	      Position		      [645, 90, 665, 110]
-	      ZOrder		      35
-	      ShowName		      off
-	      IconShape		      "round"
-	      Inputs		      "|++"
-	      InputSameDT	      off
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Sum
 	      Name		      "Sum4"
 	      SID		      "1023"
 	      Ports		      [2, 1]
@@ -3968,7 +3776,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Vx"
 	      SID		      "679"
-	      Position		      [825, 38, 855, 52]
+	      Position		      [655, 38, 685, 52]
 	      ZOrder		      -7
 	      IconDisplay	      "Port number"
 	    }
@@ -3976,7 +3784,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "X"
 	      SID		      "680"
-	      Position		      [825, 93, 855, 107]
+	      Position		      [655, 93, 685, 107]
 	      ZOrder		      -8
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -3985,7 +3793,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Y"
 	      SID		      "682"
-	      Position		      [825, 288, 855, 302]
+	      Position		      [655, 288, 685, 302]
 	      ZOrder		      -9
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -3994,7 +3802,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Vy"
 	      SID		      "681"
-	      Position		      [825, 228, 855, 242]
+	      Position		      [655, 228, 685, 242]
 	      ZOrder		      -10
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -4052,62 +3860,31 @@ Model {
 	    Line {
 	      SrcBlock		      "Manual Switch"
 	      SrcPort		      1
-	      Points		      [65, 0]
-	      DstBlock		      "Sum"
-	      DstPort		      2
+	      Points		      [21, 0]
+	      Branch {
+		Points			[44, 0]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 132; 44, 0]
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      Points		      [104, 0]
 	      Branch {
-		Points			[0, 31]
-		Branch {
-		  Points		  [198, 0; 0, 24]
-		  DstBlock		  "Discrete-Time Integrator1"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, 24]
-		  DstBlock		  "Sum2"
-		  DstPort		  1
-		}
+		Points			[0, 55]
+		DstBlock		"Discrete-Time Integrator1"
+		DstPort			1
 	      }
 	      Branch {
 		DstBlock		"Vx"
 		DstPort			1
 	      }
-	    }
-	    Line {
-	      SrcBlock		      "Sum2"
-	      SrcPort		      1
-	      DstBlock		      "Sum3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Sum3"
-	      SrcPort		      1
-	      Points		      [-5, 0; 18, 0]
-	    }
-	    Line {
-	      SrcBlock		      "Constant1"
-	      SrcPort		      1
-	      Points		      [15, 0]
-	      DstBlock		      "Sum3"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Fcn"
-	      SrcPort		      1
-	      Points		      [45, 0]
-	      DstBlock		      "Sum2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Clock"
-	      SrcPort		      1
-	      DstBlock		      "Fcn"
-	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Sum1"
@@ -4135,13 +3912,6 @@ Model {
 	      SrcPort		      1
 	      DstBlock		      "Discrete-Time Integrator"
 	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Random\nNumber1"
-	      SrcPort		      1
-	      Points		      [125, 0]
-	      DstBlock		      "Sum1"
-	      DstPort		      2
 	    }
 	  }
 	}
@@ -4959,22 +4729,6 @@ Model {
       Lockdown		      off
     }
     Block {
-      BlockType		      Reference
-      Name		      "XY Graph"
-      SID		      "1033"
-      Ports		      [2]
-      Position		      [1035, 30, 1065, 65]
-      ZOrder		      29
-      LibraryVersion	      "1.281"
-      SourceBlock	      "simulink/Sinks/XY Graph"
-      SourceType	      "XY scope."
-      xmin		      "-20"
-      xmax		      "20"
-      ymin		      "-5"
-      ymax		      "25"
-      st		      "Ts"
-    }
-    Block {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "9"
@@ -5223,16 +4977,8 @@ Model {
 	}
       }
       Branch {
-	Points			[37, 0]
-	Branch {
-	  Points		  [0, -195]
-	  DstBlock		  "XY Graph"
-	  DstPort		  2
-	}
-	Branch {
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
+	DstBlock		"Mux"
+	DstPort			2
       }
     }
     Line {
@@ -5265,16 +5011,8 @@ Model {
 	DstPort			3
       }
       Branch {
-	Points			[44, 0]
-	Branch {
-	  Points		  [0, -190]
-	  DstBlock		  "XY Graph"
-	  DstPort		  1
-	}
-	Branch {
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
+	DstBlock		"Mux"
+	DstPort			1
       }
     }
     Line {
@@ -5394,7 +5132,10 @@ Stateflow {
     firstTransition	    12
     firstJunction	    11
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    25
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5635,7 +5376,10 @@ Stateflow {
     firstTransition	    25
     firstJunction	    24
     viewObj		    14
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
