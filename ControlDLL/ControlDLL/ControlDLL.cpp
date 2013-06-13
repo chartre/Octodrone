@@ -24,6 +24,7 @@ double Kcy = 0;
 double Tiy = 0;
 double Tdy = 0;
 
+int i;
 
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
@@ -35,15 +36,16 @@ extern "C" {
 		Kcx = param[0];
 		Tix = param[1];
 		Tdx = param[2];
-		actualWayPoint[0] =  wayPointX[1];
-		e_kx = wayPointX[1] - position[0];
+		e_kx = wayPointX[i] - position[0];
 		
 		//Pitch Parameters
 		Kcy = param[3];
 		Tiy = param[4];
 		Tdy = param[5];
-		actualWayPoint[1] =  wayPointY[1];
-		e_ky = wayPointY[1] - position[1];
+		e_ky = wayPointY[i] - position[1];
+
+		if((e_kx+e_ky)<0.1)
+			i++;
 
 		// Control PID Law for X-ROLL
 		//action[1] = u_kx_1 + Kcx*(e_kx - e_kx_1) + (Kcx*Ts/Tix)*e_kx + (Kcx*Tdx)/Ts*(e_kx - 2*e_kx_1 + e_kx_2);
