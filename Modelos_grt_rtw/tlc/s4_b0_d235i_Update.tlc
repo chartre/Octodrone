@@ -1,0 +1,43 @@
+%implements s4_b0_d235i_Update "C"
+
+%function Update(block, system) Output
+%<SLibCGIRAccessLocalVar(15, 0)> %% rtb_Sum_e
+%<SLibCGIRAccessLocalVar(16, 0)> %% rtb_IntegralGain
+%<SLibCGIRAccessLocalVar(7, 0)> %% rtb_FilterCoefficient
+%<SLibCGIRAccessLocalVar(17, 0)> %% rtb_IntegralGain_c
+%<SLibCGIRAccessLocalVar(14, 0)> %% rtb_FilterCoefficient_g
+
+%assign tlcUpdateFcnOfS3B0 = OpaqueTLCBlockFcn("Update", 3, 0, 1, 4)
+%assign tlcUpdateFcnOfS3B10 = OpaqueTLCBlockFcn("Update", 3, 10, 1, 4)
+%<SLibCG_TrackDW(3)>\
+%<SLibCG_TrackParam(3)>\
+%<SLibCG_TrackBlockIO(3)>\
+/* Update for DiscreteIntegrator: '<S1>/Discrete-Time Integrator1' */
+Modelos_DWork.DiscreteTimeIntegrator1_DSTATE += Modelos_P.DiscreteTimeIntegrator1_gainval * Modelos_B.Pwlinear1;
+/* Update for DiscreteIntegrator: '<S1>/Discrete-Time Integrator' */
+Modelos_DWork.DiscreteTimeIntegrator_DSTATE += Modelos_P.DiscreteTimeIntegrator_gainval * rtb_Sum_e;
+%<tlcUpdateFcnOfS3B0>\
+/* Update for Delay: '<S2>/Delay' incorporates:
+ *  Constant: '<Root>/Constant'
+ */
+Modelos_DWork.Delay_DSTATE[0] = Modelos_P.Constant_Value[0];
+Modelos_DWork.Delay_DSTATE[1] = Modelos_P.Constant_Value[1];
+/* Update for Delay: '<S6>/Delay' */
+Modelos_DWork.Delay_DSTATE_a[0] = Modelos_B.CurrRef[0];
+Modelos_DWork.Delay_DSTATE_a[1] = Modelos_B.CurrRef[1];
+/* Update for DiscreteIntegrator: '<S8>/Integrator' */
+Modelos_DWork.Integrator_DSTATE += Modelos_P.Integrator_gainval * rtb_IntegralGain;
+/* Update for DiscreteIntegrator: '<S8>/Filter' */
+Modelos_DWork.Filter_DSTATE += Modelos_P.Filter_gainval * rtb_FilterCoefficient;
+%<tlcUpdateFcnOfS3B10>\
+/* Update for DiscreteIntegrator: '<S9>/Integrator' */
+Modelos_DWork.Integrator_DSTATE_i += Modelos_P.Integrator_gainval_m * rtb_IntegralGain_c;
+/* Update for DiscreteIntegrator: '<S9>/Filter' */
+Modelos_DWork.Filter_DSTATE_g += Modelos_P.Filter_gainval_d * rtb_FilterCoefficient_g;
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 4, fcnProtoType)>
+%endfunction

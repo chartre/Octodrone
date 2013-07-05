@@ -1,0 +1,18 @@
+%implements s4_b0_d235i_Start "C"
+
+%function Start(block, system) Output
+%assign tlcStartFcnOfS3B7 = OpaqueTLCBlockFcn("Start", 3, 7, 1, 1)
+%assign tlcStartFcnOfS3B8 = OpaqueTLCBlockFcn("Start", 3, 8, 1, 1)
+%assign tlcStartFcnOfS3B11 = OpaqueTLCBlockFcn("Start", 3, 11, 1, 1)
+%assign tlcStartFcnOfS3B12 = OpaqueTLCBlockFcn("Start", 3, 12, 1, 1)
+%<tlcStartFcnOfS3B7>\
+%<tlcStartFcnOfS3B8>\
+%<tlcStartFcnOfS3B11>\
+%<tlcStartFcnOfS3B12>\
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 1, fcnProtoType)>
+%endfunction

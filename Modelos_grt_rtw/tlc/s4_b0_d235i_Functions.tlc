@@ -1,0 +1,78 @@
+%implements s4_b0_d235i_Functions "C"
+
+%function Modelos_inv_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+if (fabs(x[1]) > fabs(x[0])) {
+    r = x[0] / x[1];
+    t = 1.0 / (r * x[3] - x[2]);
+    y[0] = x[3] / x[1] * t;
+    y[1] = -t;
+    y[2] = -x[2] / x[1] * t;
+    y[3] = r * t;
+} else {
+    r = x[1] / x[0];
+    t = 1.0 / (x[3] - r * x[2]);
+    y[0] = x[3] / x[0] * t;
+    y[1] = -r * t;
+    y[2] = -x[2] / x[0] * t;
+    y[3] = t;
+}
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Modelos_inv(\
+%assign comma = ""
+%<comma>const real_T x[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 0, fcnProtoType)>
+%openfile localVarsBuf
+real_T r;
+real_T t;
+%closefile localVarsBuf
+%return localVarsBuf + fcnBuff
+%endfunction
+
+%function Outputs_Fcn3Call0Arg0(block) void
+%<SLibCG_AccessLocal(1 ,3, 2)>
+
+%assign argBuff = ""
+%openfile argBuff
+MatrA\
+%closefile argBuff
+%return argBuff
+%endfunction
+
+%function Outputs_Fcn3Call0Arg1(block) void
+%<SLibCG_AccessLocal(1 ,3, 7)>
+
+%assign argBuff = ""
+%openfile argBuff
+tmp\
+%closefile argBuff
+%return argBuff
+%endfunction
+
+%function Outputs_Fcn3Call1Arg0(block) void
+%<SLibCG_AccessLocal(1 ,3, 2)>
+
+%assign argBuff = ""
+%openfile argBuff
+MatrA\
+%closefile argBuff
+%return argBuff
+%endfunction
+
+%function Outputs_Fcn3Call1Arg1(block) void
+%<SLibCG_AccessLocal(1 ,3, 7)>
+
+%assign argBuff = ""
+%openfile argBuff
+tmp\
+%closefile argBuff
+%return argBuff
+%endfunction
+

@@ -8,7 +8,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define Ts 0.06
+#define Ts 0.06 // El TrackDroneLite va a llamar a la función "Control" cada 0.06 seg.
+
+
+// Estas variables son variables que van a perdurar a los ciclos
 
 double e_kx = 0;
 double e_kx_1 = 0;
@@ -24,7 +27,40 @@ double Kcy = 0;
 double Tiy = 0;
 double Tdy = 0;
 
-int i;
+int i = 1;
+
+/* PARAMETROS
+position	-> puntero a las posiciones instantaneas x y z
+		x	-> position [0]
+		y	-> position [1]
+		z	-> position [2]
+
+velocity	-> puntero a las velocidades instantaneas x y z
+		x	-> velocity [0]
+		y	-> velocity [1]
+		z	-> velocity [2]
+
+action		-> acciones a realizar sobre el aparato (RefPitch y RefRoll)
+		Pitch	-> action [0]
+		Roll	-> action [1]
+
+numAxis		-> constante del numero de ejes a usar. 3 Invariables. (no útil para nosotros)
+
+wayPointX	-> array con las componentes X de todas las posiciones del recorrido.
+		wayPointX [0]	-> Corresponde a la posicion de inicio del aparato
+
+wayPointY	-> array con las componentes Y de todas las posiciones del recorrido.
+		wayPointY [0]	-> Corresponde a la posicion de inicio del aparato
+
+numWaypoints	-> indica el numero de waypoints que hay en los vectores anteriores (suponemos que el origen incluido)
+
+actualWaypoint	-> indica al TrackDroneLite a qué waypoint estamos intentando ir
+
+param		-> array con los parametros que le queremos dar al sistema de control (como los parametros de los pid's). En el tutorial dice que son ilimitados.
+
+numParam	-> entero que dice cuantos elementos son los del vector anterior
+*/
+
 
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
@@ -36,25 +72,23 @@ extern "C" {
 		Kcx = param[0];
 		Tix = param[1];
 		Tdx = param[2];
+		actualWayPoint [0] = wayPointX[i];
 		e_kx = wayPointX[i] - position[0];
-		
+
 		//Pitch Parameters
 		Kcy = param[3];
 		Tiy = param[4];
 		Tdy = param[5];
+		actualWayPoint [1] = wayPointY[i];
 		e_ky = wayPointY[i] - position[1];
-
-		if((e_kx+e_ky)<0.1)
-			i++;
 
 		// Control PID Law for X-ROLL
 		//action[1] = u_kx_1 + Kcx*(e_kx - e_kx_1) + (Kcx*Ts/Tix)*e_kx + (Kcx*Tdx)/Ts*(e_kx - 2*e_kx_1 + e_kx_2);
 		action[1] = Kcx*e_kx + (Kcx*Tdx)/Ts*(e_kx - e_kx_1);
-		
+
 		// Control PID Law for Y-PITCH
 		//action[0] = action[1] + Kcy*(e_ky - e_ky_1) + (Kcy*Ts)/Tiy*e_ky + (Kcy*Tdy)/Ts*(e_ky - 2*e_ky_1 + e_ky_2);
 		action[0] = Kcy*e_ky + (Kcy*Tdy)/Ts*(e_ky - e_ky_1);
-		
 
 		// Saturation Check
 		if ((action[0]) > 1)
@@ -72,6 +106,11 @@ extern "C" {
 		// Manage Variables
 		e_kx_1 = e_kx;
 		e_ky_1 = e_ky;
+
+		if ((e_kx < 0.01) && (e_ky < 0.01) && (i < numWaypoints-1))
+			i = i+1;
+
+		printf("3");
 
 	}
 

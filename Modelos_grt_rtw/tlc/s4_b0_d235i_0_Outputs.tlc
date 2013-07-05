@@ -1,0 +1,11 @@
+%implements s4_b0_d235i_0_Outputs "C"
+
+%function Outputs(block, system) Output
+ssCallAccelRunBlock(%<(RTMGetModelSS())>, 4, 7, SS_CALL_MDL_OUTPUTS);
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Synthesized_Atomic_Subsystem_Fo(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction

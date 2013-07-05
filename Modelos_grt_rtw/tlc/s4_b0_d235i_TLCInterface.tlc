@@ -1,0 +1,2150 @@
+%implements s4_b0_d235i_TLCInterface "C"
+
+%function getInputAddr_3_7_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationX"
+%endfunction
+
+%function getInput_3_7_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationX"
+%endfunction
+
+%function getOutputAddr_3_7_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear"
+%endfunction
+
+%function getOutput_3_7_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear"
+%endfunction
+
+%function getParamAddr_3_7_1_1_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParam_3_7_1_1_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParamAddr_3_7_1_1_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParam_3_7_1_1_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParamAddr_3_7_1_1_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParam_3_7_1_1_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParamAddr_3_7_1_1_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParam_3_7_1_1_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParamAddr_3_7_1_1_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParam_3_7_1_1_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParamAddr_3_7_1_1_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParam_3_7_1_1_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParamAddr_3_7_1_1_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getParam_3_7_1_1_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getInputAddr_3_8_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel"
+%endfunction
+
+%function getInput_3_8_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel"
+%endfunction
+
+%function getOutputAddr_3_8_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1"
+%endfunction
+
+%function getOutput_3_8_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1"
+%endfunction
+
+%function getParamAddr_3_8_1_1_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParam_3_8_1_1_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParamAddr_3_8_1_1_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParam_3_8_1_1_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParamAddr_3_8_1_1_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParam_3_8_1_1_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParamAddr_3_8_1_1_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParam_3_8_1_1_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParamAddr_3_8_1_1_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParam_3_8_1_1_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParamAddr_3_8_1_1_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParam_3_8_1_1_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParamAddr_3_8_1_1_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getParam_3_8_1_1_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getInputAddr_3_11_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationY"
+%endfunction
+
+%function getInput_3_11_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationY"
+%endfunction
+
+%function getOutputAddr_3_11_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getOutput_3_11_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getParamAddr_3_11_1_1_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParam_3_11_1_1_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParamAddr_3_11_1_1_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParam_3_11_1_1_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParamAddr_3_11_1_1_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParam_3_11_1_1_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParamAddr_3_11_1_1_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParam_3_11_1_1_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParamAddr_3_11_1_1_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParam_3_11_1_1_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParamAddr_3_11_1_1_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParam_3_11_1_1_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParamAddr_3_11_1_1_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getParam_3_11_1_1_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getInputAddr_3_12_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel_d"
+%endfunction
+
+%function getInput_3_12_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel_d"
+%endfunction
+
+%function getOutputAddr_3_12_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getOutput_3_12_1_1_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getParamAddr_3_12_1_1_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParam_3_12_1_1_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParamAddr_3_12_1_1_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParam_3_12_1_1_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParamAddr_3_12_1_1_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParam_3_12_1_1_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParamAddr_3_12_1_1_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParam_3_12_1_1_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParamAddr_3_12_1_1_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParam_3_12_1_1_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParamAddr_3_12_1_1_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParam_3_12_1_1_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParamAddr_3_12_1_1_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7_b"
+%endfunction
+
+%function getParam_3_12_1_1_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7_b"
+%endfunction
+
+%function getInputAddr_3_0_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear"
+%endfunction
+
+%function getInput_3_0_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear"
+%endfunction
+
+%function getOutputAddr_3_0_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel"
+%endfunction
+
+%function getOutput_3_0_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel"
+%endfunction
+
+%function getDWorkAddr_3_0_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&Modelos_DWork.LinearModel_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_3_0_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "Modelos_DWork.LinearModel_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_3_0_1_2_1_4(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_A"
+%endfunction
+
+%function getParam_3_0_1_2_1_4(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_A"
+%endfunction
+
+%function getParamAddr_3_0_1_2_1_5(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_C"
+%endfunction
+
+%function getParam_3_0_1_2_1_5(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_C"
+%endfunction
+
+%function getParamAddr_3_0_1_2_1_7(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_X0"
+%endfunction
+
+%function getParam_3_0_1_2_1_7(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_X0"
+%endfunction
+
+%function getInputAddr_3_7_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationX"
+%endfunction
+
+%function getInput_3_7_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationX"
+%endfunction
+
+%function getOutputAddr_3_7_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear"
+%endfunction
+
+%function getOutput_3_7_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear"
+%endfunction
+
+%function getParamAddr_3_7_1_2_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParam_3_7_1_2_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParamAddr_3_7_1_2_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParam_3_7_1_2_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParamAddr_3_7_1_2_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParam_3_7_1_2_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParamAddr_3_7_1_2_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParam_3_7_1_2_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParamAddr_3_7_1_2_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParam_3_7_1_2_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParamAddr_3_7_1_2_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParam_3_7_1_2_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParamAddr_3_7_1_2_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getParam_3_7_1_2_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getInputAddr_3_8_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel"
+%endfunction
+
+%function getInput_3_8_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel"
+%endfunction
+
+%function getOutputAddr_3_8_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1"
+%endfunction
+
+%function getOutput_3_8_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1"
+%endfunction
+
+%function getParamAddr_3_8_1_2_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParam_3_8_1_2_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParamAddr_3_8_1_2_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParam_3_8_1_2_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParamAddr_3_8_1_2_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParam_3_8_1_2_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParamAddr_3_8_1_2_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParam_3_8_1_2_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParamAddr_3_8_1_2_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParam_3_8_1_2_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParamAddr_3_8_1_2_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParam_3_8_1_2_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParamAddr_3_8_1_2_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getParam_3_8_1_2_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getInputAddr_3_10_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getInput_3_10_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getOutputAddr_3_10_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel_d"
+%endfunction
+
+%function getOutput_3_10_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel_d"
+%endfunction
+
+%function getDWorkAddr_3_10_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&Modelos_DWork.LinearModel_DSTATE_j"
+%endfunction
+
+%function getDWork_3_10_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "Modelos_DWork.LinearModel_DSTATE_j"
+%endfunction
+
+%function getParamAddr_3_10_1_2_1_54(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_A_p"
+%endfunction
+
+%function getParam_3_10_1_2_1_54(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_A_p"
+%endfunction
+
+%function getParamAddr_3_10_1_2_1_55(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_C_o"
+%endfunction
+
+%function getParam_3_10_1_2_1_55(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_C_o"
+%endfunction
+
+%function getParamAddr_3_10_1_2_1_57(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_X0_k"
+%endfunction
+
+%function getParam_3_10_1_2_1_57(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_X0_k"
+%endfunction
+
+%function getInputAddr_3_11_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationY"
+%endfunction
+
+%function getInput_3_11_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationY"
+%endfunction
+
+%function getOutputAddr_3_11_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getOutput_3_11_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getParamAddr_3_11_1_2_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParam_3_11_1_2_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParamAddr_3_11_1_2_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParam_3_11_1_2_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParamAddr_3_11_1_2_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParam_3_11_1_2_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParamAddr_3_11_1_2_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParam_3_11_1_2_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParamAddr_3_11_1_2_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParam_3_11_1_2_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParamAddr_3_11_1_2_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParam_3_11_1_2_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParamAddr_3_11_1_2_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getParam_3_11_1_2_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getInputAddr_3_12_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel_d"
+%endfunction
+
+%function getInput_3_12_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel_d"
+%endfunction
+
+%function getOutputAddr_3_12_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getOutput_3_12_1_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getParamAddr_3_12_1_2_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParam_3_12_1_2_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParamAddr_3_12_1_2_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParam_3_12_1_2_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParamAddr_3_12_1_2_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParam_3_12_1_2_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParamAddr_3_12_1_2_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParam_3_12_1_2_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParamAddr_3_12_1_2_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParam_3_12_1_2_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParamAddr_3_12_1_2_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParam_3_12_1_2_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParamAddr_3_12_1_2_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7_b"
+%endfunction
+
+%function getParam_3_12_1_2_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7_b"
+%endfunction
+
+%function getInputAddr_3_0_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear"
+%endfunction
+
+%function getInput_3_0_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear"
+%endfunction
+
+%function getOutputAddr_3_0_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel"
+%endfunction
+
+%function getOutput_3_0_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel"
+%endfunction
+
+%function getDWorkAddr_3_0_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&Modelos_DWork.LinearModel_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_3_0_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "Modelos_DWork.LinearModel_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_3_0_1_3_1_4(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_A"
+%endfunction
+
+%function getParam_3_0_1_3_1_4(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_A"
+%endfunction
+
+%function getParamAddr_3_0_1_3_1_5(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_C"
+%endfunction
+
+%function getParam_3_0_1_3_1_5(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_C"
+%endfunction
+
+%function getParamAddr_3_0_1_3_1_7(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_X0"
+%endfunction
+
+%function getParam_3_0_1_3_1_7(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_X0"
+%endfunction
+
+%function getInputAddr_3_7_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationX"
+%endfunction
+
+%function getInput_3_7_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationX"
+%endfunction
+
+%function getOutputAddr_3_7_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear"
+%endfunction
+
+%function getOutput_3_7_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear"
+%endfunction
+
+%function getParamAddr_3_7_1_3_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParam_3_7_1_3_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParamAddr_3_7_1_3_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParam_3_7_1_3_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParamAddr_3_7_1_3_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParam_3_7_1_3_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParamAddr_3_7_1_3_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParam_3_7_1_3_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParamAddr_3_7_1_3_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParam_3_7_1_3_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParamAddr_3_7_1_3_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParam_3_7_1_3_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParamAddr_3_7_1_3_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getParam_3_7_1_3_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getInputAddr_3_8_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel"
+%endfunction
+
+%function getInput_3_8_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel"
+%endfunction
+
+%function getOutputAddr_3_8_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1"
+%endfunction
+
+%function getOutput_3_8_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1"
+%endfunction
+
+%function getParamAddr_3_8_1_3_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParam_3_8_1_3_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParamAddr_3_8_1_3_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParam_3_8_1_3_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParamAddr_3_8_1_3_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParam_3_8_1_3_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParamAddr_3_8_1_3_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParam_3_8_1_3_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParamAddr_3_8_1_3_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParam_3_8_1_3_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParamAddr_3_8_1_3_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParam_3_8_1_3_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParamAddr_3_8_1_3_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getParam_3_8_1_3_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getInputAddr_3_10_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getInput_3_10_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getOutputAddr_3_10_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel_d"
+%endfunction
+
+%function getOutput_3_10_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel_d"
+%endfunction
+
+%function getDWorkAddr_3_10_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&Modelos_DWork.LinearModel_DSTATE_j"
+%endfunction
+
+%function getDWork_3_10_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "Modelos_DWork.LinearModel_DSTATE_j"
+%endfunction
+
+%function getParamAddr_3_10_1_3_1_54(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_A_p"
+%endfunction
+
+%function getParam_3_10_1_3_1_54(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_A_p"
+%endfunction
+
+%function getParamAddr_3_10_1_3_1_55(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_C_o"
+%endfunction
+
+%function getParam_3_10_1_3_1_55(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_C_o"
+%endfunction
+
+%function getParamAddr_3_10_1_3_1_57(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_X0_k"
+%endfunction
+
+%function getParam_3_10_1_3_1_57(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_X0_k"
+%endfunction
+
+%function getInputAddr_3_11_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationY"
+%endfunction
+
+%function getInput_3_11_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationY"
+%endfunction
+
+%function getOutputAddr_3_11_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getOutput_3_11_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getParamAddr_3_11_1_3_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParam_3_11_1_3_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParamAddr_3_11_1_3_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParam_3_11_1_3_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParamAddr_3_11_1_3_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParam_3_11_1_3_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParamAddr_3_11_1_3_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParam_3_11_1_3_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParamAddr_3_11_1_3_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParam_3_11_1_3_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParamAddr_3_11_1_3_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParam_3_11_1_3_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParamAddr_3_11_1_3_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getParam_3_11_1_3_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getInputAddr_3_12_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel_d"
+%endfunction
+
+%function getInput_3_12_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel_d"
+%endfunction
+
+%function getOutputAddr_3_12_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getOutput_3_12_1_3_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getParamAddr_3_12_1_3_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParam_3_12_1_3_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParamAddr_3_12_1_3_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParam_3_12_1_3_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParamAddr_3_12_1_3_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParam_3_12_1_3_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParamAddr_3_12_1_3_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParam_3_12_1_3_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParamAddr_3_12_1_3_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParam_3_12_1_3_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParamAddr_3_12_1_3_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParam_3_12_1_3_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParamAddr_3_12_1_3_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7_b"
+%endfunction
+
+%function getParam_3_12_1_3_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7_b"
+%endfunction
+
+%function getInputAddr_3_0_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear"
+%endfunction
+
+%function getInput_3_0_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear"
+%endfunction
+
+%function getOutputAddr_3_0_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel"
+%endfunction
+
+%function getOutput_3_0_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel"
+%endfunction
+
+%function getDWorkAddr_3_0_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&Modelos_DWork.LinearModel_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_3_0_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "Modelos_DWork.LinearModel_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_3_0_1_4_1_4(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_A"
+%endfunction
+
+%function getParam_3_0_1_4_1_4(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_A"
+%endfunction
+
+%function getParamAddr_3_0_1_4_1_5(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_C"
+%endfunction
+
+%function getParam_3_0_1_4_1_5(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_C"
+%endfunction
+
+%function getParamAddr_3_0_1_4_1_7(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_X0"
+%endfunction
+
+%function getParam_3_0_1_4_1_7(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_X0"
+%endfunction
+
+%function getInputAddr_3_10_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getInput_3_10_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getOutputAddr_3_10_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel_d"
+%endfunction
+
+%function getOutput_3_10_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel_d"
+%endfunction
+
+%function getDWorkAddr_3_10_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&Modelos_DWork.LinearModel_DSTATE_j"
+%endfunction
+
+%function getDWork_3_10_1_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "Modelos_DWork.LinearModel_DSTATE_j"
+%endfunction
+
+%function getParamAddr_3_10_1_4_1_54(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_A_p"
+%endfunction
+
+%function getParam_3_10_1_4_1_54(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_A_p"
+%endfunction
+
+%function getParamAddr_3_10_1_4_1_55(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_C_o"
+%endfunction
+
+%function getParam_3_10_1_4_1_55(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_C_o"
+%endfunction
+
+%function getParamAddr_3_10_1_4_1_57(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.LinearModel_X0_k"
+%endfunction
+
+%function getParam_3_10_1_4_1_57(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.LinearModel_X0_k"
+%endfunction
+
+%function getInputAddr_3_7_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationX"
+%endfunction
+
+%function getInput_3_7_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationX"
+%endfunction
+
+%function getOutputAddr_3_7_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear"
+%endfunction
+
+%function getOutput_3_7_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear"
+%endfunction
+
+%function getParamAddr_3_7_1_5_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParam_3_7_1_5_1_26(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1"
+%endfunction
+
+%function getParamAddr_3_7_1_5_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParam_3_7_1_5_1_28(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2"
+%endfunction
+
+%function getParamAddr_3_7_1_5_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParam_3_7_1_5_1_30(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3"
+%endfunction
+
+%function getParamAddr_3_7_1_5_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParam_3_7_1_5_1_32(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4"
+%endfunction
+
+%function getParamAddr_3_7_1_5_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParam_3_7_1_5_1_34(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5"
+%endfunction
+
+%function getParamAddr_3_7_1_5_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParam_3_7_1_5_1_36(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6"
+%endfunction
+
+%function getParamAddr_3_7_1_5_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getParam_3_7_1_5_1_38(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7"
+%endfunction
+
+%function getInputAddr_3_8_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel"
+%endfunction
+
+%function getInput_3_8_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel"
+%endfunction
+
+%function getOutputAddr_3_8_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1"
+%endfunction
+
+%function getOutput_3_8_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1"
+%endfunction
+
+%function getParamAddr_3_8_1_5_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParam_3_8_1_5_1_40(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1"
+%endfunction
+
+%function getParamAddr_3_8_1_5_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParam_3_8_1_5_1_42(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2"
+%endfunction
+
+%function getParamAddr_3_8_1_5_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParam_3_8_1_5_1_44(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3"
+%endfunction
+
+%function getParamAddr_3_8_1_5_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParam_3_8_1_5_1_46(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4"
+%endfunction
+
+%function getParamAddr_3_8_1_5_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParam_3_8_1_5_1_48(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5"
+%endfunction
+
+%function getParamAddr_3_8_1_5_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParam_3_8_1_5_1_50(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6"
+%endfunction
+
+%function getParamAddr_3_8_1_5_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getParam_3_8_1_5_1_52(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7"
+%endfunction
+
+%function getInputAddr_3_11_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.SaturationY"
+%endfunction
+
+%function getInput_3_11_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.SaturationY"
+%endfunction
+
+%function getOutputAddr_3_11_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getOutput_3_11_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear_a"
+%endfunction
+
+%function getParamAddr_3_11_1_5_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParam_3_11_1_5_1_68(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P1_e"
+%endfunction
+
+%function getParamAddr_3_11_1_5_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParam_3_11_1_5_1_70(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P2_n"
+%endfunction
+
+%function getParamAddr_3_11_1_5_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParam_3_11_1_5_1_72(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P3_b"
+%endfunction
+
+%function getParamAddr_3_11_1_5_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParam_3_11_1_5_1_74(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P4_b"
+%endfunction
+
+%function getParamAddr_3_11_1_5_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParam_3_11_1_5_1_76(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P5_h"
+%endfunction
+
+%function getParamAddr_3_11_1_5_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParam_3_11_1_5_1_78(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P6_h"
+%endfunction
+
+%function getParamAddr_3_11_1_5_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getParam_3_11_1_5_1_80(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear_P7_d"
+%endfunction
+
+%function getInputAddr_3_12_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.LinearModel_d"
+%endfunction
+
+%function getInput_3_12_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.LinearModel_d"
+%endfunction
+
+%function getOutputAddr_3_12_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "&Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getOutput_3_12_1_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackBlockIO(3)>
+
+%return "Modelos_B.Pwlinear1_o"
+%endfunction
+
+%function getParamAddr_3_12_1_5_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParam_3_12_1_5_1_82(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P1_l"
+%endfunction
+
+%function getParamAddr_3_12_1_5_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParam_3_12_1_5_1_84(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P2_d"
+%endfunction
+
+%function getParamAddr_3_12_1_5_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParam_3_12_1_5_1_86(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P3_o"
+%endfunction
+
+%function getParamAddr_3_12_1_5_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParam_3_12_1_5_1_88(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P4_l"
+%endfunction
+
+%function getParamAddr_3_12_1_5_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParam_3_12_1_5_1_90(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P5_b"
+%endfunction
+
+%function getParamAddr_3_12_1_5_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParam_3_12_1_5_1_92(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P6_l"
+%endfunction
+
+%function getParamAddr_3_12_1_5_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "&Modelos_P.Pwlinear1_P7_b"
+%endfunction
+
+%function getParam_3_12_1_5_1_94(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackParam(3)>
+
+%return "Modelos_P.Pwlinear1_P7_b"
+%endfunction
+

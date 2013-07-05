@@ -1,0 +1,281 @@
+%implements s4_b0_d235i_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(7, 0)> %% rtb_FilterCoefficient
+%<SLibCGIRAccessLocalVar(14, 0)> %% rtb_FilterCoefficient_g
+%<SLibCGIRAccessLocalVar(16, 0)> %% rtb_IntegralGain
+%<SLibCGIRAccessLocalVar(17, 0)> %% rtb_IntegralGain_c
+%<SLibCGIRAccessLocalVar(15, 0)> %% rtb_Sum_e
+
+%assign tlcOutputsFcnOfS3B0 = OpaqueTLCBlockFcn("Outputs", 3, 0, 1, 3)
+%assign tlcOutputsFcnOfS3B7 = OpaqueTLCBlockFcn("Outputs", 3, 7, 1, 3)
+%assign tlcOutputsFcnOfS3B8 = OpaqueTLCBlockFcn("Outputs", 3, 8, 1, 3)
+%assign tlcOutputsFcnOfS3B10 = OpaqueTLCBlockFcn("Outputs", 3, 10, 1, 3)
+%assign tlcOutputsFcnOfS3B11 = OpaqueTLCBlockFcn("Outputs", 3, 11, 1, 3)
+%assign tlcOutputsFcnOfS3B12 = OpaqueTLCBlockFcn("Outputs", 3, 12, 1, 3)
+%<SLibCG_TrackDW(3)>\
+%<SLibCG_TrackParam(3)>\
+%<SLibCG_TrackBlockIO(3)>\
+/* DiscreteIntegrator: '<S1>/Discrete-Time Integrator1' */
+rtb_DiscreteTimeIntegrator1 = Modelos_DWork.DiscreteTimeIntegrator1_DSTATE;
+/* DiscreteIntegrator: '<S1>/Discrete-Time Integrator' */
+rtb_DiscreteTimeIntegrator = Modelos_DWork.DiscreteTimeIntegrator_DSTATE;
+%<tlcOutputsFcnOfS3B0>\
+/* Delay: '<S2>/Delay' */
+Modelos_B.Delay[0] = Modelos_DWork.Delay_DSTATE[0];
+Modelos_B.Delay[1] = Modelos_DWork.Delay_DSTATE[1];
+/* Logic: '<S2>/Logical Operator' incorporates:
+ *  Constant: '<Root>/Constant'
+ *  RelationalOperator: '<S2>/Relational Operator'
+ */
+Modelos_B.LogicalOperator = ((Modelos_B.Delay[0] != Modelos_P.Constant_Value[0]) || (Modelos_B.Delay[1] != Modelos_P.Constant_Value[1]));
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[0], "Output",0)
+Synthesized_Atomic_Subsystem_Fo();
+%endif
+/* MATLAB Function: '<S6>/Sistema de trayectorias' incorporates:
+ *  Constant: '<Root>/Constant'
+ *  Constant: '<S6>/Constant'
+ *  Constant: '<S6>/Constant1'
+ *  Delay: '<S6>/Delay'
+ */
+/* MATLAB Function 'Controlador/Control Ejes teórico/Sistema de trayectorias': '<S11>:1' */
+/*  Este bloque es un control de velocidad y aceleración a título teórico para */
+/*  definir las consignas a seguir según unas velocidades y aceleraciones */
+/*  máximas teóricas constantes obtenidas experimentalmente en los modelos. */
+/*  No corrige las imprecisiones en la trayectoria y el desincronismo de los ejes */
+/*  en el arranque. Problemas en la llegada de sobrepasamiento. */
+/* %<"\% Valores límite calculados experimentalmente"> */
+/* %<"\% Método de control simple"> */
+/* '<S11>:1:14' */
+Modelos_B.CurrRef[0] = Modelos_P.Constant_Value[0] - Modelos_DWork.Delay_DSTATE_a[0];
+Modelos_B.CurrRef[1] = Modelos_P.Constant_Value[1] - Modelos_DWork.Delay_DSTATE_a[1];
+scale = 2.2250738585072014E-308;
+absxk = fabs(Modelos_B.CurrRef[0]);
+if (absxk > 2.2250738585072014E-308) {
+    minT = 1.0;
+    scale = absxk;
+} else {
+    t = absxk / 2.2250738585072014E-308;
+    minT = t * t;
+}
+absxk = fabs(Modelos_B.CurrRef[1]);
+if (absxk > scale) {
+    t = scale / absxk;
+    minT = minT * t * t + 1.0;
+    scale = absxk;
+} else {
+    t = absxk / scale;
+    minT += t * t;
+}
+minT = scale * sqrt(minT);
+if (minT < 0.5 * Modelos_P.Constant1_Value) {
+    /* '<S11>:1:16' */
+    /*  (0.5*radio) */
+    /* '<S11>:1:17' */
+    Modelos_B.CurrRef[0] = Modelos_P.Constant_Value[0];
+    Modelos_B.CurrRef[1] = Modelos_P.Constant_Value[1];
+} else {
+    /* '<S11>:1:19' */
+    /* '<S11>:1:20' */
+    /* '<S11>:1:22' */
+    absxk = fabs(Modelos_B.CurrRef[0]) / 2.0;
+    minT = fabs(Modelos_B.CurrRef[1]);
+    if ((absxk >= minT) || rtIsNaN(minT)) {
+        minT = absxk;
+    }
+    if (minT < Modelos_P.Constant_Value_c) {
+        /* '<S11>:1:24' */
+        /* '<S11>:1:25' */
+        Modelos_B.CurrRef[0] = Modelos_P.Constant_Value[0];
+        Modelos_B.CurrRef[1] = Modelos_P.Constant_Value[1];
+    } else {
+        /* '<S11>:1:27' */
+        minT = Modelos_P.Constant_Value_c / minT;
+        Modelos_B.CurrRef[0] = minT * Modelos_B.CurrRef[0] + Modelos_DWork.Delay_DSTATE_a[0];
+        Modelos_B.CurrRef[1] = minT * Modelos_B.CurrRef[1] + Modelos_DWork.Delay_DSTATE_a[1];
+    }
+}
+/* End of MATLAB Function: '<S6>/Sistema de trayectorias' */
+
+/* MATLAB Function: '<S6>/Corrector' incorporates:
+ *  Constant: '<Root>/Constant'
+ */
+/* MATLAB Function 'Controlador/Control Ejes teórico/Corrector': '<S10>:1' */
+/* '<S10>:1:5' */
+/* construimos vector posicion */
+/*  creamos vector director de la recta AB (recta r) */
+/* '<S10>:1:8' */
+Vr_idx = Modelos_P.Constant_Value[0] - Modelos_B.Switch[0];
+t = Modelos_P.Constant_Value[1] - Modelos_B.Switch[1];
+/*  iniciamos vector Vs */
+/* '<S10>:1:11' */
+/*  creamos vector perpendicular a Vr */
+/* '<S10>:1:14' */
+/* '<S10>:1:15' */
+/*  creamos matriz de vectores directores */
+/* '<S10>:1:18' */
+MatrA[0] = Vr_idx;
+MatrA[1] = t;
+MatrA[2] = -(-t);
+MatrA[3] = -Vr_idx;
+/*  creamos matriz de valores independientes */
+/* '<S10>:1:21' */
+/*  calculamos los valores de las K's de cada recta */
+/* '<S10>:1:24' */
+%<(SLibCGCallSubFcn(block, 1, 3, 1))>;
+absxk = (rtb_DiscreteTimeIntegrator1 - Modelos_B.Switch[0]) * tmp[0] + (rtb_DiscreteTimeIntegrator - Modelos_B.Switch[1]) * tmp[2];
+/*  sacamos el punto D intereseccion de las rectas */
+/* '<S10>:1:27' */
+/* '<S10>:1:29' */
+Vs_idx = (absxk * Vr_idx + Modelos_B.Switch[0]) - rtb_DiscreteTimeIntegrator1;
+Vs_idx_0 = (absxk * t + Modelos_B.Switch[1]) - rtb_DiscreteTimeIntegrator;
+/* %<"\% Calculo cuando CurrRef no está sobre la trayectoria"> */
+/*  Se añade esta segunda parte para corregir desviaciones de la trayectoria  */
+/*  ideal teórica de la forma apropiada y evitar discrepancias según el método  */
+/*  de gestión de consigna empleado. Funciona correctamente. */
+/*  creamos matriz de valores independientes */
+/* '<S10>:1:37' */
+/*  calculamos los valores de las K's de cada recta */
+/* '<S10>:1:40' */
+/*  sacamos el punto E, vertical desde CurrRef, intereseccion de las rectas */
+/*  con trayectoria */
+/* '<S10>:1:44' */
+%<(SLibCGCallSubFcn(block, 1, 3, 0))>;
+absxk = (Modelos_B.CurrRef[0] - Modelos_B.Switch[0]) * tmp[0] + (Modelos_B.CurrRef[1] - Modelos_B.Switch[1]) * tmp[2];
+Vr_idx = absxk * Vr_idx + Modelos_B.Switch[0];
+Vr = absxk * t + Modelos_B.Switch[1];
+/*  Permite seleccionar el instante al que afecta la */
+/*  magnitud de la corrección (posible introducción a la corrección variable */
+/*  selectiva) */
+scale = 2.2250738585072014E-308;
+absxk = fabs(Vs_idx);
+if (absxk > 2.2250738585072014E-308) {
+    minT = 1.0;
+    scale = absxk;
+} else {
+    t = absxk / 2.2250738585072014E-308;
+    minT = t * t;
+}
+absxk = fabs(Vs_idx_0);
+if (absxk > scale) {
+    t = scale / absxk;
+    minT = minT * t * t + 1.0;
+    scale = absxk;
+} else {
+    t = absxk / scale;
+    minT += t * t;
+}
+minT = scale * sqrt(minT);
+if (minT > 0.5) {
+    /* '<S10>:1:48' */
+    /* '<S10>:1:49' */
+    Vr_idx += Vs_idx * 10.0;
+    t = Vs_idx_0 * 10.0 + Vr;
+} else {
+    /* '<S10>:1:51' */
+    Vr_idx += Vs_idx * 3.0;
+    t = Vs_idx_0 * 3.0 + Vr;
+}
+/* End of MATLAB Function: '<S6>/Corrector' */
+
+/* Gain: '<S2>/Gain' incorporates:
+ *  Sum: '<S2>/Sum'
+ */
+scale = (Vr_idx - rtb_DiscreteTimeIntegrator1) * Modelos_P.Gain_Gain;
+/* Gain: '<S8>/Filter Coefficient' incorporates:
+ *  DiscreteIntegrator: '<S8>/Filter'
+ *  Gain: '<S8>/Derivative Gain'
+ *  Sum: '<S8>/SumD'
+ */
+rtb_FilterCoefficient = (Modelos_P.DerivativeGain_Gain * scale - Modelos_DWork.Filter_DSTATE) * Modelos_P.FilterCoefficient_Gain;
+/* Sum: '<S8>/Sum' incorporates:
+ *  DiscreteIntegrator: '<S8>/Integrator'
+ *  Gain: '<S8>/Proportional Gain'
+ */
+minT = (Modelos_P.ProportionalGain_Gain * scale + Modelos_DWork.Integrator_DSTATE) + rtb_FilterCoefficient;
+/* Signum: '<S7>/Sign' */
+if (minT < 0.0) {
+    absxk = -1.0;
+} else if (minT > 0.0) {
+    absxk = 1.0;
+} else if (minT == 0.0) {
+    absxk = 0.0;
+} else {
+    absxk = minT;
+}
+/* Sum: '<S7>/Sum' incorporates:
+ *  Gain: '<S7>/Gain'
+ *  Gain: '<S7>/Gain1'
+ *  Signum: '<S7>/Sign'
+ */
+absxk = Modelos_P.Gain1_Gain * absxk + Modelos_P.Gain_Gain_l * minT;
+/* Saturate: '<S2>/SaturationX' */
+if (absxk >= Modelos_P.SaturationX_UpperSat) {
+    Modelos_B.SaturationX = Modelos_P.SaturationX_UpperSat;
+} else if (absxk <= Modelos_P.SaturationX_LowerSat) {
+    Modelos_B.SaturationX = Modelos_P.SaturationX_LowerSat;
+} else {
+    Modelos_B.SaturationX = absxk;
+}
+/* End of Saturate: '<S2>/SaturationX' */
+%<tlcOutputsFcnOfS3B7>\
+%<tlcOutputsFcnOfS3B8>\
+%<tlcOutputsFcnOfS3B10>\
+/* Sum: '<S2>/Sum1' */
+minT = t - rtb_DiscreteTimeIntegrator;
+/* Gain: '<S9>/Filter Coefficient' incorporates:
+ *  DiscreteIntegrator: '<S9>/Filter'
+ *  Gain: '<S9>/Derivative Gain'
+ *  Sum: '<S9>/SumD'
+ */
+rtb_FilterCoefficient_g = (Modelos_P.DerivativeGain_Gain_m * minT - Modelos_DWork.Filter_DSTATE_g) * Modelos_P.FilterCoefficient_Gain_n;
+/* Sum: '<S9>/Sum' incorporates:
+ *  DiscreteIntegrator: '<S9>/Integrator'
+ *  Gain: '<S9>/Proportional Gain'
+ */
+absxk = (Modelos_P.ProportionalGain_Gain_d * minT + Modelos_DWork.Integrator_DSTATE_i) + rtb_FilterCoefficient_g;
+/* Saturate: '<S2>/SaturationY' */
+if (absxk >= Modelos_P.SaturationY_UpperSat) {
+    Modelos_B.SaturationY = Modelos_P.SaturationY_UpperSat;
+} else if (absxk <= Modelos_P.SaturationY_LowerSat) {
+    Modelos_B.SaturationY = Modelos_P.SaturationY_LowerSat;
+} else {
+    Modelos_B.SaturationY = absxk;
+}
+/* End of Saturate: '<S2>/SaturationY' */
+%<tlcOutputsFcnOfS3B11>\
+%<tlcOutputsFcnOfS3B12>\
+/* Sum: '<S1>/Sum' incorporates:
+ *  Constant: '<S1>/Constant'
+ */
+rtb_Sum_e = Modelos_B.Pwlinear1_o + Modelos_P.Constant_Value_a;
+/* Gain: '<S8>/Integral Gain' */
+rtb_IntegralGain = Modelos_P.IntegralGain_Gain * scale;
+/* Gain: '<S9>/Integral Gain' */
+rtb_IntegralGain_c = Modelos_P.IntegralGain_Gain_k * minT;
+%<SLibInsertSolverResetCode()>\
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 3, fcnProtoType)>
+
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T minT;
+real_T scale;
+real_T MatrA[4];
+real_T absxk;
+real_T t;
+real_T rtb_DiscreteTimeIntegrator1;
+real_T rtb_DiscreteTimeIntegrator;
+real_T tmp[4];
+real_T Vr;
+real_T Vs_idx;
+real_T Vs_idx_0;
+real_T Vr_idx;
+
+%closefile localVarDecl
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
