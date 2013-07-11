@@ -74,6 +74,20 @@ numParam	-> entero que dice cuantos elementos son los del vector anterior
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
 	{
+
+		char   s[] = "this is a string";
+		char   c = '\n';
+
+		FILE * logfile;
+
+		if((logfile=fopen("DEATH.LOG","a+, ccs=<encoding>")) != NULL)
+		{
+			fprintf(logfile, "%s%c", s, c);
+			fclose(logfile);
+			system( "type DEATH.LOG" );
+		}
+
+
 		// creamos variables locales para poder verlas en el debugger
 		pos[0] = position[0];
 		pos[1] = position[1];
@@ -81,9 +95,9 @@ extern "C" {
 		wPx = new double[numWaypoints];
 		wPy = new double[numWaypoints];
 		
-		for(int i=0;i<numWaypoints;i++){
-			wPx[i] = wayPointX[i];
-			wPy[i] = wayPointY[i];
+		for(int j=0;j<numWaypoints;j++){
+			wPx[j] = wayPointX[j];
+			wPy[j] = wayPointY[j];
 		}
 
 
@@ -131,9 +145,6 @@ extern "C" {
 
 		if ((abs(e_kx) < 0.01) && (abs(e_ky) < 0.01) && (i < numWaypoints-1))// cambiar esto a detectar dentro del radio y no cuando los dos errores sean nulos
 			i = i+1;
-
-		printf("3");
-
 	}
 
 }
