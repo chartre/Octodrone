@@ -8,6 +8,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+// Para crear el log
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
 #define Ts 0.06 // El TrackDroneLite va a llamar a la función "Control" cada 0.06 seg.
 
 
@@ -28,6 +35,10 @@ double Tiy = 0;
 double Tdy = 0;
 
 int i = 1;
+double pos[3];
+double *wPx;
+double *wPy;
+
 
 /* PARAMETROS
 position	-> puntero a las posiciones instantaneas x y z
@@ -65,20 +76,33 @@ numParam	-> entero que dice cuantos elementos son los del vector anterior
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
 	{
+		// creamos variables locales para poder verlas en el debugger
+		pos[0] = position[0];
+		pos[1] = position[1];
 
+		wPx = new double[numWaypoints];
+		wPy = new double[numWaypoints];
 		
+		for(int i=0;i<numWaypoints;i++){
+			wPx[i] = wayPointX[i];
+			wPy[i] = wayPointY[i];
+		}
+
+
+		// Parametros del control
 		// Preprocessing
+
 		//Roll Parameters
-		Kcx = param[0];
-		Tix = param[1];
-		Tdx = param[2];
+		Kcx = 0.225;
+		Tix = 0;
+		Tdx = 0.667;
 		actualWayPoint [0] = wayPointX[i];
 		e_kx = wayPointX[i] - position[0];
 
 		//Pitch Parameters
-		Kcy = param[3];
-		Tiy = param[4];
-		Tdy = param[5];
+		Kcy = -0.2;
+		Tiy = 0;
+		Tdy = 1;
 		actualWayPoint [1] = wayPointY[i];
 		e_ky = wayPointY[i] - position[1];
 
