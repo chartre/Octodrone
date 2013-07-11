@@ -7,15 +7,13 @@
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#define Ts 0.06 // El TrackDroneLite va a llamar a la función "Control" cada 0.06 seg.
 
 // Para crear el log
 #include <string>
 #include <fstream>
 #include <iostream>
 using namespace std;
-
-#define Ts 0.06 // El TrackDroneLite va a llamar a la función "Control" cada 0.06 seg.
 
 
 // Estas variables son variables que van a perdurar a los ciclos
@@ -131,7 +129,7 @@ extern "C" {
 		e_kx_1 = e_kx;
 		e_ky_1 = e_ky;
 
-		if ((e_kx < 0.01) && (e_ky < 0.01) && (i < numWaypoints-1))
+		if ((abs(e_kx) < 0.01) && (abs(e_ky) < 0.01) && (i < numWaypoints-1))// cambiar esto a detectar dentro del radio y no cuando los dos errores sean nulos
 			i = i+1;
 
 		printf("3");
