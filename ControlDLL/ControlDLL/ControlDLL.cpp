@@ -9,10 +9,11 @@
 #include <stdlib.h>
 #define Ts 0.06 // El TrackDroneLite va a llamar a la función "Control" cada 0.06 seg.
 
-// Para crear el log
+// Añadido nuestro (a borrar)
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 
@@ -33,6 +34,7 @@ double Tiy = 0;
 double Tdy = 0;
 
 int i = 1;
+int contCiclo;
 double pos[3];
 double *wPx;
 double *wPy;
@@ -61,7 +63,7 @@ wayPointX	-> array con las componentes X de todas las posiciones del recorrido.
 wayPointY	-> array con las componentes Y de todas las posiciones del recorrido.
 		wayPointY [0]	-> Corresponde a la posicion de inicio del aparato
 
-numWaypoints	-> indica el numero de waypoints que hay en los vectores anteriores (suponemos que el origen incluido)
+numWaypoints	-> indica el numero de waypoints que hay en los vectores anteriores (el origen incluido)
 
 actualWaypoint	-> indica al TrackDroneLite a qué waypoint estamos intentando ir
 
@@ -74,18 +76,26 @@ numParam	-> entero que dice cuantos elementos son los del vector anterior
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
 	{
+		// Contador del numero de ciclos y del tiempo transcurrido
+		float tCiclo = contCiclo*0.06;
+		contCiclo++;
 
-		char   s[] = "this is a string";
-		char   c = '\n';
 
+		/* Manejo del log file*/
+		char tmpbuf[10];
+		_strtime_s(tmpbuf,10); // metemos en tmpbuf la hora del SO
 		FILE * logfile;
-
-		if((logfile=fopen("DEATH.LOG","a+, ccs=<encoding>")) != NULL)
+		if (contCiclo == 1) // si es el primer ciclo, escribe titulo
 		{
-			fprintf(logfile, "%s%c", s, c);
+			logfile=fopen("historico.log","w");
+			fprintf(logfile, "%s Tiempo\t\tPosX\t\tPosY\t\tVelX\t\tVelY\t\twPX\t\twPY\n",tmpbuf); // Insercion del texto
 			fclose(logfile);
-			system( "type DEATH.LOG" );
 		}
+		logfile=fopen("historico.log","a");
+		fprintf(logfile, "\t %f\t%d\t%d\t%d\t%d\t%d\t%d\n",tCiclo,position[0],position[1],velocity[0],velocity[1],wayPointX[i],wayPointY[i]); // Insercion del texto
+		fclose(logfile);
+		
+		/* Fin del logfile*/
 
 
 		// creamos variables locales para poder verlas en el debugger
