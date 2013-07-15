@@ -14,7 +14,6 @@
 #include <fstream>
 #include <iostream>
 #include <time.h>
-using namespace std;
 
 
 // Estas variables son variables que van a perdurar a los ciclos
@@ -37,7 +36,7 @@ int i = 1;
 int contCiclo;
 double pos[3];
 double *wPx;
-double *wPy;
+double  *wPy;
 
 
 /* PARAMETROS
@@ -77,10 +76,10 @@ extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
 	{
 		// Contador del numero de ciclos y del tiempo transcurrido
-		float tCiclo = contCiclo*0.06;
+		double tCiclo = contCiclo*0.06;
 		contCiclo++;
 
-
+		 
 		/* Manejo del log file*/
 		char tmpbuf[10];
 		_strtime_s(tmpbuf,10); // metemos en tmpbuf la hora del SO
@@ -88,11 +87,11 @@ extern "C" {
 		if (contCiclo == 1) // si es el primer ciclo, escribe titulo
 		{
 			logfile=fopen("historico.log","w");
-			fprintf(logfile, "%s Tiempo\t\tPosX\t\tPosY\t\tVelX\t\tVelY\t\twPX\t\twPY\n",tmpbuf); // Insercion del texto
+			fprintf(logfile, "%s Tiempo\t\tPosX\t\tPosY\t\tVelX\t\tVelY\t\twPX\t\twPY\n\n",tmpbuf); // Insercion del texto
 			fclose(logfile);
 		}
 		logfile=fopen("historico.log","a");
-		fprintf(logfile, "\t %f\t%d\t%d\t%d\t%d\t%d\t%d\n",tCiclo,position[0],position[1],velocity[0],velocity[1],wayPointX[i],wayPointY[i]); // Insercion del texto
+		fprintf(logfile, "%i\t %f\t%f\t%f\t%f\t%f\t%f\t%f\n",(contCiclo-1),tCiclo,position[0],position[1],velocity[0],velocity[1],wayPointX[i],wayPointY[i]); // Insercion del texto
 		fclose(logfile);
 		
 		/* Fin del logfile*/
