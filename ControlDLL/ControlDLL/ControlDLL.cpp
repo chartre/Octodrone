@@ -34,9 +34,6 @@ double Tdy = 0;
 
 int i = 1;
 int contCiclo;
-double pos[3];
-double *wPx;
-double  *wPy;
 
 
 /* PARAMETROS
@@ -78,7 +75,6 @@ extern "C" {
 		// Contador del numero de ciclos y del tiempo transcurrido
 		double tCiclo = contCiclo*0.06;
 		contCiclo++;
-
 		 
 		/* Manejo del log file*/
 		char tmpbuf[10];
@@ -87,28 +83,14 @@ extern "C" {
 		if (contCiclo == 1) // si es el primer ciclo, escribe titulo
 		{
 			logfile=fopen("historico.log","w");
-			fprintf(logfile, "%s Tiempo\t\tPosX\t\tPosY\t\tVelX\t\tVelY\t\twPX\t\twPY\n\n",tmpbuf); // Insercion del texto
+			fprintf(logfile, "%s Tiempo\t\t(PosX    ,PosY    )\t(VelX    ,VelY    )\t(wPX     ,wPY    )\tDist\n\n",tmpbuf); // Insercion del texto
 			fclose(logfile);
 		}
 		logfile=fopen("historico.log","a");
-		fprintf(logfile, "%i\t %f\t%f\t%f\t%f\t%f\t%f\t%f\n",(contCiclo-1),tCiclo,position[0],position[1],velocity[0],velocity[1],wayPointX[i],wayPointY[i]); // Insercion del texto
+		fprintf(logfile, "%i\t %f\t(%f,%f)\t(%f,%f)\t(%f,%f)",(contCiclo-1),tCiclo,position[0],position[1],velocity[0],velocity[1],wayPointX[i],wayPointY[i]); // Insercion del texto
 		fclose(logfile);
 		
 		/* Fin del logfile*/
-
-
-		// creamos variables locales para poder verlas en el debugger
-		pos[0] = position[0];
-		pos[1] = position[1];
-
-		wPx = new double[numWaypoints];
-		wPy = new double[numWaypoints];
-		
-		for(int j=0;j<numWaypoints;j++){
-			wPx[j] = wayPointX[j];
-			wPy[j] = wayPointY[j];
-		}
-
 
 		// Parametros del control
 		// Preprocessing
@@ -151,8 +133,15 @@ extern "C" {
 		// Manage Variables
 		e_kx_1 = e_kx;
 		e_ky_1 = e_ky;
+		
+		double dist = sqrt((e_kx*e_kx)+(e_ky*e_ky));
 
-		if ((abs(e_kx) < 0.01) && (abs(e_ky) < 0.01) && (i < numWaypoints-1))// cambiar esto a detectar dentro del radio y no cuando los dos errores sean nulos
+		logfile=fopen("historico.log","a");
+		fprintf(logfile, "\t%f\n",dist);
+		fclose(logfile);
+
+
+		if ((dist < 0.01) && (i < numWaypoints-1))
 			i = i+1;
 	}
 
