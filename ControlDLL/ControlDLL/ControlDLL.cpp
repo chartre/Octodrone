@@ -18,19 +18,25 @@
 
 // Estas variables son variables que van a perdurar a los ciclos
 
+double U_x = 0;
 double e_kx = 0;
 double e_kx_1 = 0;
+double e_kx_2 = 0;
 
+double U_y = 0;
 double e_ky = 0;
 double e_ky_1 = 0;
+double e_ky_2 = 0;
 
 double Kcx = 0;
 double Tix = 0;
 double Tdx = 0;
+double Nx = 0;
 
 double Kcy = 0;
 double Tiy = 0;
 double Tdy = 0;
+double Ny = 0;
 
 int i = 1;
 int contCiclo;
@@ -96,26 +102,29 @@ extern "C" {
 		// Preprocessing
 
 		//Roll Parameters
-		Kcx = 0.225;
+		Kcx = 0.1;
 		Tix = 0;
-		Tdx = 0.667;
+		Tdx = 0.05;
+		Nx = 12;
 		actualWayPoint [0] = wayPointX[i];
 		e_kx = wayPointX[i] - position[0];
 
 		//Pitch Parameters
-		Kcy = -0.2;
+		Kcy = 1.5;
 		Tiy = 0;
-		Tdy = 1;
+		Tdy = 3;
+		Ny = 20;
 		actualWayPoint [1] = wayPointY[i];
 		e_ky = wayPointY[i] - position[1];
 
 		// Control PID Law for X-ROLL
 		//action[1] = u_kx_1 + Kcx*(e_kx - e_kx_1) + (Kcx*Ts/Tix)*e_kx + (Kcx*Tdx)/Ts*(e_kx - 2*e_kx_1 + e_kx_2);
-		action[1] = Kcx*e_kx + (Kcx*Tdx)/Ts*(e_kx - e_kx_1);
+		action[1] = Kcx*e_kx + (Kcx*Tdx)*Nx*(e_kx - 2*e_kx_1 + e_kx_2)/((e_kx - 2*e_kx_1 + e_kx_2) + Nx*Ts); // Obteneos la configuración de la fórmula de la ayuda de Simulink para definir el PID
 
 		// Control PID Law for Y-PITCH
 		//action[0] = action[1] + Kcy*(e_ky - e_ky_1) + (Kcy*Ts)/Tiy*e_ky + (Kcy*Tdy)/Ts*(e_ky - 2*e_ky_1 + e_ky_2);
-		action[0] = Kcy*e_ky + (Kcy*Tdy)/Ts*(e_ky - e_ky_1);
+		// action[0] = (Kcy*e_ky + (Kcy*Tdy)*Ny*(e_ky - 2*e_ky_1 + e_ky_2)/((e_ky - 2*e_ky_1 + e_ky_2) + Ny*Ts))*-1; // La dirección parece estar invertida respecto a nuestro modelo, en el que invierte el eje X
+		action[0] = Kcy*e_ky + (Kcy*Tdy)/Ts*(e_ky - e_ky_1); // Propuesta ejemplo del documento original
 
 		// Saturation Check
 		if ((action[0]) > 1)
@@ -131,8 +140,12 @@ extern "C" {
 			action[1] = -1;
 
 		// Manage Variables
+		e_kx_2 = e_kx_1;
 		e_kx_1 = e_kx;
+		// U_x = action[1];
+		e_ky_2 = e_ky_1;
 		e_ky_1 = e_ky;
+		// U_y = action[0];
 		
 		double dist = sqrt((e_kx*e_kx)+(e_ky*e_ky));
 
