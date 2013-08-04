@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.7"
+    ComputedModelVersion    "1.8"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -60,33 +60,24 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		3
+	Dimension		2
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1564.0, 699.0]
+	  Extents		  [1564.0, 697.0]
 	  ZoomFactor		  [2.4086021505376345]
 	  Offset		  [417.25223214285728, 60.25]
 	}
 	Object {
 	  $ObjectID		  7
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "1"
-	  Extents		  [1564.0, 699.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-577.0, -303.0]
-	}
-	Object {
-	  $ObjectID		  8
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "15"
-	  Extents		  [1564.0, 699.0]
-	  ZoomFactor		  [1.18]
-	  Offset		  [0.0, 0.0]
+	  LoadSaveID		  "23"
+	  Extents		  [1564.0, 697.0]
+	  ZoomFactor		  [2.08]
+	  Offset		  [-133.46153846153845, 105.63461538461542]
 	}
 	PropName		"EditorsInfo"
       }
@@ -96,11 +87,11 @@ Model {
   Creator		  "borJaRal"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Carlos"
+  LastModifiedBy	  "borJaRal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jun 22 16:09:09 2013"
-  RTWModifiedTimeStamp	  293818004
-  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  LastModifiedDate	  "Tue Jun 25 12:27:09 2013"
+  RTWModifiedTimeStamp	  294063677
+  ModelVersionFormat	  "1.%<AutoIncrement:8>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -135,7 +126,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    9
+    $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Modelos"
     overrideMode_	    [0.0]
@@ -194,13 +185,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      10
+      $ObjectID		      9
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
@@ -235,7 +226,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -267,7 +258,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -323,7 +314,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -413,7 +404,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -450,7 +441,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -465,7 +456,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -480,7 +471,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  18
+	  $ObjectID		  17
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -549,7 +540,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      19
+	      $ObjectID		      18
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -617,7 +608,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      20
+	      $ObjectID		      19
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -697,7 +688,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  21
+	  $ObjectID		  20
 	  Version		  "1.12.1"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -719,11 +710,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    10
+    $ObjectID		    9
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    22
+    $ObjectID		    21
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -844,6 +835,41 @@ Model {
       RTWStateStorageClass    "Auto"
     }
     Block {
+      BlockType		      DiscreteTransferFcn
+      NumeratorSource	      "Dialog"
+      Numerator		      "[1]"
+      DenominatorSource	      "Dialog"
+      Denominator	      "[1 0.5]"
+      InitialStatesSource     "Dialog"
+      InitialStates	      "0"
+      InputProcessing	      "Elements as channels (sample based)"
+      ExternalReset	      "None"
+      InitialDenominatorStates "0"
+      FilterStructure	      "Direct form II"
+      SampleTime	      "-1"
+      a0EqualsOne	      off
+      NumCoefMin	      "[]"
+      NumCoefMax	      "[]"
+      DenCoefMin	      "[]"
+      DenCoefMax	      "[]"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      StateDataTypeStr	      "Inherit: Same as input"
+      MultiplicandDataTypeStr "Inherit: Same as input"
+      NumCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      DenCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      NumProductDataTypeStr   "Inherit: Inherit via internal rule"
+      DenProductDataTypeStr   "Inherit: Inherit via internal rule"
+      NumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      DenAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      Gain
       Gain		      "1"
       Multiplication	      "Element-wise(K.*u)"
@@ -884,6 +910,160 @@ Model {
       AllPortsSameDT	      on
       OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Lookup_n-D
+      NumberOfTableDimensions "2"
+      BreakpointsForDimension1 "[10,22,31]"
+      BreakpointsForDimension2 "[10,22,31]"
+      BreakpointsForDimension3 "[1:3]"
+      BreakpointsForDimension4 "[1:3]"
+      BreakpointsForDimension5 "[1:3]"
+      BreakpointsForDimension6 "[1:3]"
+      BreakpointsForDimension7 "[1:3]"
+      BreakpointsForDimension8 "[1:3]"
+      BreakpointsForDimension9 "[1:3]"
+      BreakpointsForDimension10	"[1:3]"
+      BreakpointsForDimension11	"[1:3]"
+      BreakpointsForDimension12	"[1:3]"
+      BreakpointsForDimension13	"[1:3]"
+      BreakpointsForDimension14	"[1:3]"
+      BreakpointsForDimension15	"[1:3]"
+      BreakpointsForDimension16	"[1:3]"
+      BreakpointsForDimension17	"[1:3]"
+      BreakpointsForDimension18	"[1:3]"
+      BreakpointsForDimension19	"[1:3]"
+      BreakpointsForDimension20	"[1:3]"
+      BreakpointsForDimension21	"[1:3]"
+      BreakpointsForDimension22	"[1:3]"
+      BreakpointsForDimension23	"[1:3]"
+      BreakpointsForDimension24	"[1:3]"
+      BreakpointsForDimension25	"[1:3]"
+      BreakpointsForDimension26	"[1:3]"
+      BreakpointsForDimension27	"[1:3]"
+      BreakpointsForDimension28	"[1:3]"
+      BreakpointsForDimension29	"[1:3]"
+      BreakpointsForDimension30	"[1:3]"
+      BreakpointsForDimension1Min "[]"
+      BreakpointsForDimension2Min "[]"
+      BreakpointsForDimension3Min "[]"
+      BreakpointsForDimension4Min "[]"
+      BreakpointsForDimension5Min "[]"
+      BreakpointsForDimension6Min "[]"
+      BreakpointsForDimension7Min "[]"
+      BreakpointsForDimension8Min "[]"
+      BreakpointsForDimension9Min "[]"
+      BreakpointsForDimension10Min "[]"
+      BreakpointsForDimension11Min "[]"
+      BreakpointsForDimension12Min "[]"
+      BreakpointsForDimension13Min "[]"
+      BreakpointsForDimension14Min "[]"
+      BreakpointsForDimension15Min "[]"
+      BreakpointsForDimension16Min "[]"
+      BreakpointsForDimension17Min "[]"
+      BreakpointsForDimension18Min "[]"
+      BreakpointsForDimension19Min "[]"
+      BreakpointsForDimension20Min "[]"
+      BreakpointsForDimension21Min "[]"
+      BreakpointsForDimension22Min "[]"
+      BreakpointsForDimension23Min "[]"
+      BreakpointsForDimension24Min "[]"
+      BreakpointsForDimension25Min "[]"
+      BreakpointsForDimension26Min "[]"
+      BreakpointsForDimension27Min "[]"
+      BreakpointsForDimension28Min "[]"
+      BreakpointsForDimension29Min "[]"
+      BreakpointsForDimension30Min "[]"
+      BreakpointsForDimension1Max "[]"
+      BreakpointsForDimension2Max "[]"
+      BreakpointsForDimension3Max "[]"
+      BreakpointsForDimension4Max "[]"
+      BreakpointsForDimension5Max "[]"
+      BreakpointsForDimension6Max "[]"
+      BreakpointsForDimension7Max "[]"
+      BreakpointsForDimension8Max "[]"
+      BreakpointsForDimension9Max "[]"
+      BreakpointsForDimension10Max "[]"
+      BreakpointsForDimension11Max "[]"
+      BreakpointsForDimension12Max "[]"
+      BreakpointsForDimension13Max "[]"
+      BreakpointsForDimension14Max "[]"
+      BreakpointsForDimension15Max "[]"
+      BreakpointsForDimension16Max "[]"
+      BreakpointsForDimension17Max "[]"
+      BreakpointsForDimension18Max "[]"
+      BreakpointsForDimension19Max "[]"
+      BreakpointsForDimension20Max "[]"
+      BreakpointsForDimension21Max "[]"
+      BreakpointsForDimension22Max "[]"
+      BreakpointsForDimension23Max "[]"
+      BreakpointsForDimension24Max "[]"
+      BreakpointsForDimension25Max "[]"
+      BreakpointsForDimension26Max "[]"
+      BreakpointsForDimension27Max "[]"
+      BreakpointsForDimension28Max "[]"
+      BreakpointsForDimension29Max "[]"
+      BreakpointsForDimension30Max "[]"
+      BreakpointsForDimension1DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension2DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension3DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension4DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension5DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension6DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension7DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension8DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension9DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension10DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension11DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension12DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension13DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension14DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension15DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension16DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension17DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension18DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension19DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension20DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension21DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension22DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension23DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension24DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension25DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension26DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension27DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension28DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension29DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension30DataTypeStr "Inherit: Same as corresponding input"
+      IndexSearchMethod	      "Binary search"
+      BeginIndexSearchUsingPreviousIndexResult off
+      UseOneInputPortForAllInputData off
+      Table		      "[4 5 6;16 19 20;10 18 23]"
+      TableMin		      "[]"
+      TableMax		      "[]"
+      TableDataTypeStr	      "Inherit: Same as output"
+      IntermediateResultsDataTypeStr "Inherit: Same as output"
+      InterpMethod	      "Linear"
+      ExtrapMethod	      "Linear"
+      DiagnosticForOutOfRangeInput "None"
+      RemoveProtectionInput   off
+      UseLastTableValue	      off
+      SampleTime	      "-1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      FractionDataTypeStr     "Inherit: Inherit via internal rule"
+      SupportTunableTableSize off
+      MaximumIndicesForEachDimension "[]"
+      LUTDesignTableMode      "Redesign Table"
+      LUTDesignDataSource     "Block Dialog"
+      LUTDesignFunctionName   "sqrt(x)"
+      LUTDesignUseExistingBP  on
+      LUTDesignRelError	      "0.01"
+      LUTDesignAbsError	      "1e-6"
     }
     Block {
       BlockType		      Mux
@@ -1014,7 +1194,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "240"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "74"
+    SIDHighWatermark	    "90"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo"
@@ -1033,7 +1213,7 @@ Model {
       System {
 	Name			" Modelo"
 	Location		[-8, -8, 1608, 868]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1059,7 +1239,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "RefRoll"
 	  SID			  "3"
-	  Position		  [50, 228, 80, 242]
+	  Position		  [50, 238, 80, 252]
 	  ZOrder		  -2
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1068,20 +1248,28 @@ Model {
 	}
 	Block {
 	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "4"
-	  Position		  [260, 335, 290, 365]
-	  ZOrder		  33
-	  Value			  "-0.006"
+	  Name			  "Constant2"
+	  SID			  "77"
+	  Position		  [255, 345, 285, 375]
+	  ZOrder		  80
+	  Value			  "0.021"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  SID			  "78"
+	  Position		  [255, 160, 285, 190]
+	  ZOrder		  83
+	  Value			  "0.0022"
 	}
 	Block {
 	  BlockType		  DiscreteIntegrator
 	  Name			  "Discrete-Time Integrator"
 	  SID			  "5"
 	  Ports			  [1, 1]
-	  Position		  [380, 277, 415, 313]
+	  Position		  [435, 287, 470, 323]
 	  ZOrder		  23
-	  gainval		  "1"
+	  gainval		  "0.95"
 	  InitialCondition	  "-1"
 	  SampleTime		  "0.06"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
@@ -1100,43 +1288,254 @@ Model {
 	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "Hammerstein-Wiener Model"
-	  SID			  "7"
+	  BlockType		  SubSystem
+	  Name			  "H-W sep X"
+	  SID			  "79"
 	  Ports			  [1, 1]
-	  Position		  [155, 24, 255, 66]
-	  ZOrder		  1
-	  LibraryVersion	  "1.263"
-	  SourceBlock		  "slident/Hammerstein-Wiener Model"
-	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vx123_nlhw113_pic2"
-	  IC			  "Zero"
-	  X0i			  "0"
+	  Position		  [155, 21, 250, 69]
+	  ZOrder		  81
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "H-W sep X"
+	    Location		    [-8, -8, 1608, 868]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "200"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "80"
+	      Position		      [20, 38, 50, 52]
+	      ZOrder		      50
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "InputNonlinearity"
+	      SID		      "81"
+	      Ports		      [1, 1]
+	      Position		      [95, 18, 150, 72]
+	      ZOrder		      68
+	      NumberOfTableDimensions "1"
+	      BreakpointsForDimension1 "[-0.7794306773114486,-0.6665517461335803,-0.38259787912288773,-0.25092725123883536,0."
+	      "09473639847108406,0.17029673563619527,0.17726636436631915,0.37957998009039323,0.38295482334780956,0.68959837044"
+	      "09222,0.7117318741228923,0.7447670914223733]"
+	      Table		      "[-0.5252577071737793,-0.5740314668184492,-0.5276067440181784,-0.4525234907735544,0.08939370174418"
+	      "115,0.1805352107680322,0.1868036147839089,0.3543585215551489,0.3611326480203565,0.37788310108320206,0.352619720"
+	      "8305561,0.3422075436511802]"
+	      RndMeth		      "Simplest"
+	    }
+	    Block {
+	      BlockType		      DiscreteTransferFcn
+	      Name		      "LinearModel"
+	      SID		      "82"
+	      Ports		      [1, 1]
+	      Position		      [190, 27, 250, 63]
+	      ZOrder		      41
+	      InputPortMap	      "u0"
+	      Denominator	      "[1 -0.9362 0 0]"
+	      SampleTime	      "0.06"
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "OutputNonlinearity"
+	      SID		      "83"
+	      Ports		      [1, 1]
+	      Position		      [290, 18, 345, 72]
+	      ZOrder		      69
+	      NumberOfTableDimensions "1"
+	      BreakpointsForDimension1 "[-13.100440261829927,-10.750187015480893,-9.470137574293718,-9.36690448652481,-6.3894"
+	      "42383224805,-1.6138287974253407,-0.297953925902821,1.971981554283074,2.7910296318480756,5.162248586236924,10.40"
+	      "110370041321,12.751035076726279]"
+	      Table		      "[3.2664521299029508,3.5252407787384157,3.7330540769149074,3.7540914265089205,2.1259511153246806,-"
+	      "0.05999829191880518,0.057697690602710905,-1.1460016436590341,-1.5145126126505724,-3.1269313395607856,-4.1681776"
+	      "89419741,-4.391972300120799]"
+	      RndMeth		      "Simplest"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "84"
+	      Position		      [395, 38, 425, 52]
+	      ZOrder		      51
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "InputNonlinearity"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "InputNonlinearity"
+	      SrcPort		      1
+	      DstBlock		      "LinearModel"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "LinearModel"
+	      SrcPort		      1
+	      DstBlock		      "OutputNonlinearity"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OutputNonlinearity"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "Hammerstein-Wiener Model1"
-	  SID			  "8"
+	  BlockType		  SubSystem
+	  Name			  "H-W sep Y"
+	  SID			  "85"
 	  Ports			  [1, 1]
-	  Position		  [155, 214, 255, 256]
-	  ZOrder		  2
-	  LibraryVersion	  "1.263"
-	  SourceBlock		  "slident/Hammerstein-Wiener Model"
-	  SourceType		  "Hammerstein-Wiener Model"
-	  sys			  "vy123_nlhw111"
-	  IC			  "Zero"
-	  X0i			  "0"
+	  Position		  [155, 222, 250, 268]
+	  ZOrder		  82
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "H-W sep Y"
+	    Location		    [-8, -8, 1608, 868]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "250"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "86"
+	      Position		      [20, 38, 50, 52]
+	      ZOrder		      65
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "1-D Lookup Table"
+	      SID		      "87"
+	      Ports		      [1, 1]
+	      Position		      [80, 18, 135, 72]
+	      ZOrder		      67
+	      NumberOfTableDimensions "1"
+	      BreakpointsForDimension1 "[-1.1225240009047588,-0.6108756671535277,-0.3128790658307752,-0.2913817412551785,0.00"
+	      "938351236428661,0.0677515420237256,0.16514140233265545,0.30042635723557465,0.3198218836765622,0.604575162756630"
+	      "3]"
+	      Table		      "[-0.5474321358905286,-0.6404833604115172,-0.42292715552017335,-0.5324214704084676,-0.076187320530"
+	      "51584,0.012562344805443028,0.16039796318878402,0.3172882429080992,0.23894258382025083,0.4664650461409855]"
+	      RndMeth		      "Simplest"
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "1-D Lookup Table1"
+	      SID		      "88"
+	      Ports		      [1, 1]
+	      Position		      [280, 18, 335, 72]
+	      ZOrder		      68
+	      NumberOfTableDimensions "1"
+	      BreakpointsForDimension1 "[-15.832778908250022,-13.7342083264422,-10.320129925856286,-7.501158359462719,-2.9390"
+	      "386213145105,-0.8462396811445138,3.4795365065330883,6.504839362526322,9.44668430471862,15.634316306375393]"
+	      Table		      "[-2.368387652340793,-2.140120269158168,-1.5133016751064454,-1.0738581735644925,0.0356388755743388"
+	      "1,-0.012667991728073244,1.0709692692542954,1.5353474643531277,2.0716251012590496,2.127622896339377]"
+	      RndMeth		      "Simplest"
+	    }
+	    Block {
+	      BlockType		      DiscreteTransferFcn
+	      Name		      "Discrete Transfer Fcn1"
+	      SID		      "89"
+	      Ports		      [1, 1]
+	      Position		      [175, 27, 235, 63]
+	      ZOrder		      50
+	      InputPortMap	      "u0"
+	      Denominator	      "[1 -0.9552]"
+	      SampleTime	      "0.06"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "90"
+	      Position		      [395, 38, 425, 52]
+	      ZOrder		      66
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "1-D Lookup Table"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "1-D Lookup Table1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "1-D Lookup Table"
+	      SrcPort		      1
+	      DstBlock		      "Discrete Transfer Fcn1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Discrete Transfer Fcn1"
+	      SrcPort		      1
+	      DstBlock		      "1-D Lookup Table1"
+	      DstPort		      1
+	    }
+	  }
 	}
 	Block {
 	  BlockType		  Sum
 	  Name			  "Sum"
 	  SID			  "9"
 	  Ports			  [2, 1]
-	  Position		  [340, 285, 360, 305]
+	  Position		  [340, 295, 360, 315]
 	  ZOrder		  32
 	  ShowName		  off
 	  IconShape		  "round"
-	  Inputs		  "|++"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "75"
+	  Ports			  [2, 1]
+	  Position		  [340, 110, 360, 130]
+	  ZOrder		  34
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -1162,7 +1561,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Vy"
 	  SID			  "12"
-	  Position		  [385, 228, 415, 242]
+	  Position		  [385, 238, 415, 252]
 	  ZOrder		  -10
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -1171,18 +1570,18 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Y"
 	  SID			  "13"
-	  Position		  [505, 288, 535, 302]
+	  Position		  [505, 298, 535, 312]
 	  ZOrder		  -9
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "Hammerstein-Wiener Model"
+	  SrcBlock		  "H-W sep X"
 	  SrcPort		  1
-	  Points		  [14, 0]
+	  Points		  [22, 0]
 	  Branch {
 	    Points		    [0, 75]
-	    DstBlock		    "Discrete-Time Integrator1"
+	    DstBlock		    "Sum1"
 	    DstPort		    1
 	  }
 	  Branch {
@@ -1193,13 +1592,13 @@ Model {
 	Line {
 	  SrcBlock		  "RefRoll"
 	  SrcPort		  1
-	  DstBlock		  "Hammerstein-Wiener Model1"
+	  DstBlock		  "H-W sep Y"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "RefPitch"
 	  SrcPort		  1
-	  DstBlock		  "Hammerstein-Wiener Model"
+	  DstBlock		  "H-W sep X"
 	  DstPort		  1
 	}
 	Line {
@@ -1215,9 +1614,9 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Hammerstein-Wiener Model1"
+	  SrcBlock		  "H-W sep Y"
 	  SrcPort		  1
-	  Points		  [19, 0]
+	  Points		  [24, 0]
 	  Branch {
 	    Points		    [0, 60]
 	    DstBlock		    "Sum"
@@ -1235,10 +1634,23 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Constant"
+	  SrcBlock		  "Constant2"
 	  SrcPort		  1
-	  Points		  [55, 0]
+	  Points		  [60, 0]
 	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Discrete-Time Integrator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "Sum1"
 	  DstPort		  2
 	}
       }
@@ -1270,7 +1682,7 @@ Model {
       System {
 	Name			"Controlador"
 	Location		[-8, -8, 1608, 868]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1352,7 +1764,7 @@ Model {
 	  System {
 	    Name		    "Control Ejes teórico"
 	    Location		    [-8, -8, 1608, 868]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1432,7 +1844,7 @@ Model {
 	      SID		      "34"
 	      Position		      [145, 327, 170, 343]
 	      ZOrder		      4
-	      Value		      "0.1"
+	      Value		      "radio"
 	      SampleTime	      "0.06"
 	    }
 	    Block {
@@ -1456,7 +1868,7 @@ Model {
 	      SFBlockType	      "MATLAB Function"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		23
+		$ObjectID		22
 		$ClassName		"Simulink.Mask"
 		Type			"Stateflow"
 		Description		"Embedded MATLAB block"
@@ -1646,7 +2058,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
-	      SystemSampleTime	      "Ts"
+	      SystemSampleTime	      "0.06"
 	      RTWSystemCode	      "Auto"
 	      FunctionWithSeparateData off
 	      Opaque		      off
@@ -1655,7 +2067,7 @@ Model {
 	      SFBlockType	      "MATLAB Function"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		24
+		$ObjectID		23
 		$ClassName		"Simulink.Mask"
 		Type			"Stateflow"
 		Description		"Embedded MATLAB block"
