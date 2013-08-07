@@ -16,8 +16,31 @@
 #include <time.h>
 
 
-// Estas variables son variables que van a perdurar a los ciclos
+// Estas variables van a perdurar a los ciclos
+double A[2];
+double B[2];
+double C[2];
+double Vr[2];
+double Vs[2];
+double D[2];
+double vE[2];
+double E[2];
+double consigna[2];
+double MatrA [2][2];
+double MatrAt [2][2];
+double MatrB [2];
+double MatrK [2];
+double MatrC [2];
+double MatrK1 [2];
 
+double minT;
+double radio = 0.1;
+
+double minTx;
+double minTy;
+
+double ref_x;
+double ref_y;
 double ref_x_1;
 double ref_y_1;
 
@@ -78,9 +101,6 @@ numParam	-> entero que dice cuantos elementos son los del vector anterior
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
 	{
-		double minT = 0;
-
-
 		// Contador del numero de ciclos y del tiempo transcurrido
 		double tCiclo = contCiclo*0.06;
 		contCiclo++;
@@ -133,32 +153,40 @@ extern "C" {
 		double dist_x = wayPointX[i] - ref_x_1;
 		double dist_y = wayPointY[i] - ref_y_1;
 		//norm(DistXY)
-		double normD = sqrt((dist_x*dist_x)+(dist_y*dist_y))
+		double normD = sqrt((dist_x*dist_x) + (dist_y*dist_y));
 
-		if (normD<(0.5*radio))
+		if (normD < (0.5*radio))
+		{
 			ref_x = wayPointX[i];
 			ref_y = wayPointY[i];
-
+		}
 		else
+		{
 			minTx = abs(dist_x)/maxVx;
 			minTy = abs(dist_y)/maxVy;
 			// minT = max (minTx,minTy);
 			if (minTx > minTy)
+			{
 				minT = minTx;
+			}
 			else
+			{
 				minT = minTy;
+			}
 
-			if minT<0.06
+			if (minT < 0.06)
+			{
 				// CurrRef = SPPos;
-			ref_x = wayPointX[i];
-			ref_y = wayPointY[i];
-
+				ref_x = wayPointX[i];
+				ref_y = wayPointY[i];
+			}
 			else
+			{
 				// CurrRef = LastRef + (Ts/minT)*DistXY;
 				ref_x = ref_x_1 + (0.06/minT)*dist_x;
 				ref_y = ref_y_1 + (0.06/minT)*dist_y;
-			end
-		end
+			}
+		}
 
 		/* Corrector (aka "nuestra parte")
 		Las entradas a esta seccion son:
@@ -169,33 +197,62 @@ extern "C" {
 		La salida es:
 		-consigna (por-definir)	*/
 
-		A=posAnt;
-		B=SPPos;
-		C=[posx;posy]; %construimos vector posicion
+		A[0] = p_x_1;
+		A[1] = p_y_1;
+
+		B[0]=wayPointX[i];
+		B[1]=wayPointY[i];
+
+		//construimos vector posicion
+		C[0] = position[0];
+		C[1] = position[1];
 
 		// creamos vector director de la recta AB (recta r)
-		Vr = B-A;
+		Vr[0] = B[0]-A[0];
+		Vr[1] = B[1]-A[1];
 
 		// iniciamos vector Vs
-		Vs = Vr;
+		// (no necesario en c++)
 
 		// creamos vector perpendicular a Vr
-		Vs(1,1) = -Vr(2,1);
-		Vs(2,1) = Vr(1,1);
+		Vs[0] = -Vr[1];
+		Vs[1] = Vr[0];
 
 		// creamos matriz de vectores directores
-		MatrA = [Vr,-Vs];
+		MatrA[0][0] = Vr[0];
+		MatrA[0][1] = -Vs[0];
+		MatrA[1][0] = Vr[1];
+		MatrA[1][1] = -Vs[1];
 
 		// creamos matriz de valores independientes
-		MatrB = C-A;
+		MatrB[0] = C[0]-A[0];
+		MatrB[1] = C[1]-A[1];
 
 		// calculamos los valores de las K's de cada recta
-		K = inv(MatrA)*MatrB;
+
+		// Inversa de MatrA
+		double detA = (MatrA[0][0]*MatrA[1][1]) - (MatrA[0][1]*MatrA[1][0]);
+		MatrAt[0][0]=MatrA[1][1];
+		MatrAt[0][1]=-MatrA[0][1];
+		MatrAt[1][0]=-MatrA[1][0];
+		MatrAt[1][1]=MatrA[0][0];
+
+		MatrAt[0][0]=MatrAt[0][0]/detA;
+		MatrAt[0][1]=MatrAt[0][1]/detA;
+		MatrAt[1][0]=MatrAt[1][0]/detA;
+		MatrAt[1][1]=MatrAt[1][1]/detA;
+
+		// Matriz de valores k
+		MatrK[0]=(MatrAt[0][0]*MatrB[0]) + (MatrA[0][1]*MatrB[1]);
+		MatrK[1]=(MatrAt[1][0]*MatrB[0]) + (MatrA[1][1]*MatrB[2]);
 
 		// sacamos el punto D intereseccion de las rectas
-		D = A + K(1,1)*Vr;
+		// D = A + K(1,1)*Vr;
+		D[0]=A[0]+MatrK[0]*Vr[0];
+		D[1]=A[1]+MatrK[0]*Vr[1];
 
-		vE = D-C;
+		vE[0] = D[0]-C[0];
+		vE[1] = D[1]-C[1];
 
 		// Calculo cuando CurrRef no está sobre la trayectoria
 		// Se añade esta segunda parte para corregir desviaciones de la trayectoria 
@@ -203,22 +260,37 @@ extern "C" {
 		// de gestión de consigna empleado. Funciona correctamente.
 
 		// creamos matriz de valores independientes
-		MatrC = CurrRef-A;
+		MatrC[0] = ref_x - A[0];
+		MatrC[1] = ref_y - A[1];
 
 		// calculamos los valores de las K's de cada recta
-		K1 = inv(MatrA)*MatrC;
+		// K1 = inv(MatrA)*MatrC;
+		MatrK1[0]=(MatrAt[0][0]*MatrC[0]) + (MatrAt[0][1]*MatrC[1]);
+		MatrK1[1]=(MatrAt[1][0]*MatrC[0]) + (MatrAt[1][1]*MatrC[2]);
 
 		// sacamos el punto E, vertical desde CurrRef, intereseccion de las rectas
 		// con trayectoria
-		E = A + K1(1,1)*Vr;
+		// E = A + K1(1,1)*Vr;
+		E[0]=A[0]+MatrK1[0]*Vr[0];
+		E[1]=A[1]+MatrK1[0]*Vr[1];
+
 		// Permite seleccionar el instante al que afecta la
 		// magnitud de la corrección (posible introducción a la corrección variable
 		// selectiva)
-		   if norm(vE)>0.5
-				   consigna = E + vE*10;
-			else
-				consigna = E + vE*3;
+		double normvE = sqrt((vE[0]*vE[0]) + (vE[1]*vE[1]));
 
+		if (normvE > 0.5)
+		{
+			consigna[0] = E[0] + vE[0]*10;
+			consigna[1] = E[1] + vE[1]*10;
+		}
+		else
+		{
+			consigna[0] = E[0] + vE[0]*vE[0]*vE[0];
+			consigna[1] = E[1] + vE[1]*vE[1]*vE[1];
+		}
+
+		falta; //comprobar la varieble que le entra al pid
 
 		// Fin de la parte del corrector//
 
