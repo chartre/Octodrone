@@ -44,14 +44,15 @@ double ref_y;
 double ref_x_1;
 double ref_y_1;
 
+double d_wx;
 double e_kx = 0;
 double e_kx_1 = 0;
+double e_kx_2 = 0;
 
+double d_wy;
 double e_ky = 0;
 double e_ky_1 = 0;
-
-double p_x_1 = 0;
-double p_y_1 = 0;
+double e_ky_2 = 0;
 
 double Kcx = 0;
 double Tix = 0;
@@ -112,7 +113,7 @@ extern "C" {
 		if (contCiclo == 1) // si es el primer ciclo, escribe titulo
 		{
 			logfile=fopen("historico.log","w");
-			fprintf(logfile, "%s Tiempo\t\t(PosX    ,PosY    )\t(VelX    ,VelY    )\t(wPX     ,wPY    )\tDist\n\n",tmpbuf); // Insercion del texto
+			fprintf(logfile, "%s Tiempo\t\t(PosX    ,PosY    )\t(VelX    ,VelY    )\t(wPX     ,wPY    )\tDist\t\tConsigna\t\tWPAnterior\n\n",tmpbuf); // Insercion del texto
 			fclose(logfile);
 		}
 		logfile=fopen("historico.log","a");
@@ -125,27 +126,22 @@ extern "C" {
 		// Preprocessing
 
 		//Roll Parameters
-		Kcx = 0.225;
-		Tix = 0;
-		Tdx = 0.667;
 		actualWayPoint [0] = wayPointX[i];
-		e_kx = wayPointX[i] - position[0];
+		d_wx = wayPointX[i] - position[0];
 
 		//Pitch Parameters
-		Kcy = -0.2;
-		Tiy = 0;
-		Tdy = 1;
 		actualWayPoint [1] = wayPointY[i];
-		e_ky = wayPointY[i] - position[1];
+		d_wy = wayPointY[i] - position[1];
 		
-		/* Sistema de trayectorias (aka "parte de Enrique")
-		Las entradas son:
-		-siguiente waypoint (wayPointX/Y[i])
-		-lastRef (ref_x/y_1)
-		-Ts (constante Ts)
-		-radio (radio)
-		Las salidas son:
-		-CurrRef (ref_x/y)	*/
+		///* Sistema de trayectorias (aka "parte de Enrique")
+		//===================================================
+		//Las entradas son:
+		//-siguiente waypoint (wayPointX/Y[i])
+		//-lastRef (ref_x/y_1)
+		//-Ts (constante Ts)
+		//-radio (radio)
+		//Las salidas son:
+		//-CurrRef (ref_x/y)	*/
 
 		int maxVx = 2;
 		int maxVy = 1;
@@ -188,120 +184,134 @@ extern "C" {
 			}
 		}
 
-		/* Corrector (aka "nuestra parte")
-		Las entradas a esta seccion son:
-		-posicion anterior (p_x/y_1)
-		-posicion (position)
-		-siguiente waypoint (wayPointX/Y[i])
-		-CurrRef (ref_x/y)
-		La salida es:
-		-consigna (por-definir)	*/
+		///* Corrector (aka "nuestra parte")
+		//==================================
+		//Las entradas a esta seccion son:
+		//-posicion anterior (p_x/y_1)
+		//-posicion (position)
+		//-siguiente waypoint (wayPointX/Y[i])
+		//-CurrRef (ref_x/y)
+		//La salida es:
+		//-consigna (por-definir)	*/
 
-		A[0] = p_x_1;
-		A[1] = p_y_1;
+		//A[0] = wayPointX[i-1];
+		//A[1] = wayPointX[i-1];
 
-		B[0]=wayPointX[i];
-		B[1]=wayPointY[i];
+		//B[0] = wayPointX[i];
+		//B[1] = wayPointY[i];
 
-		//construimos vector posicion
-		C[0] = position[0];
-		C[1] = position[1];
+		////construimos vector posicion
+		//C[0] = position[0];
+		//C[1] = position[1];
 
-		// creamos vector director de la recta AB (recta r)
-		Vr[0] = B[0]-A[0];
-		Vr[1] = B[1]-A[1];
+		//// creamos vector director de la recta AB (recta r)
+		//Vr[0] = B[0]-A[0];
+		//Vr[1] = B[1]-A[1];
 
-		// iniciamos vector Vs
-		// (no necesario en c++)
+		//// iniciamos vector Vs
+		//// (no necesario en c++)
 
-		// creamos vector perpendicular a Vr
-		Vs[0] = -Vr[1];
-		Vs[1] = Vr[0];
+		//// creamos vector perpendicular a Vr
+		//Vs[0] = -Vr[1];
+		//Vs[1] = Vr[0];
 
-		// creamos matriz de vectores directores
-		MatrA[0][0] = Vr[0];
-		MatrA[0][1] = -Vs[0];
-		MatrA[1][0] = Vr[1];
-		MatrA[1][1] = -Vs[1];
+		//// creamos matriz de vectores directores
+		//MatrA[0][0] = Vr[0];
+		//MatrA[0][1] = -Vs[0];
+		//MatrA[1][0] = Vr[1];
+		//MatrA[1][1] = -Vs[1];
 
-		// creamos matriz de valores independientes
-		MatrB[0] = C[0]-A[0];
-		MatrB[1] = C[1]-A[1];
+		//// creamos matriz de valores independientes
+		//MatrB[0] = C[0]-A[0];
+		//MatrB[1] = C[1]-A[1];
 
-		// calculamos los valores de las K's de cada recta
+		//// calculamos los valores de las K's de cada recta
 
-		// Inversa de MatrA
-		double detA = (MatrA[0][0]*MatrA[1][1]) - (MatrA[0][1]*MatrA[1][0]);
-		MatrAt[0][0]=MatrA[1][1];
-		MatrAt[0][1]=-MatrA[0][1];
-		MatrAt[1][0]=-MatrA[1][0];
-		MatrAt[1][1]=MatrA[0][0];
+		//// Inversa de MatrA
+		//double detA = (MatrA[0][0]*MatrA[1][1]) - (MatrA[0][1]*MatrA[1][0]);
+		//MatrAt[0][0]=MatrA[1][1];
+		//MatrAt[0][1]=-MatrA[0][1];
+		//MatrAt[1][0]=-MatrA[1][0];
+		//MatrAt[1][1]=MatrA[0][0];
 
-		MatrAt[0][0]=MatrAt[0][0]/detA;
-		MatrAt[0][1]=MatrAt[0][1]/detA;
-		MatrAt[1][0]=MatrAt[1][0]/detA;
-		MatrAt[1][1]=MatrAt[1][1]/detA;
+		//MatrAt[0][0]=MatrAt[0][0]/detA;
+		//MatrAt[0][1]=MatrAt[0][1]/detA;
+		//MatrAt[1][0]=MatrAt[1][0]/detA;
+		//MatrAt[1][1]=MatrAt[1][1]/detA;
 
-		// Matriz de valores k
-		MatrK[0]=(MatrAt[0][0]*MatrB[0]) + (MatrA[0][1]*MatrB[1]);
-		MatrK[1]=(MatrAt[1][0]*MatrB[0]) + (MatrA[1][1]*MatrB[2]);
+		//// Matriz de valores k
+		//MatrK[0]=(MatrAt[0][0]*MatrB[0]) + (MatrA[0][1]*MatrB[1]);
+		//MatrK[1]=(MatrAt[1][0]*MatrB[0]) + (MatrA[1][1]*MatrB[1]);
 
-		// sacamos el punto D intereseccion de las rectas
-		// D = A + K(1,1)*Vr;
-		D[0]=A[0]+MatrK[0]*Vr[0];
-		D[1]=A[1]+MatrK[0]*Vr[1];
+		//// sacamos el punto D intereseccion de las rectas
+		//// D = A + K(1,1)*Vr;
+		//D[0]=A[0]+MatrK[0]*Vr[0];
+		//D[1]=A[1]+MatrK[0]*Vr[1];
 
-		vE[0] = D[0]-C[0];
-		vE[1] = D[1]-C[1];
+		//vE[0] = D[0]-C[0];
+		//vE[1] = D[1]-C[1];
 
-		// Calculo cuando CurrRef no está sobre la trayectoria
-		// Se añade esta segunda parte para corregir desviaciones de la trayectoria 
-		// ideal teórica de la forma apropiada y evitar discrepancias según el método 
-		// de gestión de consigna empleado. Funciona correctamente.
+		//// Calculo cuando CurrRef no está sobre la trayectoria
+		//// Se añade esta segunda parte para corregir desviaciones de la trayectoria 
+		//// ideal teórica de la forma apropiada y evitar discrepancias según el método 
+		//// de gestión de consigna empleado. Funciona correctamente.
 
-		// creamos matriz de valores independientes
-		MatrC[0] = ref_x - A[0];
-		MatrC[1] = ref_y - A[1];
+		//// creamos matriz de valores independientes
+		//MatrC[0] = ref_x - A[0];
+		//MatrC[1] = ref_y - A[1];
 
-		// calculamos los valores de las K's de cada recta
-		// K1 = inv(MatrA)*MatrC;
-		MatrK1[0]=(MatrAt[0][0]*MatrC[0]) + (MatrAt[0][1]*MatrC[1]);
-		MatrK1[1]=(MatrAt[1][0]*MatrC[0]) + (MatrAt[1][1]*MatrC[2]);
+		//// calculamos los valores de las K's de cada recta
+		//// K1 = inv(MatrA)*MatrC;
+		//MatrK1[0]=(MatrAt[0][0]*MatrC[0]) + (MatrAt[0][1]*MatrC[1]);
+		//MatrK1[1]=(MatrAt[1][0]*MatrC[0]) + (MatrAt[1][1]*MatrC[1]);
 
-		// sacamos el punto E, vertical desde CurrRef, intereseccion de las rectas
-		// con trayectoria
-		// E = A + K1(1,1)*Vr;
-		E[0]=A[0]+MatrK1[0]*Vr[0];
-		E[1]=A[1]+MatrK1[0]*Vr[1];
+		//// sacamos el punto E, vertical desde CurrRef, intereseccion de las rectas
+		//// con trayectoria
+		//// E = A + K1(1,1)*Vr;
+		//E[0]=A[0]+MatrK1[0]*Vr[0];
+		//E[1]=A[1]+MatrK1[0]*Vr[1];
 
-		// Permite seleccionar el instante al que afecta la
-		// magnitud de la corrección (posible introducción a la corrección variable
-		// selectiva)
-		double normvE = sqrt((vE[0]*vE[0]) + (vE[1]*vE[1]));
+		//// Permite seleccionar el instante al que afecta la
+		//// magnitud de la corrección (posible introducción a la corrección variable
+		//// selectiva)
+		//double normvE = sqrt((vE[0]*vE[0]) + (vE[1]*vE[1]));
 
-		if (normvE > 0.5)
-		{
-			consigna[0] = E[0] + vE[0]*10;
-			consigna[1] = E[1] + vE[1]*10;
-		}
-		else
-		{
-			consigna[0] = E[0] + vE[0]*vE[0]*vE[0];
-			consigna[1] = E[1] + vE[1]*vE[1]*vE[1];
-		}
+		//if (normvE > 0.5)
+		//{
+		//	consigna[0] = E[0] + vE[0]*10;
+		//	consigna[1] = E[1] + vE[1]*10;
+		//}
+		//else
+		//{
+		//	consigna[0] = E[0] + vE[0]*3;
+		//	consigna[1] = E[1] + vE[1]*3;
+		//}
+		//// Fin de la parte del corrector//
 
-		falta; //comprobar la varieble que le entra al pid
-
-		// Fin de la parte del corrector//
+		//consigna[0] = wayPointX[i];
+		//consigna[1] = wayPointY[i];
+		
+		e_kx = ref_x - position[0];
+		e_ky = ref_y - position[1];
 
 		// Acciones de control
 		double accion;
 		// Control PID Law for X-ROLL
 		// action[1] = u_kx_1 + Kcx*(e_kx - e_kx_1) + (Kcx*Ts/Tix)*e_kx + (Kcx*Tdx)/Ts*(e_kx - 2*e_kx_1 + e_kx_2);
-		action[1] = Kcx*e_kx + (Kcx*Tdx)/Ts*(e_kx - e_kx_1);
+		// action[1] = Kcx*e_kx + (Kcx*Tdx)/Ts*(e_kx - e_kx_1);
+		//Pitch Parameters
+		Kcx = 0.1;
+		Tix = 0;
+		Tdx = 0.05;
+		int Nx = 12;
+		action[1] = Kcx*e_kx + (Kcx*Tdx)*Nx*(e_kx - 2*e_kx_1 + e_kx_2)/((e_kx - 2*e_kx_1 + e_kx_2) + Nx*Ts);
 
 		// Control PID Law for Y-PITCH
 		// action[0] = action[1] + Kcy*(e_ky - e_ky_1) + (Kcy*Ts)/Tiy*e_ky + (Kcy*Tdy)/Ts*(e_ky - 2*e_ky_1 + e_ky_2);
+		// Roll Params
+		Kcy = -0.2;
+		Tiy = 0;
+		Tdy = 1;
 		action[0] = Kcy*e_ky + (Kcy*Tdy)/Ts*(e_ky - e_ky_1);
 		// Fin acciones de control
 
@@ -328,20 +338,27 @@ extern "C" {
 			action[1]=accion ;
 
 		// Manage Variables
+		e_kx_2 = e_kx_1;
+		e_ky_2 = e_ky_1;
 		e_kx_1 = e_kx;
 		e_ky_1 = e_ky;
+		ref_x_1 = ref_x;
+		ref_y_1 = ref_y;
 
-		p_x_1 = position[0];
-		p_y_1 = position[1];
-
-		double dist = sqrt((e_kx*e_kx)+(e_ky*e_ky));
+		double dist = sqrt((d_wx*d_wx)+(d_wy*d_wy));
 
 		logfile=fopen("historico.log","a");
-		fprintf(logfile, "\t%f\n",dist);
+		fprintf(logfile, "\t%f\t(%f,%f)\t(%f,%f|%f,%f)\n",dist,consigna[0],consigna[1],wayPointX[i],wayPointY[i],wayPointX[i-1],wayPointY[i-1]);
 		fclose(logfile);
 		
 		if ((dist < 0.01) && (i < numWaypoints-1))
 			i = i+1;
+
+		/* Manejo del archivo log de las salidas de los PIDs)*/
+		logfile=fopen("salidaPIDs.log","a");
+		fprintf(logfile, "%f\n",action[1]); // Insercion del texto
+		fclose(logfile);
+
 	}
 
 }
@@ -360,4 +377,3 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	}
 	return TRUE;
 }
-
