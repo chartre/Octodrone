@@ -98,6 +98,25 @@ param		-> array con los parametros que le queremos dar al sistema de control (co
 numParam	-> entero que dice cuantos elementos son los del vector anterior
 */
 
+// Funciones adicionales
+double norm (double a, double b)
+{
+	return sqrt((a*a+b*b));
+}
+double sat (double valor, double top, double bottom)
+{
+	if (valor > top)
+	{
+		return top;
+	}else if (valor < bottom)
+	{
+		return bottom;
+	}
+	else
+	{
+		return valor;
+	}
+}
 
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
@@ -113,6 +132,7 @@ extern "C" {
 		if (contCiclo == 1) // si es el primer ciclo, escribe titulo
 		{
 			logfile=fopen("historico.log","w");
+			logfile=fopen("salidaPIDs.log","w");
 			fprintf(logfile, "%s Tiempo\t\t(PosX    ,PosY    )\t(VelX    ,VelY    )\t(wPX     ,wPY    )\tDist\t\tConsigna\t\tWPAnterior\n\n",tmpbuf); // Insercion del texto
 			fclose(logfile);
 		}
@@ -149,7 +169,7 @@ extern "C" {
 		double dist_x = wayPointX[i] - ref_x_1;
 		double dist_y = wayPointY[i] - ref_y_1;
 		//norm(DistXY)
-		double normD = sqrt((dist_x*dist_x) + (dist_y*dist_y));
+		double normD = norm (dist_x,dist_y);
 
 		if (normD < (0.5*radio))
 		{
@@ -300,42 +320,32 @@ extern "C" {
 		// action[1] = u_kx_1 + Kcx*(e_kx - e_kx_1) + (Kcx*Ts/Tix)*e_kx + (Kcx*Tdx)/Ts*(e_kx - 2*e_kx_1 + e_kx_2);
 		// action[1] = Kcx*e_kx + (Kcx*Tdx)/Ts*(e_kx - e_kx_1);
 		//Pitch Parameters
-		Kcx = 0.1;
+		Kcx = 1;
 		Tix = 0;
-		Tdx = 0.05;
+		Tdx = 0;
 		int Nx = 12;
-		action[1] = Kcx*e_kx + (Kcx*Tdx)*Nx*(e_kx - 2*e_kx_1 + e_kx_2)/((e_kx - 2*e_kx_1 + e_kx_2) + Nx*Ts);
+		action[1] = Kcx*e_kx; //+ (Kcx*Tdx)*Nx*(e_kx - 2*e_kx_1 + e_kx_2)/((e_kx - 2*e_kx_1 + e_kx_2) + Nx*Ts);
 
 		// Control PID Law for Y-PITCH
 		// action[0] = action[1] + Kcy*(e_ky - e_ky_1) + (Kcy*Ts)/Tiy*e_ky + (Kcy*Tdy)/Ts*(e_ky - 2*e_ky_1 + e_ky_2);
 		// Roll Params
-		Kcy = -0.2;
+		Kcy = 1.5;
 		Tiy = 0;
-		Tdy = 1;
-		action[0] = Kcy*e_ky + (Kcy*Tdy)/Ts*(e_ky - e_ky_1);
+		Tdy = 3;
+		int Ny = 20;
+		action[0] =-( Kcy*e_ky + (Kcy*Tdy)*Ny*(e_ky - 2*e_ky_1 + e_ky_2)/((e_ky - 2*e_ky_1 + e_ky_2) + Ny*Ts));
+
+		// action[0] = Kcy*e_ky + (Kcy*Tdy)/Ts*(e_ky - e_ky_1);
 		// Fin acciones de control
 
 		// Coulombic and Viscous for X axis only
-		accion = abs(action[1])+0.07;
-		if (action[1] < 0)
-			accion = accion *(-1);
-		
+		//accion = (abs(action[1]))+0.07;
+		//if (action[1] < 0)
+		//	accion = accion *(-1);
+
 		// Saturation Check
-		if ((action[0]) > 0.6)
-			action[0] = 0.6;
-
-		if ((accion ) > 0.6)
-			action[1] = 0.6;
-		else
-			action[1]=accion;
-
-		if ((action[0]) < -0.65)
-			action[0] = -0.65;
-
-		if ((accion ) < -0.6)
-			action[1] = -0.6;
-		else
-			action[1]=accion ;
+		action[0] = sat(action[0],0.6,-0.65);
+		action[1] = sat(action[1],0.6,-0.6);
 
 		// Manage Variables
 		e_kx_2 = e_kx_1;
@@ -345,7 +355,7 @@ extern "C" {
 		ref_x_1 = ref_x;
 		ref_y_1 = ref_y;
 
-		double dist = sqrt((d_wx*d_wx)+(d_wy*d_wy));
+		double dist = norm(d_wx,d_wy);
 
 		logfile=fopen("historico.log","a");
 		fprintf(logfile, "\t%f\t(%f,%f)\t(%f,%f|%f,%f)\n",dist,consigna[0],consigna[1],wayPointX[i],wayPointY[i],wayPointX[i-1],wayPointY[i-1]);
@@ -356,12 +366,17 @@ extern "C" {
 
 		/* Manejo del archivo log de las salidas de los PIDs)*/
 		logfile=fopen("salidaPIDs.log","a");
-		fprintf(logfile, "%f\n",action[1]); // Insercion del texto
+		fprintf(logfile, "%f\t%f\n",action[0]); // Insercion del texto
 		fclose(logfile);
 
 	}
 
 }
+
+
+
+
+
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
                        LPVOID lpReserved
