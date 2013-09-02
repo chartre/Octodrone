@@ -106,24 +106,6 @@ extern "C" {
 		double tCiclo = contCiclo*0.06;
 		contCiclo++;
 		 
-		/* Manejo del log file*/
-		//char tmpbuf[10];
-		//_strtime_s(tmpbuf,10); // metemos en tmpbuf la hora del SO
-		//FILE * logfile;
-		//if (contCiclo == 1) // si es el primer ciclo, escribe titulo
-		//{
-		//	logfile=fopen("historico.log","w");
-		//	fprintf(logfile, "%s Tiempo\t\t(PosX    ,PosY    )\t(VelX    ,VelY    )\t(wPX     ,wPY    )\tDist\t\tConsigna\t\tWPAnterior\n\n",tmpbuf); // Insercion del texto
-		//	fclose(logfile);
-		//	logfile=fopen("salidaPIDs.log","w");
-		//	fclose(logfile);
-		//}
-		//logfile=fopen("historico.log","a");
-		//fprintf(logfile, "%i\t %f\t(%f,%f)\t(%f,%f)\t(%f,%f)",(contCiclo-1),tCiclo,position[0],position[1],velocity[0],velocity[1],wayPointX[i],wayPointY[i]); // Insercion del texto
-		//fclose(logfile);
-		
-		/* Fin del logfile*/
-
 		// Parametros del control
 		// Preprocessing
 
@@ -200,7 +182,7 @@ extern "C" {
 		//-consigna (por-definir)	*/
 
 		//A[0] = wayPointX[i-1];
-		//A[1] = wayPointX[i-1];
+		//A[1] = wayPointX[i-1];??????????????????????????????????????????????????????????????????????????????????????????????????????????????????
 
 		//B[0] = wayPointX[i];
 		//B[1] = wayPointY[i];
@@ -293,79 +275,60 @@ extern "C" {
 		//}
 		//// Fin de la parte del corrector//
 
-		//consigna[0] = wayPointX[i];
-		//consigna[1] = wayPointY[i];
-		
 		e_kx = ref_x - position[0];
 		e_ky = ref_y + (position[1]);
 
 		// Acciones de control
-		double accion;
 		// Control PID Law for X-PITCH
-		// action[1] = u_kx_1 + Kcx*(e_kx - e_kx_1) + (Kcx*Ts/Tix)*e_kx + (Kcx*Tdx)/Ts*(e_kx - 2*e_kx_1 + e_kx_2);
-		// action[1] = Kcx*e_kx + (Kcx*Tdx)/Ts*(e_kx - e_kx_1);
-		//Pitch Param¡eters
+		// Pitch Param¡eters
 		Kcx = 0.1;
 		Tix = 0;
 		Tdx = 0.05;
 		int Nx = 12;
-		action[1] = 0; // -(Kcx*e_kx + ((Tdx*Nx)/(1+(Nx*Ts/(e_kx_1 - e_kx_2)))));
+		action[0] = 0; // -(Kcx*e_kx + ((Tdx*Nx)/(1+(Nx*Ts/(e_kx_1 - e_kx_2)))));
 		// Anulamos "action[]" de este eje para medir sólo el otro.
 
 		// Control PID Law for Y-ROLL
-		// action[0] = action[1] + Kcy*(e_ky - e_ky_1) + (Kcy*Ts)/Tiy*e_ky + (Kcy*Tdy)/Ts*(e_ky - 2*e_ky_1 + e_ky_2);
 		// Roll Params
 		Kcy = 1.5;
 		Tiy = 0;
 		Tdy = 3;
 		int Ny = 20;
-		action[0] = -(Kcy*e_ky + ((Tdy*Ny)/(1+(Ny*Ts/(e_ky_1 - e_ky_2)))));
+		action[1] = -(Kcy*e_ky + ((Tdy*Ny)/(1+(Ny*Ts/(e_ky_1 - e_ky_2)))));
 
-		// action[0] = Kcy*e_ky + (Kcy*Tdy)/Ts*(e_ky - e_ky_1);
 		// Fin acciones de control
 
-		// Coulombic and Viscous for X axis only
-		//accion = (abs(action[1]))+0.07;
-		//if (action[1] < 0)
+
+		// Coulombic and Viscous for X axis only????????????????????????????????????????????????????????????????????????????
+		// double accion;
+		// accion = (abs(action[0]))+0.07;
+		// if (action[0] < 0)
 		//	accion = accion *(-1);
 
 		// Saturation Check
-		// FUNCION: action[0] = sat(action[0],0.6,-0.65);
+		// FUNCION: action[0] = sat(action[0],0.6,-0.6);
 		double valor = action[0];
 		double top = 0.6;
-		double bottom = -0.65;
+		double bottom = -0.6;
 
 		if (valor > top){
 			action[0] = top;
 		}else if (valor < bottom){
 			action[0] = bottom;
 		}
-		else{
-			;
-		}
 
-
-		// FUNCION action[1] = sat(action[1],0.6,-0.6);
+		// FUNCION action[1] = sat(action[1],0.6,-0.65);
 		valor = action[1];
 		top = 0.6;
-		bottom = -0.6;
+		bottom = -0.65;
 
 		if (valor > top)
 		{
-			action[0] = top;
+			action[1] = top;
 		}else if (valor < bottom)
 		{
-			action[0] = bottom;
+			action[1] = bottom;
 		}
-		else
-		{
-			;
-		}
-		
-		// Aquí intercambiamos los valores de salida de los PIDs entre los ejes por estar cambiados respecto de la mierda hecha para el simulador de puta mierda!!!
-		double temp = action [0];
-		action[0] = action [1];
-		action [1] = temp;
 		
 		// Manage Variables
 		e_kx_2 = e_kx_1;
@@ -378,25 +341,11 @@ extern "C" {
 		// double dist = norm(d_wx,d_wy);
 		double dist = sqrt((d_wx*d_wx)+(d_wy*d_wy));
 
-	/*	logfile=fopen("historico.log","a");
-		fprintf(logfile, "\t%f\t(%f,%f)\t(%f,%f|%f,%f)\n",dist,consigna[0],consigna[1],wayPointX[i],wayPointY[i],wayPointX[i-1],wayPointY[i-1]);
-		fclose(logfile);
-	*/	
 		if ((dist < 0.5) && (i < numWaypoints-1))
 			i = i+1;
-
-		/* Manejo del archivo log de las salidas de los PIDs)*/
-		//logfile=fopen("salidaPIDs.log","a");
-		//fprintf(logfile, "%f\t%f\t%f\t%f\t%f\t%f\n",action[0],position[1],ref_y, action[1],position[0],ref_x); // Insercion del texto
-		//fclose(logfile);
-
 	}
 
 }
-
-
-
-
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
