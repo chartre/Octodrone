@@ -68,7 +68,7 @@ Model {
 	  LoadSaveID		  "0"
 	  Extents		  [1564.0, 697.0]
 	  ZoomFactor		  [1.25]
-	  Offset		  [6.8615207883230482, -28.305059523809547]
+	  Offset		  [6.8615207883230482, -63.305059523809547]
 	}
 	Object {
 	  $ObjectID		  7
@@ -89,7 +89,7 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "borJaRal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Sep 02 15:07:38 2013"
+  LastModifiedDate	  "Thu Aug 29 15:15:39 2013"
   RTWModifiedTimeStamp	  299689824
   ModelVersionFormat	  "1.%<AutoIncrement:12>"
   ConfigurationManager	  "None"
@@ -1233,21 +1233,11 @@ Model {
     Block {
       BlockType		      Terminator
     }
-    Block {
-      BlockType		      ToWorkspace
-      VariableName	      "simulink_output"
-      MaxDataPoints	      "1000"
-      Decimation	      "1"
-      SampleTime	      "0"
-      SaveFormat	      "Array"
-      FixptAsFi		      off
-      NumInputs		      "1"
-    }
   }
   System {
     Name		    "Modelos"
     Location		    [-8, -8, 1608, 868]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1260,13 +1250,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "122"
+    SIDHighWatermark	    "120"
     Block {
       BlockType		      SubSystem
       Name		      " Modelo"
       SID		      "1"
       Ports		      [2, 4]
-      Position		      [780, 177, 850, 318]
+      Position		      [780, 142, 850, 283]
       ZOrder		      1
       NamePlacement	      "alternate"
       MinAlgLoopOccurrences   off
@@ -1336,6 +1326,7 @@ Model {
 	  Position		  [435, 287, 470, 323]
 	  ZOrder		  23
 	  gainval		  "0.95"
+	  InitialCondition	  "-1"
 	  SampleTime		  "0.06"
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
 	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
@@ -1725,7 +1716,7 @@ Model {
       Name		      "Contador de tiempo ensayo"
       SID		      "91"
       Ports		      [1, 1]
-      Position		      [215, 112, 370, 148]
+      Position		      [215, 77, 370, 113]
       ZOrder		      24
       BlockMirror	      on
       MinAlgLoopOccurrences   off
@@ -1885,7 +1876,7 @@ Model {
       Name		      "Controlador"
       SID		      "15"
       Ports		      [6, 2]
-      Position		      [595, 176, 665, 319]
+      Position		      [595, 141, 665, 284]
       ZOrder		      18
       NamePlacement	      "alternate"
       MinAlgLoopOccurrences   off
@@ -1980,7 +1971,7 @@ Model {
 	  System {
 	    Name		    "Control Ejes teórico"
 	    Location		    [-8, -8, 1608, 868]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3140,7 +3131,7 @@ Model {
       Name		      "Demux"
       SID		      "72"
       Ports		      [1, 2]
-      Position		      [525, 223, 530, 272]
+      Position		      [525, 188, 530, 237]
       ZOrder		      20
       ShowName		      off
       Outputs		      "2"
@@ -3151,7 +3142,7 @@ Model {
       Name		      "Generador Referencia"
       SID		      "100"
       Ports		      [1, 2]
-      Position		      [285, 240, 360, 300]
+      Position		      [285, 205, 360, 265]
       ZOrder		      23
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -3500,7 +3491,7 @@ Model {
       Name		      "Mux"
       SID		      "120"
       Ports		      [2, 1]
-      Position		      [310, 361, 315, 399]
+      Position		      [310, 326, 315, 364]
       ZOrder		      25
       BlockMirror	      on
       ShowName		      off
@@ -3509,21 +3500,10 @@ Model {
     }
     Block {
       BlockType		      Display
-      Name		      "Pos"
-      SID		      "121"
-      Ports		      [1]
-      Position		      [325, 29, 415, 71]
-      ZOrder		      26
-      BlockMirror	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
       Name		      "Pto de la ruta"
       SID		      "118"
       Ports		      [1]
-      Position		      [280, 187, 370, 213]
+      Position		      [280, 152, 370, 178]
       ZOrder		      22
       BlockMirror	      on
       Decimation	      "1"
@@ -3534,29 +3514,18 @@ Model {
       Name		      "Tiempo"
       SID		      "119"
       Ports		      [1]
-      Position		      [110, 115, 200, 145]
+      Position		      [110, 80, 200, 110]
       ZOrder		      21
       BlockMirror	      on
       Decimation	      "1"
       Lockdown		      off
     }
     Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace"
-      SID		      "122"
-      Ports		      [1]
-      Position		      [780, 20, 840, 50]
-      ZOrder		      27
-      VariableName	      "RefRollOut"
-      MaxDataPoints	      "inf"
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Reference
       Name		      "XY Graph"
       SID		      "14"
       Ports		      [2]
-      Position		      [930, 220, 960, 255]
+      Position		      [930, 185, 960, 220]
       ZOrder		      2
       LibraryVersion	      "1.281"
       SourceBlock	      "simulink/Sinks/XY Graph"
@@ -3620,16 +3589,8 @@ Model {
     Line {
       SrcBlock		      "Controlador"
       SrcPort		      2
-      Points		      [43, 0]
-      Branch {
-	Points			[0, -250]
-	DstBlock		"To Workspace"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		" Modelo"
-	DstPort			2
-      }
+      DstBlock		      " Modelo"
+      DstPort		      2
     }
     Line {
       SrcBlock		      " Modelo"
@@ -3681,17 +3642,9 @@ Model {
     Line {
       SrcBlock		      "Generador Referencia"
       SrcPort		      2
-      Points		      [59, 0]
-      Branch {
-	Points			[0, -235]
-	DstBlock		"Pos"
-	DstPort			1
-      }
-      Branch {
-	Points			[33, 0; 0, -35]
-	DstBlock		"Demux"
-	DstPort			1
-      }
+      Points		      [92, 0; 0, -35]
+      DstBlock		      "Demux"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Mux"
@@ -3727,7 +3680,10 @@ Stateflow {
     firstTransition	    11
     firstJunction	    10
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    25
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -3946,7 +3902,10 @@ Stateflow {
     firstTransition	    21
     firstJunction	    20
     viewObj		    13
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
