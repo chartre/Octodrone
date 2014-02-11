@@ -94,18 +94,48 @@ numParam	-> entero que dice cuantos elementos son los del vector anterior
 extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
 	{
+<<<<<<< HEAD
 		actualWayPoint[2]=i;
+=======
+		// Contador del numero de ciclos y del tiempo transcurrido
+		double tCiclo = contCiclo*0.06;
+		contCiclo++;
+		 
+		/* Manejo del log file*/
+		//char tmpbuf[10];
+		//_strtime_s(tmpbuf,10); // metemos en tmpbuf la hora del SO
+		//FILE * logfile;
+		//if (contCiclo == 1) // si es el primer ciclo, escribe titulo
+		//{
+		//	logfile=fopen("historico.log","w");
+		//	fprintf(logfile, "%s Tiempo\t\t(PosX    ,PosY    )\t(VelX    ,VelY    )\t(wPX     ,wPY    )\tDist\t\tConsigna\t\tWPAnterior\n\n",tmpbuf); // Insercion del texto
+		//	fclose(logfile);
+		//	logfile=fopen("salidaPIDs.log","w");
+		//	fclose(logfile);
+		//}
+		//logfile=fopen("historico.log","a");
+		//fprintf(logfile, "%i\t %f\t(%f,%f)\t(%f,%f)\t(%f,%f)",(contCiclo-1),tCiclo,position[0],position[1],velocity[0],velocity[1],wayPointX[i],wayPointY[i]); // Insercion del texto
+		//fclose(logfile);
+		
+		/* Fin del logfile*/
+>>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
 
 		// Parametros del control
 		// Preprocessing
 
 		//Roll Parameters
+		position[0]=0; // Asignamos valor 0 a la posición X para probar únicamente el eje Y sobre la posición nula de X. Anular también "action[]" PID del eje.
 		actualWayPoint [0] = wayPointX[i];
 		d_wx = wayPointX[i] - position[0];
 
 		//Pitch Parameters
+		
 		actualWayPoint [1] = wayPointY[i];
+<<<<<<< HEAD
 		d_wy = wayPointY[i] - (position[1]); // Cambiamos signos en valor posición para eje Y por entender convenio de signos a la inversa. También se modifica en otro uso de esta variable más adelante del código.
+=======
+		d_wy = wayPointY[i] + (position[1]); // Cambiamos signos en valor posición para eje Y por entender convenio de signos a la inversa. También se modifica en otro uso de esta variable más adelante del código.
+>>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
 		
 		///* Sistema de trayectorias
 		//===================================================
@@ -267,6 +297,7 @@ extern "C" {
 		ref_y=consigna[1];
 
 		e_kx = ref_x - position[0];
+<<<<<<< HEAD
 		e_ky = ref_y - (position[1]);
 
 		// Acciones de control
@@ -284,15 +315,38 @@ extern "C" {
 		// Anulamos "action[]" de este eje para medir sólo el otro.
 
 		// Control PID Law for Y-ROLL
+=======
+		e_ky = ref_y + (position[1]);
+
+		// Acciones de control
+		double accion;
+		// Control PID Law for X-PITCH
+		// action[1] = u_kx_1 + Kcx*(e_kx - e_kx_1) + (Kcx*Ts/Tix)*e_kx + (Kcx*Tdx)/Ts*(e_kx - 2*e_kx_1 + e_kx_2);
+		// action[1] = Kcx*e_kx + (Kcx*Tdx)/Ts*(e_kx - e_kx_1);
+		//Pitch Param¡eters
+		Kcx = 0.1;
+		Tix = 0;
+		Tdx = 0.05;
+		int Nx = 12;
+		action[1] = 0; // -(Kcx*e_kx + ((Tdx*Nx)/(1+(Nx*Ts/(e_kx_1 - e_kx_2)))));
+		// Anulamos "action[]" de este eje para medir sólo el otro.
+
+		// Control PID Law for Y-ROLL
+		// action[0] = action[1] + Kcy*(e_ky - e_ky_1) + (Kcy*Ts)/Tiy*e_ky + (Kcy*Tdy)/Ts*(e_ky - 2*e_ky_1 + e_ky_2);
+>>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
 		// Roll Params
 		/*Kcy = 1.5;
 		Tiy = 0;
 		Tdy = 3;
+<<<<<<< HEAD
 		int Ny = 20;*/
 		Kcy = 0.1;
 		Tiy = 0;
 		Tdy = 0.05;
 		int Ny = 12;
+=======
+		int Ny = 20;
+>>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
 		action[0] = -(Kcy*e_ky + ((Tdy*Ny)/(1+(Ny*Ts/(e_ky_1 - e_ky_2)))));
 
 		// Fin acciones de control
@@ -305,16 +359,24 @@ extern "C" {
 			accion = accion *(-1);
 
 		// Saturation Check
+<<<<<<< HEAD
 		// FUNCION: action[0] = sat(action[0],0.6,-0.6);
 		double valor = action[0];
 		double top = 0.1; //0.6
 		double bottom = -0.1; //0.65
+=======
+		// FUNCION: action[0] = sat(action[0],0.6,-0.65);
+		double valor = action[0];
+		double top = 0.6;
+		double bottom = -0.65;
+>>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
 
 		if (valor > top){
 			action[0] = top;
 		}else if (valor < bottom){
 			action[0] = bottom;
 		}
+<<<<<<< HEAD
 
 		// FUNCION action[1] = sat(action[1],0.6,-0.65);
 		valor = action[1];
@@ -328,6 +390,34 @@ extern "C" {
 		{
 			action[1] = bottom;
 		}
+=======
+		else{
+			;
+		}
+
+
+		// FUNCION action[1] = sat(action[1],0.6,-0.6);
+		valor = action[1];
+		top = 0.6;
+		bottom = -0.6;
+
+		if (valor > top)
+		{
+			action[0] = top;
+		}else if (valor < bottom)
+		{
+			action[0] = bottom;
+		}
+		else
+		{
+			;
+		}
+		
+		// Aquí intercambiamos los valores de salida de los PIDs entre los ejes por estar cambiados respecto de la mierda hecha para el simulador de puta mierda!!!
+		double temp = action [0];
+		action[0] = action [1];
+		action [1] = temp;
+>>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
 		
 		// Manage Variables
 		e_kx_2 = e_kx_1;
@@ -339,9 +429,24 @@ extern "C" {
 
 		// double dist = norm(d_wx,d_wy);
 		double dist = sqrt((d_wx*d_wx)+(d_wy*d_wy));
+<<<<<<< HEAD
 
 		if ((dist < 0.1) && (i < numWaypoints-1))
 			i++;
+=======
+
+	/*	logfile=fopen("historico.log","a");
+		fprintf(logfile, "\t%f\t(%f,%f)\t(%f,%f|%f,%f)\n",dist,consigna[0],consigna[1],wayPointX[i],wayPointY[i],wayPointX[i-1],wayPointY[i-1]);
+		fclose(logfile);
+	*/	
+		if ((dist < 0.5) && (i < numWaypoints-1))
+			i = i+1;
+
+		/* Manejo del archivo log de las salidas de los PIDs)*/
+		//logfile=fopen("salidaPIDs.log","a");
+		//fprintf(logfile, "%f\t%f\t%f\t%f\t%f\t%f\n",action[0],position[1],ref_y, action[1],position[0],ref_x); // Insercion del texto
+		//fclose(logfile);
+>>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
 
 		//actualWayPoint[2]=i;
 	}
