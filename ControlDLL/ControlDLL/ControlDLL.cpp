@@ -95,8 +95,6 @@ extern "C" {
     __declspec(dllexport) void __cdecl Control (double *position, double *velocity, double *action, int numAxis, double *wayPointX, double *wayPointY, int numWaypoints, double *actualWayPoint, double *param, int numParam)
 	{
 <<<<<<< HEAD
-		actualWayPoint[2]=i;
-=======
 		// Contador del numero de ciclos y del tiempo transcurrido
 		double tCiclo = contCiclo*0.06;
 		contCiclo++;
@@ -118,7 +116,9 @@ extern "C" {
 		//fclose(logfile);
 		
 		/* Fin del logfile*/
->>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
+=======
+		actualWayPoint[2]=i;
+>>>>>>> Adaptaci贸n de variables a convenio del concurso.
 
 		// Parametros del control
 		// Preprocessing
@@ -132,10 +132,10 @@ extern "C" {
 		
 		actualWayPoint [1] = wayPointY[i];
 <<<<<<< HEAD
-		d_wy = wayPointY[i] - (position[1]); // Cambiamos signos en valor posici髇 para eje Y por entender convenio de signos a la inversa. Tambi閚 se modifica en otro uso de esta variable m醩 adelante del c骴igo.
-=======
 		d_wy = wayPointY[i] + (position[1]); // Cambiamos signos en valor posici髇 para eje Y por entender convenio de signos a la inversa. Tambi閚 se modifica en otro uso de esta variable m醩 adelante del c骴igo.
->>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
+=======
+		d_wy = wayPointY[i] - (position[1]); // Cambiamos signos en valor posici髇 para eje Y por entender convenio de signos a la inversa. Tambi閚 se modifica en otro uso de esta variable m醩 adelante del c骴igo.
+>>>>>>> Adaptaci贸n de variables a convenio del concurso.
 		
 		///* Sistema de trayectorias
 		//===================================================
@@ -298,24 +298,6 @@ extern "C" {
 
 		e_kx = ref_x - position[0];
 <<<<<<< HEAD
-		e_ky = ref_y - (position[1]);
-
-		// Acciones de control
-		// Control PID Law for X-PITCH
-		// Pitch Paramters
-		/*Kcx = 0.1;
-		Tix = 0;
-		Tdx = 0.05;
-		int Nx = 12;*/
-		Kcx = 1.5;
-		Tix = 0;
-		Tdx = 3;
-		int Nx = 20;
-		action[1] = (Kcx*e_kx + ((Tdx*Nx)/(1+(Nx*Ts/(e_kx_1 - e_kx_2)))));
-		// Anulamos "action[]" de este eje para medir s髄o el otro.
-
-		// Control PID Law for Y-ROLL
-=======
 		e_ky = ref_y + (position[1]);
 
 		// Acciones de control
@@ -333,20 +315,38 @@ extern "C" {
 
 		// Control PID Law for Y-ROLL
 		// action[0] = action[1] + Kcy*(e_ky - e_ky_1) + (Kcy*Ts)/Tiy*e_ky + (Kcy*Tdy)/Ts*(e_ky - 2*e_ky_1 + e_ky_2);
->>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
+=======
+		e_ky = ref_y - (position[1]);
+
+		// Acciones de control
+		// Control PID Law for X-PITCH
+		// Pitch Paramters
+		/*Kcx = 0.1;
+		Tix = 0;
+		Tdx = 0.05;
+		int Nx = 12;*/
+		Kcx = 1.5;
+		Tix = 0;
+		Tdx = 3;
+		int Nx = 20;
+		action[1] = (Kcx*e_kx + ((Tdx*Nx)/(1+(Nx*Ts/(e_kx_1 - e_kx_2)))));
+		// Anulamos "action[]" de este eje para medir s髄o el otro.
+
+		// Control PID Law for Y-ROLL
+>>>>>>> Adaptaci贸n de variables a convenio del concurso.
 		// Roll Params
 		/*Kcy = 1.5;
 		Tiy = 0;
 		Tdy = 3;
 <<<<<<< HEAD
+		int Ny = 20;
+=======
 		int Ny = 20;*/
 		Kcy = 0.1;
 		Tiy = 0;
 		Tdy = 0.05;
 		int Ny = 12;
-=======
-		int Ny = 20;
->>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
+>>>>>>> Adaptaci贸n de variables a convenio del concurso.
 		action[0] = -(Kcy*e_ky + ((Tdy*Ny)/(1+(Ny*Ts/(e_ky_1 - e_ky_2)))));
 
 		// Fin acciones de control
@@ -360,16 +360,16 @@ extern "C" {
 
 		// Saturation Check
 <<<<<<< HEAD
-		// FUNCION: action[0] = sat(action[0],0.6,-0.6);
-		double valor = action[0];
-		double top = 0.1; //0.6
-		double bottom = -0.1; //0.65
-=======
 		// FUNCION: action[0] = sat(action[0],0.6,-0.65);
 		double valor = action[0];
 		double top = 0.6;
 		double bottom = -0.65;
->>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
+=======
+		// FUNCION: action[0] = sat(action[0],0.6,-0.6);
+		double valor = action[0];
+		double top = 0.1; //0.6
+		double bottom = -0.1; //0.65
+>>>>>>> Adaptaci贸n de variables a convenio del concurso.
 
 		if (valor > top){
 			action[0] = top;
@@ -377,20 +377,6 @@ extern "C" {
 			action[0] = bottom;
 		}
 <<<<<<< HEAD
-
-		// FUNCION action[1] = sat(action[1],0.6,-0.65);
-		valor = action[1];
-		top = 0.1; //0.6
-		bottom = -0.1; //-0.6
-
-		if (valor > top)
-		{
-			action[1] = top;
-		}else if (valor < bottom)
-		{
-			action[1] = bottom;
-		}
-=======
 		else{
 			;
 		}
@@ -417,7 +403,21 @@ extern "C" {
 		double temp = action [0];
 		action[0] = action [1];
 		action [1] = temp;
->>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
+=======
+
+		// FUNCION action[1] = sat(action[1],0.6,-0.65);
+		valor = action[1];
+		top = 0.1; //0.6
+		bottom = -0.1; //-0.6
+
+		if (valor > top)
+		{
+			action[1] = top;
+		}else if (valor < bottom)
+		{
+			action[1] = bottom;
+		}
+>>>>>>> Adaptaci贸n de variables a convenio del concurso.
 		
 		// Manage Variables
 		e_kx_2 = e_kx_1;
@@ -431,10 +431,6 @@ extern "C" {
 		double dist = sqrt((d_wx*d_wx)+(d_wy*d_wy));
 <<<<<<< HEAD
 
-		if ((dist < 0.1) && (i < numWaypoints-1))
-			i++;
-=======
-
 	/*	logfile=fopen("historico.log","a");
 		fprintf(logfile, "\t%f\t(%f,%f)\t(%f,%f|%f,%f)\n",dist,consigna[0],consigna[1],wayPointX[i],wayPointY[i],wayPointX[i-1],wayPointY[i-1]);
 		fclose(logfile);
@@ -446,7 +442,11 @@ extern "C" {
 		//logfile=fopen("salidaPIDs.log","a");
 		//fprintf(logfile, "%f\t%f\t%f\t%f\t%f\t%f\n",action[0],position[1],ref_y, action[1],position[0],ref_x); // Insercion del texto
 		//fclose(logfile);
->>>>>>> d02847fa6f5c63d5aa4fec79c235e2d9a2f3ac7c
+=======
+
+		if ((dist < 0.1) && (i < numWaypoints-1))
+			i++;
+>>>>>>> Adaptaci贸n de variables a convenio del concurso.
 
 		//actualWayPoint[2]=i;
 	}
